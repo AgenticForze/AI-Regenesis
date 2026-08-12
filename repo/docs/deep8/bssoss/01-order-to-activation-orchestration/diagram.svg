@@ -1,0 +1,301 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1786 2027" font-family="'Inter','IBM Plex Sans',-apple-system,sans-serif">
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+<path d="M0,0 L10,5 L0,10 z" fill="#9AA3AE"/>
+</marker>
+<filter id="cardshadow" x="-20%" y="-20%" width="140%" height="140%">
+<feDropShadow dx="0" dy="1.5" stdDeviation="2.5" flood-color="#1a1a1a" flood-opacity="0.08"/>
+</filter>
+</defs>
+<rect x="0" y="0" width="1786" height="2027" fill="#FFFFFF"/>
+<path d="M 649.0 151.0 L 649.0 178.0 Q 649.0 190.0 661.0 190.0 L 775.0 190.0 Q 787.0 190.0 787.0 202.0 L 787.0 229.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 925.0 151.0 L 925.0 178.0 Q 925.0 190.0 913.0 190.0 L 799.0 190.0 Q 787.0 190.0 787.0 202.0 L 787.0 229.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 1201.0 151.0 L 1201.0 178.0 Q 1201.0 190.0 1189.0 190.0 L 799.0 190.0 Q 787.0 190.0 787.0 202.0 L 787.0 229.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 1477.0 151.0 L 1477.0 178.0 Q 1477.0 190.0 1465.0 190.0 L 799.0 190.0 Q 787.0 190.0 787.0 202.0 L 787.0 229.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 912.0 281.5 L 938.0 281.5" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 912.0 281.5 L 1214.0 281.5" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 1063.0 334.0 L 1063.0 412.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 1339.0 334.0 L 1339.0 361.0 Q 1339.0 373.0 1327.0 373.0 L 1075.0 373.0 Q 1063.0 373.0 1063.0 385.0 L 1063.0 412.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 1063.0 517.0 L 1063.0 544.0 Q 1063.0 556.0 1051.0 556.0 L 661.0 556.0 Q 649.0 556.0 649.0 568.0 L 649.0 595.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 1063.0 517.0 L 1063.0 544.0 Q 1063.0 556.0 1051.0 556.0 L 937.0 556.0 Q 925.0 556.0 925.0 568.0 L 925.0 595.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 1063.0 517.0 L 1063.0 544.0 Q 1063.0 556.0 1075.0 556.0 L 1189.0 556.0 Q 1201.0 556.0 1201.0 568.0 L 1201.0 595.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 1063.0 517.0 L 1063.0 544.0 Q 1063.0 556.0 1075.0 556.0 L 1465.0 556.0 Q 1477.0 556.0 1477.0 568.0 L 1477.0 595.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 1063.0 517.0 L 1063.0 635.5 Q 1063.0 647.5 1051.0 647.5 L 661.0 647.5 Q 649.0 647.5 649.0 659.5 L 649.0 778.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" stroke-dasharray="5 4" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<path d="M 649.0 700.0 L 649.0 727.0 Q 649.0 739.0 661.0 739.0 L 913.0 739.0 Q 925.0 739.0 925.0 751.0 L 925.0 778.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" stroke-dasharray="5 4" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<path d="M 925.0 700.0 L 925.0 727.0 Q 925.0 739.0 937.0 739.0 L 1189.0 739.0 Q 1201.0 739.0 1201.0 751.0 L 1201.0 778.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" stroke-dasharray="5 4" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<path d="M 1201.0 700.0 L 1201.0 727.0 Q 1201.0 739.0 1213.0 739.0 L 1465.0 739.0 Q 1477.0 739.0 1477.0 751.0 L 1477.0 778.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" stroke-dasharray="5 4" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<path d="M 649.0 700.0 L 649.0 818.5 Q 649.0 830.5 661.0 830.5 L 775.0 830.5 Q 787.0 830.5 787.0 842.5 L 787.0 961.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 925.0 700.0 L 925.0 818.5 Q 925.0 830.5 937.0 830.5 L 1051.0 830.5 Q 1063.0 830.5 1063.0 842.5 L 1063.0 961.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 1201.0 700.0 L 1201.0 818.5 Q 1201.0 830.5 1213.0 830.5 L 1327.0 830.5 Q 1339.0 830.5 1339.0 842.5 L 1339.0 961.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 1477.0 700.0 L 1477.0 818.5 Q 1477.0 830.5 1465.0 830.5 L 799.0 830.5 Q 787.0 830.5 787.0 842.5 L 787.0 961.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 787.0 1066.0 L 787.0 1093.0 Q 787.0 1105.0 799.0 1105.0 L 1051.0 1105.0 Q 1063.0 1105.0 1063.0 1117.0 L 1063.0 1144.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 1063.0 1066.0 L 1063.0 1144.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 1339.0 1066.0 L 1339.0 1093.0 Q 1339.0 1105.0 1327.0 1105.0 L 1075.0 1105.0 Q 1063.0 1105.0 1063.0 1117.0 L 1063.0 1144.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 1063.0 1249.0 L 1063.0 1276.0 Q 1063.0 1288.0 1051.0 1288.0 L 523.0 1288.0 Q 511.0 1288.0 511.0 1300.0 L 511.0 1327.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<g><rect x="724.6" y="1277.0" width="124.8" height="20" rx="9" fill="#FFFFFF" stroke="#D8DCE2" stroke-width="1"/><text x="787.0" y="1292.0" text-anchor="middle" font-size="10.5" font-weight="600" fill="#51586A">medium confidence</text></g>
+<path d="M 1063.0 1249.0 L 1063.0 1276.0 Q 1063.0 1288.0 1051.0 1288.0 L 799.0 1288.0 Q 787.0 1288.0 787.0 1300.0 L 787.0 1327.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<g><rect x="869.0" y="1277.0" width="112.0" height="20" rx="9" fill="#FFFFFF" stroke="#D8DCE2" stroke-width="1"/><text x="925.0" y="1292.0" text-anchor="middle" font-size="10.5" font-weight="600" fill="#51586A">high confidence</text></g>
+<path d="M 1063.0 1249.0 L 1063.0 1276.0 Q 1063.0 1288.0 1075.0 1288.0 L 1603.0 1288.0 Q 1615.0 1288.0 1615.0 1300.0 L 1615.0 1327.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+<g><rect x="1286.2" y="1277.0" width="105.6" height="20" rx="9" fill="#FFFFFF" stroke="#D8DCE2" stroke-width="1"/><text x="1339.0" y="1292.0" text-anchor="middle" font-size="10.5" font-weight="600" fill="#51586A">low confidence</text></g>
+<path d="M 912.0 1379.5 L 938.0 1379.5" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 1188.0 1379.5 L 1214.0 1379.5" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 511.0 1432.0 L 511.0 1459.0 Q 511.0 1471.0 523.0 1471.0 L 775.0 1471.0 Q 787.0 1471.0 787.0 1483.0 L 787.0 1510.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+<path d="M 787.0 1432.0 L 787.0 1459.0 Q 787.0 1471.0 799.0 1471.0 L 1051.0 1471.0 Q 1063.0 1471.0 1063.0 1483.0 L 1063.0 1510.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+<path d="M 1063.0 1432.0 L 1063.0 1459.0 Q 1063.0 1471.0 1075.0 1471.0 L 1327.0 1471.0 Q 1339.0 1471.0 1339.0 1483.0 L 1339.0 1510.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+<path d="M 787.0 1615.0 L 787.0 1693.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+<path d="M 1063.0 1615.0 L 1063.0 1693.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+<path d="M 1339.0 1615.0 L 1339.0 1693.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+<path d="M 787.0 1798.0 L 787.0 1876.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+<path d="M 912.0 1928.5 L 938.0 1928.5" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 1188.0 1928.5 L 1214.0 1928.5" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 1339.0 1981.0 L 1339.0 1367.5 Q 1339.0 1379.5 1351.0 1379.5 L 1465.0 1379.5 Q 1477.0 1379.5 1477.0 1391.5 L 1477.0 778.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+<path d="M 1339.0 1981.0 L 1339.0 1367.5 Q 1339.0 1379.5 1327.0 1379.5 L 937.0 1379.5 Q 925.0 1379.5 925.0 1391.5 L 925.0 778.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+<line x1="300" y1="46.0" x2="300" y2="1981.0" stroke="#D64545" stroke-width="2.5"/>
+<line x1="19.0" y1="52.0" x2="19.0" y2="1975.0" stroke="#1A1A1A" stroke-width="1.5"/>
+<polygon points="14.0,61.0 24.0,61.0 19.0,52.0" fill="#1A1A1A"/>
+<polygon points="14.0,1966.0 24.0,1966.0 19.0,1975.0" fill="#1A1A1A"/>
+<text x="19.0" y="1013.5" text-anchor="middle" font-size="11" font-weight="700" fill="#1A1A1A" letter-spacing="0.5" transform="rotate(-90 19.0 1013.5)">SYSTEM ORCHESTRATION &amp; KNOWLEDGE FLOW</text>
+<rect x="40" y="72.5" width="42" height="52" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2"/>
+<text x="61.0" y="104.5" text-anchor="middle" font-size="17" font-weight="700" fill="#1A1A1A">L1</text>
+<rect x="82" y="72.5" width="196" height="52" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2"/>
+<text x="180.0" y="92.5" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1A1A1A">Foundational Data &amp;</text>
+<text x="180.0" y="107.5" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1A1A1A">Infrastructure</text>
+<line x1="278" y1="98.5" x2="300" y2="98.5" stroke="#D64545" stroke-width="1.5" stroke-dasharray="3 3"/>
+<circle cx="300" cy="98.5" r="4" fill="#D64545"/>
+<rect x="40" y="255.5" width="42" height="52" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2"/>
+<text x="61.0" y="287.5" text-anchor="middle" font-size="17" font-weight="700" fill="#1A1A1A">L2</text>
+<rect x="82" y="255.5" width="196" height="52" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2"/>
+<text x="180.0" y="275.5" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1A1A1A">Agent Intelligence &amp;</text>
+<text x="180.0" y="290.5" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1A1A1A">Models</text>
+<line x1="278" y1="281.5" x2="300" y2="281.5" stroke="#D64545" stroke-width="1.5" stroke-dasharray="3 3"/>
+<circle cx="300" cy="281.5" r="4" fill="#D64545"/>
+<rect x="40" y="438.0" width="42" height="53" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2"/>
+<text x="61.0" y="470.5" text-anchor="middle" font-size="17" font-weight="700" fill="#1A1A1A">L3</text>
+<rect x="82" y="438.0" width="196" height="53" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2"/>
+<text x="180.0" y="458.0" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1A1A1A">Agentic Core</text>
+<text x="180.0" y="476.0" text-anchor="middle" font-size="10" fill="#5A6270">(Orchestration &amp; Reasoning)</text>
+<line x1="278" y1="464.5" x2="300" y2="464.5" stroke="#D64545" stroke-width="1.5" stroke-dasharray="3 3"/>
+<circle cx="300" cy="464.5" r="4" fill="#D64545"/>
+<rect x="40" y="979.5" width="42" height="68" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2"/>
+<text x="61.0" y="1019.5" text-anchor="middle" font-size="17" font-weight="700" fill="#1A1A1A">L4</text>
+<rect x="82" y="979.5" width="196" height="68" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2"/>
+<text x="180.0" y="999.5" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1A1A1A">Decisions Engineering &amp;</text>
+<text x="180.0" y="1014.5" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1A1A1A">SECI Framework</text>
+<text x="180.0" y="1032.5" text-anchor="middle" font-size="10" fill="#5A6270">(Governance &amp; Logic)</text>
+<line x1="278" y1="1013.5" x2="300" y2="1013.5" stroke="#D64545" stroke-width="1.5" stroke-dasharray="3 3"/>
+<circle cx="300" cy="1013.5" r="4" fill="#D64545"/>
+<rect x="40" y="1353.0" width="42" height="53" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2"/>
+<text x="61.0" y="1385.5" text-anchor="middle" font-size="17" font-weight="700" fill="#1A1A1A">L5</text>
+<rect x="82" y="1353.0" width="196" height="53" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2"/>
+<text x="180.0" y="1373.0" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1A1A1A">Execution &amp; Interaction</text>
+<text x="180.0" y="1391.0" text-anchor="middle" font-size="10" fill="#5A6270">(Action Layer)</text>
+<line x1="278" y1="1379.5" x2="300" y2="1379.5" stroke="#D64545" stroke-width="1.5" stroke-dasharray="3 3"/>
+<circle cx="300" cy="1379.5" r="4" fill="#D64545"/>
+<rect x="40" y="1536.0" width="42" height="53" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2"/>
+<text x="61.0" y="1568.5" text-anchor="middle" font-size="17" font-weight="700" fill="#1A1A1A">L6</text>
+<rect x="82" y="1536.0" width="196" height="53" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2"/>
+<text x="180.0" y="1556.0" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1A1A1A">End-to-End Observability</text>
+<text x="180.0" y="1574.0" text-anchor="middle" font-size="10" fill="#5A6270">(The Nervous System)</text>
+<line x1="278" y1="1562.5" x2="300" y2="1562.5" stroke="#D64545" stroke-width="1.5" stroke-dasharray="3 3"/>
+<circle cx="300" cy="1562.5" r="4" fill="#D64545"/>
+<rect x="40" y="1719.0" width="42" height="53" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2"/>
+<text x="61.0" y="1751.5" text-anchor="middle" font-size="17" font-weight="700" fill="#1A1A1A">L7</text>
+<rect x="82" y="1719.0" width="196" height="53" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2"/>
+<text x="180.0" y="1739.0" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1A1A1A">Leadership Dashboard Layer</text>
+<text x="180.0" y="1757.0" text-anchor="middle" font-size="10" fill="#5A6270">(Accountability &amp; Outcomes)</text>
+<line x1="278" y1="1745.5" x2="300" y2="1745.5" stroke="#D64545" stroke-width="1.5" stroke-dasharray="3 3"/>
+<circle cx="300" cy="1745.5" r="4" fill="#D64545"/>
+<rect x="40" y="1894.5" width="42" height="68" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2"/>
+<text x="61.0" y="1934.5" text-anchor="middle" font-size="17" font-weight="700" fill="#1A1A1A">L8</text>
+<rect x="82" y="1894.5" width="196" height="68" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2"/>
+<text x="180.0" y="1914.5" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1A1A1A">Feedback &amp; Reinforcement</text>
+<text x="180.0" y="1929.5" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1A1A1A">Loops</text>
+<text x="180.0" y="1947.5" text-anchor="middle" font-size="10" fill="#5A6270">(Self-Healing)</text>
+<line x1="278" y1="1928.5" x2="300" y2="1928.5" stroke="#D64545" stroke-width="1.5" stroke-dasharray="3 3"/>
+<circle cx="300" cy="1928.5" r="4" fill="#D64545"/>
+<g filter="url(#cardshadow)">
+<rect x="524.0" y="46.0" width="250" height="105" rx="16" fill="#F2EEE3" stroke="#C7BC9E" stroke-width="1.5" stroke-dasharray="6 4"/>
+</g>
+<text x="649.0" y="95.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#4A4432">Partner/Vendor Order API</text>
+<text x="649.0" y="112.2" text-anchor="middle" font-size="12.5" fill="#8C8365">External Data Store</text>
+<g filter="url(#cardshadow)">
+<rect x="800.0" y="46.0" width="250" height="105" rx="16" fill="#F2EEE3" stroke="#C7BC9E" stroke-width="1.5"/>
+</g>
+<text x="925.0" y="85.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#4A4432">Order Management System</text>
+<text x="925.0" y="105.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#4A4432">DB</text>
+<text x="925.0" y="122.2" text-anchor="middle" font-size="12.5" fill="#8C8365">Internal Data Store</text>
+<g filter="url(#cardshadow)">
+<rect x="1076.0" y="46.0" width="250" height="105" rx="16" fill="#F2EEE3" stroke="#C7BC9E" stroke-width="1.5"/>
+</g>
+<text x="1201.0" y="95.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#4A4432">Product Catalog DB</text>
+<text x="1201.0" y="112.2" text-anchor="middle" font-size="12.5" fill="#8C8365">Internal Data Store</text>
+<g filter="url(#cardshadow)">
+<rect x="1352.0" y="46.0" width="250" height="105" rx="16" fill="#F2EEE3" stroke="#C7BC9E" stroke-width="1.5"/>
+</g>
+<text x="1477.0" y="85.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#4A4432">Network Provisioning</text>
+<text x="1477.0" y="105.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#4A4432">Logs</text>
+<text x="1477.0" y="122.2" text-anchor="middle" font-size="12.5" fill="#8C8365">Internal Data Store</text>
+<g filter="url(#cardshadow)">
+<rect x="662.0" y="229.0" width="250" height="105" rx="16" fill="#DBF2E7" stroke="#4FAE83" stroke-width="1.5"/>
+</g>
+<text x="787.0" y="278.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1B5E3D">AI Gateway</text>
+<text x="787.0" y="295.2" text-anchor="middle" font-size="12.5" fill="#3D8261">L2 · The Brain</text>
+<g filter="url(#cardshadow)">
+<rect x="938.0" y="229.0" width="250" height="105" rx="16" fill="#DBF2E7" stroke="#4FAE83" stroke-width="1.5"/>
+</g>
+<text x="1063.0" y="268.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1B5E3D">LLM Reasoning Core</text>
+<text x="1063.0" y="288.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1B5E3D">(Claude)</text>
+<text x="1063.0" y="305.2" text-anchor="middle" font-size="12.5" fill="#3D8261">L2 · The Brain</text>
+<g filter="url(#cardshadow)">
+<rect x="1214.0" y="229.0" width="250" height="105" rx="16" fill="#DBF2E7" stroke="#4FAE83" stroke-width="1.5"/>
+</g>
+<text x="1339.0" y="268.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1B5E3D">Order/Catalog Knowledge</text>
+<text x="1339.0" y="288.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1B5E3D">Graph</text>
+<text x="1339.0" y="305.2" text-anchor="middle" font-size="12.5" fill="#3D8261">L2 · The Brain</text>
+<g filter="url(#cardshadow)">
+<rect x="938.0" y="412.0" width="250" height="105" rx="16" fill="#DCEBFB" stroke="#5B93C9" stroke-width="1.5"/>
+</g>
+<text x="1063.0" y="451.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1C4A73">Order Orchestration</text>
+<text x="1063.0" y="471.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1C4A73">Agent</text>
+<text x="1063.0" y="488.2" text-anchor="middle" font-size="12.5" fill="#3E6D93">L3 · Orchestration</text>
+<g filter="url(#cardshadow)">
+<rect x="524.0" y="595.0" width="250" height="105" rx="16" fill="#DBF2E7" stroke="#4FAE83" stroke-width="1.5"/>
+</g>
+<text x="649.0" y="644.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1B5E3D">Order Validation Agent</text>
+<text x="649.0" y="661.2" text-anchor="middle" font-size="12.5" fill="#3D8261">L3 · Specialist</text>
+<g filter="url(#cardshadow)">
+<rect x="800.0" y="595.0" width="250" height="105" rx="16" fill="#DBF2E7" stroke="#4FAE83" stroke-width="1.5"/>
+</g>
+<text x="925.0" y="634.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1B5E3D">Product-to-Service</text>
+<text x="925.0" y="654.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1B5E3D">Mapping Agent</text>
+<text x="925.0" y="671.2" text-anchor="middle" font-size="12.5" fill="#3D8261">L3 · Specialist</text>
+<g filter="url(#cardshadow)">
+<rect x="1076.0" y="595.0" width="250" height="105" rx="16" fill="#DBF2E7" stroke="#4FAE83" stroke-width="1.5"/>
+</g>
+<text x="1201.0" y="634.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1B5E3D">Provisioning Sequencing</text>
+<text x="1201.0" y="654.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1B5E3D">Agent</text>
+<text x="1201.0" y="671.2" text-anchor="middle" font-size="12.5" fill="#3D8261">L3 · Specialist</text>
+<g filter="url(#cardshadow)">
+<rect x="1352.0" y="595.0" width="250" height="105" rx="16" fill="#DBF2E7" stroke="#4FAE83" stroke-width="1.5"/>
+</g>
+<text x="1477.0" y="634.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1B5E3D">Activation Confirmation</text>
+<text x="1477.0" y="654.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1B5E3D">Agent</text>
+<text x="1477.0" y="671.2" text-anchor="middle" font-size="12.5" fill="#3D8261">L3 · Specialist</text>
+<g filter="url(#cardshadow)">
+<rect x="524.0" y="778.0" width="250" height="105" rx="16" fill="#E4F0F6" stroke="#5FA3C0" stroke-width="1.5"/>
+</g>
+<text x="649.0" y="827.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1D4E5F">Working Memory</text>
+<text x="649.0" y="844.2" text-anchor="middle" font-size="12.5" fill="#3E7B93">Short-Term · current session</text>
+<g filter="url(#cardshadow)">
+<rect x="800.0" y="778.0" width="250" height="105" rx="16" fill="#E4F0F6" stroke="#5FA3C0" stroke-width="1.5"/>
+</g>
+<text x="925.0" y="827.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1D4E5F">Episodic Memory</text>
+<text x="925.0" y="844.2" text-anchor="middle" font-size="12.5" fill="#3E7B93">Long-Term · past cases</text>
+<g filter="url(#cardshadow)">
+<rect x="1076.0" y="778.0" width="250" height="105" rx="16" fill="#E4F0F6" stroke="#5FA3C0" stroke-width="1.5"/>
+</g>
+<text x="1201.0" y="827.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1D4E5F">Semantic Memory</text>
+<text x="1201.0" y="844.2" text-anchor="middle" font-size="12.5" fill="#3E7B93">Long-Term · domain knowledge</text>
+<g filter="url(#cardshadow)">
+<rect x="1352.0" y="778.0" width="250" height="105" rx="16" fill="#E4F0F6" stroke="#5FA3C0" stroke-width="1.5"/>
+</g>
+<text x="1477.0" y="827.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1D4E5F">Policy Memory</text>
+<text x="1477.0" y="844.2" text-anchor="middle" font-size="12.5" fill="#3E7B93">Long-Term · governance rules</text>
+<g filter="url(#cardshadow)">
+<rect x="662.0" y="961.0" width="250" height="105" rx="16" fill="#DCEBFB" stroke="#5B93C9" stroke-width="1.5"/>
+</g>
+<text x="787.0" y="1000.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1C4A73">Catalog Compliance</text>
+<text x="787.0" y="1020.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1C4A73">Policy Engine</text>
+<text x="787.0" y="1037.2" text-anchor="middle" font-size="12.5" fill="#3E6D93">L4 · Governance</text>
+<g filter="url(#cardshadow)">
+<rect x="938.0" y="961.0" width="250" height="105" rx="16" fill="#DCEBFB" stroke="#5B93C9" stroke-width="1.5"/>
+</g>
+<text x="1063.0" y="1010.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1C4A73">Fallout Risk Guardrail</text>
+<text x="1063.0" y="1027.2" text-anchor="middle" font-size="12.5" fill="#3E6D93">L4 · Governance</text>
+<g filter="url(#cardshadow)">
+<rect x="1214.0" y="961.0" width="250" height="105" rx="16" fill="#DCEBFB" stroke="#5B93C9" stroke-width="1.5"/>
+</g>
+<text x="1339.0" y="1000.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1C4A73">Change-Management Rule</text>
+<text x="1339.0" y="1020.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1C4A73">Engine</text>
+<text x="1339.0" y="1037.2" text-anchor="middle" font-size="12.5" fill="#3E6D93">L4 · Governance</text>
+<g filter="url(#cardshadow)">
+<rect x="938.0" y="1144.0" width="250" height="105" rx="16" fill="#DCEBFB" stroke="#5B93C9" stroke-width="1.5"/>
+</g>
+<text x="1063.0" y="1183.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1C4A73">Fulfillment Confidence &amp;</text>
+<text x="1063.0" y="1203.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1C4A73">Risk Gate</text>
+<text x="1063.0" y="1220.2" text-anchor="middle" font-size="12.5" fill="#3E6D93">Conditional routing</text>
+<g filter="url(#cardshadow)">
+<rect x="386.0" y="1327.0" width="250" height="105" rx="16" fill="#FBE1E6" stroke="#D9748C" stroke-width="1.5"/>
+</g>
+<text x="511.0" y="1376.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#7A2B3F">Order Ops Approval</text>
+<text x="511.0" y="1393.2" text-anchor="middle" font-size="12.5" fill="#9C4F60">Human-in-the-loop</text>
+<g filter="url(#cardshadow)">
+<rect x="662.0" y="1327.0" width="250" height="105" rx="16" fill="#FBE8CE" stroke="#D89A3F" stroke-width="1.5"/>
+</g>
+<text x="787.0" y="1376.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#7A4E12">Billing Activation API</text>
+<text x="787.0" y="1393.2" text-anchor="middle" font-size="12.5" fill="#9C6B22">L5 · Tool Registry</text>
+<g filter="url(#cardshadow)">
+<rect x="938.0" y="1327.0" width="250" height="105" rx="16" fill="#FBE8CE" stroke="#D89A3F" stroke-width="1.5"/>
+</g>
+<text x="1063.0" y="1376.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#7A4E12">Network Provisioning API</text>
+<text x="1063.0" y="1393.2" text-anchor="middle" font-size="12.5" fill="#9C6B22">L5 · Tool Registry</text>
+<g filter="url(#cardshadow)">
+<rect x="1214.0" y="1327.0" width="250" height="105" rx="16" fill="#FBE8CE" stroke="#D89A3F" stroke-width="1.5"/>
+</g>
+<text x="1339.0" y="1366.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#7A4E12">Customer Notification</text>
+<text x="1339.0" y="1386.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#7A4E12">Gateway</text>
+<text x="1339.0" y="1403.2" text-anchor="middle" font-size="12.5" fill="#9C6B22">L5 · Tool Registry</text>
+<g filter="url(#cardshadow)">
+<rect x="1490.0" y="1327.0" width="250" height="105" rx="16" fill="#EAE1F8" stroke="#9575CD" stroke-width="1.5"/>
+</g>
+<text x="1615.0" y="1376.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#4A2E7A">Fallout Hold Queue</text>
+<text x="1615.0" y="1393.2" text-anchor="middle" font-size="12.5" fill="#6B4A9E">Conditional: policy breach</text>
+<g filter="url(#cardshadow)">
+<rect x="662.0" y="1510.0" width="250" height="105" rx="16" fill="#EAE1F8" stroke="#9575CD" stroke-width="1.5"/>
+</g>
+<text x="787.0" y="1549.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#4A2E7A">Fallout Recurrence</text>
+<text x="787.0" y="1569.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#4A2E7A">Monitor</text>
+<text x="787.0" y="1586.2" text-anchor="middle" font-size="12.5" fill="#6B4A9E">L6 · Nervous System</text>
+<g filter="url(#cardshadow)">
+<rect x="938.0" y="1510.0" width="250" height="105" rx="16" fill="#EAE1F8" stroke="#9575CD" stroke-width="1.5"/>
+</g>
+<text x="1063.0" y="1559.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#4A2E7A">Data Quality Watchdog</text>
+<text x="1063.0" y="1576.2" text-anchor="middle" font-size="12.5" fill="#6B4A9E">L6 · Nervous System</text>
+<g filter="url(#cardshadow)">
+<rect x="1214.0" y="1510.0" width="250" height="105" rx="16" fill="#EAE1F8" stroke="#9575CD" stroke-width="1.5"/>
+</g>
+<text x="1339.0" y="1559.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#4A2E7A">Provisioning Auditor</text>
+<text x="1339.0" y="1576.2" text-anchor="middle" font-size="12.5" fill="#6B4A9E">L6 · Nervous System</text>
+<g filter="url(#cardshadow)">
+<rect x="662.0" y="1693.0" width="250" height="105" rx="16" fill="#FBE1E6" stroke="#D9748C" stroke-width="1.5"/>
+</g>
+<text x="787.0" y="1732.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#7A2B3F">Order Cycle-Time</text>
+<text x="787.0" y="1752.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#7A2B3F">Dashboard</text>
+<text x="787.0" y="1769.2" text-anchor="middle" font-size="12.5" fill="#9C4F60">L7 · Leadership Portal</text>
+<g filter="url(#cardshadow)">
+<rect x="938.0" y="1693.0" width="250" height="105" rx="16" fill="#FBE1E6" stroke="#D9748C" stroke-width="1.5"/>
+</g>
+<text x="1063.0" y="1742.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#7A2B3F">Fallout Cost Scorecard</text>
+<text x="1063.0" y="1759.2" text-anchor="middle" font-size="12.5" fill="#9C4F60">L7 · Leadership Portal</text>
+<g filter="url(#cardshadow)">
+<rect x="1214.0" y="1693.0" width="250" height="105" rx="16" fill="#FBE1E6" stroke="#D9748C" stroke-width="1.5"/>
+</g>
+<text x="1339.0" y="1742.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#7A2B3F">Automation Coverage View</text>
+<text x="1339.0" y="1759.2" text-anchor="middle" font-size="12.5" fill="#9C4F60">L7 · Leadership Portal</text>
+<g filter="url(#cardshadow)">
+<rect x="662.0" y="1876.0" width="250" height="105" rx="16" fill="#EAE1F8" stroke="#9575CD" stroke-width="1.5"/>
+</g>
+<text x="787.0" y="1915.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#4A2E7A">Fulfillment Accuracy</text>
+<text x="787.0" y="1935.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#4A2E7A">Tracker</text>
+<text x="787.0" y="1952.2" text-anchor="middle" font-size="12.5" fill="#6B4A9E">L8 · Self-Healing</text>
+<g filter="url(#cardshadow)">
+<rect x="938.0" y="1876.0" width="250" height="105" rx="16" fill="#EAE1F8" stroke="#9575CD" stroke-width="1.5"/>
+</g>
+<text x="1063.0" y="1925.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#4A2E7A">Retraining Trigger</text>
+<text x="1063.0" y="1942.2" text-anchor="middle" font-size="12.5" fill="#6B4A9E">L8 · Self-Healing</text>
+<g filter="url(#cardshadow)">
+<rect x="1214.0" y="1876.0" width="250" height="105" rx="16" fill="#EAE1F8" stroke="#9575CD" stroke-width="1.5"/>
+</g>
+<text x="1339.0" y="1925.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#4A2E7A">Policy Memory Updater</text>
+<text x="1339.0" y="1942.2" text-anchor="middle" font-size="12.5" fill="#6B4A9E">L8 · Self-Healing</text>
+</svg>

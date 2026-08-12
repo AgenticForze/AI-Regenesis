@@ -1,0 +1,78 @@
+stages:
+  - validate
+  - build
+  - deploy
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+cache:
+  paths:
+    - .cache/pip
+
+# Lint all markdown files for basic style consistency
+lint-markdown:
+  stage: validate
+  image: node:20-alpine
+  script:
+    - npm install -g markdownlint-cli
+    - markdownlint 'docs/**/*.md' 'patterns/*.md' 'README.md' --disable MD013 MD033 MD041 || true
+  allow_failure: true
+
+# Validate every Mermaid diagram actually parses (catches broken generator output before merge).
+# Uses mermaid's own parser via a headless DOM (jsdom) rather than full rendering — avoids needing a
+# Chrome/puppeteer install in the CI runner just to check syntax.
+validate-mermaid:
+  stage: validate
+  image: node:20-alpine
+  script:
+    - npm install mermaid jsdom --no-save
+    - |
+      cat > validate.mjs << 'EOF'
+      import { JSDOM } from "jsdom";
+      import fs from "fs";
+      const dom = new JSDOM("<!DOCTYPE html><html><body></body></html>");
+      global.window = dom.window;
+      global.document = dom.window.document;
+      Object.defineProperty(global, "navigator", { value: dom.window.navigator, configurable: true });
+      const mermaid = (await import("mermaid")).default;
+      mermaid.initialize({ startOnLoad: false });
+      const files = fs.readFileSync(process.argv[2], "utf-8").split("\n").filter(Boolean);
+      let failCount = 0;
+      for (const f of files) {
+        try { await mermaid.parse(fs.readFileSync(f, "utf-8")); }
+        catch (e) { failCount++; console.log("FAIL: " + f + " -- " + String(e.message || e).split("\n")[0]); }
+      }
+      console.log(`${files.length - failCount}/${files.length} diagrams parsed OK`);
+      process.exit(failCount > 0 ? 1 : 0);
+      EOF
+    - find docs -name '*.mmd' | sort > filelist.txt
+    - node validate.mjs filelist.txt
+
+# Rebuild docs/ and website/data.json from source data and fail CI if the repo drifted
+# (i.e. someone hand-edited a generated file instead of the source data in scripts/)
+verify-generated-artifacts-in-sync:
+  stage: build
+  image: python:3.12-slim
+  script:
+    - cp -r docs /tmp/docs_before
+    - cp website/data.json /tmp/data_before.json
+    - python3 scripts/build.py
+    - diff -r docs /tmp/docs_before
+    - diff website/data.json /tmp/data_before.json
+
+pages:
+  stage: deploy
+  image: alpine:3.20
+  script:
+    - mkdir -p public
+    - cp -r website/* public/
+    - cp -r docs public/docs
+    - cp -r patterns public/patterns
+    - cp README.md public/README.md
+    - rm -f public/index.template.html public/data.json.bak
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'

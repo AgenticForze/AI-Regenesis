@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agent Architecture Catalog — Telecom, BSS/OSS &amp; Financial Services</title>
+<style>
+  :root{
+    --bg: #0B0E13;
+    --surface: #12161E;
+    --surface-2: #191F2A;
+    --line: #262E3D;
+    --text: #E7ECF3;
+    --text-dim: #8B96A8;
+    --telecom: #2FD3C7;
+    --telecom-dim: #12403C;
+    --finance: #E8B23C;
+    --finance-dim: #40340F;
+    --bssoss: #FF7A66;
+    --bssoss-dim: #431F17;
+    --accent: #8C7CFF;
+    --mono: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:'IBM Plex Sans', Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+  ::-webkit-scrollbar{width:8px; height:8px;}
+  ::-webkit-scrollbar-thumb{background:var(--line); border-radius:4px;}
+  ::-webkit-scrollbar-track{background:transparent;}
+
+  header.hero{
+    position:relative; overflow:hidden;
+    padding: 48px 32px 34px;
+    border-bottom:1px solid var(--line);
+    background:
+      radial-gradient(circle at 15% 20%, rgba(47,211,199,0.10), transparent 45%),
+      radial-gradient(circle at 55% 0%, rgba(255,122,102,0.08), transparent 40%),
+      radial-gradient(circle at 90% 10%, rgba(232,178,60,0.10), transparent 40%);
+  }
+  #netcanvas{position:absolute; inset:0; width:100%; height:100%; opacity:0.5; pointer-events:none;}
+  .hero-inner{position:relative; z-index:2; max-width:1320px; margin:0 auto;}
+  .eyebrow{
+    font-family:var(--mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--text-dim); margin-bottom:14px; display:flex; gap:10px; align-items:center;
+  }
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--accent); display:inline-block;}
+  h1{
+    font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:clamp(28px,3.8vw,46px);
+    line-height:1.08; margin:0 0 16px; letter-spacing:-0.01em;
+    max-width:880px;
+  }
+  h1 .accent-telecom{color:var(--telecom);}
+  h1 .accent-finance{color:var(--finance);}
+  h1 .accent-bssoss{color:var(--bssoss);}
+  .hero-sub{color:var(--text-dim); font-size:15px; line-height:1.6; max-width:660px; margin-bottom:24px;}
+  .hero-stats{display:flex; gap:26px; flex-wrap:wrap;}
+  .stat{border-left:2px solid var(--line); padding-left:13px;}
+  .stat b{font-family:'Space Grotesk',sans-serif; font-size:24px; display:block; font-weight:600;}
+  .stat span{color:var(--text-dim); font-size:11.5px; font-family:var(--mono); text-transform:uppercase; letter-spacing:.08em;}
+
+  .layout{max-width:1320px; margin:0 auto; padding:26px 32px 80px; display:flex; gap:26px; align-items:flex-start;}
+  aside.sidebar{
+    width:300px; flex-shrink:0; background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:14px; position:sticky; top:20px; max-height:calc(100vh - 40px); overflow-y:auto;
+  }
+  .sidebar-search{position:relative; margin-bottom:12px;}
+
+  .view-toggle{
+    display:flex; gap:3px; padding:3px; background:var(--surface-2); border-radius:9px;
+    margin-bottom:14px; border:1px solid var(--line);
+  }
+  .view-btn{
+    flex:1; padding:8px 6px; border-radius:6px; border:none; background:transparent; color:var(--text-dim);
+    font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; cursor:pointer;
+    transition:all .15s ease;
+  }
+  .view-btn.active{background:var(--accent); color:#0B0E13;}
+  .view-btn:not(.active):hover{color:var(--text); background:rgba(255,255,255,0.04);}
+
+  .deep8-badge{
+    font-family:var(--mono); font-size:9.5px; padding:2px 7px; border-radius:100px; font-weight:600;
+    text-transform:uppercase; letter-spacing:.04em;
+  }
+  .deep8-badge.available{color:var(--bssoss); background:var(--bssoss-dim);}
+  .deep8-badge.soon{color:var(--text-dim); background:var(--surface-2); border:1px solid var(--line);}
+  .card.disabled{opacity:0.5; cursor:default;}
+  .card.disabled:hover{transform:none; border-color:var(--line);}
+
+  .crosslink-btn{
+    display:inline-flex; align-items:center; gap:7px; margin-top:18px; padding:10px 16px; border-radius:9px;
+    background:linear-gradient(135deg, rgba(140,124,255,0.16), rgba(47,211,199,0.08));
+    border:1px solid #3A3560; color:var(--text); font-size:12.5px; font-weight:600; cursor:pointer;
+    font-family:'IBM Plex Sans',sans-serif;
+  }
+  .crosslink-btn:hover{border-color:var(--accent);}
+  .crosslink-note{
+    margin-top:18px; padding:10px 14px; border-radius:9px; background:var(--surface-2); border:1px solid var(--line);
+    color:var(--text-dim); font-size:12px;
+  }
+  table.agent-stack-table{width:100%; border-collapse:collapse; font-size:12.5px; margin-top:6px;}
+  table.agent-stack-table th{
+    text-align:left; color:var(--text-dim); font-family:var(--mono); font-size:10px; text-transform:uppercase;
+    letter-spacing:.05em; padding:7px 8px; border-bottom:1px solid var(--line); white-space:nowrap;
+  }
+  table.agent-stack-table td{padding:8px; border-bottom:1px solid var(--line); vertical-align:top; line-height:1.5;}
+  table.agent-stack-table td.layer-cell{font-family:var(--mono); font-weight:600; color:var(--accent); white-space:nowrap;}
+  ol.build-order-list{margin:0; padding-left:20px;}
+  ol.build-order-list li{font-size:13.5px; line-height:1.65; color:#CDD5E0; padding:8px 0;}
+  .sidebar-search input{
+    width:100%; background:var(--surface-2); border:1px solid var(--line); color:var(--text); border-radius:8px;
+    padding:9px 12px 9px 30px; font-size:13px; font-family:'IBM Plex Sans',sans-serif;
+  }
+  .sidebar-search input:focus{outline:none; border-color:var(--accent);}
+  .sidebar-search .icon{position:absolute; left:10px; top:50%; transform:translateY(-50%); color:var(--text-dim); font-size:13px;}
+  .sidebar-reset{
+    font-family:var(--mono); font-size:11px; color:var(--accent); cursor:pointer; margin:0 2px 12px; display:inline-block;
+    user-select:none;
+  }
+  .sidebar-reset:hover{text-decoration:underline;}
+
+  .platform-pin{
+    display:flex; align-items:center; gap:9px; padding:10px 10px; border-radius:9px; cursor:pointer;
+    background:linear-gradient(135deg, rgba(140,124,255,0.14), rgba(47,211,199,0.08));
+    border:1px solid #3A3560; margin-bottom:10px; transition:border-color .15s ease;
+  }
+  #reference-pins{ margin-bottom:4px; }
+  .platform-pin:hover{border-color:var(--accent);}
+  .platform-pin .icon{font-size:16px;}
+  .platform-pin .label{font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:12.5px; line-height:1.3;}
+  .platform-pin .sub{font-family:var(--mono); font-size:10px; color:var(--text-dim); margin-top:1px;}
+
+  .tree-node{margin-bottom:2px;}
+  .node-row{
+    display:flex; align-items:center; gap:7px; padding:7px 8px; border-radius:7px; cursor:pointer;
+    font-size:13px; user-select:none; transition:background .12s ease;
+  }
+  .node-row:hover{background:var(--surface-2);}
+  .node-row.selected{background:var(--surface-2); box-shadow: inset 2px 0 0 var(--accent);}
+  .chevron{
+    width:14px; height:14px; flex-shrink:0; display:flex; align-items:center; justify-content:center;
+    color:var(--text-dim); font-size:10px; transition:transform .15s ease;
+  }
+  .chevron.open{transform:rotate(90deg);}
+  .chevron.hidden{visibility:hidden;}
+  .node-swatch{width:8px; height:8px; border-radius:2px; flex-shrink:0;}
+  .node-label{flex:1; font-weight:500; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+  .node-count{font-family:var(--mono); font-size:10.5px; color:var(--text-dim); flex-shrink:0;}
+  .domain-node > .node-row{font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:13.5px;}
+  .pattern-node{padding-left:14px;}
+  .pattern-node > .node-row{color:var(--text-dim); font-size:12.5px;}
+  .leaf-node{padding-left:34px;}
+  .leaf-node .node-row{font-size:12.5px; color:#C3CBD8; padding-top:6px; padding-bottom:6px;}
+  .leaf-node .node-row.active-leaf{background:rgba(140,124,255,0.14); box-shadow: inset 2px 0 0 var(--accent); color:var(--text);}
+  .leaf-node .node-row.soon-row{opacity:0.42; cursor:default;}
+  .leaf-node .node-row.soon-row:hover{background:transparent;}
+  .children{overflow:hidden; max-height:0; transition:max-height .18s ease;}
+  .children.open{max-height:4000px;}
+
+  main{flex:1; min-width:0;}
+  .main-topbar{display:flex; align-items:center; gap:12px; margin-bottom:16px; flex-wrap:wrap;}
+  .breadcrumb{font-family:var(--mono); font-size:12px; color:var(--text-dim);}
+  .breadcrumb b{color:var(--text); font-weight:500;}
+  #count{color:var(--text-dim); font-size:12.5px; font-family:var(--mono); margin-left:auto;}
+  .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:14px;}
+  .card{
+    background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:18px 18px 16px;
+    cursor:pointer; transition:transform .15s ease, border-color .15s ease; position:relative; overflow:hidden;
+  }
+  .card:hover{transform:translateY(-2px); border-color:#3A4457;}
+  .card .badge-row{display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;}
+  .card .num{font-family:var(--mono); font-size:11px; color:var(--text-dim);}
+  .domain-tag{
+    font-family:var(--mono); font-size:10.5px; padding:3px 9px; border-radius:5px; text-transform:uppercase; letter-spacing:.06em; font-weight:500;
+  }
+  .domain-tag.telecom{color:var(--telecom); background:var(--telecom-dim);}
+  .domain-tag.finance{color:var(--finance); background:var(--finance-dim);}
+  .domain-tag.bssoss{color:var(--bssoss); background:var(--bssoss-dim);}
+  .card h3{font-family:'Space Grotesk',sans-serif; font-size:17px; font-weight:600; margin:0 0 10px; line-height:1.3;}
+  .card p.problem{color:var(--text-dim); font-size:13px; line-height:1.55; margin:0 0 14px;
+    display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;}
+  .pattern-pill{
+    font-family:var(--mono); font-size:11px; color:var(--accent); display:inline-flex; align-items:center; gap:6px;
+  }
+  .pattern-pill::before{content:''; width:5px; height:5px; border-radius:50%; background:var(--accent);}
+  .empty-state{color:var(--text-dim); font-size:13px; padding:60px 0; text-align:center; font-family:var(--mono);}
+
+  #overlay{
+    position:fixed; inset:0; background:rgba(6,8,11,0.75); backdrop-filter:blur(3px);
+    display:none; align-items:flex-start; justify-content:center; z-index:50; padding:40px 20px; overflow-y:auto;
+  }
+  #overlay.open{display:flex;}
+  .panel{
+    background:var(--surface); border:1px solid var(--line); border-radius:16px; max-width:900px; width:100%;
+    padding:36px 40px 44px; margin-bottom:40px;
+  }
+  .panel-top{display:flex; justify-content:space-between; align-items:flex-start; gap:20px; margin-bottom:6px;}
+  .close-btn{
+    background:var(--surface-2); border:1px solid var(--line); color:var(--text-dim); width:32px; height:32px;
+    border-radius:8px; cursor:pointer; font-size:16px; flex-shrink:0;
+  }
+  .close-btn:hover{color:var(--text);}
+  .panel h2{font-family:'Space Grotesk',sans-serif; font-size:26px; margin:4px 0 14px; line-height:1.25;}
+  .panel-meta{display:flex; gap:10px; margin-bottom:22px; flex-wrap:wrap;}
+  .section-label{
+    font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.12em; color:var(--text-dim);
+    margin:28px 0 12px; display:flex; align-items:center; gap:10px;
+  }
+  .section-label::after{content:''; flex:1; height:1px; background:var(--line);}
+  .panel .problem-text{font-size:15px; line-height:1.7; color:#CDD5E0;}
+  .mermaid-wrap{background:#FFFFFF; border:1px solid var(--line); border-radius:10px; padding:14px; overflow-x:auto;}
+  .mermaid-wrap svg{display:block; width:100%; height:auto; min-width:520px;}
+  table.info-table{width:100%; border-collapse:collapse; font-size:13.5px;}
+  table.info-table th{text-align:left; color:var(--text-dim); font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.06em; padding:8px 10px; border-bottom:1px solid var(--line);}
+  table.info-table td{padding:9px 10px; border-bottom:1px solid var(--line); vertical-align:top; line-height:1.5;}
+  table.info-table td:first-child{color:var(--text); font-weight:500; white-space:nowrap; width:220px;}
+  ul.retro-list{margin:0; padding-left:0; list-style:none;}
+  ul.retro-list li{
+    font-size:13.5px; line-height:1.6; color:#CDD5E0; padding:10px 0 10px 22px; border-bottom:1px solid var(--line);
+    position:relative;
+  }
+  ul.retro-list li:last-child{border-bottom:none;}
+  ul.retro-list li::before{content:'↻'; position:absolute; left:0; color:var(--accent); font-size:13px;}
+  .gh-link{font-family:var(--mono); font-size:12px; color:var(--text-dim); margin-top:26px; display:block;}
+  .gh-link a{color:var(--accent); text-decoration:none;}
+
+  footer{border-top:1px solid var(--line); padding:26px 32px; text-align:center; color:var(--text-dim); font-size:12px; font-family:var(--mono);}
+
+  @media (max-width:900px){
+    .layout{flex-direction:column;}
+    aside.sidebar{width:100%; position:static; max-height:340px;}
+  }
+  @media (max-width:640px){
+    .panel{padding:26px 20px 32px;} .layout{padding:20px 18px 60px;} header.hero{padding:36px 18px 26px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <canvas id="netcanvas"></canvas>
+  <div class="hero-inner">
+    <div class="eyebrow"><span class="dot"></span> 60 use cases · 8 architecture patterns · 3 domains</div>
+    <h1>Where multi-agent systems earn their keep in <span class="accent-telecom">telecom</span>, <span class="accent-bssoss">BSS/OSS</span> and <span class="accent-finance">finance</span></h1>
+    <p class="hero-sub">A working catalog of orchestrator, hierarchical, pipeline, blackboard, debate-critique,
+    market-based, event-swarm, and human-escalation architectures — each tied to a specific operational problem,
+    a real agent roster, a named tech stack, and a retrospective on what we'd change.</p>
+    <div class="hero-stats">
+      <div class="stat"><b>20</b><span>Telecom</span></div>
+      <div class="stat"><b>20</b><span>BSS/OSS</span></div>
+      <div class="stat"><b>20</b><span>Financial Services</span></div>
+      <div class="stat"><b>8</b><span>Patterns</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="view-toggle" id="view-toggle">
+      <button class="view-btn active" data-view="quick">Quick Reference</button>
+      <button class="view-btn" data-view="deep8">Deep 8-Layer</button>
+    </div>
+    <div class="sidebar-search">
+      <span class="icon">⌕</span>
+      <input id="sidebar-search" placeholder="Search use cases…" />
+    </div>
+    <span class="sidebar-reset" id="reset-filters">✕ Clear selection</span>
+    <div id="reference-pins"></div>
+    <div id="tree"></div>
+  </aside>
+
+  <main>
+    <div class="main-topbar">
+      <div class="breadcrumb" id="breadcrumb"><b>All use cases</b></div>
+      <div id="count"></div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </main>
+</div>
+
+<footer>Generated from structured source data · scripts/build.py · MIT licensed</footer>
+
+<div id="overlay">
+  <div class="panel" id="panel"></div>
+</div>
+
+<script id="catalog-data" type="application/json">__DATA_JSON__</script>
+<script>
+const PAYLOAD = JSON.parse(document.getElementById('catalog-data').textContent);
+const CATALOG = PAYLOAD.catalog;
+const REFERENCES = PAYLOAD.references || [];
+const DEEP8 = PAYLOAD.deep8 || [];
+const DEEP8_ROADMAP = PAYLOAD.deep8_roadmap || [];
+const DEEP8_BY_ID = {}; DEEP8.forEach(d => DEEP8_BY_ID[d.domain_slug+':'+d.id] = d);
+const DOMAIN_ORDER = [...new Set(CATALOG.map(u=>u.domain_slug))];
+const DOMAIN_LABEL = {}; CATALOG.forEach(u=>DOMAIN_LABEL[u.domain_slug]=u.domain);
+const PATTERN_LABELS = {}; CATALOG.forEach(uc => PATTERN_LABELS[uc.pattern] = uc.pattern_label);
+const PATTERN_ORDER = Object.keys(PATTERN_LABELS).sort();
+
+let state = { view: 'quick', domain: null, pattern: null, ucId: null, q: '' };
+let expanded = new Set(DOMAIN_ORDER.map(d=>'d:'+d)); // domains start expanded, patterns start collapsed
+DOMAIN_ORDER.forEach(d => expanded.add('d8:'+d));
+
+document.querySelectorAll('.view-btn').forEach(btn=>{
+  btn.onclick = () => {
+    state.view = btn.dataset.view;
+    document.querySelectorAll('.view-btn').forEach(b=>b.classList.toggle('active', b===btn));
+    state.domain=null; state.pattern=null; state.ucId=null;
+    render();
+  };
+});
+
+function mdBold(s){
+  return s.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+}
+
+function countFor(domain, pattern){
+  return CATALOG.filter(u => (!domain || u.domain_slug===domain) && (!pattern || u.pattern===pattern)).length;
+}
+
+const REF_ICONS = ['📐', '🧠', '🗺️', '📊'];
+function buildReferencePins(){
+  const wrap = document.getElementById('reference-pins');
+  if(!REFERENCES.length){ wrap.innerHTML=''; return; }
+  wrap.innerHTML = REFERENCES.map((ref, i) => `
+    <div class="platform-pin" data-ref-idx="${i}">
+      <span class="icon">${REF_ICONS[i % REF_ICONS.length]}</span>
+      <div>
+        <div class="label">${ref.title}</div>
+        <div class="sub">Reference architecture</div>
+      </div>
+    </div>
+  `).join('');
+  wrap.querySelectorAll('.platform-pin').forEach(el => {
+    el.onclick = () => openReferencePanel(REFERENCES[parseInt(el.dataset.refIdx, 10)]);
+  });
+}
+
+function openReferencePanel(ref){
+  const panel = document.getElementById('panel');
+  const blueprintBlock = ref.blueprint_svg ? `
+    <div class="section-label">Layer Blueprint — Reference Model vs. Use Case</div>
+    <div class="mermaid-wrap">${ref.blueprint_svg}</div>
+    <div class="section-label">Architecture Diagram (Flow View)</div>
+  ` : '<div class="section-label">Diagram</div>';
+  panel.innerHTML = `
+    <div class="panel-top">
+      <div>
+        <span class="num">REFERENCE ARCHITECTURE</span>
+        <h2>${ref.title}</h2>
+      </div>
+      <button class="close-btn" onclick="closePanel()">✕</button>
+    </div>
+    <p class="problem-text">${ref.description}</p>
+    ${blueprintBlock}
+    <div class="mermaid-wrap">${ref.diagram_svg}</div>
+    <span class="gh-link">Full markdown source: <a href="${ref.path}" target="_blank">${ref.path}</a></span>
+  `;
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function buildTree(){
+  const root = document.getElementById('tree');
+  root.innerHTML = '';
+  if(state.view === 'deep8'){ buildDeep8Tree(root); return; }
+  DOMAIN_ORDER.forEach(dslug=>{
+    const dKey = 'd:'+dslug;
+    const dWrap = document.createElement('div');
+    dWrap.className = 'tree-node domain-node';
+
+
+    const dRow = document.createElement('div');
+    dRow.className = 'node-row' + (state.domain===dslug && !state.pattern ? ' selected' : '');
+    dRow.innerHTML = `
+      <span class="chevron ${expanded.has(dKey)?'open':''}">▸</span>
+      <span class="node-swatch" style="background:var(--${dslug})"></span>
+      <span class="node-label">${DOMAIN_LABEL[dslug]}</span>
+      <span class="node-count">${countFor(dslug)}</span>
+    `;
+    dRow.onclick = ()=>{
+      toggle(dKey);
+      selectDomain(dslug);
+    };
+    dWrap.appendChild(dRow);
+
+    const dChildren = document.createElement('div');
+    dChildren.className = 'children' + (expanded.has(dKey) ? ' open' : '');
+
+    PATTERN_ORDER.forEach(pkey=>{
+      const c = countFor(dslug, pkey);
+      if(c===0) return;
+      const pKeyId = 'p:'+dslug+':'+pkey;
+      const pWrap = document.createElement('div');
+      pWrap.className = 'tree-node pattern-node';
+
+      const pRow = document.createElement('div');
+      pRow.className = 'node-row' + (state.domain===dslug && state.pattern===pkey ? ' selected' : '');
+      pRow.innerHTML = `
+        <span class="chevron ${expanded.has(pKeyId)?'open':''}">▸</span>
+        <span class="node-label">${PATTERN_LABELS[pkey]}</span>
+        <span class="node-count">${c}</span>
+      `;
+      pRow.onclick = (e)=>{
+        e.stopPropagation();
+        toggle(pKeyId);
+        selectPattern(dslug, pkey);
+      };
+      pWrap.appendChild(pRow);
+
+      const pChildren = document.createElement('div');
+      pChildren.className = 'children' + (expanded.has(pKeyId) ? ' open' : '');
+      CATALOG.filter(u=>u.domain_slug===dslug && u.pattern===pkey).forEach(uc=>{
+        const lWrap = document.createElement('div');
+        lWrap.className = 'tree-node leaf-node';
+        const lRow = document.createElement('div');
+        lRow.className = 'node-row' + (state.ucId===uc.id && state.domain===dslug ? ' active-leaf' : '');
+        lRow.innerHTML = `<span class="chevron hidden">▸</span><span class="node-label">${uc.title}</span>`;
+        lRow.onclick = (e)=>{ e.stopPropagation(); selectLeaf(uc); };
+        lWrap.appendChild(lRow);
+        pChildren.appendChild(lWrap);
+      });
+      pWrap.appendChild(pChildren);
+      dChildren.appendChild(pWrap);
+    });
+    dWrap.appendChild(dChildren);
+    root.appendChild(dWrap);
+  });
+}
+
+function toggle(key){
+  if(expanded.has(key)) expanded.delete(key); else expanded.add(key);
+  buildTree();
+}
+
+function buildDeep8Tree(root){
+  DOMAIN_ORDER.forEach(dslug=>{
+    const dKey = 'd8:'+dslug;
+    const items = DEEP8_ROADMAP.filter(r=>r.domain_slug===dslug);
+    const availCount = items.filter(r=>r.available).length;
+    const dWrap = document.createElement('div');
+    dWrap.className = 'tree-node domain-node';
+
+    const dRow = document.createElement('div');
+    dRow.className = 'node-row' + (state.domain===dslug ? ' selected' : '');
+    dRow.innerHTML = `
+      <span class="chevron ${expanded.has(dKey)?'open':''}">▸</span>
+      <span class="node-swatch" style="background:var(--${dslug})"></span>
+      <span class="node-label">${DOMAIN_LABEL[dslug]}</span>
+      <span class="node-count">${availCount}/${items.length}</span>
+    `;
+    dRow.onclick = ()=>{
+      toggle(dKey);
+      state.domain = (state.domain===dslug) ? null : dslug;
+      state.ucId = null;
+      render();
+    };
+    dWrap.appendChild(dRow);
+
+    const dChildren = document.createElement('div');
+    dChildren.className = 'children' + (expanded.has(dKey) ? ' open' : '');
+    items.forEach(r=>{
+      const lWrap = document.createElement('div');
+      lWrap.className = 'tree-node leaf-node';
+      const lRow = document.createElement('div');
+      const isActive = state.ucId===r.id && state.domain===dslug;
+      lRow.className = 'node-row' + (isActive?' active-leaf':'') + (!r.available?' soon-row':'');
+      lRow.innerHTML = `<span class="chevron hidden">▸</span><span class="node-label">${r.title}</span>` +
+        (r.available ? '<span class="deep8-badge available">Ready</span>' : '<span class="deep8-badge soon">Soon</span>');
+      if(r.available){
+        lRow.onclick = (e)=>{
+          e.stopPropagation();
+          state.domain=dslug; state.ucId=r.id;
+          render();
+          openDeep8Panel(DEEP8_BY_ID[dslug+':'+r.id]);
+        };
+      }
+      lWrap.appendChild(lRow);
+      dChildren.appendChild(lWrap);
+    });
+    dWrap.appendChild(dChildren);
+    root.appendChild(dWrap);
+  });
+}
+function selectDomain(dslug){
+  state.domain = (state.domain===dslug && !state.pattern) ? null : dslug;
+  state.pattern = null; state.ucId = null;
+  render();
+}
+function selectPattern(dslug, pkey){
+  state.domain = dslug;
+  state.pattern = (state.pattern===pkey) ? null : pkey;
+  state.ucId = null;
+  render();
+}
+function selectLeaf(uc){
+  state.domain = uc.domain_slug; state.pattern = uc.pattern; state.ucId = uc.id;
+  render();
+  openPanel(uc);
+}
+document.getElementById('reset-filters').onclick = ()=>{
+  state.domain=null; state.pattern=null; state.ucId=null; state.q='';
+  document.getElementById('sidebar-search').value='';
+  render();
+};
+document.getElementById('sidebar-search').addEventListener('input', e=>{ state.q = e.target.value; render(); });
+
+function matches(uc){
+  if(state.domain && uc.domain_slug!==state.domain) return false;
+  if(state.pattern && uc.pattern!==state.pattern) return false;
+  if(state.q){
+    const hay = (uc.title+' '+uc.problem+' '+uc.pattern_label).toLowerCase();
+    if(!hay.includes(state.q.toLowerCase())) return false;
+  }
+  return true;
+}
+
+function updateBreadcrumb(){
+  const bc = document.getElementById('breadcrumb');
+  const viewLabel = state.view === 'deep8' ? 'Deep 8-Layer' : 'Quick Reference';
+  if(!state.domain){ bc.innerHTML = `<b>${viewLabel} · All use cases</b>`; return; }
+  let html = `${viewLabel} <span style="color:var(--text-dim)">→</span> ${DOMAIN_LABEL[state.domain]}`;
+  if(state.pattern) html += ` <span style="color:var(--text-dim)">→</span> <b>${PATTERN_LABELS[state.pattern]}</b>`;
+  else html = `<b>${html}</b>`;
+  bc.innerHTML = html;
+}
+
+function render(){
+  buildReferencePins();
+  buildTree();
+  updateBreadcrumb();
+  if(state.view === 'deep8'){ renderDeep8Grid(); return; }
+  renderQuickGrid();
+}
+
+function matchesDeep8(r){
+  if(state.domain && r.domain_slug!==state.domain) return false;
+  if(state.q){
+    if(!r.title.toLowerCase().includes(state.q.toLowerCase())) return false;
+  }
+  return true;
+}
+
+function renderDeep8Grid(){
+  const items = DEEP8_ROADMAP.filter(matchesDeep8);
+  const availCount = items.filter(r=>r.available).length;
+  document.getElementById('count').textContent = `${availCount} of ${items.length} available`;
+  const gridEl = document.getElementById('grid');
+  gridEl.innerHTML = '';
+  if(items.length===0){
+    gridEl.innerHTML = '<div class="empty-state">No use cases match this filter.</div>';
+    return;
+  }
+  items.forEach(r=>{
+    const card = document.createElement('div');
+    card.className = 'card' + (r.available ? '' : ' disabled');
+    card.innerHTML = `
+      <div class="badge-row">
+        <span class="num">#${String(r.id).padStart(2,'0')}</span>
+        <span class="domain-tag ${r.domain_slug}">${r.domain_slug}</span>
+      </div>
+      <h3>${r.title}</h3>
+      ${r.available ? '<span class="deep8-badge available">Deep 8-Layer ready</span>' : '<span class="deep8-badge soon">Coming soon</span>'}
+    `;
+    if(r.available){
+      card.onclick = () => {
+        state.domain=r.domain_slug; state.ucId=r.id; buildTree();
+        openDeep8Panel(DEEP8_BY_ID[r.domain_slug+':'+r.id]);
+      };
+    }
+    gridEl.appendChild(card);
+  });
+}
+
+function renderQuickGrid(){
+  const items = CATALOG.filter(matches);
+  const countEl = document.getElementById('count');
+  countEl.textContent = `${items.length} use case${items.length!==1?'s':''}`;
+  const gridEl = document.getElementById('grid');
+  gridEl.innerHTML='';
+  if(items.length===0){
+    gridEl.innerHTML = '<div class="empty-state">No use cases match this filter.</div>';
+    return;
+  }
+  items.forEach(uc=>{
+    const card = document.createElement('div');
+    card.className='card';
+    card.innerHTML = `
+      <div class="badge-row">
+        <span class="num">#${String(uc.id).padStart(2,'0')}</span>
+        <span class="domain-tag ${uc.domain_slug}">${uc.domain_slug}</span>
+      </div>
+      <h3>${uc.title}</h3>
+      <p class="problem">${uc.problem}</p>
+      <span class="pattern-pill">${uc.pattern_label}</span>
+    `;
+    card.onclick = () => { state.domain=uc.domain_slug; state.pattern=uc.pattern; state.ucId=uc.id; buildTree(); openPanel(uc); };
+    gridEl.appendChild(card);
+  });
+}
+
+function openPanel(uc){
+  const panel = document.getElementById('panel');
+  const agentsRows = uc.agents.map(a=>`<tr><td>${a[0]}</td><td>${a[1]}</td></tr>`).join('');
+  const techRows = uc.tech.map(t=>`<tr><td>${t[0]}</td><td>${t[1]}</td></tr>`).join('');
+  const retroItems = uc.retro.map(r=>`<li>${r}</li>`).join('');
+  const buildOrderItems = (uc.build_order||[]).map(b=>`<li>${mdBold(b)}</li>`).join('');
+  const deep8Cross = uc.deep8_available
+    ? `<div class="crosslink-btn" id="quick-crosslink-deep8">🧠 View Deep 8-Layer Architecture for this use case</div>`
+    : `<div class="crosslink-note">🧠 Deep 8-Layer Architecture not yet built for this use case — <a href="docs/deep8/README.md" target="_blank" style="color:var(--accent)">see the roadmap</a>.</div>`;
+  panel.innerHTML = `
+    <div class="panel-top">
+      <div>
+        <span class="num">#${String(uc.id).padStart(2,'0')} · ${uc.domain}</span>
+        <h2>${uc.title}</h2>
+      </div>
+      <button class="close-btn" onclick="closePanel()">✕</button>
+    </div>
+    <div class="panel-meta">
+      <span class="domain-tag ${uc.domain_slug}">${uc.domain_slug}</span>
+      <span class="pattern-pill">${uc.pattern_label}</span>
+    </div>
+
+    <div class="section-label">Problem statement</div>
+    <p class="problem-text">${uc.problem}</p>
+
+    <div class="section-label">Architecture diagram</div>
+    <div class="mermaid-wrap">${uc.diagram_svg}</div>
+
+    <div class="section-label">Agents &amp; sub-agents</div>
+    <table class="info-table"><thead><tr><th>Agent</th><th>Responsibility</th></tr></thead><tbody>${agentsRows}</tbody></table>
+
+    <div class="section-label">Technologies used</div>
+    <table class="info-table"><thead><tr><th>Step / layer</th><th>Technology</th></tr></thead><tbody>${techRows}</tbody></table>
+
+    <div class="section-label">Suggested build order</div>
+    <ol class="build-order-list">${buildOrderItems}</ol>
+
+    <div class="section-label">If we rebuilt this</div>
+    <ul class="retro-list">${retroItems}</ul>
+
+    ${deep8Cross}
+    <span class="gh-link">Full markdown source: <a href="${uc.path}" target="_blank">${uc.path}</a></span>
+  `;
+  if(uc.deep8_available){
+    document.getElementById('quick-crosslink-deep8').onclick = () => {
+      const entry = DEEP8_BY_ID[uc.domain_slug+':'+uc.id];
+      document.querySelector('.view-btn[data-view="deep8"]').click();
+      if(entry) openDeep8Panel(entry);
+    };
+  }
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function openDeep8Panel(entry){
+  const panel = document.getElementById('panel');
+  const agentRows = entry.agent_stack.map(a =>
+    `<tr><td class="layer-cell">${a[0]}</td><td>${a[1]}</td><td>${a[2]}</td><td>${a[3]}</td><td>${a[4]}</td><td>${a[5]}</td></tr>`
+  ).join('');
+  const buildOrderItems = entry.build_order.map(b=>`<li>${mdBold(b)}</li>`).join('');
+  panel.innerHTML = `
+    <div class="panel-top">
+      <div>
+        <span class="num">DEEP 8-LAYER · ${entry.domain}</span>
+        <h2>${entry.title}</h2>
+      </div>
+      <button class="close-btn" onclick="closePanel()">✕</button>
+    </div>
+    <div class="panel-meta">
+      <span class="domain-tag ${entry.domain_slug}">${entry.domain_slug}</span>
+      <span class="pattern-pill">8-Layer Regenerative Architecture</span>
+    </div>
+    <p class="problem-text">${entry.intro}</p>
+
+    <div class="section-label">Problem statement</div>
+    <p class="problem-text">${entry.problem}</p>
+
+    <div class="section-label">8-Layer Blueprint</div>
+    <div class="mermaid-wrap">${entry.blueprint_svg}</div>
+
+    <div class="section-label">Architecture diagram (flow view)</div>
+    <div class="mermaid-wrap">${entry.diagram_svg}</div>
+    <p class="problem-text" style="font-size:12.5px; color:var(--text-dim); margin-top:10px;">${entry.diagram_note}</p>
+
+    <div class="section-label">Agent-level architecture stack</div>
+    <table class="agent-stack-table">
+      <thead><tr><th>Layer</th><th>Agent</th><th>Purpose</th><th>Inputs/Outputs</th><th>Learning Stack</th><th>Production Stack</th></tr></thead>
+      <tbody>${agentRows}</tbody>
+    </table>
+
+    <div class="section-label">Suggested build order (by layer)</div>
+    <ol class="build-order-list">${buildOrderItems}</ol>
+
+    <div class="crosslink-btn" id="deep8-crosslink-back">⚡ View Quick Reference Architecture</div>
+    <span class="gh-link">Full markdown source: <a href="${entry.path}" target="_blank">${entry.path}</a></span>
+  `;
+  document.getElementById('deep8-crosslink-back').onclick = () => {
+    const quickUc = CATALOG.find(u=>u.domain_slug===entry.domain_slug && u.id===entry.id);
+    document.querySelector('.view-btn[data-view="quick"]').click();
+    if(quickUc) openPanel(quickUc);
+  };
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closePanel(){
+  document.getElementById('overlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('overlay').addEventListener('click', e=>{
+  if(e.target.id==='overlay') closePanel();
+});
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closePanel(); });
+
+render();
+
+/* ---------- Ambient agent-network canvas in header ---------- */
+(function(){
+  const canvas = document.getElementById('netcanvas');
+  const ctx = canvas.getContext('2d');
+  let w,h,nodes=[];
+  function resize(){
+    w = canvas.width = canvas.parentElement.offsetWidth;
+    h = canvas.height = canvas.parentElement.offsetHeight;
+    const count = Math.floor(w/60);
+    const colors=['47,211,199','232,178,60','255,122,102'];
+    nodes = Array.from({length:count}, ()=>({
+      x: Math.random()*w, y: Math.random()*h,
+      vx:(Math.random()-0.5)*0.25, vy:(Math.random()-0.5)*0.25,
+      c: colors[Math.floor(Math.random()*colors.length)]
+    }));
+  }
+  function tick(){
+    ctx.clearRect(0,0,w,h);
+    nodes.forEach(n=>{
+      n.x+=n.vx; n.y+=n.vy;
+      if(n.x<0||n.x>w) n.vx*=-1;
+      if(n.y<0||n.y>h) n.vy*=-1;
+    });
+    for(let i=0;i<nodes.length;i++){
+      for(let j=i+1;j<nodes.length;j++){
+        const a=nodes[i], b=nodes[j];
+        const d = Math.hypot(a.x-b.x, a.y-b.y);
+        if(d<130){
+          ctx.strokeStyle = `rgba(140,124,255,${0.12*(1-d/130)})`;
+          ctx.lineWidth=1;
+          ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+        }
+      }
+    }
+    nodes.forEach(n=>{
+      ctx.fillStyle = `rgba(${n.c},0.7)`;
+      ctx.beginPath(); ctx.arc(n.x,n.y,2,0,Math.PI*2); ctx.fill();
+    });
+    requestAnimationFrame(tick);
+  }
+  window.addEventListener('resize', resize);
+  resize(); tick();
+})();
+</script>
+</body>
+</html>
