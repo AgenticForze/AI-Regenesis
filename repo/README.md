@@ -40,6 +40,13 @@ write-up with its diagram. See [GitLab Pages setup](#gitlab-pages) below to host
 │       ├── README.md             ← Financial Services domain index (20 use cases)
 │       └── 01-aml-transaction-monitoring-sar/ ...
 │       ... (20 use case folders)
+├── docs/deep8/                   ← Deep 8-Layer Regenerative Architecture view — all 60 use cases
+│   ├── README.md                 ← roadmap/index (all 60 currently available)
+│   ├── telecom/, bssoss/, finance/
+│   │   └── <use-case-slug>/
+│   │       ├── README.md         ← problem, 8-layer blueprint, flow diagram, agent stack, build order
+│   │       ├── diagram.svg       ← labeled L1–L8 flow diagram
+│   │       └── blueprint.svg     ← reference-model blueprint table
 ├── patterns/                     ← one doc per architecture pattern, cross-linking every use case that applies it
 │   ├── orchestrator-worker.md
 │   ├── hierarchical.md
@@ -49,18 +56,28 @@ write-up with its diagram. See [GitLab Pages setup](#gitlab-pages) below to host
 │   ├── market-based.md
 │   ├── event-swarm.md
 │   └── human-escalation.md
-├── website/                      ← single-page navigator: collapsible sidebar (Domain → Pattern → Use Case)
+├── website/                      ← single-page navigator: view toggle (Quick Reference / Deep 8-Layer),
+│   │                                 collapsible sidebar (Domain → Pattern → Use Case, or Domain → Use Case)
 │   ├── index.html                ← standalone, data inlined — open directly, no server needed
 │   ├── index.template.html       ← source template (build.py injects catalog JSON into this)
 │   └── data.json                 ← generated catalog data, also fetchable standalone
+├── skills/
+│   └── deep8-architecture-engine/  ← packaged, reusable Claude Skill for the generic spec → diagram/
+│       │                              blueprint/agent-stack/build-order engine (see below)
+│       ├── SKILL.md
+│       ├── scripts/
+│       └── references/
 └── scripts/                      ← the generator that produced docs/ and website/index.html from structured data
     ├── svg_engine.py              ← layout engine: rounded cards, title+subtitle, elbow connectors
     ├── svg_patterns.py            ← one diagram builder per architecture pattern + the E2E platform diagram
+    ├── deep8_engine.py            ← generic spec → Deep 8-Layer diagram/blueprint-rows/agent-stack engine
+    ├── deep8_data.py              ← the 2 hand-built Deep 8-Layer pilot examples
+    ├── {bssoss,finance,telecom}_deep8_data.py  ← Deep 8-Layer specs for the remaining 58 use cases
     ├── templates.py               ← Mermaid text-source templates per architecture pattern (kept for portability)
     ├── telecom_data.py            ← structured source data, 20 telecom use cases
     ├── bssoss_data.py             ← structured source data, 20 BSS/OSS use cases
     ├── finance_data.py            ← structured source data, 20 finance use cases
-    └── build.py                   ← renders docs/, patterns/, and website/index.html
+    └── build.py                   ← renders docs/, patterns/, docs/deep8/, and website/index.html
 ```
 
 ## Reference architectures
@@ -78,6 +95,36 @@ than one workflow:
   labeled), conditional routing, and internal/external data stores all made explicit.
 
 Both are pinned at the top of the website sidebar.
+
+## Deep 8-Layer Regenerative Architecture
+
+Every one of the 60 use cases also has a **Deep 8-Layer** view — a second, deeper treatment of the same
+problem mapped through the Integrated Decision Engineering Meta-Architecture (L1 Foundational Data &
+Infrastructure → L8 Feedback & Reinforcement Loops). Where the Quick Reference view shows one execution
+pattern, the Deep 8-Layer view shows the whole enterprise stack that pattern sits inside: governance gates,
+memory, observability, executive accountability, and the regenerative feedback loop.
+
+Each Deep 8-Layer entry has four parts, all generated from one structured spec:
+1. A labeled L1–L8 flow diagram, with left-margin layer labels and a governed three-way conditional gate
+   (auto-execute / human review / hold)
+2. A reference blueprint table (the manuscript's own two-column model vs. this use case's specific solution)
+3. An agent-level stack table (Layer, Agent Name, Purpose, Inputs/Outputs, Learning Stack, Production Stack)
+4. A six-phase, layer-by-layer suggested build order
+
+Browse via the **Deep 8-Layer** toggle at the top of the website sidebar, or start at
+[`docs/deep8/README.md`](docs/deep8/README.md).
+
+## Reusable skill: Deep 8-Layer Architecture Engine
+
+The generic engine that produces every Deep 8-Layer diagram/blueprint/agent-stack/build-order from a single
+compact spec is packaged as a standalone, portable [Claude Skill](https://docs.claude.com) at
+[`skills/deep8-architecture-engine/`](skills/deep8-architecture-engine/) — install it into another project to
+generate this same style of layered architecture content for a different use-case catalog entirely.
+
+It's self-contained (no dependency on this repo's other scripts) and includes a `references/lessons-learned.md`
+documenting the actual bugs hit while building it — overlapping condition labels, edges rendering invisibly
+behind cards, a hardcoded domain string — and the specific fix for each, so those mistakes don't need to be
+rediscovered from scratch next time.
 
 ## Architecture patterns covered
 
@@ -129,20 +176,31 @@ built to satisfy:
    data sources → orchestrating agent(s) → worker/specialist agents → aggregation/action agents → downstream
    systems, including any human-in-the-loop checkpoint.
 3. **Technologies Used** — a concrete, named technology per architectural step (not generic placeholders).
-4. **If We Rebuilt This** — a retrospective of concrete lessons learned / what would change on a second pass.
+4. **Suggested Build Order** — a phased, pattern-specific path to actually building it, not "build everything
+   at once."
+5. **If We Rebuilt This** — a retrospective of concrete lessons learned / what would change on a second pass.
+
+Each use case also links to its Deep 8-Layer counterpart in `docs/deep8/<domain>/<slug>/README.md`, which
+follows a different four-section structure (problem, 8-layer blueprint, flow diagram, agent stack + build
+order) described above.
 
 ## Regenerating the catalog
 
 The `docs/` folder and `website/data.json` are generated from the structured data in `scripts/`. To modify a use
-case, edit `scripts/telecom_data.py` or `scripts/finance_data.py` (or `scripts/templates.py` for diagram styling),
-then run:
+case, edit `scripts/telecom_data.py`, `scripts/bssoss_data.py`, or `scripts/finance_data.py` (or
+`scripts/templates.py` for Quick Reference diagram styling), then run:
 
 ```bash
 python3 scripts/build.py
 ```
 
-This regenerates every `docs/**/README.md`, `docs/**/architecture.mmd`, `patterns/*.md`, and `website/data.json`
-deterministically from the source data — the website and docs never drift out of sync.
+This regenerates every `docs/**/README.md`, `docs/**/architecture.mmd`, `patterns/*.md`, `docs/deep8/**`, and
+`website/data.json` deterministically from the source data — the website and docs never drift out of sync.
+
+To modify a Deep 8-Layer entry, edit its spec in `scripts/{bssoss,finance,telecom}_deep8_data.py` (or
+`scripts/deep8_data.py` for the two hand-built pilots), then run the same `build.py` command. See
+[`skills/deep8-architecture-engine/references/spec-format.md`](skills/deep8-architecture-engine/references/spec-format.md)
+for the full spec field reference.
 
 ## GitLab Pages
 

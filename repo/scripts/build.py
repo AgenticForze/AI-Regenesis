@@ -9,6 +9,8 @@ from build_order import build_order_for
 from deep8_data import PILOTS, CHURN_RETENTION, RCA_REMEDIATION
 from deep8_engine import build_deep8_diagram, auto_blueprint_rows, auto_agent_stack, generic_build_order
 from bssoss_deep8_data import BSSOSS_SPECS as BSSOSS_DEEP8_SPECS
+from finance_deep8_data import FINANCE_SPECS as FINANCE_DEEP8_SPECS
+from telecom_deep8_data import TELECOM_SPECS as TELECOM_DEEP8_SPECS
 
 from telecom_data import TELECOM
 from finance_data import FINANCE
@@ -270,15 +272,16 @@ def main():
                     pilot["intro"], pilot["problem"], pilot["diagram_note"], diagram_svg, blueprint_svg,
                     pilot["agent_stack"], pilot["build_order"])
 
-    # --- the spec-driven batch (BSS/OSS, and later Finance/Telecom) ---
-    for spec_wrap in BSSOSS_DEEP8_SPECS:
-        diagram_svg = build_deep8_diagram(spec_wrap["spec"])
-        blueprint_svg = blueprint_table(auto_blueprint_rows(spec_wrap["spec"]))
-        agent_stack = auto_agent_stack(spec_wrap["spec"])
-        build_order = generic_build_order(*spec_wrap["build_order_params"])
-        _emit_deep8("bssoss", spec_wrap["id"], spec_wrap["title"], spec_wrap["quick_title"],
-                    spec_wrap["quick_pattern_label"], spec_wrap["intro"], spec_wrap["problem"],
-                    spec_wrap["diagram_note"], diagram_svg, blueprint_svg, agent_stack, build_order)
+    # --- the spec-driven batch (BSS/OSS, Finance, Telecom) ---
+    for dslug, specs in [("bssoss", BSSOSS_DEEP8_SPECS), ("finance", FINANCE_DEEP8_SPECS), ("telecom", TELECOM_DEEP8_SPECS)]:
+        for spec_wrap in specs:
+            diagram_svg = build_deep8_diagram(spec_wrap["spec"])
+            blueprint_svg = blueprint_table(auto_blueprint_rows(spec_wrap["spec"]))
+            agent_stack = auto_agent_stack(spec_wrap["spec"])
+            build_order = generic_build_order(*spec_wrap["build_order_params"])
+            _emit_deep8(dslug, spec_wrap["id"], spec_wrap["title"], spec_wrap["quick_title"],
+                        spec_wrap["quick_pattern_label"], spec_wrap["intro"], spec_wrap["problem"],
+                        spec_wrap["diagram_note"], diagram_svg, blueprint_svg, agent_stack, build_order)
 
     all_for_patterns = []
     catalog_json = []
@@ -350,8 +353,7 @@ def main():
 The Deep 8-Layer view maps a use case through the full Integrated Decision Engineering Meta-Architecture
 (L1 Foundational Data & Infrastructure → L8 Feedback & Reinforcement Loops), with an agent-level tools/technologies
 stack and a suggested build order by layer. This is a deeper, slower-to-build companion to the
-[Quick Reference Architecture](../../README.md) — currently available for {len(deep8_available_ids)} of 60 use
-cases, with the rest on the roadmap.
+[Quick Reference Architecture](../../README.md) — {"now available for all 60 use cases across Telecom, Financial Services, and BSS/OSS." if len(deep8_available_ids) == 60 else f"currently available for {len(deep8_available_ids)} of 60 use cases, with the rest on the roadmap."}
 
 {chr(10).join(domain_sections)}
 
