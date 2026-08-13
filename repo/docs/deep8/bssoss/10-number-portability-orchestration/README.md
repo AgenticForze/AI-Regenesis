@@ -1,6 +1,14 @@
+---
+layout: default
+title: Number Portability Execution Decisioning — Deep 8-Layer — AgenticWorks
+description: Porting a number between operators involves a strict, regulator-defined
+  sequence with tight SLA windows. A mis-sequenced or rolled-back port disrupts real…
+permalink: /deep8/bssoss/10-number-portability-orchestration/
+---
+
 # Deep 8-Layer Regenerative Architecture: Number Portability Execution Decisioning
 
-**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Number Portability Orchestration](../../../bssoss/10-number-portability-orchestration/README.md) (Sequential Pipeline)
+**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Number Portability Orchestration]({{ '/bssoss/10-number-portability-orchestration/' | relative_url }}) (Sequential Pipeline)
 
 This deep-8 view keeps the Quick view's deliberately rigid, rules-driven sequencing — the regulatory and service-continuity stakes are too high for adaptive flexibility — while adding the governance and observability layers that were previously implicit in the pipeline's discipline.
 
@@ -61,4 +69,4 @@ Porting a number between operators involves a strict, regulator-defined sequence
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

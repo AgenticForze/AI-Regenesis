@@ -1,6 +1,14 @@
+---
+layout: default
+title: Collections Risk & Hardship Decisioning — Deep 8-Layer — AgenticWorks
+description: Collections must run at scale while escalating hardship, dispute, or
+  high-value cases to a human. The Quick view's own retrospective flags two…
+permalink: /deep8/bssoss/16-dunning-collections-automation/
+---
+
 # Deep 8-Layer Regenerative Architecture: Collections Risk & Hardship Decisioning
 
-**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Dunning & Prepaid/Postpaid Collections Automation](../../../bssoss/16-dunning-collections-automation/README.md) (Human-in-the-Loop Escalation Chain)
+**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Dunning & Prepaid/Postpaid Collections Automation]({{ '/bssoss/16-dunning-collections-automation/' | relative_url }}) (Human-in-the-Loop Escalation Chain)
 
 This deep-8 view keeps the Quick view's non-negotiable rule — the risk gate can never be overridden for automated suspension — as an explicit L4 policy rather than an implicit design choice, and adds household-level (not per-line) value assessment as a first-class guardrail.
 
@@ -60,4 +68,4 @@ Collections must run at scale while escalating hardship, dispute, or high-value 
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

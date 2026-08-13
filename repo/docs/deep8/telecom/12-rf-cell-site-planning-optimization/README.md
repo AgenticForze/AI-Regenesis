@@ -1,6 +1,14 @@
+---
+layout: default
+title: RF Parameter Change Decisioning — Deep 8-Layer — AgenticWorks
+description: Optimizing RF parameters across thousands of cells is a continuous multi-objective
+  problem. Treating clusters as fully independent caused optimization…
+permalink: /deep8/telecom/12-rf-cell-site-planning-optimization/
+---
+
 # Deep 8-Layer Regenerative Architecture: RF Parameter Change Decisioning
 
-**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [RF / Cell-Site Planning & Optimization](../../../telecom/12-rf-cell-site-planning-optimization/README.md) (Hierarchical Multi-Agent (Manager-of-Managers))
+**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [RF / Cell-Site Planning & Optimization]({{ '/telecom/12-rf-cell-site-planning-optimization/' | relative_url }}) (Hierarchical Multi-Agent (Manager-of-Managers))
 
 This deep-8 view makes digital-twin validation a mandatory L4 gate before any production RF change — added after an early direct-to-production tilt change caused unexpected coverage holes in an adjacent cluster.
 
@@ -61,4 +69,4 @@ Optimizing RF parameters across thousands of cells is a continuous multi-objecti
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

@@ -1,6 +1,12 @@
 MIT License
 
-Copyright (c) 2026 Contributors
+**Scope: this license covers the code in this repository only** — the generator scripts (`scripts/`),
+website template and interactive logic (`website/index.template.html`, `website/index.html`'s JS/CSS), and
+the packaged skills' code (`skills/*/scripts/`, `skills/*/SKILL.md`, `skills/*/references/`). It does **not**
+cover the generated use-case content — see `CONTENT-LICENSE.md` for the terms covering `docs/**` (problem
+statements, retrospectives, diagrams, and all other generated architecture content).
+
+Copyright (c) 2026 Naga Gande / AgenticWorks
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

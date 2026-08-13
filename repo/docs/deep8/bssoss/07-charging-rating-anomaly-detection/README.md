@@ -1,6 +1,14 @@
+---
+layout: default
+title: Rating Anomaly Correction Decisioning — Deep 8-Layer — AgenticWorks
+description: Real-time charging engines occasionally under- or over-charge due to
+  configuration errors or edge-case usage patterns. Auto-correction without a…
+permalink: /deep8/bssoss/07-charging-rating-anomaly-detection/
+---
+
 # Deep 8-Layer Regenerative Architecture: Rating Anomaly Correction Decisioning
 
-**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Charging & Rating Engine Anomaly Detection](../../../bssoss/07-charging-rating-anomaly-detection/README.md) (Debate-Critique-Arbiter (Reflective Loop))
+**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Charging & Rating Engine Anomaly Detection]({{ '/bssoss/07-charging-rating-anomaly-detection/' | relative_url }}) (Debate-Critique-Arbiter (Reflective Loop))
 
 This deep-8 view keeps the proposer/critic reflective loop from the Quick view but wraps it in explicit dollar-limit governance and executive revenue-recovery reporting — the debate happens inside L3, but nothing gets corrected without passing L4's guardrails.
 
@@ -61,4 +69,4 @@ Real-time charging engines occasionally under- or over-charge due to configurati
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

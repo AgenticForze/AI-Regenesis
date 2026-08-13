@@ -1,6 +1,14 @@
+---
+layout: default
+title: Contact Center Resolution Decisioning — Deep 8-Layer — AgenticWorks
+description: Contact centers field billing, technical, and retention calls with misrouting
+  inflating handle time. Intent-only routing missed customer-value signals…
+permalink: /deep8/telecom/06-contact-center-triage-resolution/
+---
+
 # Deep 8-Layer Regenerative Architecture: Contact Center Resolution Decisioning
 
-**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [Intelligent Contact Center Triage & Resolution](../../../telecom/06-contact-center-triage-resolution/README.md) (Hierarchical Multi-Agent (Manager-of-Managers))
+**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [Intelligent Contact Center Triage & Resolution]({{ '/telecom/06-contact-center-triage-resolution/' | relative_url }}) (Hierarchical Multi-Agent (Manager-of-Managers))
 
 This deep-8 view adds a shared session-state store as an explicit L3 memory function — the Quick view found domain managers initially couldn't see each other's context, causing duplicate retention offers on the same call.
 
@@ -61,4 +69,4 @@ Contact centers field billing, technical, and retention calls with misrouting in
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

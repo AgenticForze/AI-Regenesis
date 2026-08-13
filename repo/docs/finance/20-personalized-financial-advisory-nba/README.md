@@ -1,8 +1,16 @@
+---
+layout: default
+title: Personalized Financial Advisory & Next-Best-Action — AgenticWorks
+description: Retail banks and wealth platforms want to proactively recommend relevant
+  financial actions (refinancing, savings goals, investment products) to customers,…
+permalink: /finance/20-personalized-financial-advisory-nba/
+---
+
 # 20. Personalized Financial Advisory & Next-Best-Action
 
-**Domain:** Financial Services &nbsp;|&nbsp; **Architecture pattern:** [Debate-Critique-Arbiter (Reflective Loop)](../../patterns/debate-critique.md)
+**Domain:** Financial Services &nbsp;|&nbsp; **Architecture pattern:** [Debate-Critique-Arbiter (Reflective Loop)]({{ '/patterns/debate-critique/' | relative_url }})
 
-> 🧠 **Deep dive available:** this use case also has a full [8-Layer Regenerative Architecture breakdown](../../deep8/finance/20-personalized-financial-advisory-nba/README.md) — the same problem mapped through L1–L8, with an agent-level tools/technologies stack and a suggested build order by layer.
+> 🧠 **Deep dive available:** this use case also has a full [8-Layer Regenerative Architecture breakdown]({{ '/deep8/finance/20-personalized-financial-advisory-nba/' | relative_url }}) — the same problem mapped through L1–L8, with an agent-level tools/technologies stack and a suggested build order by layer.
 
 ## 1. Problem Statement & Use Case
 
@@ -28,9 +36,9 @@ The solution is implemented as a **Debate-Critique-Arbiter (Reflective Loop)** a
 > This diagram is organized as a **layered architecture**: Data &amp; Integration → Orchestration → Agent →
 > Action &amp; Execution, plus a cross-cutting Observability &amp; Governance layer (tracing, audit log,
 > guardrails, and any human review checkpoint — shown in lavender). See the
-> [E2E Platform Architecture](../../architecture/e2e-platform-architecture.md) for how this layering looks
-> across all 60 use cases at once. A [Mermaid text source](architecture.mmd) of the same diagram is also
-> available in this folder.
+> [E2E Platform Architecture]({{ '/architecture/e2e-platform-architecture/' | relative_url }}) for how this
+> layering looks across all 60 use cases at once. A [Mermaid text source](architecture.mmd) of the same
+> diagram is also available in this folder.
 
 ## 3. Technologies Used (per step)
 
@@ -63,4 +71,4 @@ The solution is implemented as a **Debate-Critique-Arbiter (Reflective Loop)** a
 - Suitability documentation requirements meant the arbiter's rationale had to be far more structured/citation-grounded than an initial free-text version allowed.
 
 ---
-[← Back to Financial Services index](../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Financial Services index]({{ '/finance/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

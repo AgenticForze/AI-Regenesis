@@ -1,6 +1,14 @@
+---
+layout: default
+title: Credit & Fraud Threshold Decisioning — Deep 8-Layer — AgenticWorks
+description: Dynamic credit limits and fraud thresholds must balance bad-debt exposure
+  against not restricting legitimate high-usage customers. Static, per-line…
+permalink: /deep8/bssoss/18-credit-limit-fraud-threshold-management/
+---
+
 # Deep 8-Layer Regenerative Architecture: Credit & Fraud Threshold Decisioning
 
-**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Credit Limit & Fraud Threshold Management (BSS)](../../../bssoss/18-credit-limit-fraud-threshold-management/README.md) (Debate-Critique-Arbiter (Reflective Loop))
+**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Credit Limit & Fraud Threshold Management (BSS)]({{ '/bssoss/18-credit-limit-fraud-threshold-management/' | relative_url }}) (Debate-Critique-Arbiter (Reflective Loop))
 
 This deep-8 view tracks customer friction (unnecessary restrictions) as a co-equal metric to bad-debt prevention from day one — the Quick view's own retrospective found it over-indexed on risk-prevention in v1, generating avoidable complaints from legitimate roaming customers.
 
@@ -61,4 +69,4 @@ Dynamic credit limits and fraud thresholds must balance bad-debt exposure agains
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

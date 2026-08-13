@@ -1,6 +1,14 @@
+---
+layout: default
+title: Roaming Settlement Reconciliation Decisioning — Deep 8-Layer — AgenticWorks
+description: Cross-carrier settlement requires reconciling TAP/CDR records and applying
+  bilateral agreement terms. A global fuzzy-matching threshold doesn't fit every…
+permalink: /deep8/telecom/13-roaming-settlement-reconciliation/
+---
+
 # Deep 8-Layer Regenerative Architecture: Roaming Settlement Reconciliation Decisioning
 
-**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [Roaming Partner Settlement Reconciliation](../../../telecom/13-roaming-settlement-reconciliation/README.md) (Sequential Pipeline)
+**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [Roaming Partner Settlement Reconciliation]({{ '/telecom/13-roaming-settlement-reconciliation/' | relative_url }}) (Sequential Pipeline)
 
 This deep-8 view adds per-partner fuzzy-matching threshold tuning as an explicit L4 policy — the Quick view found a single global threshold over-flagged discrepancies with some partners due to differing clock-sync tolerances.
 
@@ -61,4 +69,4 @@ Cross-carrier settlement requires reconciling TAP/CDR records and applying bilat
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

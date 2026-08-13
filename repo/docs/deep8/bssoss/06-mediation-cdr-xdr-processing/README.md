@@ -1,6 +1,14 @@
+---
+layout: default
+title: Mediation & Rating-Feed Integrity Decisioning — Deep 8-Layer — AgenticWorks
+description: Mediation ingests billions of records from heterogeneous network elements.
+  Format drift from vendor firmware updates causes downstream rating errors that…
+permalink: /deep8/bssoss/06-mediation-cdr-xdr-processing/
+---
+
 # Deep 8-Layer Regenerative Architecture: Mediation & Rating-Feed Integrity Decisioning
 
-**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Mediation & CDR/xDR Processing Pipeline](../../../bssoss/06-mediation-cdr-xdr-processing/README.md) (Sequential Pipeline)
+**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Mediation & CDR/xDR Processing Pipeline]({{ '/bssoss/06-mediation-cdr-xdr-processing/' | relative_url }}) (Sequential Pipeline)
 
 This deep-8 view treats mediation as more than a data pipeline — every record's path to the rating engine now passes through explicit data-quality governance, with drift detection catching vendor format changes before they silently corrupt a billing cycle.
 
@@ -61,4 +69,4 @@ Mediation ingests billions of records from heterogeneous network elements. Forma
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

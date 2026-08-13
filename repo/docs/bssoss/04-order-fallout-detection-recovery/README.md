@@ -1,8 +1,16 @@
+---
+layout: default
+title: Order Fallout Detection & Auto-Recovery — AgenticWorks
+description: Orders that stall mid-fulfillment ('fallout') due to system timeouts,
+  data mismatches, or catalog/network inconsistencies pile up in manual work queues,…
+permalink: /bssoss/04-order-fallout-detection-recovery/
+---
+
 # 04. Order Fallout Detection & Auto-Recovery
 
-**Domain:** BSS/OSS &nbsp;|&nbsp; **Architecture pattern:** [Event-Driven Reactive Swarm](../../patterns/event-swarm.md)
+**Domain:** BSS/OSS &nbsp;|&nbsp; **Architecture pattern:** [Event-Driven Reactive Swarm]({{ '/patterns/event-swarm/' | relative_url }})
 
-> 🧠 **Deep dive available:** this use case also has a full [8-Layer Regenerative Architecture breakdown](../../deep8/bssoss/04-order-fallout-detection-recovery/README.md) — the same problem mapped through L1–L8, with an agent-level tools/technologies stack and a suggested build order by layer.
+> 🧠 **Deep dive available:** this use case also has a full [8-Layer Regenerative Architecture breakdown]({{ '/deep8/bssoss/04-order-fallout-detection-recovery/' | relative_url }}) — the same problem mapped through L1–L8, with an agent-level tools/technologies stack and a suggested build order by layer.
 
 ## 1. Problem Statement & Use Case
 
@@ -28,9 +36,9 @@ The solution is implemented as a **Event-Driven Reactive Swarm** architecture.
 > This diagram is organized as a **layered architecture**: Data &amp; Integration → Orchestration → Agent →
 > Action &amp; Execution, plus a cross-cutting Observability &amp; Governance layer (tracing, audit log,
 > guardrails, and any human review checkpoint — shown in lavender). See the
-> [E2E Platform Architecture](../../architecture/e2e-platform-architecture.md) for how this layering looks
-> across all 60 use cases at once. A [Mermaid text source](architecture.mmd) of the same diagram is also
-> available in this folder.
+> [E2E Platform Architecture]({{ '/architecture/e2e-platform-architecture/' | relative_url }}) for how this
+> layering looks across all 60 use cases at once. A [Mermaid text source](architecture.mmd) of the same
+> diagram is also available in this folder.
 
 ## 3. Technologies Used (per step)
 
@@ -63,4 +71,4 @@ The solution is implemented as a **Event-Driven Reactive Swarm** architecture.
 - Would track auto-resolution accuracy per pattern type over time and auto-disable a pattern's automation if its false-fix rate rises, rather than assuming static reliability.
 
 ---
-[← Back to BSS/OSS index](../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to BSS/OSS index]({{ '/bssoss/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

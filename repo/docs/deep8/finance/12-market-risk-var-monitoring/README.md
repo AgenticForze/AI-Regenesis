@@ -1,6 +1,14 @@
+---
+layout: default
+title: Firm-Wide Risk Concentration Decisioning — Deep 8-Layer — AgenticWorks
+description: Trading desks need a real-time firm-wide view of VaR and limit breaches.
+  Risk factors interact across desks in non-obvious ways; siloed per-desk views…
+permalink: /deep8/finance/12-market-risk-var-monitoring/
+---
+
 # Deep 8-Layer Regenerative Architecture: Firm-Wide Risk Concentration Decisioning
 
-**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Market Risk Management / VaR Monitoring](../../../finance/12-market-risk-var-monitoring/README.md) (Blackboard / Shared-Memory)
+**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Market Risk Management / VaR Monitoring]({{ '/finance/12-market-risk-var-monitoring/' | relative_url }}) (Blackboard / Shared-Memory)
 
 This deep-8 view makes concentration/correlation risk detection a first-class L3 agent from the start — the Quick view added it only after a near-miss where three desks independently built correlated exposure that no single desk view caught.
 
@@ -62,4 +70,4 @@ Trading desks need a real-time firm-wide view of VaR and limit breaches. Risk fa
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

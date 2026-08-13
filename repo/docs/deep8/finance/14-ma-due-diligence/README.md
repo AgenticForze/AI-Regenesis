@@ -1,6 +1,14 @@
+---
+layout: default
+title: M&A Findings Prioritization Decisioning — Deep 8-Layer — AgenticWorks
+description: Due diligence requires reviewing thousands of documents across legal,
+  financial, and commercial workstreams under deal-timeline pressure. Findings…
+permalink: /deep8/finance/14-ma-due-diligence/
+---
+
 # Deep 8-Layer Regenerative Architecture: M&A Findings Prioritization Decisioning
 
-**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Mergers & Acquisitions Due Diligence](../../../finance/14-ma-due-diligence/README.md) (Hierarchical Multi-Agent (Manager-of-Managers))
+**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Mergers & Acquisitions Due Diligence]({{ '/finance/14-ma-due-diligence/' | relative_url }}) (Hierarchical Multi-Agent (Manager-of-Managers))
 
 This deep-8 view adds explicit findings de-duplication and materiality-based prioritization from the start — the Quick view found deal teams valued a prioritized findings list far more than an exhaustive one, and that cross-workstream overlap needed reconciliation logic the first version lacked.
 
@@ -61,4 +69,4 @@ Due diligence requires reviewing thousands of documents across legal, financial,
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

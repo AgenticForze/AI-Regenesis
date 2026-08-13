@@ -1,6 +1,14 @@
+---
+layout: default
+title: Customer Identity Resolution Decisioning — Deep 8-Layer — AgenticWorks
+description: Customer data is fragmented across CRM, billing, provisioning, loyalty,
+  and support systems. Identity-resolution false-merges are far more damaging than…
+permalink: /deep8/bssoss/08-customer-360-master-data-unification/
+---
+
 # Deep 8-Layer Regenerative Architecture: Customer Identity Resolution Decisioning
 
-**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Customer 360 / Master Data Unification](../../../bssoss/08-customer-360-master-data-unification/README.md) (Blackboard / Shared-Memory)
+**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Customer 360 / Master Data Unification]({{ '/bssoss/08-customer-360-master-data-unification/' | relative_url }}) (Blackboard / Shared-Memory)
 
 This deep-8 view makes the Quick view's 'most restrictive wins' consent rule an explicit, non-bypassable L4 policy, and adds a materiality-tiered review path for genuinely ambiguous identity conflicts rather than forcing every conflict through the same resolution path.
 
@@ -62,4 +70,4 @@ Customer data is fragmented across CRM, billing, provisioning, loyalty, and supp
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

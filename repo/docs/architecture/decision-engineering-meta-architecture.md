@@ -1,3 +1,10 @@
+---
+layout: default
+title: "The Integrated Decision Engineering Meta-Architecture — AgenticWorks"
+description: "The flagship 8-layer reference example: a full enterprise decision stack from foundational data through the regenerative feedback loop, applied to one concrete high-stakes decision."
+permalink: /architecture/decision-engineering-meta-architecture/
+---
+
 # Flagship Reference Example: The Integrated Decision Engineering Meta-Architecture
 
 This document is a different kind of artifact from the 60 catalog use cases in `docs/telecom/`, `docs/bssoss/`,

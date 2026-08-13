@@ -1,8 +1,16 @@
+---
+layout: default
+title: Mediation & CDR/xDR Processing Pipeline — AgenticWorks
+description: Mediation systems must ingest, validate, correlate, and transform billions
+  of daily call/data/event detail records (CDRs/xDRs) from heterogeneous network…
+permalink: /bssoss/06-mediation-cdr-xdr-processing/
+---
+
 # 06. Mediation & CDR/xDR Processing Pipeline
 
-**Domain:** BSS/OSS &nbsp;|&nbsp; **Architecture pattern:** [Sequential Pipeline](../../patterns/pipeline.md)
+**Domain:** BSS/OSS &nbsp;|&nbsp; **Architecture pattern:** [Sequential Pipeline]({{ '/patterns/pipeline/' | relative_url }})
 
-> 🧠 **Deep dive available:** this use case also has a full [8-Layer Regenerative Architecture breakdown](../../deep8/bssoss/06-mediation-cdr-xdr-processing/README.md) — the same problem mapped through L1–L8, with an agent-level tools/technologies stack and a suggested build order by layer.
+> 🧠 **Deep dive available:** this use case also has a full [8-Layer Regenerative Architecture breakdown]({{ '/deep8/bssoss/06-mediation-cdr-xdr-processing/' | relative_url }}) — the same problem mapped through L1–L8, with an agent-level tools/technologies stack and a suggested build order by layer.
 
 ## 1. Problem Statement & Use Case
 
@@ -28,9 +36,9 @@ The solution is implemented as a **Sequential Pipeline** architecture.
 > This diagram is organized as a **layered architecture**: Data &amp; Integration → Orchestration → Agent →
 > Action &amp; Execution, plus a cross-cutting Observability &amp; Governance layer (tracing, audit log,
 > guardrails, and any human review checkpoint — shown in lavender). See the
-> [E2E Platform Architecture](../../architecture/e2e-platform-architecture.md) for how this layering looks
-> across all 60 use cases at once. A [Mermaid text source](architecture.mmd) of the same diagram is also
-> available in this folder.
+> [E2E Platform Architecture]({{ '/architecture/e2e-platform-architecture/' | relative_url }}) for how this
+> layering looks across all 60 use cases at once. A [Mermaid text source](architecture.mmd) of the same
+> diagram is also available in this folder.
 
 ## 3. Technologies Used (per step)
 
@@ -63,4 +71,4 @@ The solution is implemented as a **Sequential Pipeline** architecture.
 - Enrichment lookups against the customer 360 store added meaningful latency at billion-record scale; would pre-compute and cache enrichment context rather than looking it up per record.
 
 ---
-[← Back to BSS/OSS index](../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to BSS/OSS index]({{ '/bssoss/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

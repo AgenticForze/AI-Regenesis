@@ -1,6 +1,14 @@
+---
+layout: default
+title: Market Abuse Surveillance Decisioning — Deep 8-Layer — AgenticWorks
+description: Detecting insider trading requires correlating trading activity with
+  MNPI access and communications — prone to both false positives and sophisticated…
+permalink: /deep8/finance/17-insider-trading-surveillance/
+---
+
 # Deep 8-Layer Regenerative Architecture: Market Abuse Surveillance Decisioning
 
-**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Insider Trading & Market Abuse Surveillance](../../../finance/17-insider-trading-surveillance/README.md) (Debate-Critique-Arbiter (Reflective Loop))
+**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Insider Trading & Market Abuse Surveillance]({{ '/finance/17-insider-trading-surveillance/' | relative_url }}) (Debate-Critique-Arbiter (Reflective Loop))
 
 This deep-8 view mirrors the AML use case's proposer/critic independence discipline — the same design lesson (shared context between proposer and critic causes confirmation bias) applies equally here, and the severity of a false insider-trading accusation warrants an even stricter dual-officer review requirement before any regulatory referral.
 
@@ -61,4 +69,4 @@ Detecting insider trading requires correlating trading activity with MNPI access
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

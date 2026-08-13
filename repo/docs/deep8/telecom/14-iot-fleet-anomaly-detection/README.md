@@ -1,6 +1,14 @@
+---
+layout: default
+title: IoT Fleet Health Decisioning — Deep 8-Layer — AgenticWorks
+description: Enterprise IoT fleets run millions of devices whose individual anomalies
+  are hard to see but form clear patterns at fleet scale. The controller…
+permalink: /deep8/telecom/14-iot-fleet-anomaly-detection/
+---
+
 # Deep 8-Layer Regenerative Architecture: IoT Fleet Health Decisioning
 
-**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [IoT Device Fleet Anomaly Detection & Remediation](../../../telecom/14-iot-fleet-anomaly-detection/README.md) (Blackboard / Shared-Memory)
+**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [IoT Device Fleet Anomaly Detection & Remediation]({{ '/telecom/14-iot-fleet-anomaly-detection/' | relative_url }}) (Blackboard / Shared-Memory)
 
 This deep-8 view adds device-model-specific baselines and per-fleet partitioning from the start — the Quick view found a single global battery-drain baseline produced too many false positives across heterogeneous device types, and the blackboard grew unbounded for large fleets without TTL-based pruning.
 
@@ -61,4 +69,4 @@ Enterprise IoT fleets run millions of devices whose individual anomalies are har
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

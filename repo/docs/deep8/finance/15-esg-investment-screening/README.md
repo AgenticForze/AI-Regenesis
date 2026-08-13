@@ -1,6 +1,14 @@
+---
+layout: default
+title: ESG Fund Compliance Screening Decisioning — Deep 8-Layer — AgenticWorks
+description: Asset managers must screen investments against fund-specific ESG mandates
+  that vary by fund. Fund policy language is often ambiguous, ESG data providers…
+permalink: /deep8/finance/15-esg-investment-screening/
+---
+
 # Deep 8-Layer Regenerative Architecture: ESG Fund Compliance Screening Decisioning
 
-**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [ESG Investment Screening & Compliance](../../../finance/15-esg-investment-screening/README.md) (Sequential Pipeline)
+**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [ESG Investment Screening & Compliance]({{ '/finance/15-esg-investment-screening/' | relative_url }}) (Sequential Pipeline)
 
 This deep-8 view treats controversy monitoring as a continuous, always-on L3 agent rather than a static once-a-cycle check — the Quick view found a held company's labor controversy went undetected for weeks when screening only ran against static data.
 
@@ -61,4 +69,4 @@ Asset managers must screen investments against fund-specific ESG mandates that v
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

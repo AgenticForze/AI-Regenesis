@@ -1,6 +1,14 @@
+---
+layout: default
+title: Contract Risk Review Prioritization Decisioning — Deep 8-Layer — AgenticWorks
+description: Reviewing loan agreements and commercial contracts for risky clauses
+  is slow, expensive legal work. A firm-specific precedent library dramatically…
+permalink: /deep8/finance/09-contract-loan-document-review/
+---
+
 # Deep 8-Layer Regenerative Architecture: Contract Risk Review Prioritization Decisioning
 
-**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Contract & Loan Document Review (Legal/Credit Agent)](../../../finance/09-contract-loan-document-review/README.md) (Debate-Critique-Arbiter (Reflective Loop))
+**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Contract & Loan Document Review (Legal/Credit Agent)]({{ '/finance/09-contract-loan-document-review/' | relative_url }}) (Debate-Critique-Arbiter (Reflective Loop))
 
 This deep-8 view keeps the critic agent's independence from the proposer as a hard, non-negotiable design constraint — the Quick view found that letting the critic see the proposer's flags turned it into a rubber stamp that missed real gaps.
 
@@ -61,4 +69,4 @@ Reviewing loan agreements and commercial contracts for risky clauses is slow, ex
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

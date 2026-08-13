@@ -1,6 +1,14 @@
+---
+layout: default
+title: Credit Underwriting Decisioning — Deep 8-Layer — AgenticWorks
+description: Underwriting requires synthesizing financial statements, credit bureau
+  data, cash-flow analysis, and policy compliance under fair-lending regulation. The…
+permalink: /deep8/finance/02-credit-underwriting-loan-origination/
+---
+
 # Deep 8-Layer Regenerative Architecture: Credit Underwriting Decisioning
 
-**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Credit Underwriting & Loan Origination](../../../finance/02-credit-underwriting-loan-origination/README.md) (Hierarchical Multi-Agent (Manager-of-Managers))
+**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Credit Underwriting & Loan Origination]({{ '/finance/02-credit-underwriting-loan-origination/' | relative_url }}) (Hierarchical Multi-Agent (Manager-of-Managers))
 
 This deep-8 view makes fair-lending disparate-impact testing a co-equal L4 gate from the start — the Quick view's own retrospective flagged this as a late add-on that should have been a first-class check on every decision path, not a final checkbox.
 
@@ -61,4 +69,4 @@ Underwriting requires synthesizing financial statements, credit bureau data, cas
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

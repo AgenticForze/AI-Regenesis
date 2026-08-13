@@ -1,6 +1,14 @@
+---
+layout: default
+title: SOC Threat Containment Decisioning — Deep 8-Layer — AgenticWorks
+description: Telecom networks face signaling exploits and DDoS against core infrastructure,
+  overwhelming SOC analysts with alert volume. Signaling and IT-security data…
+permalink: /deep8/telecom/08-telecom-soc-threat-hunting/
+---
+
 # Deep 8-Layer Regenerative Architecture: SOC Threat Containment Decisioning
 
-**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [Telecom SOC Threat Hunting & Incident Response](../../../telecom/08-telecom-soc-threat-hunting/README.md) (Orchestrator-Worker (Supervisor fan-out/fan-in))
+**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [Telecom SOC Threat Hunting & Incident Response]({{ '/telecom/08-telecom-soc-threat-hunting/' | relative_url }}) (Orchestrator-Worker (Supervisor fan-out/fan-in))
 
 This deep-8 view adds a unified threat-narrative synthesis step as a first-class L3 output — the Quick view found analysts initially had to piece together outputs from 5 separate agents themselves.
 
@@ -62,4 +70,4 @@ Telecom networks face signaling exploits and DDoS against core infrastructure, o
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

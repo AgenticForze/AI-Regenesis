@@ -1,6 +1,15 @@
+---
+layout: default
+title: Rolling Forecast & Variance Decisioning — Deep 8-Layer — AgenticWorks
+description: FP&A teams spend weeks consolidating actuals and building forecasts.
+  The Quick view moved from quarterly to continuous weekly consolidation and found
+  the…
+permalink: /deep8/finance/10-fpna-forecasting/
+---
+
 # Deep 8-Layer Regenerative Architecture: Rolling Forecast & Variance Decisioning
 
-**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Financial Planning & Analysis (FP&A) Forecasting](../../../finance/10-fpna-forecasting/README.md) (Sequential Pipeline)
+**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Financial Planning & Analysis (FP&A) Forecasting]({{ '/finance/10-fpna-forecasting/' | relative_url }}) (Sequential Pipeline)
 
 This deep-8 view grounds every variance narrative in structured price/volume/mix decomposition before any LLM-generated explanation — the Quick view found finance leadership trusted narratives far more once they were grounded this way rather than free-form.
 
@@ -61,4 +70,4 @@ FP&A teams spend weeks consolidating actuals and building forecasts. The Quick v
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

@@ -1,6 +1,14 @@
+---
+layout: default
+title: Regulatory Filing Readiness Decisioning — Deep 8-Layer — AgenticWorks
+description: Banks must continuously monitor a patchwork of regulations and file numerous
+  recurring reports. Data reconciliation exceptions, not report generation…
+permalink: /deep8/finance/07-regulatory-compliance-monitoring-reporting/
+---
+
 # Deep 8-Layer Regenerative Architecture: Regulatory Filing Readiness Decisioning
 
-**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Regulatory Compliance Monitoring & Reg Reporting](../../../finance/07-regulatory-compliance-monitoring-reporting/README.md) (Hierarchical Multi-Agent (Manager-of-Managers))
+**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Regulatory Compliance Monitoring & Reg Reporting]({{ '/finance/07-regulatory-compliance-monitoring-reporting/' | relative_url }}) (Hierarchical Multi-Agent (Manager-of-Managers))
 
 This deep-8 view treats regulatory-change monitoring as a first-class L6 component from day one — the Quick view found new rule versions silently broke report templates before this monitoring existed.
 
@@ -61,4 +69,4 @@ Banks must continuously monitor a patchwork of regulations and file numerous rec
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

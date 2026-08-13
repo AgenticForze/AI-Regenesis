@@ -1,6 +1,14 @@
+---
+layout: default
+title: Line Activation Decisioning — Deep 8-Layer — AgenticWorks
+description: Activating a new line requires identity verification, credit risk, and
+  fraud screening in parallel. A slow credit bureau API could stall the entire flow…
+permalink: /deep8/telecom/11-line-onboarding-kyc-automation/
+---
+
 # Deep 8-Layer Regenerative Architecture: Line Activation Decisioning
 
-**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [New Line/Device Onboarding & KYC Automation](../../../telecom/11-line-onboarding-kyc-automation/README.md) (Orchestrator-Worker (Supervisor fan-out/fan-in))
+**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [New Line/Device Onboarding & KYC Automation]({{ '/telecom/11-line-onboarding-kyc-automation/' | relative_url }}) (Orchestrator-Worker (Supervisor fan-out/fan-in))
 
 This deep-8 view adds explicit per-worker timeout/fallback behavior as a first-class L4 policy — the Quick view's own early version stalled the whole onboarding flow when one bureau API was slow, with no defined fallback.
 
@@ -62,4 +70,4 @@ Activating a new line requires identity verification, credit risk, and fraud scr
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

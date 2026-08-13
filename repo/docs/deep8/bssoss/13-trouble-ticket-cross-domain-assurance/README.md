@@ -1,6 +1,14 @@
+---
+layout: default
+title: Cross-Domain Trouble Ticket Decisioning — Deep 8-Layer — AgenticWorks
+description: Trouble tickets often bounce between teams before landing correctly,
+  since cross-domain diagnosis (access, transport, core, or CPE) needs to happen before…
+permalink: /deep8/bssoss/13-trouble-ticket-cross-domain-assurance/
+---
+
 # Deep 8-Layer Regenerative Architecture: Cross-Domain Trouble Ticket Decisioning
 
-**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Trouble Ticket Management & Cross-Domain Assurance (OSS)](../../../bssoss/13-trouble-ticket-cross-domain-assurance/README.md) (Orchestrator-Worker (Supervisor fan-out/fan-in))
+**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Trouble Ticket Management & Cross-Domain Assurance (OSS)]({{ '/bssoss/13-trouble-ticket-cross-domain-assurance/' | relative_url }}) (Orchestrator-Worker (Supervisor fan-out/fan-in))
 
 This deep-8 view makes explicit customer consent for any device-affecting auto-resolution — the hard lesson from the Quick view's early remote-reboot-during-a-call incident is now a permanent, non-bypassable L4 policy.
 
@@ -62,4 +70,4 @@ Trouble tickets often bounce between teams before landing correctly, since cross
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

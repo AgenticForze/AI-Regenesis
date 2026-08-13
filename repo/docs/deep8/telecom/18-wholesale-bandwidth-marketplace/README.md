@@ -1,6 +1,14 @@
+---
+layout: default
+title: Wholesale Capacity Trading Decisioning — Deep 8-Layer — AgenticWorks
+description: Operators with excess capacity in some routes and shortages in others
+  could trade wholesale, but bilateral trust issues were the biggest adoption blocker,…
+permalink: /deep8/telecom/18-wholesale-bandwidth-marketplace/
+---
+
 # Deep 8-Layer Regenerative Architecture: Wholesale Capacity Trading Decisioning
 
-**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [Wholesale Bandwidth Marketplace (Capacity Trading)](../../../telecom/18-wholesale-bandwidth-marketplace/README.md) (Market-Based / Auction Agents)
+**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [Wholesale Bandwidth Marketplace (Capacity Trading)]({{ '/telecom/18-wholesale-bandwidth-marketplace/' | relative_url }}) (Market-Based / Auction Agents)
 
 This deep-8 view adds a circuit-breaker for anomalous price swings as a first-class L4 policy, borrowed directly from financial-market safeguards — a gap the Quick view's own retrospective identified.
 
@@ -61,4 +69,4 @@ Operators with excess capacity in some routes and shortages in others could trad
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

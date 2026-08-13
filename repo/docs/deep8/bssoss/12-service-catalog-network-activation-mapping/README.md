@@ -1,6 +1,15 @@
+---
+layout: default
+title: Catalog-to-Network Mapping Decisioning — Deep 8-Layer — AgenticWorks
+description: Translating a commercial catalog entry into the correct OSS API call
+  sequence requires deep, often tribal-knowledge mapping logic that breaks whenever
+  the…
+permalink: /deep8/bssoss/12-service-catalog-network-activation-mapping/
+---
+
 # Deep 8-Layer Regenerative Architecture: Catalog-to-Network Mapping Decisioning
 
-**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Service Catalog-to-Network Activation Mapping (TMF Open APIs)](../../../bssoss/12-service-catalog-network-activation-mapping/README.md) (Hierarchical Multi-Agent (Manager-of-Managers))
+**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Service Catalog-to-Network Activation Mapping (TMF Open APIs)]({{ '/bssoss/12-service-catalog-network-activation-mapping/' | relative_url }}) (Hierarchical Multi-Agent (Manager-of-Managers))
 
 This deep-8 view elevates API contract drift detection — the Quick view's highest-value addition found in hindsight — to a first-class, always-on L6 component rather than something built after production mapping failures had already occurred.
 
@@ -61,4 +70,4 @@ Translating a commercial catalog entry into the correct OSS API call sequence re
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

@@ -1,6 +1,14 @@
+---
+layout: default
+title: Promotion Launch Risk Decisioning — Deep 8-Layer — AgenticWorks
+description: Poorly modeled promotions can be gamed or cannibalize existing revenue.
+  Pre-launch Monte Carlo simulation catches most risks, but the Quick view's own…
+permalink: /deep8/bssoss/15-promotions-campaign-configuration-engine/
+---
+
 # Deep 8-Layer Regenerative Architecture: Promotion Launch Risk Decisioning
 
-**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Promotions & Campaign Configuration Engine](../../../bssoss/15-promotions-campaign-configuration-engine/README.md) (Debate-Critique-Arbiter (Reflective Loop))
+**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Promotions & Campaign Configuration Engine]({{ '/bssoss/15-promotions-campaign-configuration-engine/' | relative_url }}) (Debate-Critique-Arbiter (Reflective Loop))
 
 This deep-8 view makes post-launch monitoring mandatory, not optional — the Quick view's own retrospective found real gaming patterns only emerged after launch, no matter how thorough the pre-launch simulation.
 
@@ -61,4 +69,4 @@ Poorly modeled promotions can be gamed or cannibalize existing revenue. Pre-laun
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

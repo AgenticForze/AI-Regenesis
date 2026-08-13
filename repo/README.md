@@ -1,4 +1,18 @@
-# Multi-Agent Architecture Use Case Catalog — Telecom, BSS/OSS & Financial Services
+# AgenticWorks — The Reference Architecture Library for Agentic AI
+
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-121212?logo=githubpages)](https://agenticforze.github.io/AgenticWorks/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Content License: CC BY-NC 4.0](https://img.shields.io/badge/Content%20License-CC%20BY--NC%204.0-lightgrey)](CONTENT-LICENSE.md)
+
+**By Naga Gande** · The Regenerative Agentic Architecture Framework, applied to 60 real use cases across
+Telecom, BSS/OSS, and Financial Services.
+
+## Quick links
+
+- Live site: https://agenticforze.github.io/AgenticWorks/
+- Interactive catalog: [website/index.html](website/index.html)
+- GitHub Pages setup: [GITHUB-PAGES-SETUP.md](GITHUB-PAGES-SETUP.md)
+- Architecture deep-dive: [docs/architecture/decision-engineering-meta-architecture.md](docs/architecture/decision-engineering-meta-architecture.md)
 
 A structured catalog of **60 real-world multi-agent AI architecture use cases** — 20 in Telecommunications
 (network/RAN/customer-facing), 20 in BSS/OSS (order-to-cash, catalog, mediation, inventory, revenue assurance),
@@ -47,7 +61,7 @@ write-up with its diagram. See [GitLab Pages setup](#gitlab-pages) below to host
 │   │       ├── README.md         ← problem, 8-layer blueprint, flow diagram, agent stack, build order
 │   │       ├── diagram.svg       ← labeled L1–L8 flow diagram
 │   │       └── blueprint.svg     ← reference-model blueprint table
-├── patterns/                     ← one doc per architecture pattern, cross-linking every use case that applies it
+├── docs/patterns/                ← one doc per architecture pattern, cross-linking every use case that applies it
 │   ├── orchestrator-worker.md
 │   ├── hierarchical.md
 │   ├── pipeline.md
@@ -56,9 +70,13 @@ write-up with its diagram. See [GitLab Pages setup](#gitlab-pages) below to host
 │   ├── market-based.md
 │   ├── event-swarm.md
 │   └── human-escalation.md
+├── docs/index.html               ← the interactive SPA — served as the site homepage by GitHub Pages
+├── docs/_config.yml              ← Jekyll config (GitHub Pages builds this repo natively, no external host)
+├── docs/_layouts/default.html    ← Jekyll layout wrapping every generated page (dark theme, SEO tag, nav)
+├── docs/robots.txt               ← points at the auto-generated /sitemap.xml (via jekyll-sitemap plugin)
 ├── website/                      ← single-page navigator: view toggle (Quick Reference / Deep 8-Layer),
 │   │                                 collapsible sidebar (Domain → Pattern → Use Case, or Domain → Use Case)
-│   ├── index.html                ← standalone, data inlined — open directly, no server needed
+│   ├── index.html                ← same file as docs/index.html — kept here too for local testing
 │   ├── index.template.html       ← source template (build.py injects catalog JSON into this)
 │   └── data.json                 ← generated catalog data, also fetchable standalone
 ├── skills/
@@ -77,8 +95,12 @@ write-up with its diagram. See [GitLab Pages setup](#gitlab-pages) below to host
     ├── telecom_data.py            ← structured source data, 20 telecom use cases
     ├── bssoss_data.py             ← structured source data, 20 BSS/OSS use cases
     ├── finance_data.py            ← structured source data, 20 finance use cases
-    └── build.py                   ← renders docs/, patterns/, docs/deep8/, and website/index.html
+    └── build.py                   ← renders docs/, docs/patterns/, docs/deep8/, and docs/index.html — every
+                                       generated page gets Jekyll front matter (title/description/permalink)
 ```
+
+See [`GITHUB-PAGES-SETUP.md`](GITHUB-PAGES-SETUP.md) for exactly how to turn this repo into a live, indexed
+site with zero external hosting.
 
 ## Reference architectures
 
@@ -146,7 +168,7 @@ use cases compose into one platform.
 | **Event-Driven Reactive Swarm** | Latency-critical always-on monitoring where central orchestration adds unacceptable lag (self-healing, CNP fraud) |
 | **Human-in-the-Loop Escalation** | Regulated/high-consequence decisions needing a confidence/risk gate before autonomy |
 
-See [`patterns/`](patterns/) for the full explanation of each, with every use case that applies it cross-linked.
+See [`docs/patterns/`](docs/patterns/) for the full explanation of each, with every use case that applies it cross-linked.
 
 ## Use case index
 
@@ -194,7 +216,7 @@ case, edit `scripts/telecom_data.py`, `scripts/bssoss_data.py`, or `scripts/fina
 python3 scripts/build.py
 ```
 
-This regenerates every `docs/**/README.md`, `docs/**/architecture.mmd`, `patterns/*.md`, `docs/deep8/**`, and
+This regenerates every `docs/**/README.md`, `docs/**/architecture.mmd`, `docs/patterns/*.md`, `docs/deep8/**`, and
 `website/data.json` deterministically from the source data — the website and docs never drift out of sync.
 
 To modify a Deep 8-Layer entry, edit its spec in `scripts/{bssoss,finance,telecom}_deep8_data.py` (or
@@ -209,4 +231,8 @@ default branch publishes the navigator at `https://<namespace>.gitlab.io/<projec
 
 ## License
 
-See [`LICENSE`](LICENSE).
+**Code** (generator scripts, website logic, packaged skills): [MIT](LICENSE).
+
+**Content** (the 60 use cases, retrospectives, and diagrams under `docs/`): [CC BY-NC 4.0](CONTENT-LICENSE.md)
+— free to read, share, and adapt with attribution for non-commercial use; commercial use requires a separate
+license.

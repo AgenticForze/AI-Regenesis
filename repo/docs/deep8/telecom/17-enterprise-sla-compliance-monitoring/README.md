@@ -1,6 +1,14 @@
+---
+layout: default
+title: SLA Credit Automation Decisioning — Deep 8-Layer — AgenticWorks
+description: Enterprise SLA contracts carry financial penalties that operators often
+  under- or over-report. Contract term interpretation needed human legal sign-off…
+permalink: /deep8/telecom/17-enterprise-sla-compliance-monitoring/
+---
+
 # Deep 8-Layer Regenerative Architecture: SLA Credit Automation Decisioning
 
-**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [Enterprise SLA Compliance Monitoring & Credit Automation](../../../telecom/17-enterprise-sla-compliance-monitoring/README.md) (Sequential Pipeline)
+**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [Enterprise SLA Compliance Monitoring & Credit Automation]({{ '/telecom/17-enterprise-sla-compliance-monitoring/' | relative_url }}) (Sequential Pipeline)
 
 This deep-8 view adds proactive at-risk-of-breach alerting to network ops as a first-class L7 output, not just after-the-fact credit calculation — the Quick view found this turns the system from reactive accounting into a retention tool.
 
@@ -61,4 +69,4 @@ Enterprise SLA contracts carry financial penalties that operators often under- o
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

@@ -1,6 +1,15 @@
+---
+layout: default
+title: SIM-Swap Fraud Decisioning — Deep 8-Layer — AgenticWorks
+description: SIM-swap fraud bypasses SMS 2FA to take over banking/crypto accounts.
+  Letting the arbiter be a third LLM vote correlated too much with the proposer's
+  own…
+permalink: /deep8/telecom/07-sim-swap-fraud-detection/
+---
+
 # Deep 8-Layer Regenerative Architecture: SIM-Swap Fraud Decisioning
 
-**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [SIM-Swap & Account-Takeover Fraud Detection](../../../telecom/07-sim-swap-fraud-detection/README.md) (Debate-Critique-Arbiter (Reflective Loop))
+**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [SIM-Swap & Account-Takeover Fraud Detection]({{ '/telecom/07-sim-swap-fraud-detection/' | relative_url }}) (Debate-Critique-Arbiter (Reflective Loop))
 
 This deep-8 view keeps the proposer/critic independence discipline shared with the AML and insider-trading use cases — the same design lesson (shared context causes confirmation bias) was independently re-confirmed here.
 
@@ -61,4 +70,4 @@ SIM-swap fraud bypasses SMS 2FA to take over banking/crypto accounts. Letting th
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

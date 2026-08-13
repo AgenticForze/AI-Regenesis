@@ -1,6 +1,14 @@
+---
+layout: default
+title: Order Fallout Recovery Decisioning — Deep 8-Layer — AgenticWorks
+description: Orders that stall mid-fulfillment pile up in manual work queues. Most
+  fallout falls into recurring patterns a swarm can resolve instantly, but…
+permalink: /deep8/bssoss/04-order-fallout-detection-recovery/
+---
+
 # Deep 8-Layer Regenerative Architecture: Order Fallout Recovery Decisioning
 
-**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Order Fallout Detection & Auto-Recovery](../../../bssoss/04-order-fallout-detection-recovery/README.md) (Event-Driven Reactive Swarm)
+**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Order Fallout Detection & Auto-Recovery]({{ '/bssoss/04-order-fallout-detection-recovery/' | relative_url }}) (Event-Driven Reactive Swarm)
 
 This deep-8 view adds governance and accountability around fallout auto-correction — the reactive swarm from the Quick view still catches events in real time, but every correction now passes through a risk gate and gets tracked for accuracy over time.
 
@@ -62,4 +70,4 @@ Orders that stall mid-fulfillment pile up in manual work queues. Most fallout fa
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

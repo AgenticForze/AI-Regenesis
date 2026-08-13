@@ -1,6 +1,14 @@
+---
+layout: default
+title: Portfolio Rebalancing Decisioning — Deep 8-Layer — AgenticWorks
+description: Automated rebalancing must monitor allocations against tax considerations
+  and fiduciary duty at scale. Tax-lot optimization that only considers one…
+permalink: /deep8/finance/06-robo-advisory-portfolio-rebalancing/
+---
+
 # Deep 8-Layer Regenerative Architecture: Portfolio Rebalancing Decisioning
 
-**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Wealth Management: Robo-Advisory Portfolio Rebalancing](../../../finance/06-robo-advisory-portfolio-rebalancing/README.md) (Sequential Pipeline)
+**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Wealth Management: Robo-Advisory Portfolio Rebalancing]({{ '/finance/06-robo-advisory-portfolio-rebalancing/' | relative_url }}) (Sequential Pipeline)
 
 This deep-8 view builds in the household-level (not single-account) wash-sale checking the Quick view discovered it needed only after an early tax season — a costly gap for a governance layer to have missed.
 
@@ -61,4 +69,4 @@ Automated rebalancing must monitor allocations against tax considerations and fi
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

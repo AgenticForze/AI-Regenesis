@@ -1,6 +1,14 @@
+---
+layout: default
+title: AML Case Investigation & SAR Filing Decisioning — Deep 8-Layer — AgenticWorks
+description: 90-95% of AML alerts are false positives, yet each still requires investigator
+  review to avoid regulatory penalty for a missed suspicious activity. The…
+permalink: /deep8/finance/01-aml-transaction-monitoring-sar/
+---
+
 # Deep 8-Layer Regenerative Architecture: AML Case Investigation & SAR Filing Decisioning
 
-**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [AML Transaction Monitoring & SAR Filing](../../../finance/01-aml-transaction-monitoring-sar/README.md) (Orchestrator-Worker (Supervisor fan-out/fan-in))
+**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [AML Transaction Monitoring & SAR Filing]({{ '/finance/01-aml-transaction-monitoring-sar/' | relative_url }}) (Orchestrator-Worker (Supervisor fan-out/fan-in))
 
 This deep-8 view keeps the Quick view's strict evidence-citation requirement — every SAR narrative sentence must cite its source record — as an explicit, non-bypassable L4 policy rather than a prompting convention, and adds executive visibility into how much investigator time the system is actually saving.
 
@@ -62,4 +70,4 @@ This deep-8 view keeps the Quick view's strict evidence-citation requirement —
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

@@ -1,6 +1,14 @@
+---
+layout: default
+title: Network Fault RCA & Auto-Remediation — Deep 8-Layer — AgenticWorks
+description: A tier-1 operator's NOC receives thousands of correlated alarms per hour
+  during a fault storm. Engineers spend 40–60 minutes correlating alarms to find…
+permalink: /deep8/telecom/01-network-fault-rca-remediation/
+---
+
 # Deep 8-Layer Regenerative Architecture: Network Fault RCA & Auto-Remediation
 
-**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [Multi-Agent Network Fault RCA & Auto-Remediation](../../../telecom/01-network-fault-rca-remediation/README.md) (Orchestrator-Worker (Supervisor fan-out/fan-in))
+**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [Multi-Agent Network Fault RCA & Auto-Remediation]({{ '/telecom/01-network-fault-rca-remediation/' | relative_url }}) (Orchestrator-Worker (Supervisor fan-out/fan-in))
 
 This is the second pilot for the Deep 8-Layer view, chosen deliberately for contrast with the retention example: where retention's L3 is a linear Planner → Execution → Reflection → Confidence chain, this use case's L3 keeps its native orchestrator-worker fan-out (one orchestrator, five parallel specialist agents) — showing the 8-layer model accommodates different internal orchestration shapes rather than forcing every use case into the same L3 pattern.
 
@@ -56,4 +64,4 @@ A tier-1 operator's NOC receives thousands of correlated alarms per hour during 
 **Phase 6 — add L7 and L8.** Build the MTTR/reliability dashboard and the RCA-accuracy retraining loop last.
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

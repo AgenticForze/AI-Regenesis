@@ -1,6 +1,14 @@
+---
+layout: default
+title: Network Inventory Reconciliation Decisioning — Deep 8-Layer — AgenticWorks
+description: OSS inventory drifts out of sync with the physical network over time,
+  cascading into failed provisioning and wasted truck-rolls. Auto-correcting inventory…
+permalink: /deep8/bssoss/05-network-inventory-discovery-reconciliation/
+---
+
 # Deep 8-Layer Regenerative Architecture: Network Inventory Reconciliation Decisioning
 
-**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Network Inventory Discovery & Reconciliation](../../../bssoss/05-network-inventory-discovery-reconciliation/README.md) (Orchestrator-Worker (Supervisor fan-out/fan-in))
+**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Network Inventory Discovery & Reconciliation]({{ '/bssoss/05-network-inventory-discovery-reconciliation/' | relative_url }}) (Orchestrator-Worker (Supervisor fan-out/fan-in))
 
 This deep-8 view wraps inventory discovery in explicit blast-radius governance — bulk corrections always require sign-off, individual low-risk corrections can auto-execute, and leadership gets a direct view of inventory accuracy trends, not just a one-time cleanup report.
 
@@ -62,4 +70,4 @@ OSS inventory drifts out of sync with the physical network over time, cascading 
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

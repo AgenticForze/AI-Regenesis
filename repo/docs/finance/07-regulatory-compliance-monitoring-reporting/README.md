@@ -1,8 +1,16 @@
+---
+layout: default
+title: Regulatory Compliance Monitoring & Reg Reporting — AgenticWorks
+description: Banks must continuously monitor for compliance with a growing patchwork
+  of regulations (Basel III/IV, Dodd-Frank, MiFID II, local reporting) and file…
+permalink: /finance/07-regulatory-compliance-monitoring-reporting/
+---
+
 # 07. Regulatory Compliance Monitoring & Reg Reporting
 
-**Domain:** Financial Services &nbsp;|&nbsp; **Architecture pattern:** [Hierarchical Multi-Agent (Manager-of-Managers)](../../patterns/hierarchical.md)
+**Domain:** Financial Services &nbsp;|&nbsp; **Architecture pattern:** [Hierarchical Multi-Agent (Manager-of-Managers)]({{ '/patterns/hierarchical/' | relative_url }})
 
-> 🧠 **Deep dive available:** this use case also has a full [8-Layer Regenerative Architecture breakdown](../../deep8/finance/07-regulatory-compliance-monitoring-reporting/README.md) — the same problem mapped through L1–L8, with an agent-level tools/technologies stack and a suggested build order by layer.
+> 🧠 **Deep dive available:** this use case also has a full [8-Layer Regenerative Architecture breakdown]({{ '/deep8/finance/07-regulatory-compliance-monitoring-reporting/' | relative_url }}) — the same problem mapped through L1–L8, with an agent-level tools/technologies stack and a suggested build order by layer.
 
 ## 1. Problem Statement & Use Case
 
@@ -29,9 +37,9 @@ The solution is implemented as a **Hierarchical Multi-Agent (Manager-of-Managers
 > This diagram is organized as a **layered architecture**: Data &amp; Integration → Orchestration → Agent →
 > Action &amp; Execution, plus a cross-cutting Observability &amp; Governance layer (tracing, audit log,
 > guardrails, and any human review checkpoint — shown in lavender). See the
-> [E2E Platform Architecture](../../architecture/e2e-platform-architecture.md) for how this layering looks
-> across all 60 use cases at once. A [Mermaid text source](architecture.mmd) of the same diagram is also
-> available in this folder.
+> [E2E Platform Architecture]({{ '/architecture/e2e-platform-architecture/' | relative_url }}) for how this
+> layering looks across all 60 use cases at once. A [Mermaid text source](architecture.mmd) of the same
+> diagram is also available in this folder.
 
 ## 3. Technologies Used (per step)
 
@@ -64,4 +72,4 @@ The solution is implemented as a **Hierarchical Multi-Agent (Manager-of-Managers
 - Cross-jurisdiction rule conflicts (same transaction reportable differently in two regimes) needed a dedicated conflict-resolution sub-agent, added after a near-miss on a filing.
 
 ---
-[← Back to Financial Services index](../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Financial Services index]({{ '/finance/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

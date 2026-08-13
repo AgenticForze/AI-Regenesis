@@ -1,6 +1,14 @@
+---
+layout: default
+title: Network Capacity Investment Decisioning — Deep 8-Layer — AgenticWorks
+description: Network planning teams manually forecast capacity using spreadsheets,
+  missing fast-moving demand shifts. Forecasting was a bottleneck when run strictly…
+permalink: /deep8/telecom/03-capacity-planning-traffic-forecasting/
+---
+
 # Deep 8-Layer Regenerative Architecture: Network Capacity Investment Decisioning
 
-**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [Proactive Capacity Planning & Traffic Forecasting](../../../telecom/03-capacity-planning-traffic-forecasting/README.md) (Sequential Pipeline)
+**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [Proactive Capacity Planning & Traffic Forecasting]({{ '/telecom/03-capacity-planning-traffic-forecasting/' | relative_url }}) (Sequential Pipeline)
 
 This deep-8 view adds scenario-comparison as a first-class L5 output rather than a single recommended plan — the Quick view's own retrospective wished it had offered upgrade-timing alternatives, not just one answer, from the start.
 
@@ -61,4 +69,4 @@ Network planning teams manually forecast capacity using spreadsheets, missing fa
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

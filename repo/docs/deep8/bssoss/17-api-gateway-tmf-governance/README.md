@@ -1,6 +1,14 @@
+---
+layout: default
+title: API Governance & Abuse Response Decisioning — Deep 8-Layer — AgenticWorks
+description: As operators expose more Open APIs, misuse, quota abuse, and contract-breaking
+  changes need real-time detection at scale. Automated throttling without…
+permalink: /deep8/bssoss/17-api-gateway-tmf-governance/
+---
+
 # Deep 8-Layer Regenerative Architecture: API Governance & Abuse Response Decisioning
 
-**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [API Gateway & TMF Open API Orchestration Governance](../../../bssoss/17-api-gateway-tmf-governance/README.md) (Event-Driven Reactive Swarm)
+**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [API Gateway & TMF Open API Orchestration Governance]({{ '/bssoss/17-api-gateway-tmf-governance/' | relative_url }}) (Event-Driven Reactive Swarm)
 
 This deep-8 view adds a conservative-by-default throttling guardrail after the Quick view's own near-miss — an early false positive throttled a legitimate high-volume partner during a peak traffic event.
 
@@ -62,4 +70,4 @@ As operators expose more Open APIs, misuse, quota abuse, and contract-breaking c
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

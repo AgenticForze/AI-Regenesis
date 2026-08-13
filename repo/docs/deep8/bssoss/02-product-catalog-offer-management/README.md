@@ -1,6 +1,14 @@
+---
+layout: default
+title: Product Catalog & Offer Launch Decisioning — Deep 8-Layer — AgenticWorks
+description: Launching a bundled offer requires coordinating pricing, eligibility,
+  and technical service specs across a sprawling catalog. Commercial teams call this…
+permalink: /deep8/bssoss/02-product-catalog-offer-management/
+---
+
 # Deep 8-Layer Regenerative Architecture: Product Catalog & Offer Launch Decisioning
 
-**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Product Catalog & Offer Management Automation](../../../bssoss/02-product-catalog-offer-management/README.md) (Hierarchical Multi-Agent (Manager-of-Managers))
+**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Product Catalog & Offer Management Automation]({{ '/bssoss/02-product-catalog-offer-management/' | relative_url }}) (Hierarchical Multi-Agent (Manager-of-Managers))
 
 This deep-8 view treats every catalog/offer launch as a governed decision, not just a publish action — with margin and legal guardrails before launch, drift detection after launch, and a feedback loop that improves the rules over time, not just faster publishing.
 
@@ -62,4 +70,4 @@ Launching a bundled offer requires coordinating pricing, eligibility, and techni
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

@@ -1,3 +1,10 @@
+---
+layout: default
+title: "E2E Platform Reference Architecture — AgenticWorks"
+description: "How channels, orchestration, the agent mesh, systems of record, and observability/governance fit together across Telecom, BSS/OSS, and Financial Services in one platform shape."
+permalink: /architecture/e2e-platform-architecture/
+---
+
 # E2E Platform Reference Architecture
 
 Every use case in this catalog is a slice of one underlying platform shape. This document zooms out to the

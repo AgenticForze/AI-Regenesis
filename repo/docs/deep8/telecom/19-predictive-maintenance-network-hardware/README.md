@@ -1,6 +1,14 @@
+---
+layout: default
+title: Predictive Maintenance Scheduling Decisioning — Deep 8-Layer — AgenticWorks
+description: Reactive maintenance on RRUs, batteries, and cooling systems leads to
+  unplanned outages. Sensor data quality varied wildly by site vintage, and the…
+permalink: /deep8/telecom/19-predictive-maintenance-network-hardware/
+---
+
 # Deep 8-Layer Regenerative Architecture: Predictive Maintenance Scheduling Decisioning
 
-**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [Predictive Maintenance for Network Hardware](../../../telecom/19-predictive-maintenance-network-hardware/README.md) (Orchestrator-Worker (Supervisor fan-out/fan-in))
+**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [Predictive Maintenance for Network Hardware]({{ '/telecom/19-predictive-maintenance-network-hardware/' | relative_url }}) (Orchestrator-Worker (Supervisor fan-out/fan-in))
 
 This deep-8 view replaces naive score-averaging with correlated-failure-mode awareness at L4 — the Quick view's initial average-based site score under-weighted the fact that a cooling failure often causes a radio failure, not two independent risks.
 
@@ -61,4 +69,4 @@ Reactive maintenance on RRUs, batteries, and cooling systems leads to unplanned 
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

@@ -1,6 +1,14 @@
+---
+layout: default
+title: Trade Settlement Break Resolution Decisioning — Deep 8-Layer — AgenticWorks
+description: Post-trade settlement requires matching trade details before T+1/T+2
+  deadlines. Static data quality (incorrect settlement instructions on file), not…
+permalink: /deep8/finance/19-trade-settlement-reconciliation/
+---
+
 # Deep 8-Layer Regenerative Architecture: Trade Settlement Break Resolution Decisioning
 
-**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Trade Settlement Reconciliation](../../../finance/19-trade-settlement-reconciliation/README.md) (Sequential Pipeline)
+**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Trade Settlement Reconciliation]({{ '/finance/19-trade-settlement-reconciliation/' | relative_url }}) (Sequential Pipeline)
 
 This deep-8 view prioritizes by deadline proximity from the start — the Quick view found deadline-aware triage had the single biggest impact on reducing settlement fails, more than any improvement to matching sophistication itself.
 
@@ -61,4 +69,4 @@ Post-trade settlement requires matching trade details before T+1/T+2 deadlines. 
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

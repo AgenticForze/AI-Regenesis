@@ -1,6 +1,14 @@
+---
+layout: default
+title: Customer Retention Investment Decisioning — Deep 8-Layer — AgenticWorks
+description: A telecom/BSS-OSS operator loses hundreds of millions of dollars a year
+  to preventable churn. Tactical retention bots score risk and dispatch offers, but…
+permalink: /deep8/telecom/05-churn-prediction-winback/
+---
+
 # Deep 8-Layer Regenerative Architecture: Customer Retention Investment Decisioning
 
-**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [Customer Churn Prediction & Win-Back Orchestration](../../../telecom/05-churn-prediction-winback/README.md) (Orchestrator-Worker (Supervisor fan-out/fan-in))
+**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [Customer Churn Prediction & Win-Back Orchestration]({{ '/telecom/05-churn-prediction-winback/' | relative_url }}) (Orchestrator-Worker (Supervisor fan-out/fan-in))
 
 This is the full 8-layer Integrated Decision Engineering Meta-Architecture treatment of the same underlying business problem as Telecom Use Case 05. Where the Quick Reference view shows *one execution pattern* (orchestrator-worker: a supervisor fanning out to parallel specialist agents), this view shows the *entire enterprise stack* that problem sits inside — governance, memory, observability, executive accountability, and the regenerative feedback loop — mapped through the manuscript's L1–L8 model.
 
@@ -54,4 +62,4 @@ A telecom/BSS-OSS operator loses hundreds of millions of dollars a year to preve
 **Phase 6 — add L7 and L8.** Build the executive dashboard last (Metabase against your Postgres decisions table) and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

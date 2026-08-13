@@ -1,6 +1,14 @@
+---
+layout: default
+title: Partner Interconnect Onboarding Decisioning — Deep 8-Layer — AgenticWorks
+description: Onboarding a wholesale partner requires coordinating commercial, technical,
+  billing, and security workstreams. The Quick view's own retrospective notes…
+permalink: /deep8/bssoss/11-wholesale-partner-interconnect-onboarding/
+---
+
 # Deep 8-Layer Regenerative Architecture: Partner Interconnect Onboarding Decisioning
 
-**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Wholesale/Partner Interconnect Onboarding](../../../bssoss/11-wholesale-partner-interconnect-onboarding/README.md) (Orchestrator-Worker (Supervisor fan-out/fan-in))
+**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Wholesale/Partner Interconnect Onboarding]({{ '/bssoss/11-wholesale-partner-interconnect-onboarding/' | relative_url }}) (Orchestrator-Worker (Supervisor fan-out/fan-in))
 
 This deep-8 view turns partner onboarding into a governed go-live decision with a single readiness gate — instead of a project-managed checklist, commercial and security sign-off are explicit, auditable gate conditions.
 
@@ -62,4 +70,4 @@ Onboarding a wholesale partner requires coordinating commercial, technical, bill
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

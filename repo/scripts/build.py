@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import os, sys, json, re
+import yaml as _yaml
 sys.path.insert(0, os.path.dirname(__file__))
 from templates import (orchestrator_worker, hierarchical, pipeline, blackboard,
                         debate_critique, market_based, event_swarm, human_escalation, PATTERNS)
@@ -64,7 +65,31 @@ def build_svg(uc):
 def slug_num(uc):
     return f'{uc["id"]:02d}-{uc["slug"]}'
 
-def render_usecase_md(domain, uc, diagram, deep8_path=None):
+def front_matter(title, description, permalink, extra=None):
+    """
+    Builds a validated Jekyll YAML front matter block. Uses yaml.safe_dump rather than hand-rolled string
+    escaping — generated titles/descriptions often contain colons, ampersands, and arrows (→) that would
+    break naively-quoted YAML, and safe_dump handles all of that correctly regardless of content.
+    """
+    data = {"layout": "default", "title": title, "description": description, "permalink": permalink}
+    if extra:
+        data.update(extra)
+    block = _yaml.safe_dump(data, default_flow_style=False, allow_unicode=True, sort_keys=False)
+    # Validate our own output before it ever reaches disk — catches any future edge case immediately
+    # instead of silently shipping a page Jekyll can't parse.
+    _yaml.safe_load(block)
+    return f"---\n{block}---\n\n"
+
+
+def meta_description(text, max_len=155):
+    text = " ".join(text.split())
+    if len(text) <= max_len:
+        return text
+    cut = text[:max_len].rsplit(" ", 1)[0]
+    return cut + "…"
+
+
+def render_usecase_md(domain, dslug, uc, diagram, deep8_path=None):
     pattern_label = PATTERNS[uc["pattern"]]
     agents_rows = "\n".join(f'| {n} | {r} |' for n, r in uc["agents_table"])
     tech_rows = "\n".join(f'| {step} | {tech} |' for step, tech in uc["tech_table"])
@@ -73,15 +98,22 @@ def render_usecase_md(domain, uc, diagram, deep8_path=None):
     build_order = "\n\n".join(build_order_for(uc))
     deep8_line = (
         f"\n> 🧠 **Deep dive available:** this use case also has a full "
-        f"[8-Layer Regenerative Architecture breakdown]({deep8_path}) — the same problem mapped through "
-        f"L1–L8, with an agent-level tools/technologies stack and a suggested build order by layer.\n"
+        f"[8-Layer Regenerative Architecture breakdown]({{{{ '{deep8_path}' | relative_url }}}}) — the same "
+        f"problem mapped through L1–L8, with an agent-level tools/technologies stack and a suggested build "
+        f"order by layer.\n"
         if deep8_path else
         "\n> 🧠 **Deep 8-Layer Regenerative Architecture:** not yet built for this use case — see the "
-        "[Deep 8-Layer view](../../deep8/README.md) for what's currently available.\n"
+        "[Deep 8-Layer view]({{ '/deep8/' | relative_url }}) for what's currently available.\n"
     )
-    md = f"""# {uc['id']:02d}. {uc['title']}
+    permalink = f"/{dslug}/{slug_num(uc)}/"
+    fm = front_matter(
+        title=f"{uc['title']} — AgenticWorks",
+        description=meta_description(uc["problem"]),
+        permalink=permalink,
+    )
+    md = fm + f"""# {uc['id']:02d}. {uc['title']}
 
-**Domain:** {domain} &nbsp;|&nbsp; **Architecture pattern:** [{pattern_label}](../../patterns/{uc['pattern']}.md)
+**Domain:** {domain} &nbsp;|&nbsp; **Architecture pattern:** [{pattern_label}]({{{{ '/patterns/{uc['pattern']}/' | relative_url }}}})
 {deep8_line}
 ## 1. Problem Statement & Use Case
 
@@ -103,9 +135,9 @@ The solution is implemented as a **{pattern_label}** architecture. {human_gate_l
 > This diagram is organized as a **layered architecture**: Data &amp; Integration → Orchestration → Agent →
 > Action &amp; Execution, plus a cross-cutting Observability &amp; Governance layer (tracing, audit log,
 > guardrails, and any human review checkpoint — shown in lavender). See the
-> [E2E Platform Architecture](../../architecture/e2e-platform-architecture.md) for how this layering looks
-> across all 60 use cases at once. A [Mermaid text source](architecture.mmd) of the same diagram is also
-> available in this folder.
+> [E2E Platform Architecture]({{{{ '/architecture/e2e-platform-architecture/' | relative_url }}}}) for how this
+> layering looks across all 60 use cases at once. A [Mermaid text source](architecture.mmd) of the same
+> diagram is also available in this folder.
 
 ## 3. Technologies Used (per step)
 
@@ -122,16 +154,24 @@ The solution is implemented as a **{pattern_label}** architecture. {human_gate_l
 {retro}
 
 ---
-[← Back to {domain} index](../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to {domain} index]({{{{ '/{dslug}/' | relative_url }}}}) &nbsp;|&nbsp; [← Back to home]({{{{ '/' | relative_url }}}})
 """
     return md
 
 def render_domain_index(domain, domain_slug, use_cases):
     rows = "\n".join(
-        f'| {uc["id"]:02d} | [{uc["title"]}]({slug_num(uc)}/README.md) | {PATTERNS[uc["pattern"]]} |'
+        f"| {uc['id']:02d} | [{uc['title']}]({{{{ '/{domain_slug}/{slug_num(uc)}/' | relative_url }}}}) | {PATTERNS[uc['pattern']]} |"
         for uc in use_cases
     )
-    return f"""# {domain} — Multi-Agent Use Case Catalog
+    fm = front_matter(
+        title=f"{domain} Use Cases — AgenticWorks",
+        description=meta_description(
+            f"{len(use_cases)} real multi-agent AI architecture use cases for {domain}, each with a problem "
+            f"statement, architecture diagram, agent table, and honest retrospective."
+        ),
+        permalink=f"/{domain_slug}/",
+    )
+    return fm + f"""# {domain} — Multi-Agent Use Case Catalog
 
 {len(use_cases)} use cases covering the major {domain.lower()} workflows where multi-agent architectures deliver measurable value: from real-time detection/decisioning to long-running investigation and orchestration workflows.
 
@@ -140,13 +180,13 @@ def render_domain_index(domain, domain_slug, use_cases):
 {rows}
 
 ---
-[← Back to home](../../README.md)
+[← Back to home]({{{{ '/' | relative_url }}}})
 """
 
 def render_pattern_doc(pattern_key, label, all_ucs):
     matches = [(dom, dslug, uc) for dom, dslug, uc in all_ucs if uc["pattern"] == pattern_key]
     rows = "\n".join(
-        f'| {dom} | [{uc["title"]}](../docs/{dslug}/{slug_num(uc)}/README.md) |'
+        f"| {dom} | [{uc['title']}]({{{{ '/{dslug}/{slug_num(uc)}/' | relative_url }}}}) |"
         for dom, dslug, uc in matches
     )
     descriptions = {
@@ -159,9 +199,15 @@ def render_pattern_doc(pattern_key, label, all_ucs):
       "event-swarm": "Lightweight agents subscribe to a shared **event bus** and react independently and asynchronously to relevant events, publishing their own findings/actions back to the bus. Best for latency-critical, always-on monitoring where centralized orchestration would add unacceptable latency (real-time fraud scoring, self-healing networks).",
       "human-escalation": "A chain of automation agents attempts full resolution, gated by a **confidence/risk gate** that routes low-confidence or high-risk cases to a human specialist, whose decision feeds back into the automated action layer. Best for regulated or high-consequence decisions where full autonomy is inappropriate but full manual handling doesn't scale.",
     }
-    return f"""# Pattern: {label}
+    desc_text = descriptions.get(pattern_key, "")
+    fm = front_matter(
+        title=f"{label} Pattern — AgenticWorks",
+        description=meta_description(re.sub(r"\*\*", "", desc_text)),
+        permalink=f"/patterns/{pattern_key}/",
+    )
+    return fm + f"""# Pattern: {label}
 
-{descriptions.get(pattern_key, "")}
+{desc_text}
 
 ## Use cases using this pattern
 
@@ -170,18 +216,23 @@ def render_pattern_doc(pattern_key, label, all_ucs):
 {rows}
 
 ---
-[← Back to home](../README.md)
+[← Back to home]({{{{ '/' | relative_url }}}})
 """
 
-def render_deep8_md(pilot, quick_path, blueprint_svg_name, diagram_svg_name):
+def render_deep8_md(pilot, quick_path, blueprint_svg_name, diagram_svg_name, permalink):
     agent_rows = "\n".join(
         f"| {layer} | {name} | {purpose} | {io} | {learn} | {prod} |"
         for layer, name, purpose, io, learn, prod in pilot["agent_stack"]
     )
     build_order = "\n\n".join(pilot["build_order"])
-    return f"""# Deep 8-Layer Regenerative Architecture: {pilot['title']}
+    fm = front_matter(
+        title=f"{pilot['title']} — Deep 8-Layer — AgenticWorks",
+        description=meta_description(pilot["problem"]),
+        permalink=permalink,
+    )
+    return fm + f"""# Deep 8-Layer Regenerative Architecture: {pilot['title']}
 
-**Domain:** {pilot.get('domain', 'Telecommunications')} &nbsp;|&nbsp; **Quick Reference counterpart:** [{pilot['quick_title']}]({quick_path}) ({pilot['quick_pattern_label']})
+**Domain:** {pilot.get('domain', 'Telecommunications')} &nbsp;|&nbsp; **Quick Reference counterpart:** [{pilot['quick_title']}]({{{{ '{quick_path}' | relative_url }}}}) ({pilot['quick_pattern_label']})
 
 {pilot['intro']}
 
@@ -210,7 +261,7 @@ def render_deep8_md(pilot, quick_path, blueprint_svg_name, diagram_svg_name):
 {build_order}
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{{{ '/deep8/' | relative_url }}}}) &nbsp;|&nbsp; [← Back to home]({{{{ '/' | relative_url }}}})
 """
 
 def main():
@@ -242,17 +293,18 @@ def main():
             f.write(diagram_svg)
         with open(os.path.join(deep_dir, "blueprint.svg"), "w") as f:
             f.write(blueprint_svg)
-        quick_rel_path = f"../../../{dslug}/{qslug}/README.md"
+        quick_permalink = f"/{dslug}/{qslug}/"
+        deep8_permalink = f"/deep8/{dslug}/{qslug}/"
         pilot_like = {
             "title": title, "quick_title": quick_title, "quick_pattern_label": quick_pattern_label,
             "intro": intro, "problem": problem, "diagram_note": diagram_note,
             "agent_stack": agent_stack, "build_order": build_order, "domain": domain,
         }
-        deep_md = render_deep8_md(pilot_like, quick_rel_path, "blueprint.svg", "diagram.svg")
+        deep_md = render_deep8_md(pilot_like, quick_permalink, "blueprint.svg", "diagram.svg", deep8_permalink)
         with open(os.path.join(deep_dir, "README.md"), "w") as f:
             f.write(deep_md)
 
-        deep8_lookup[(dslug, ucid)] = f"../../deep8/{dslug}/{qslug}/README.md"
+        deep8_lookup[(dslug, ucid)] = deep8_permalink
         deep8_available_ids.add((dslug, ucid))
         deep8_json.append({
             "domain": domain, "domain_slug": dslug, "id": ucid, "title": title,
@@ -296,7 +348,7 @@ def main():
             ucdir = os.path.join(ddir, slug_num(uc))
             os.makedirs(ucdir, exist_ok=True)
             deep8_path = deep8_lookup.get((dslug, uc["id"]))
-            md = render_usecase_md(domain, uc, diagram, deep8_path)
+            md = render_usecase_md(domain, dslug, uc, diagram, deep8_path)
             with open(os.path.join(ucdir, "README.md"), "w") as f:
                 f.write(md)
             with open(os.path.join(ucdir, "architecture.mmd"), "w") as f:
@@ -322,7 +374,7 @@ def main():
             f.write(render_domain_index(domain, dslug, use_cases))
 
     # patterns
-    pdir = os.path.join(ROOT, "patterns")
+    pdir = os.path.join(DOCS, "patterns")
     os.makedirs(pdir, exist_ok=True)
     for pkey, label in PATTERNS.items():
         with open(os.path.join(pdir, f"{pkey}.md"), "w") as f:
@@ -343,22 +395,30 @@ def main():
         for r in rows:
             if r["available"]:
                 dslug = r["domain_slug"]
-                link = f'[Available →](../deep8/{dslug}/{r["qslug"]}/README.md)'
+                link = f"[Available →]({{{{ '/deep8/{dslug}/{r['qslug']}/' | relative_url }}}})"
             else:
                 link = "Coming soon"
             lines.append(f'| {r["id"]:02d} | {r["title"]} | {link} |')
         domain_sections.append("\n".join(lines))
-    deep8_index_md = f"""# Deep 8-Layer Regenerative Architecture — Index
+    fm = front_matter(
+        title="Deep 8-Layer Regenerative Architecture — AgenticWorks",
+        description=meta_description(
+            "The Deep 8-Layer view maps every use case through the full Integrated Decision Engineering "
+            "Meta-Architecture, from foundational data through the regenerative feedback loop."
+        ),
+        permalink="/deep8/",
+    )
+    deep8_index_md = fm + f"""# Deep 8-Layer Regenerative Architecture — Index
 
 The Deep 8-Layer view maps a use case through the full Integrated Decision Engineering Meta-Architecture
 (L1 Foundational Data & Infrastructure → L8 Feedback & Reinforcement Loops), with an agent-level tools/technologies
 stack and a suggested build order by layer. This is a deeper, slower-to-build companion to the
-[Quick Reference Architecture](../../README.md) — {"now available for all 60 use cases across Telecom, Financial Services, and BSS/OSS." if len(deep8_available_ids) == 60 else f"currently available for {len(deep8_available_ids)} of 60 use cases, with the rest on the roadmap."}
+[Quick Reference Architecture]({{{{ '/' | relative_url }}}}) — {"now available for all 60 use cases across Telecom, Financial Services, and BSS/OSS." if len(deep8_available_ids) == 60 else f"currently available for {len(deep8_available_ids)} of 60 use cases, with the rest on the roadmap."}
 
 {chr(10).join(domain_sections)}
 
 ---
-[← Back to home](../../README.md)
+[← Back to home]({{{{ '/' | relative_url }}}})
 """
     with open(os.path.join(deep8_dir, "README.md"), "w") as f:
         f.write(deep8_index_md)
@@ -414,6 +474,11 @@ stack and a suggested build order by layer. This is a deeper, slower-to-build co
         }
         html = tmpl.replace("__DATA_JSON__", json.dumps(payload))
         with open(os.path.join(ROOT, "website", "index.html"), "w") as f:
+            f.write(html)
+        # Also write to docs/index.html — this is the file GitHub Pages actually serves as the homepage
+        # once Pages is set to build from /docs. No Jekyll front matter here on purpose (starts with
+        # <!DOCTYPE html>, not "---"), so Jekyll copies it through untouched rather than trying to process it.
+        with open(os.path.join(DOCS, "index.html"), "w") as f:
             f.write(html)
 
     print(f"Built {len(catalog_json)} use cases. Deep 8-Layer available for {len(deep8_available_ids)}.")

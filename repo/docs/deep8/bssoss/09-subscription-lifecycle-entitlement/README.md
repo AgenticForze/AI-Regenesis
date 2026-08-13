@@ -1,6 +1,14 @@
+---
+layout: default
+title: Subscription Entitlement Accuracy Decisioning — Deep 8-Layer — AgenticWorks
+description: Bundled subscriptions (streaming, cloud storage, device insurance) must
+  stay perfectly synchronized between entitlement state and billing state across…
+permalink: /deep8/bssoss/09-subscription-lifecycle-entitlement/
+---
+
 # Deep 8-Layer Regenerative Architecture: Subscription Entitlement Accuracy Decisioning
 
-**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Subscription Lifecycle & Entitlement Management](../../../bssoss/09-subscription-lifecycle-entitlement/README.md) (Hierarchical Multi-Agent (Manager-of-Managers))
+**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Subscription Lifecycle & Entitlement Management]({{ '/bssoss/09-subscription-lifecycle-entitlement/' | relative_url }}) (Hierarchical Multi-Agent (Manager-of-Managers))
 
 This deep-8 view adds the entitlement-drift monitoring the Quick view's own retrospective wished it had built first — proactive drift detection is now a first-class L6 component, not an afterthought discovered through customer complaints.
 
@@ -61,4 +69,4 @@ Bundled subscriptions (streaming, cloud storage, device insurance) must stay per
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

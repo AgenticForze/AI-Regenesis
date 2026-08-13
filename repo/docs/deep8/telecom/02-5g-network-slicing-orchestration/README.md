@@ -1,6 +1,14 @@
+---
+layout: default
+title: 5G Network Slice Design & Assurance Decisioning — Deep 8-Layer — AgenticWorks
+description: Enterprises request bespoke 5G slices with different SLAs, and manually
+  designing and assuring each slice across RAN, transport, and core takes weeks.…
+permalink: /deep8/telecom/02-5g-network-slicing-orchestration/
+---
+
 # Deep 8-Layer Regenerative Architecture: 5G Network Slice Design & Assurance Decisioning
 
-**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [5G Network Slice Lifecycle Orchestration](../../../telecom/02-5g-network-slicing-orchestration/README.md) (Hierarchical Multi-Agent (Manager-of-Managers))
+**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [5G Network Slice Lifecycle Orchestration]({{ '/telecom/02-5g-network-slicing-orchestration/' | relative_url }}) (Hierarchical Multi-Agent (Manager-of-Managers))
 
 This deep-8 view makes cross-domain conflict resolution an explicit L4 governance function — the Quick view's own retrospective found domain managers initially couldn't jointly resolve conflicting resource constraints, only escalate past each other.
 
@@ -61,4 +69,4 @@ Enterprises request bespoke 5G slices with different SLAs, and manually designin
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

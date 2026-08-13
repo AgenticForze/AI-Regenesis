@@ -1,6 +1,14 @@
+---
+layout: default
+title: Plan Upsell Recommendation Decisioning — Deep 8-Layer — AgenticWorks
+description: Generic upsell campaigns have low conversion and can push customers onto
+  poor-fit plans. Fit thresholds were initially expert-guessed and too…
+permalink: /deep8/telecom/20-personalized-plan-upsell-agent/
+---
+
 # Deep 8-Layer Regenerative Architecture: Plan Upsell Recommendation Decisioning
 
-**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [Personalized Plan Recommendation & Upsell Agent](../../../telecom/20-personalized-plan-upsell-agent/README.md) (Debate-Critique-Arbiter (Reflective Loop))
+**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [Personalized Plan Recommendation & Upsell Agent]({{ '/telecom/20-personalized-plan-upsell-agent/' | relative_url }}) (Debate-Critique-Arbiter (Reflective Loop))
 
 This deep-8 view mirrors the Finance domain's Next-Best-Action use case's core discipline — a hard minimum customer-fit threshold the arbiter cannot override for revenue reasons — applied here to telecom plan recommendations instead of financial products.
 
@@ -61,4 +69,4 @@ Generic upsell campaigns have low conversion and can push customers onto poor-fi
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

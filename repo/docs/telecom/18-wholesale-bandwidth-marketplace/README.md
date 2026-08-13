@@ -1,8 +1,16 @@
+---
+layout: default
+title: Wholesale Bandwidth Marketplace (Capacity Trading) — AgenticWorks
+description: Operators with excess backbone/transit capacity in some routes and shortages
+  in others could trade capacity wholesale, but manual bilateral negotiation is…
+permalink: /telecom/18-wholesale-bandwidth-marketplace/
+---
+
 # 18. Wholesale Bandwidth Marketplace (Capacity Trading)
 
-**Domain:** Telecommunications &nbsp;|&nbsp; **Architecture pattern:** [Market-Based / Auction Agents](../../patterns/market-based.md)
+**Domain:** Telecommunications &nbsp;|&nbsp; **Architecture pattern:** [Market-Based / Auction Agents]({{ '/patterns/market-based/' | relative_url }})
 
-> 🧠 **Deep dive available:** this use case also has a full [8-Layer Regenerative Architecture breakdown](../../deep8/telecom/18-wholesale-bandwidth-marketplace/README.md) — the same problem mapped through L1–L8, with an agent-level tools/technologies stack and a suggested build order by layer.
+> 🧠 **Deep dive available:** this use case also has a full [8-Layer Regenerative Architecture breakdown]({{ '/deep8/telecom/18-wholesale-bandwidth-marketplace/' | relative_url }}) — the same problem mapped through L1–L8, with an agent-level tools/technologies stack and a suggested build order by layer.
 
 ## 1. Problem Statement & Use Case
 
@@ -28,9 +36,9 @@ The solution is implemented as a **Market-Based / Auction Agents** architecture.
 > This diagram is organized as a **layered architecture**: Data &amp; Integration → Orchestration → Agent →
 > Action &amp; Execution, plus a cross-cutting Observability &amp; Governance layer (tracing, audit log,
 > guardrails, and any human review checkpoint — shown in lavender). See the
-> [E2E Platform Architecture](../../architecture/e2e-platform-architecture.md) for how this layering looks
-> across all 60 use cases at once. A [Mermaid text source](architecture.mmd) of the same diagram is also
-> available in this folder.
+> [E2E Platform Architecture]({{ '/architecture/e2e-platform-architecture/' | relative_url }}) for how this
+> layering looks across all 60 use cases at once. A [Mermaid text source](architecture.mmd) of the same
+> diagram is also available in this folder.
 
 ## 3. Technologies Used (per step)
 
@@ -63,4 +71,4 @@ The solution is implemented as a **Market-Based / Auction Agents** architecture.
 - Legal review of auto-generated contracts was a bottleneck; would pre-approve a narrower set of standard contract templates to reduce review overhead.
 
 ---
-[← Back to Telecommunications index](../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Telecommunications index]({{ '/telecom/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

@@ -1,6 +1,15 @@
+---
+layout: default
+title: Chargeback Representment Decisioning — Deep 8-Layer — AgenticWorks
+description: Chargeback disputes require assembling evidence within tight network
+  deadlines. A missed deadline is an automatic loss regardless of evidence quality,
+  and…
+permalink: /deep8/finance/11-chargeback-dispute-resolution/
+---
+
 # Deep 8-Layer Regenerative Architecture: Chargeback Representment Decisioning
 
-**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Customer Dispute & Chargeback Resolution](../../../finance/11-chargeback-dispute-resolution/README.md) (Sequential Pipeline)
+**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Customer Dispute & Chargeback Resolution]({{ '/finance/11-chargeback-dispute-resolution/' | relative_url }}) (Sequential Pipeline)
 
 This deep-8 view prioritizes by win-probability before committing resources to a full representment package — the Quick view found many early low-probability disputes weren't worth the operational cost to contest.
 
@@ -61,4 +70,4 @@ Chargeback disputes require assembling evidence within tight network deadlines. 
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

@@ -1,6 +1,14 @@
+---
+layout: default
+title: Partner Settlement Transparency Decisioning — Deep 8-Layer — AgenticWorks
+description: Revenue-share settlement across partners involves complex, often-disputed
+  calculations. The Quick view found that dispute volume dropped more from…
+permalink: /deep8/bssoss/19-partner-revenue-share-settlement/
+---
+
 # Deep 8-Layer Regenerative Architecture: Partner Settlement Transparency Decisioning
 
-**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Partner Revenue Share & Settlement Automation](../../../bssoss/19-partner-revenue-share-settlement/README.md) (Market-Based / Auction Agents)
+**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Partner Revenue Share & Settlement Automation]({{ '/bssoss/19-partner-revenue-share-settlement/' | relative_url }}) (Market-Based / Auction Agents)
 
 This deep-8 view makes the partner-facing calculation transparency portal — the Quick view's own single highest-leverage addition — an explicit L5 component from the start, not a later retrofit after dispute volume proved the point.
 
@@ -61,4 +69,4 @@ Revenue-share settlement across partners involves complex, often-disputed calcul
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

@@ -1,6 +1,14 @@
+---
+layout: default
+title: Social Sentiment Response Decisioning — Deep 8-Layer — AgenticWorks
+description: Service outages trend on social media faster than internal monitoring
+  detects them. Sarcasm and negation handling was a major early accuracy gap, and…
+permalink: /deep8/telecom/15-sentiment-social-listening-action/
+---
+
 # Deep 8-Layer Regenerative Architecture: Social Sentiment Response Decisioning
 
-**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [Customer Sentiment & Social Listening to Action](../../../telecom/15-sentiment-social-listening-action/README.md) (Event-Driven Reactive Swarm)
+**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [Customer Sentiment & Social Listening to Action]({{ '/telecom/15-sentiment-social-listening-action/' | relative_url }}) (Event-Driven Reactive Swarm)
 
 This deep-8 view keeps the Quick view's hard constraint — every public-facing response requires human approval, no exceptions — as a permanent L4 policy even as other automation in the system matures.
 
@@ -61,4 +69,4 @@ Service outages trend on social media faster than internal monitoring detects th
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

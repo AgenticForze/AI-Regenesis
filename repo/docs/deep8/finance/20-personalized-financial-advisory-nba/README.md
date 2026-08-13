@@ -1,6 +1,14 @@
+---
+layout: default
+title: Next-Best-Action Recommendation Decisioning — Deep 8-Layer — AgenticWorks
+description: Proactive financial recommendations must balance business value against
+  genuine customer benefit. Without outcome tracking, there's no way to prove the…
+permalink: /deep8/finance/20-personalized-financial-advisory-nba/
+---
+
 # Deep 8-Layer Regenerative Architecture: Next-Best-Action Recommendation Decisioning
 
-**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Personalized Financial Advisory & Next-Best-Action](../../../finance/20-personalized-financial-advisory-nba/README.md) (Debate-Critique-Arbiter (Reflective Loop))
+**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Personalized Financial Advisory & Next-Best-Action]({{ '/finance/20-personalized-financial-advisory-nba/' | relative_url }}) (Debate-Critique-Arbiter (Reflective Loop))
 
 This deep-8 view makes the minimum customer-wellbeing-benefit threshold a hard L4 policy the arbiter cannot override for revenue reasons — the direct lesson carried over from watching purely revenue-optimized recommenders erode long-term customer trust.
 
@@ -61,4 +69,4 @@ Proactive financial recommendations must balance business value against genuine 
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

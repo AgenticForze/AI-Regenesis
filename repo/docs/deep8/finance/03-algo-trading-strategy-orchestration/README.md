@@ -1,6 +1,14 @@
+---
+layout: default
+title: Trading Capital Allocation Decisioning — Deep 8-Layer — AgenticWorks
+description: Multiple alpha strategies compete for the same risk budget and execution
+  capacity. An early version routed borderline allocation cases through an LLM and…
+permalink: /deep8/finance/03-algo-trading-strategy-orchestration/
+---
+
 # Deep 8-Layer Regenerative Architecture: Trading Capital Allocation Decisioning
 
-**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Algorithmic Trading Strategy Orchestration](../../../finance/03-algo-trading-strategy-orchestration/README.md) (Market-Based / Auction Agents)
+**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Algorithmic Trading Strategy Orchestration]({{ '/finance/03-algo-trading-strategy-orchestration/' | relative_url }}) (Market-Based / Auction Agents)
 
 This deep-8 view preserves the Quick view's most important design decision — LLM reasoning stays entirely out of the latency-critical bid/execution loop, used only for offline reporting — and gives the independent Risk Guardrail absolute veto power from the start, not as advisory-only.
 
@@ -61,4 +69,4 @@ Multiple alpha strategies compete for the same risk budget and execution capacit
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

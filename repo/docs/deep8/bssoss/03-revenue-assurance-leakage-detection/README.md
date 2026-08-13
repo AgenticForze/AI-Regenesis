@@ -1,6 +1,14 @@
+---
+layout: default
+title: Revenue Leakage Detection & Recovery Decisioning — Deep 8-Layer — AgenticWorks
+description: Revenue leakage typically runs 1-3% of telecom revenue and is scattered
+  across mediation, rating, billing, and provisioning systems. Detection alone…
+permalink: /deep8/bssoss/03-revenue-assurance-leakage-detection/
+---
+
 # Deep 8-Layer Regenerative Architecture: Revenue Leakage Detection & Recovery Decisioning
 
-**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Revenue Assurance & Leakage Detection](../../../bssoss/03-revenue-assurance-leakage-detection/README.md) (Blackboard / Shared-Memory)
+**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Revenue Assurance & Leakage Detection]({{ '/bssoss/03-revenue-assurance-leakage-detection/' | relative_url }}) (Blackboard / Shared-Memory)
 
 This deep-8 view turns leakage detection from a reporting exercise into a governed recovery decision system — auto-correcting only what's high-confidence, routing the rest to finance, and tracking recovered-vs-at-risk revenue for leadership.
 
@@ -62,4 +70,4 @@ Revenue leakage typically runs 1-3% of telecom revenue and is scattered across m
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

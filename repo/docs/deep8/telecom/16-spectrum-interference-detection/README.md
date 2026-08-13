@@ -1,6 +1,14 @@
+---
+layout: default
+title: Spectrum Interference Mitigation Decisioning — Deep 8-Layer — AgenticWorks
+description: Unlicensed spectrum use or faulty equipment degrades performance in hard-to-diagnose
+  ways. Triangulation accuracy was highly sensitive to sensor density,…
+permalink: /deep8/telecom/16-spectrum-interference-detection/
+---
+
 # Deep 8-Layer Regenerative Architecture: Spectrum Interference Mitigation Decisioning
 
-**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [Spectrum Interference Detection & Mitigation](../../../telecom/16-spectrum-interference-detection/README.md) (Orchestrator-Worker (Supervisor fan-out/fan-in))
+**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [Spectrum Interference Detection & Mitigation]({{ '/telecom/16-spectrum-interference-detection/' | relative_url }}) (Orchestrator-Worker (Supervisor fan-out/fan-in))
 
 This deep-8 view integrates equipment inventory data as a first-class L1 source from the start — the Quick view found many early 'interference' cases were actually the operator's own faulty equipment, missed by a triangulation-only flow.
 
@@ -61,4 +69,4 @@ Unlicensed spectrum use or faulty equipment degrades performance in hard-to-diag
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

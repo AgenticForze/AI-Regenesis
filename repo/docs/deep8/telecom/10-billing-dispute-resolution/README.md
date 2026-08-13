@@ -1,6 +1,14 @@
+---
+layout: default
+title: Billing Dispute Resolution Decisioning — Deep 8-Layer — AgenticWorks
+description: Billing disputes require pulling data across billing, rating, mediation,
+  and CRM systems. Parallelizing evidence-gathering calls rather than running them…
+permalink: /deep8/telecom/10-billing-dispute-resolution/
+---
+
 # Deep 8-Layer Regenerative Architecture: Billing Dispute Resolution Decisioning
 
-**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [Billing Dispute Investigation & Resolution](../../../telecom/10-billing-dispute-resolution/README.md) (Sequential Pipeline)
+**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [Billing Dispute Investigation & Resolution]({{ '/telecom/10-billing-dispute-resolution/' | relative_url }}) (Sequential Pipeline)
 
 This deep-8 view keeps credit calculation strictly in a deterministic rules engine after the Quick view's own early prototype produced a plausible-but-wrong dollar amount — a hard lesson on where generative reasoning cannot be trusted, echoed across several other use cases in this catalog.
 
@@ -61,4 +69,4 @@ Billing disputes require pulling data across billing, rating, mediation, and CRM
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

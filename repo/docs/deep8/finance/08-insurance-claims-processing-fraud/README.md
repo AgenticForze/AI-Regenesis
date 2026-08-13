@@ -1,6 +1,14 @@
+---
+layout: default
+title: Insurance Claims Settlement Decisioning — Deep 8-Layer — AgenticWorks
+description: Claims require damage assessment, coverage verification, fraud screening,
+  and settlement calculation. Image-based damage assessment needed human adjuster…
+permalink: /deep8/finance/08-insurance-claims-processing-fraud/
+---
+
 # Deep 8-Layer Regenerative Architecture: Insurance Claims Settlement Decisioning
 
-**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Insurance Claims Processing & Fraud Detection](../../../finance/08-insurance-claims-processing-fraud/README.md) (Orchestrator-Worker (Supervisor fan-out/fan-in))
+**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Insurance Claims Processing & Fraud Detection]({{ '/finance/08-insurance-claims-processing-fraud/' | relative_url }}) (Orchestrator-Worker (Supervisor fan-out/fan-in))
 
 This deep-8 view scales auto-settlement dollar caps down for newer, riskier claim types instead of using one global threshold — the Quick view's own retrospective found a single global cap overpaid a class of low-frequency, high-severity claims.
 
@@ -62,4 +70,4 @@ Claims require damage assessment, coverage verification, fraud screening, and se
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

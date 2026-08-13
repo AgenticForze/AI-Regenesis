@@ -1,6 +1,14 @@
+---
+layout: default
+title: Closed-Loop Network Remediation Decisioning — Deep 8-Layer — AgenticWorks
+description: Transient network degradations need sub-minute autonomous reaction. A
+  shared blast-radius guardrail was missing in v1, and lower-trust agents initially…
+permalink: /deep8/telecom/04-self-healing-network-closed-loop/
+---
+
 # Deep 8-Layer Regenerative Architecture: Closed-Loop Network Remediation Decisioning
 
-**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [Self-Healing Network (Closed-Loop Automation)](../../../telecom/04-self-healing-network-closed-loop/README.md) (Event-Driven Reactive Swarm)
+**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [Self-Healing Network (Closed-Loop Automation)]({{ '/telecom/04-self-healing-network-closed-loop/' | relative_url }}) (Event-Driven Reactive Swarm)
 
 This deep-8 view makes the shared blast-radius rate-limiter — added only after two agents independently restarting adjacent CNFs caused a cascading outage in the Quick view — a non-negotiable L4 policy from the start, and separates 'decide' from 'act' permissions per agent as the Quick view's own retrospective recommended.
 
@@ -61,4 +69,4 @@ Transient network degradations need sub-minute autonomous reaction. A shared bla
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

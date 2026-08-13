@@ -1,6 +1,15 @@
+---
+layout: default
+title: Order-to-Activation Fulfillment Decisioning — Deep 8-Layer — AgenticWorks
+description: A single customer order fans out into dozens of downstream tasks across
+  CRM, catalog, provisioning, and billing. Static workflow engines break silently
+  on…
+permalink: /deep8/bssoss/01-order-to-activation-orchestration/
+---
+
 # Deep 8-Layer Regenerative Architecture: Order-to-Activation Fulfillment Decisioning
 
-**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Order-to-Activation Orchestration](../../../bssoss/01-order-to-activation-orchestration/README.md) (Sequential Pipeline)
+**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Order-to-Activation Orchestration]({{ '/bssoss/01-order-to-activation-orchestration/' | relative_url }}) (Sequential Pipeline)
 
 This deep-8 view takes the order-to-activation pipeline beyond task execution into a governed, observable, self-improving decision system — a fulfillment engine that knows when to auto-execute, when to ask a human, and when to hold and escalate, with executive-level cost/cycle-time visibility.
 
@@ -63,4 +72,4 @@ A single customer order fans out into dozens of downstream tasks across CRM, cat
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

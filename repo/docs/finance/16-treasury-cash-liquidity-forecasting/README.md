@@ -1,8 +1,16 @@
+---
+layout: default
+title: Treasury Cash Management & Liquidity Forecasting — AgenticWorks
+description: Corporate and bank treasury functions need accurate, near-real-time visibility
+  into cash positions across many accounts/entities/currencies to optimize…
+permalink: /finance/16-treasury-cash-liquidity-forecasting/
+---
+
 # 16. Treasury Cash Management & Liquidity Forecasting
 
-**Domain:** Financial Services &nbsp;|&nbsp; **Architecture pattern:** [Orchestrator-Worker (Supervisor fan-out/fan-in)](../../patterns/orchestrator-worker.md)
+**Domain:** Financial Services &nbsp;|&nbsp; **Architecture pattern:** [Orchestrator-Worker (Supervisor fan-out/fan-in)]({{ '/patterns/orchestrator-worker/' | relative_url }})
 
-> 🧠 **Deep dive available:** this use case also has a full [8-Layer Regenerative Architecture breakdown](../../deep8/finance/16-treasury-cash-liquidity-forecasting/README.md) — the same problem mapped through L1–L8, with an agent-level tools/technologies stack and a suggested build order by layer.
+> 🧠 **Deep dive available:** this use case also has a full [8-Layer Regenerative Architecture breakdown]({{ '/deep8/finance/16-treasury-cash-liquidity-forecasting/' | relative_url }}) — the same problem mapped through L1–L8, with an agent-level tools/technologies stack and a suggested build order by layer.
 
 ## 1. Problem Statement & Use Case
 
@@ -31,9 +39,9 @@ The solution is implemented as a **Orchestrator-Worker (Supervisor fan-out/fan-i
 > This diagram is organized as a **layered architecture**: Data &amp; Integration → Orchestration → Agent →
 > Action &amp; Execution, plus a cross-cutting Observability &amp; Governance layer (tracing, audit log,
 > guardrails, and any human review checkpoint — shown in lavender). See the
-> [E2E Platform Architecture](../../architecture/e2e-platform-architecture.md) for how this layering looks
-> across all 60 use cases at once. A [Mermaid text source](architecture.mmd) of the same diagram is also
-> available in this folder.
+> [E2E Platform Architecture]({{ '/architecture/e2e-platform-architecture/' | relative_url }}) for how this
+> layering looks across all 60 use cases at once. A [Mermaid text source](architecture.mmd) of the same
+> diagram is also available in this folder.
 
 ## 3. Technologies Used (per step)
 
@@ -66,4 +74,4 @@ The solution is implemented as a **Orchestrator-Worker (Supervisor fan-out/fan-i
 - Cross-currency netting optimization needed real transfer-cost data per banking corridor, which was more heterogeneous than initially modeled — required significant refinement post-launch.
 
 ---
-[← Back to Financial Services index](../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Financial Services index]({{ '/finance/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

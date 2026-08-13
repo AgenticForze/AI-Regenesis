@@ -1,6 +1,14 @@
+---
+layout: default
+title: Treasury Liquidity Action Decisioning — Deep 8-Layer — AgenticWorks
+description: Treasury needs near-real-time visibility into cash positions across many
+  accounts, entities, and currencies. Cash flow forecasting accuracy depends…
+permalink: /deep8/finance/16-treasury-cash-liquidity-forecasting/
+---
+
 # Deep 8-Layer Regenerative Architecture: Treasury Liquidity Action Decisioning
 
-**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Treasury Cash Management & Liquidity Forecasting](../../../finance/16-treasury-cash-liquidity-forecasting/README.md) (Orchestrator-Worker (Supervisor fan-out/fan-in))
+**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Treasury Cash Management & Liquidity Forecasting]({{ '/finance/16-treasury-cash-liquidity-forecasting/' | relative_url }}) (Orchestrator-Worker (Supervisor fan-out/fan-in))
 
 This deep-8 view builds segregation of duties into L4 as a hard architectural rule from the start — no single agent both recommends and executes above threshold — which proved essential during a vendor API bug that would otherwise have triggered an erroneous cash sweep.
 
@@ -62,4 +70,4 @@ Treasury needs near-real-time visibility into cash positions across many account
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

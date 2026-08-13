@@ -1,6 +1,14 @@
+---
+layout: default
+title: BSS/OSS Migration Cutover Decisioning — Deep 8-Layer — AgenticWorks
+description: Migrating to a modern BSS/OSS platform requires moving millions of records
+  without service disruption. Aggregate-count validation alone misses systematic…
+permalink: /deep8/bssoss/14-digital-bss-oss-migration-reconciliation/
+---
+
 # Deep 8-Layer Regenerative Architecture: BSS/OSS Migration Cutover Decisioning
 
-**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Digital BSS/OSS Migration & Data Reconciliation](../../../bssoss/14-digital-bss-oss-migration-reconciliation/README.md) (Sequential Pipeline)
+**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Digital BSS/OSS Migration & Data Reconciliation]({{ '/bssoss/14-digital-bss-oss-migration-reconciliation/' | relative_url }}) (Sequential Pipeline)
 
 This deep-8 view makes deep-diff sampling — the Quick view's own highest-value validation technique, discovered mid-program — the default validation method from day one, not an optional extra check added after count-based validation missed systematic errors.
 
@@ -61,4 +69,4 @@ Migrating to a modern BSS/OSS platform requires moving millions of records witho
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

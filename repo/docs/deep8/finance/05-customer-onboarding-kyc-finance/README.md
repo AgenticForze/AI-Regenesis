@@ -1,6 +1,14 @@
+---
+layout: default
+title: Customer Onboarding & KYC Risk Decisioning — Deep 8-Layer — AgenticWorks
+description: Digital account opening requires identity verification, sanctions screening,
+  and risk rating in near real time. The Quick view found beneficial-ownership…
+permalink: /deep8/finance/05-customer-onboarding-kyc-finance/
+---
+
 # Deep 8-Layer Regenerative Architecture: Customer Onboarding & KYC Risk Decisioning
 
-**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Customer Onboarding & KYC (Retail & Business Banking)](../../../finance/05-customer-onboarding-kyc-finance/README.md) (Orchestrator-Worker (Supervisor fan-out/fan-in))
+**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Customer Onboarding & KYC (Retail & Business Banking)]({{ '/finance/05-customer-onboarding-kyc-finance/' | relative_url }}) (Orchestrator-Worker (Supervisor fan-out/fan-in))
 
 This deep-8 view invests early in the beneficial-ownership resolution challenge the Quick view's own retrospective flagged as harder than expected — international registry resolution gets its own governed path rather than a single generic worker agent.
 
@@ -62,4 +70,4 @@ Digital account opening requires identity verification, sanctions screening, and
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

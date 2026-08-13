@@ -1,6 +1,14 @@
+---
+layout: default
+title: Field Dispatch Allocation Decisioning — Deep 8-Layer — AgenticWorks
+description: Dispatching technicians across a large geography with varying skills,
+  SLA windows, and travel time is a hard combinatorial problem. Pure price-based…
+permalink: /deep8/telecom/09-field-workforce-dispatch-scheduling/
+---
+
 # Deep 8-Layer Regenerative Architecture: Field Dispatch Allocation Decisioning
 
-**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [Field Workforce Dispatch & Dynamic Scheduling](../../../telecom/09-field-workforce-dispatch-scheduling/README.md) (Market-Based / Auction Agents)
+**Domain:** Telecommunications &nbsp;|&nbsp; **Quick Reference counterpart:** [Field Workforce Dispatch & Dynamic Scheduling]({{ '/telecom/09-field-workforce-dispatch-scheduling/' | relative_url }}) (Market-Based / Auction Agents)
 
 This deep-8 view adds an explainability layer as a first-class L7 component — the Quick view's own retrospective found dispatchers needed to see *why* a job was assigned to a given technician, not just receive a black-box optimizer output.
 
@@ -61,4 +69,4 @@ Dispatching technicians across a large geography with varying skills, SLA window
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

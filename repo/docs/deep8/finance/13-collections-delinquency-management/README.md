@@ -1,6 +1,14 @@
+---
+layout: default
+title: Collections Strategy Decisioning — Deep 8-Layer — AgenticWorks
+description: Effective collections requires tailoring outreach to each borrower's
+  situation while strictly complying with FDCPA/Reg F contact-frequency rules.…
+permalink: /deep8/finance/13-collections-delinquency-management/
+---
+
 # Deep 8-Layer Regenerative Architecture: Collections Strategy Decisioning
 
-**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Collections & Delinquency Management](../../../finance/13-collections-delinquency-management/README.md) (Orchestrator-Worker (Supervisor fan-out/fan-in))
+**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Collections & Delinquency Management]({{ '/finance/13-collections-delinquency-management/' | relative_url }}) (Orchestrator-Worker (Supervisor fan-out/fan-in))
 
 This deep-8 view gives the Contact Compliance Agent hard veto power over every outreach action with no override path except a documented human exception — non-negotiable given the regulatory risk the Quick view identified from the outset.
 
@@ -61,4 +69,4 @@ Effective collections requires tailoring outreach to each borrower's situation w
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

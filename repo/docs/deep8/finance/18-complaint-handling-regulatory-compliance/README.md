@@ -1,6 +1,14 @@
+---
+layout: default
+title: Regulatory Complaint Resolution Decisioning — Deep 8-Layer — AgenticWorks
+description: Complaints must be handled within strict regulatory timeframes with consistent
+  categorization and adequate redress. Vulnerable-customer cases need…
+permalink: /deep8/finance/18-complaint-handling-regulatory-compliance/
+---
+
 # Deep 8-Layer Regenerative Architecture: Regulatory Complaint Resolution Decisioning
 
-**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Customer Complaint Handling (Regulatory Compliance)](../../../finance/18-complaint-handling-regulatory-compliance/README.md) (Hierarchical Multi-Agent (Manager-of-Managers))
+**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Customer Complaint Handling (Regulatory Compliance)]({{ '/finance/18-complaint-handling-regulatory-compliance/' | relative_url }}) (Hierarchical Multi-Agent (Manager-of-Managers))
 
 This deep-8 view builds vulnerable-customer identification as a conservative, always-routes-to-human L4 policy from the start — never a fully automated resolution — and elevates systemic-issue detection to a first-class L6 component, which the Quick view found was the highest-value output of the entire system despite being originally out of scope.
 
@@ -61,4 +69,4 @@ Complaints must be handled within strict regulatory timeframes with consistent c
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

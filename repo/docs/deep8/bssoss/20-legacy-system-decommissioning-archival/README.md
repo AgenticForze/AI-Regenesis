@@ -1,6 +1,14 @@
+---
+layout: default
+title: Legacy System Decommissioning Decisioning — Deep 8-Layer — AgenticWorks
+description: Decommissioning a legacy BSS/OSS system requires exhaustively mapping
+  every remaining dependency, which documentation and interviews consistently miss.…
+permalink: /deep8/bssoss/20-legacy-system-decommissioning-archival/
+---
+
 # Deep 8-Layer Regenerative Architecture: Legacy System Decommissioning Decisioning
 
-**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Legacy System Decommissioning & Data Archival](../../../bssoss/20-legacy-system-decommissioning-archival/README.md) (Orchestrator-Worker (Supervisor fan-out/fan-in))
+**Domain:** BSS/OSS &nbsp;|&nbsp; **Quick Reference counterpart:** [Legacy System Decommissioning & Data Archival]({{ '/bssoss/20-legacy-system-decommissioning-archival/' | relative_url }}) (Orchestrator-Worker (Supervisor fan-out/fan-in))
 
 This deep-8 view extends the zero-traffic validation window the Quick view's retrospective wished it had built longer — an early decommissioning shut down a system that still received a rare monthly batch job, missed by a shorter initial window.
 
@@ -62,4 +70,4 @@ Decommissioning a legacy BSS/OSS system requires exhaustively mapping every rema
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

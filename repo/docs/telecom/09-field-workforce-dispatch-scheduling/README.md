@@ -1,8 +1,16 @@
+---
+layout: default
+title: Field Workforce Dispatch & Dynamic Scheduling — AgenticWorks
+description: Dispatching field technicians for installs, repairs, and tower maintenance
+  across a large geography with varying skill requirements, SLA windows, and…
+permalink: /telecom/09-field-workforce-dispatch-scheduling/
+---
+
 # 09. Field Workforce Dispatch & Dynamic Scheduling
 
-**Domain:** Telecommunications &nbsp;|&nbsp; **Architecture pattern:** [Market-Based / Auction Agents](../../patterns/market-based.md)
+**Domain:** Telecommunications &nbsp;|&nbsp; **Architecture pattern:** [Market-Based / Auction Agents]({{ '/patterns/market-based/' | relative_url }})
 
-> 🧠 **Deep dive available:** this use case also has a full [8-Layer Regenerative Architecture breakdown](../../deep8/telecom/09-field-workforce-dispatch-scheduling/README.md) — the same problem mapped through L1–L8, with an agent-level tools/technologies stack and a suggested build order by layer.
+> 🧠 **Deep dive available:** this use case also has a full [8-Layer Regenerative Architecture breakdown]({{ '/deep8/telecom/09-field-workforce-dispatch-scheduling/' | relative_url }}) — the same problem mapped through L1–L8, with an agent-level tools/technologies stack and a suggested build order by layer.
 
 ## 1. Problem Statement & Use Case
 
@@ -28,9 +36,9 @@ The solution is implemented as a **Market-Based / Auction Agents** architecture.
 > This diagram is organized as a **layered architecture**: Data &amp; Integration → Orchestration → Agent →
 > Action &amp; Execution, plus a cross-cutting Observability &amp; Governance layer (tracing, audit log,
 > guardrails, and any human review checkpoint — shown in lavender). See the
-> [E2E Platform Architecture](../../architecture/e2e-platform-architecture.md) for how this layering looks
-> across all 60 use cases at once. A [Mermaid text source](architecture.mmd) of the same diagram is also
-> available in this folder.
+> [E2E Platform Architecture]({{ '/architecture/e2e-platform-architecture/' | relative_url }}) for how this
+> layering looks across all 60 use cases at once. A [Mermaid text source](architecture.mmd) of the same
+> diagram is also available in this folder.
 
 ## 3. Technologies Used (per step)
 
@@ -63,4 +71,4 @@ The solution is implemented as a **Market-Based / Auction Agents** architecture.
 - Sub-contractor bidding needed real cost-visibility guardrails; initial version could over-select costly overflow capacity when internal techs were briefly unavailable.
 
 ---
-[← Back to Telecommunications index](../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Telecommunications index]({{ '/telecom/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})

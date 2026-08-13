@@ -1,6 +1,14 @@
+---
+layout: default
+title: Card-Not-Present Authorization Decisioning — Deep 8-Layer — AgenticWorks
+description: Card-not-present fraud decisions must resolve in under 100ms. An early
+  experiment routing borderline cases through an LLM blew the latency SLA;…
+permalink: /deep8/finance/04-card-not-present-fraud-detection/
+---
+
 # Deep 8-Layer Regenerative Architecture: Card-Not-Present Authorization Decisioning
 
-**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Fraud Detection - Card-Not-Present Transactions](../../../finance/04-card-not-present-fraud-detection/README.md) (Event-Driven Reactive Swarm)
+**Domain:** Financial Services &nbsp;|&nbsp; **Quick Reference counterpart:** [Fraud Detection - Card-Not-Present Transactions]({{ '/finance/04-card-not-present-fraud-detection/' | relative_url }}) (Event-Driven Reactive Swarm)
 
 This deep-8 view keeps the Quick view's core discipline — the hot authorization path never calls an LLM, full stop — and tracks declined-legitimate-transaction cost as a co-equal metric to fraud caught, per the Quick view's own retrospective.
 
@@ -62,4 +70,4 @@ Card-not-present fraud decisions must resolve in under 100ms. An early experimen
 **Phase 6 — add L7 and L8.** Build the executive dashboard last, and the scheduled retraining/memory-update job. These teach the least new technical ground but close the loop the manuscript calls "regenerative."
 
 ---
-[← Back to Deep 8-Layer index](../../README.md) &nbsp;|&nbsp; [← Back to home](../../../README.md)
+[← Back to Deep 8-Layer index]({{ '/deep8/' | relative_url }}) &nbsp;|&nbsp; [← Back to home]({{ '/' | relative_url }})
