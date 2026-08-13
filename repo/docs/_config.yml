@@ -14,8 +14,8 @@ description: >-
   The reference architecture library for agentic AI — 60 real use cases across Telecom, BSS/OSS, and
   Financial Services, each mapped through the Regenerative Agentic Arcdo whathitecture Framework (8-layer model),
   with honest retrospectives included. Created by Naga Gande.
-url: "https://agenticworks.ai"
-# baseurl removed for custom domain
+url: "https://AgenticForce.github.io"
+baseurl: "/AgenticWorks"
 author: "Naga Gande"
 twitter:
   card: summary_large_image
