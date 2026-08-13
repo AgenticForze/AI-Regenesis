@@ -1,6 +1,6 @@
 # AgenticWorks — The Reference Architecture Library for Agentic AI
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-121212?logo=githubpages)](https://agenticforze.github.io/AgenticWorks/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-121212?logo=githubpages)](https://AgenticForce.github.io/AI-Regenesis/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Content License: CC BY-NC 4.0](https://img.shields.io/badge/Content%20License-CC%20BY--NC%204.0-lightgrey)](CONTENT-LICENSE.md)
 
@@ -9,7 +9,7 @@ Telecom, BSS/OSS, and Financial Services.
 
 ## Quick links
 
-- Live site: https://agenticforze.github.io/AgenticWorks/
+- Live site: https://AgenticForce.github.io/AI-Regenesis/
 - Interactive catalog: [website/index.html](website/index.html)
 - GitHub Pages setup: [GITHUB-PAGES-SETUP.md](GITHUB-PAGES-SETUP.md)
 - Architecture deep-dive: [docs/architecture/decision-engineering-meta-architecture.md](docs/architecture/decision-engineering-meta-architecture.md)

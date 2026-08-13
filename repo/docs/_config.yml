@@ -15,12 +15,12 @@ description: >-
   Financial Services, each mapped through the Regenerative Agentic Arcdo whathitecture Framework (8-layer model),
   with honest retrospectives included. Created by Naga Gande.
 url: "https://AgenticForce.github.io"
-baseurl: "/AgenticWorks"
+baseurl: "/AI-Regenesis"
 author: "Naga Gande"
 twitter:
   card: summary_large_image
 logo: /favicon.svg
-repository: "AgenticForce/AgenticWorks"
+repository: "AgenticForce/AI-Regenesis"
 
 # GitHub Pages whitelisted plugins — both work with zero extra setup, no Ruby/gems needed locally.
 # jekyll-seo-tag: auto-generates <title>, meta description, canonical URL, Open Graph, and Twitter Card tags
