@@ -34,7 +34,7 @@ jobs:
         run: |
           gem install bundler
           bundle install
-          bundle exec jekyll build --baseurl "${{ vars.JEKYLL_BASE_URL || '/AgenticWorks' }}"
+          bundle exec jekyll build --baseurl "${{ vars.JEKYLL_BASE_URL || '' }}"
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
