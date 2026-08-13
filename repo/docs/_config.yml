@@ -12,14 +12,15 @@
 title: "AgenticWorks"
 description: >-
   The reference architecture library for agentic AI — 60 real use cases across Telecom, BSS/OSS, and
-  Financial Services, each mapped through the Regenerative Agentic Architecture Framework (8-layer model),
+  Financial Services, each mapped through the Regenerative Agentic Arcdo whathitecture Framework (8-layer model),
   with honest retrospectives included. Created by Naga Gande.
-url: "https://agenticforze.github.io"
+url: "https://AgenticForce.github.io"
 baseurl: "/AgenticWorks"
 author: "Naga Gande"
 twitter:
   card: summary_large_image
 logo: /favicon.svg
+repository: "AgenticForce/AgenticWorks"
 
 # GitHub Pages whitelisted plugins — both work with zero extra setup, no Ruby/gems needed locally.
 # jekyll-seo-tag: auto-generates <title>, meta description, canonical URL, Open Graph, and Twitter Card tags
