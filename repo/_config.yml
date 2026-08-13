@@ -1,0 +1,8 @@
+# Minimal Jekyll config to ensure GitHub Metadata finds the repository name when
+# the Actions runner builds from the repository root.
+repository: "AgenticForce/AgenticWorks"
+url: "https://AgenticForce.github.io"
+baseurl: "/AgenticWorks"
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
