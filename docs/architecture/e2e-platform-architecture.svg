@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1170 1214" font-family="'Inter','IBM Plex Sans',-apple-system,sans-serif">
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+<path d="M0,0 L10,5 L0,10 z" fill="#9AA3AE"/>
+</marker>
+<filter id="cardshadow" x="-20%" y="-20%" width="140%" height="140%">
+<feDropShadow dx="0" dy="1.5" stdDeviation="2.5" flood-color="#1a1a1a" flood-opacity="0.08"/>
+</filter>
+</defs>
+<rect x="0" y="0" width="1170" height="1214" fill="#FFFFFF"/>
+<path d="M 171.0 168.0 L 171.0 246.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 447.0 168.0 L 447.0 195.0 Q 447.0 207.0 435.0 207.0 L 183.0 207.0 Q 171.0 207.0 171.0 219.0 L 171.0 246.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 723.0 168.0 L 723.0 195.0 Q 723.0 207.0 711.0 207.0 L 183.0 207.0 Q 171.0 207.0 171.0 219.0 L 171.0 246.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 999.0 168.0 L 999.0 195.0 Q 999.0 207.0 987.0 207.0 L 459.0 207.0 Q 447.0 207.0 447.0 219.0 L 447.0 246.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 171.0 368.0 L 171.0 446.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 447.0 368.0 L 447.0 395.0 Q 447.0 407.0 435.0 407.0 L 183.0 407.0 Q 171.0 407.0 171.0 419.0 L 171.0 446.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 723.0 368.0 L 723.0 395.0 Q 723.0 407.0 711.0 407.0 L 183.0 407.0 Q 171.0 407.0 171.0 419.0 L 171.0 446.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 999.0 368.0 L 999.0 395.0 Q 999.0 407.0 987.0 407.0 L 183.0 407.0 Q 171.0 407.0 171.0 419.0 L 171.0 446.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 296.0 507.0 L 322.0 507.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 296.0 507.0 L 598.0 507.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 296.0 507.0 L 874.0 507.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 447.0 568.0 L 447.0 595.0 Q 447.0 607.0 435.0 607.0 L 321.0 607.0 Q 309.0 607.0 309.0 619.0 L 309.0 646.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 723.0 568.0 L 723.0 595.0 Q 723.0 607.0 711.0 607.0 L 597.0 607.0 Q 585.0 607.0 585.0 619.0 L 585.0 646.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 999.0 568.0 L 999.0 595.0 Q 999.0 607.0 987.0 607.0 L 873.0 607.0 Q 861.0 607.0 861.0 619.0 L 861.0 646.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 309.0 768.0 L 309.0 846.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 585.0 768.0 L 585.0 846.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 585.0 768.0 L 585.0 795.0 Q 585.0 807.0 573.0 807.0 L 321.0 807.0 Q 309.0 807.0 309.0 819.0 L 309.0 846.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 861.0 768.0 L 861.0 846.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 171.0 568.0 L 171.0 795.0 Q 171.0 807.0 183.0 807.0 L 573.0 807.0 Q 585.0 807.0 585.0 819.0 L 585.0 1046.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+<path d="M 309.0 768.0 L 309.0 895.0 Q 309.0 907.0 321.0 907.0 L 573.0 907.0 Q 585.0 907.0 585.0 919.0 L 585.0 1046.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+<path d="M 585.0 768.0 L 585.0 1046.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+<path d="M 861.0 768.0 L 861.0 895.0 Q 861.0 907.0 849.0 907.0 L 597.0 907.0 Q 585.0 907.0 585.0 919.0 L 585.0 1046.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+<path d="M 309.0 968.0 L 309.0 995.0 Q 309.0 1007.0 321.0 1007.0 L 573.0 1007.0 Q 585.0 1007.0 585.0 1019.0 L 585.0 1046.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+<path d="M 861.0 968.0 L 861.0 995.0 Q 861.0 1007.0 849.0 1007.0 L 597.0 1007.0 Q 585.0 1007.0 585.0 1019.0 L 585.0 1046.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+<g filter="url(#cardshadow)">
+<rect x="46.0" y="46.0" width="250" height="122" rx="16" fill="#EDEFF3" stroke="#AEB4C0" stroke-width="1.5"/>
+</g>
+<text x="171.0" y="104.1" text-anchor="middle" font-size="15.5" font-weight="600" fill="#333B4A">Customer App / Web</text>
+<text x="171.0" y="120.7" text-anchor="middle" font-size="12.5" fill="#7B828F">Channel</text>
+<g filter="url(#cardshadow)">
+<rect x="322.0" y="46.0" width="250" height="122" rx="16" fill="#EDEFF3" stroke="#AEB4C0" stroke-width="1.5"/>
+</g>
+<text x="447.0" y="94.1" text-anchor="middle" font-size="15.5" font-weight="600" fill="#333B4A">Contact Center / Agent</text>
+<text x="447.0" y="114.1" text-anchor="middle" font-size="15.5" font-weight="600" fill="#333B4A">Desktop</text>
+<text x="447.0" y="130.7" text-anchor="middle" font-size="12.5" fill="#7B828F">Channel</text>
+<g filter="url(#cardshadow)">
+<rect x="598.0" y="46.0" width="250" height="122" rx="16" fill="#EDEFF3" stroke="#AEB4C0" stroke-width="1.5"/>
+</g>
+<text x="723.0" y="94.1" text-anchor="middle" font-size="15.5" font-weight="600" fill="#333B4A">Partner &amp; Wholesale</text>
+<text x="723.0" y="114.1" text-anchor="middle" font-size="15.5" font-weight="600" fill="#333B4A">Portals</text>
+<text x="723.0" y="130.7" text-anchor="middle" font-size="12.5" fill="#7B828F">Channel</text>
+<g filter="url(#cardshadow)">
+<rect x="874.0" y="46.0" width="250" height="122" rx="16" fill="#EDEFF3" stroke="#AEB4C0" stroke-width="1.5"/>
+</g>
+<text x="999.0" y="104.1" text-anchor="middle" font-size="15.5" font-weight="600" fill="#333B4A">Internal Ops Consoles</text>
+<text x="999.0" y="120.7" text-anchor="middle" font-size="12.5" fill="#7B828F">Channel</text>
+<g filter="url(#cardshadow)">
+<rect x="46.0" y="246.0" width="250" height="122" rx="16" fill="#F2EEE3" stroke="#C7BC9E" stroke-width="1.5"/>
+</g>
+<text x="171.0" y="304.1" text-anchor="middle" font-size="15.5" font-weight="600" fill="#4A4432">API Gateway</text>
+<text x="171.0" y="320.7" text-anchor="middle" font-size="12.5" fill="#8C8365">TM Forum Open APIs</text>
+<g filter="url(#cardshadow)">
+<rect x="322.0" y="246.0" width="250" height="122" rx="16" fill="#F2EEE3" stroke="#C7BC9E" stroke-width="1.5"/>
+</g>
+<text x="447.0" y="304.1" text-anchor="middle" font-size="15.5" font-weight="600" fill="#4A4432">Event Bus</text>
+<text x="447.0" y="320.7" text-anchor="middle" font-size="12.5" fill="#8C8365">Kafka</text>
+<g filter="url(#cardshadow)">
+<rect x="598.0" y="246.0" width="250" height="122" rx="16" fill="#F2EEE3" stroke="#C7BC9E" stroke-width="1.5"/>
+</g>
+<text x="723.0" y="294.1" text-anchor="middle" font-size="15.5" font-weight="600" fill="#4A4432">Customer 360 / Master</text>
+<text x="723.0" y="314.1" text-anchor="middle" font-size="15.5" font-weight="600" fill="#4A4432">Data</text>
+<text x="723.0" y="330.7" text-anchor="middle" font-size="12.5" fill="#8C8365">Data &amp; Integration</text>
+<g filter="url(#cardshadow)">
+<rect x="874.0" y="246.0" width="250" height="122" rx="16" fill="#F2EEE3" stroke="#C7BC9E" stroke-width="1.5"/>
+</g>
+<text x="999.0" y="294.1" text-anchor="middle" font-size="15.5" font-weight="600" fill="#4A4432">Vector Store / Knowledge</text>
+<text x="999.0" y="314.1" text-anchor="middle" font-size="15.5" font-weight="600" fill="#4A4432">Base</text>
+<text x="999.0" y="330.7" text-anchor="middle" font-size="12.5" fill="#8C8365">Data &amp; Integration</text>
+<g filter="url(#cardshadow)">
+<rect x="46.0" y="446.0" width="250" height="122" rx="16" fill="#DCEBFB" stroke="#5B93C9" stroke-width="1.5"/>
+</g>
+<text x="171.0" y="494.1" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1C4A73">Cross-Domain Meta-</text>
+<text x="171.0" y="514.1" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1C4A73">Orchestrator</text>
+<text x="171.0" y="530.7" text-anchor="middle" font-size="12.5" fill="#3E6D93">Orchestration</text>
+<g filter="url(#cardshadow)">
+<rect x="322.0" y="446.0" width="250" height="122" rx="16" fill="#DCEBFB" stroke="#5B93C9" stroke-width="1.5"/>
+</g>
+<text x="447.0" y="494.1" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1C4A73">Telecom Domain</text>
+<text x="447.0" y="514.1" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1C4A73">Supervisor</text>
+<text x="447.0" y="530.7" text-anchor="middle" font-size="12.5" fill="#3E6D93">Orchestration</text>
+<g filter="url(#cardshadow)">
+<rect x="598.0" y="446.0" width="250" height="122" rx="16" fill="#DCEBFB" stroke="#5B93C9" stroke-width="1.5"/>
+</g>
+<text x="723.0" y="494.1" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1C4A73">BSS/OSS Domain</text>
+<text x="723.0" y="514.1" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1C4A73">Supervisor</text>
+<text x="723.0" y="530.7" text-anchor="middle" font-size="12.5" fill="#3E6D93">Orchestration</text>
+<g filter="url(#cardshadow)">
+<rect x="874.0" y="446.0" width="250" height="122" rx="16" fill="#DCEBFB" stroke="#5B93C9" stroke-width="1.5"/>
+</g>
+<text x="999.0" y="494.1" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1C4A73">Finance Domain</text>
+<text x="999.0" y="514.1" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1C4A73">Supervisor</text>
+<text x="999.0" y="530.7" text-anchor="middle" font-size="12.5" fill="#3E6D93">Orchestration</text>
+<g filter="url(#cardshadow)">
+<rect x="184.0" y="646.0" width="250" height="122" rx="16" fill="#DBF2E7" stroke="#4FAE83" stroke-width="1.5"/>
+</g>
+<text x="309.0" y="704.1" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1B5E3D">Telecom Agents</text>
+<text x="309.0" y="720.7" text-anchor="middle" font-size="12.5" fill="#3D8261">20 use cases</text>
+<g filter="url(#cardshadow)">
+<rect x="460.0" y="646.0" width="250" height="122" rx="16" fill="#DBF2E7" stroke="#4FAE83" stroke-width="1.5"/>
+</g>
+<text x="585.0" y="704.1" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1B5E3D">BSS/OSS Agents</text>
+<text x="585.0" y="720.7" text-anchor="middle" font-size="12.5" fill="#3D8261">20 use cases</text>
+<g filter="url(#cardshadow)">
+<rect x="736.0" y="646.0" width="250" height="122" rx="16" fill="#DBF2E7" stroke="#4FAE83" stroke-width="1.5"/>
+</g>
+<text x="861.0" y="704.1" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1B5E3D">Finance Agents</text>
+<text x="861.0" y="720.7" text-anchor="middle" font-size="12.5" fill="#3D8261">20 use cases</text>
+<g filter="url(#cardshadow)">
+<rect x="184.0" y="846.0" width="250" height="122" rx="16" fill="#FBE8CE" stroke="#D89A3F" stroke-width="1.5"/>
+</g>
+<text x="309.0" y="904.1" text-anchor="middle" font-size="15.5" font-weight="600" fill="#7A4E12">OSS / Network Systems</text>
+<text x="309.0" y="920.7" text-anchor="middle" font-size="12.5" fill="#9C6B22">Action &amp; Execution</text>
+<g filter="url(#cardshadow)">
+<rect x="460.0" y="846.0" width="250" height="122" rx="16" fill="#FBE8CE" stroke="#D89A3F" stroke-width="1.5"/>
+</g>
+<text x="585.0" y="894.1" text-anchor="middle" font-size="15.5" font-weight="600" fill="#7A4E12">Billing / CRM / Order</text>
+<text x="585.0" y="914.1" text-anchor="middle" font-size="15.5" font-weight="600" fill="#7A4E12">Mgmt</text>
+<text x="585.0" y="930.7" text-anchor="middle" font-size="12.5" fill="#9C6B22">Action &amp; Execution</text>
+<g filter="url(#cardshadow)">
+<rect x="736.0" y="846.0" width="250" height="122" rx="16" fill="#FBE8CE" stroke="#D89A3F" stroke-width="1.5"/>
+</g>
+<text x="861.0" y="894.1" text-anchor="middle" font-size="15.5" font-weight="600" fill="#7A4E12">Core Banking / Trading</text>
+<text x="861.0" y="914.1" text-anchor="middle" font-size="15.5" font-weight="600" fill="#7A4E12">Systems</text>
+<text x="861.0" y="930.7" text-anchor="middle" font-size="12.5" fill="#9C6B22">Action &amp; Execution</text>
+<g filter="url(#cardshadow)">
+<rect x="460.0" y="1046.0" width="250" height="122" rx="16" fill="#EAE1F8" stroke="#9575CD" stroke-width="1.5"/>
+</g>
+<text x="585.0" y="1085.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#4A2E7A">Observability &amp;</text>
+<text x="585.0" y="1105.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#4A2E7A">Governance Layer</text>
+<text x="585.0" y="1122.2" text-anchor="middle" font-size="12.5" fill="#6B4A9E">Tracing · Audit · Guardrails ·</text>
+<text x="585.0" y="1139.2" text-anchor="middle" font-size="12.5" fill="#6B4A9E">Agent Eval · Human Council</text>
+</svg>

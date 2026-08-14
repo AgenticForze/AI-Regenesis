@@ -1,0 +1,59 @@
+flowchart TB
+  subgraph L1["🔗 Intent / Request Layer"]
+    REQ(["Incoming Request / Intent"])
+  end
+  subgraph L2["🧭 Orchestration Layer"]
+    TOP{"Regulatory Compliance Orchestrator"}
+  end
+  subgraph L3["🤖 Agent Layer (manager-of-managers)"]
+    subgraph L3_0["Capital/Liquidity Reporting Manager Agent"]
+      M0(("Capital/Liquidity Reporting Manager Agent<br/>Domain Manager"))
+      L0_0["Basel Capital Ratio Calculation Agent"]
+      M0 --> L0_0
+      L0_1["LCR/NSFR Liquidity Agent"]
+      M0 --> L0_1
+      L0_2["Data Reconciliation Agent"]
+      M0 --> L0_2
+    end
+    subgraph L3_1["Trade/Transaction Reporting Manager Agent"]
+      M1(("Trade/Transaction Reporting Manager Agent<br/>Domain Manager"))
+      L1_0["MiFID II Transaction Reporting Agent"]
+      M1 --> L1_0
+      L1_1["Trade Reporting Exception Agent"]
+      M1 --> L1_1
+    end
+  end
+  subgraph L4["⚙️ Action &amp; Execution Layer"]
+    RES["Resolution / Reporting Agent"]
+    SYS0[("Regulatory Report Submission")]
+    RES --> SYS0
+    SYS1[("Internal Compliance Dashboard")]
+    RES --> SYS1
+    SYS2[("Breach/Exception Escalation")]
+    RES --> SYS2
+  end
+  L1 --> L2
+  REQ --> TOP
+  TOP --> M0
+  TOP --> M1
+  L3 --> L4
+  TOP --> RES
+  subgraph OBS["📊 Observability &amp; Governance Layer (cross-cutting)"]
+    TRACE["Tracing &amp; Telemetry<br/>(OpenTelemetry)"]:::obsNode
+    AUDIT["Immutable Audit Log"]:::obsNode
+    GUARD["Guardrails / Policy Engine"]:::obsNode
+  end
+  L2 -.telemetry.-> OBS
+  L3 -.telemetry.-> OBS
+  L4 -.audit.-> OBS
+  classDef dataLayer fill:#0F2A28,stroke:#2FD3C7,stroke-width:1px,color:#E7ECF3;
+  classDef orchLayer fill:#241B3D,stroke:#8C7CFF,stroke-width:1.5px,color:#E7ECF3;
+  classDef agentLayer fill:#141A28,stroke:#4C8DFF,stroke-width:1px,color:#E7ECF3;
+  classDef actionLayer fill:#3D2A1B,stroke:#E8B23C,stroke-width:1px,color:#E7ECF3;
+  classDef obsLayer fill:#3D1B24,stroke:#FF7A66,stroke-width:1px,color:#E7ECF3;
+  classDef obsNode fill:#2A1319,stroke:#FF7A66,stroke-width:1px,color:#E7ECF3,stroke-dasharray: 2 2;
+  class L1 dataLayer;
+  class L2 orchLayer;
+  class L3 agentLayer;
+  class L4 actionLayer;
+  class OBS obsLayer;

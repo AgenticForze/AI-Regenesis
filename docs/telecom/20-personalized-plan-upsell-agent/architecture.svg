@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1170 746" font-family="'Inter','IBM Plex Sans',-apple-system,sans-serif">
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+<path d="M0,0 L10,5 L0,10 z" fill="#9AA3AE"/>
+</marker>
+<filter id="cardshadow" x="-20%" y="-20%" width="140%" height="140%">
+<feDropShadow dx="0" dy="1.5" stdDeviation="2.5" flood-color="#1a1a1a" flood-opacity="0.08"/>
+</filter>
+</defs>
+<rect x="0" y="0" width="1170" height="746" fill="#FFFFFF"/>
+<path d="M 171.0 151.0 L 171.0 178.0 Q 171.0 190.0 183.0 190.0 L 435.0 190.0 Q 447.0 190.0 447.0 202.0 L 447.0 229.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 447.0 151.0 L 447.0 229.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 723.0 151.0 L 723.0 178.0 Q 723.0 190.0 711.0 190.0 L 459.0 190.0 Q 447.0 190.0 447.0 202.0 L 447.0 229.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 999.0 151.0 L 999.0 178.0 Q 999.0 190.0 987.0 190.0 L 459.0 190.0 Q 447.0 190.0 447.0 202.0 L 447.0 229.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 572.0 281.5 L 598.0 281.5" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 598.0 281.5 L 572.0 281.5" fill="none" stroke="#9AA3AE" stroke-width="1.75" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+<path d="M 723.0 334.0 L 723.0 361.0 Q 723.0 373.0 711.0 373.0 L 597.0 373.0 Q 585.0 373.0 585.0 385.0 L 585.0 412.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 585.0 517.0 L 585.0 544.0 Q 585.0 556.0 573.0 556.0 L 321.0 556.0 Q 309.0 556.0 309.0 568.0 L 309.0 595.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 585.0 517.0 L 585.0 595.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<path d="M 585.0 517.0 L 585.0 544.0 Q 585.0 556.0 597.0 556.0 L 849.0 556.0 Q 861.0 556.0 861.0 568.0 L 861.0 595.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<g filter="url(#cardshadow)">
+<rect x="46.0" y="46.0" width="250" height="105" rx="16" fill="#F2EEE3" stroke="#C7BC9E" stroke-width="1.5"/>
+</g>
+<text x="171.0" y="85.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#4A4432">Usage History</text>
+<text x="171.0" y="105.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#4A4432">(data/voice/roaming)</text>
+<text x="171.0" y="122.2" text-anchor="middle" font-size="12.5" fill="#8C8365">Data &amp; Integration</text>
+<g filter="url(#cardshadow)">
+<rect x="322.0" y="46.0" width="250" height="105" rx="16" fill="#F2EEE3" stroke="#C7BC9E" stroke-width="1.5"/>
+</g>
+<text x="447.0" y="95.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#4A4432">Plan Catalog &amp; Pricing</text>
+<text x="447.0" y="112.2" text-anchor="middle" font-size="12.5" fill="#8C8365">Data &amp; Integration</text>
+<g filter="url(#cardshadow)">
+<rect x="598.0" y="46.0" width="250" height="105" rx="16" fill="#F2EEE3" stroke="#C7BC9E" stroke-width="1.5"/>
+</g>
+<text x="723.0" y="85.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#4A4432">Past Upgrade/Downgrade</text>
+<text x="723.0" y="105.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#4A4432">History</text>
+<text x="723.0" y="122.2" text-anchor="middle" font-size="12.5" fill="#8C8365">Data &amp; Integration</text>
+<g filter="url(#cardshadow)">
+<rect x="874.0" y="46.0" width="250" height="105" rx="16" fill="#F2EEE3" stroke="#C7BC9E" stroke-width="1.5"/>
+</g>
+<text x="999.0" y="95.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#4A4432">Customer Segment Profile</text>
+<text x="999.0" y="112.2" text-anchor="middle" font-size="12.5" fill="#8C8365">Data &amp; Integration</text>
+<g filter="url(#cardshadow)">
+<rect x="322.0" y="229.0" width="250" height="105" rx="16" fill="#DBF2E7" stroke="#4FAE83" stroke-width="1.5"/>
+</g>
+<text x="447.0" y="268.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1B5E3D">Revenue-Optimized</text>
+<text x="447.0" y="288.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1B5E3D">Recommendation Agent</text>
+<text x="447.0" y="305.2" text-anchor="middle" font-size="12.5" fill="#3D8261">Proposes</text>
+<g filter="url(#cardshadow)">
+<rect x="598.0" y="229.0" width="250" height="105" rx="16" fill="#DBF2E7" stroke="#4FAE83" stroke-width="1.5"/>
+</g>
+<text x="723.0" y="268.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1B5E3D">Customer-Fit Critic</text>
+<text x="723.0" y="288.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1B5E3D">Agent</text>
+<text x="723.0" y="305.2" text-anchor="middle" font-size="12.5" fill="#3D8261">Challenges</text>
+<g filter="url(#cardshadow)">
+<rect x="460.0" y="412.0" width="250" height="105" rx="16" fill="#DCEBFB" stroke="#5B93C9" stroke-width="1.5"/>
+</g>
+<text x="585.0" y="451.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1C4A73">Recommendation Arbiter</text>
+<text x="585.0" y="471.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1C4A73">Agent</text>
+<text x="585.0" y="488.2" text-anchor="middle" font-size="12.5" fill="#3E6D93">Final decision</text>
+<g filter="url(#cardshadow)">
+<rect x="184.0" y="595.0" width="250" height="105" rx="16" fill="#FBE8CE" stroke="#D89A3F" stroke-width="1.5"/>
+</g>
+<text x="309.0" y="634.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#7A4E12">In-App/SMS Personalized</text>
+<text x="309.0" y="654.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#7A4E12">Offer</text>
+<text x="309.0" y="671.2" text-anchor="middle" font-size="12.5" fill="#9C6B22">Action &amp; Execution</text>
+<g filter="url(#cardshadow)">
+<rect x="460.0" y="595.0" width="250" height="105" rx="16" fill="#FBE8CE" stroke="#D89A3F" stroke-width="1.5"/>
+</g>
+<text x="585.0" y="634.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#7A4E12">Call-Center Agent</text>
+<text x="585.0" y="654.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#7A4E12">Recommendation Panel</text>
+<text x="585.0" y="671.2" text-anchor="middle" font-size="12.5" fill="#9C6B22">Action &amp; Execution</text>
+<g filter="url(#cardshadow)">
+<rect x="736.0" y="595.0" width="250" height="105" rx="16" fill="#FBE8CE" stroke="#D89A3F" stroke-width="1.5"/>
+</g>
+<text x="861.0" y="644.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#7A4E12">Offer Outcome Tracking</text>
+<text x="861.0" y="661.2" text-anchor="middle" font-size="12.5" fill="#9C6B22">Action &amp; Execution</text>
+</svg>
