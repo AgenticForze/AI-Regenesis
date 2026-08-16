@@ -1,0 +1,17 @@
+# Global ignores
+*.zip
+*.log
+.DS_Store
+
+# Docusaurus project ignores
+regai-training/node_modules/
+regai-training/build/
+regai-training/.docusaurus/
+regai-training/.cache-loader/
+regai-training/.env*
+
+# General node ignores
+node_modules/
+build/
+.docusaurus/
+.cache-loader/
