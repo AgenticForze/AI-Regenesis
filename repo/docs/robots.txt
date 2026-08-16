@@ -1,9 +1,0 @@
----
-# Empty front matter block above is required — it's what tells Jekyll to run this file through the
-# Liquid templating engine below (a plain robots.txt with no front matter gets copied verbatim, and the
-# {{ }} tag would ship as literal text instead of being resolved to a real URL).
----
-User-agent: *
-Allow: /
-
-Sitemap: {{ '/sitemap.xml' | absolute_url }}

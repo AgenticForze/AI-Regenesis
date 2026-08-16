@@ -3,18 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <title>AI-Regenesis — The Reference Architecture Library for Agentic AI</title>
 <meta name="description" content="60 real agentic AI use cases across Telecom, BSS/OSS, and Financial Services, each mapped through the Regenerative Agentic Architecture Framework (8-layer model), with honest retrospectives included. Created by Naga Gande.">
 <meta property="og:title" content="AI-Regenesis — The Reference Architecture Library for Agentic AI">
 <meta property="og:description" content="60 real agentic AI use cases across Telecom, BSS/OSS, and Financial Services, each mapped through an 8-layer regenerative architecture framework — with the failure modes included, not hidden.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="og-image.png">
+<meta property="og:image" content="__SITE_URL__/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AI-Regenesis — The Reference Architecture Library for Agentic AI">
 <meta name="twitter:description" content="60 real agentic AI use cases, 8 layers, zero marketing gloss.">
-<meta name="twitter:image" content="og-image.png">
-<!-- NOTE: og-image.png doesn't exist yet — see Phase 1c (visual polish) for creating a real 1200x630
-     social preview image. Until then these tags degrade gracefully (link previews just show no image). -->
+<meta name="twitter:image" content="__SITE_URL__/og-image.png">
 
 <!--
   ANALYTICS PLACEHOLDER — Phase 0, Week 1 task.
@@ -59,6 +58,27 @@
     -webkit-font-smoothing:antialiased;
   }
   @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+  .site-header{
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+    padding:14px 20px; border-bottom:1px solid var(--line); background:var(--surface);
+    position:sticky; top:0; z-index:50;
+  }
+  .site-header a.brand{
+    color:var(--text); text-decoration:none; font-weight:700; font-size:15px; letter-spacing:.01em;
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .site-header a.brand img{width:22px; height:22px; border-radius:6px;}
+  .site-header a.brand .brand-text{color:var(--text);}
+  .site-header a.brand .brand-accent{color:var(--accent);}
+  .site-header nav{display:flex; flex-wrap:wrap;}
+  .site-header nav a{
+    color:var(--text-dim); text-decoration:none; font-size:13px; margin-left:18px; white-space:nowrap;
+  }
+  .site-header nav a:hover{color:var(--text);}
+  @media (max-width:640px){
+    .site-header{flex-direction:column; align-items:flex-start; gap:8px; position:static;}
+    .site-header nav a{margin-left:0; margin-right:16px;}
+  }
   ::-webkit-scrollbar{width:8px; height:8px;}
   ::-webkit-scrollbar-thumb{background:var(--line); border-radius:4px;}
   ::-webkit-scrollbar-track{background:transparent;}
@@ -88,6 +108,28 @@
   h1 .accent-finance{color:var(--finance);}
   h1 .accent-bssoss{color:var(--bssoss);}
   .hero-sub{color:var(--text-dim); font-size:15px; line-height:1.6; max-width:660px; margin-bottom:24px;}
+  .hero-wordmark{
+    font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:clamp(40px,5.5vw,64px);
+    line-height:1; letter-spacing:-0.02em; margin:0 0 10px; color:var(--text);
+    display:flex; align-items:center; gap:16px;
+  }
+  .hero-wordmark img{width:clamp(40px,5vw,58px); height:clamp(40px,5vw,58px); border-radius:13px; flex-shrink:0;}
+  .hero-wordmark .brand-text{color:var(--text);}
+  .hero-wordmark .brand-accent{color:var(--accent);}
+  .hero-tagline{color:var(--text-dim); font-size:19px; margin:0 0 22px;}
+  .hero-pills{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:22px;}
+  .hero-pill{
+    padding:7px 16px; border-radius:20px; font-size:13.5px; font-weight:600; font-family:'IBM Plex Sans',sans-serif;
+  }
+  .hero-pill.telecom{background:var(--telecom-dim); color:var(--telecom); border:1px solid var(--telecom);}
+  .hero-pill.bssoss{background:var(--bssoss-dim); color:var(--bssoss); border:1px solid var(--bssoss);}
+  .hero-pill.finance{background:var(--finance-dim); color:var(--finance); border:1px solid var(--finance);}
+  .hero-credit{color:#5C6779; font-size:13px; margin-top:20px;}
+  .hero-diagram{
+    position:absolute; right:40px; top:50%; transform:translateY(-50%); width:340px; opacity:0.95;
+    pointer-events:none;
+  }
+  @media (max-width:1100px){.hero-diagram{display:none;}}
   .hero-stats{display:flex; gap:26px; flex-wrap:wrap;}
   .hero-cta{
     display:inline-flex; align-items:center; gap:10px; margin-top:26px; padding:12px 20px;
@@ -280,14 +322,50 @@
 </head>
 <body>
 
+<header class="site-header">
+  <a class="brand" href="./"><img src="favicon.svg" alt=""><span class="brand-text">AI-<span class="brand-accent">Regenesis</span></span></a>
+  <nav>
+    <a href="./">Browse the catalog</a>
+    <a href="build/">Build Your Own</a>
+    <a href="deep8/">Deep 8-Layer</a>
+    <a href="skills/">Skills (free)</a>
+  </nav>
+</header>
+
 <header class="hero">
   <canvas id="netcanvas"></canvas>
+  <svg class="hero-diagram" viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#9AA3AE" stroke-width="1.4" fill="none" opacity="0.8">
+      <path d="M 170 58 L 170 88"/>
+      <path d="M 100 148 L 100 178"/>
+      <path d="M 240 148 L 240 178"/>
+      <path d="M 170 238 L 170 268"/>
+    </g>
+    <rect x="90" y="6" width="160" height="52" rx="10" fill="#DCEBFB" stroke="#5B93C9" stroke-width="1.2"/>
+    <text x="170" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="#1C4A73" font-family="'IBM Plex Sans',sans-serif">Orchestrator</text>
+    <rect x="20" y="96" width="140" height="52" rx="10" fill="#DBF2E7" stroke="#4FAE83" stroke-width="1.2"/>
+    <text x="90" y="127" text-anchor="middle" font-size="13" font-weight="700" fill="#1B5E3D" font-family="'IBM Plex Sans',sans-serif">Worker A</text>
+    <rect x="170" y="96" width="140" height="52" rx="10" fill="#DBF2E7" stroke="#4FAE83" stroke-width="1.2"/>
+    <text x="240" y="127" text-anchor="middle" font-size="13" font-weight="700" fill="#1B5E3D" font-family="'IBM Plex Sans',sans-serif">Worker B</text>
+    <rect x="90" y="186" width="160" height="52" rx="10" fill="#DBF2E7" stroke="#4FAE83" stroke-width="1.2"/>
+    <text x="170" y="217" text-anchor="middle" font-size="13" font-weight="700" fill="#1B5E3D" font-family="'IBM Plex Sans',sans-serif">Aggregator</text>
+    <rect x="90" y="276" width="160" height="52" rx="10" fill="#FBE8CE" stroke="#D89A3F" stroke-width="1.2"/>
+    <text x="170" y="307" text-anchor="middle" font-size="14" font-weight="700" fill="#7A4E12" font-family="'IBM Plex Sans',sans-serif">Action</text>
+  </svg>
   <div class="hero-inner">
+    <div class="hero-wordmark"><img src="favicon.svg" alt=""><span class="brand-text">AI-<span class="brand-accent">Regenesis</span></span></div>
+    <p class="hero-tagline">The reference architecture library for agentic AI</p>
+    <div class="hero-pills">
+      <span class="hero-pill telecom">Telecom</span>
+      <span class="hero-pill bssoss">BSS/OSS</span>
+      <span class="hero-pill finance">Finance</span>
+    </div>
     <div class="eyebrow"><span class="dot"></span> 60 use cases · 8 architecture patterns · 3 domains</div>
     <h1>Where multi-agent systems earn their keep in <span class="accent-telecom">telecom</span>, <span class="accent-bssoss">BSS/OSS</span> and <span class="accent-finance">finance</span></h1>
     <p class="hero-sub">A working catalog of orchestrator, hierarchical, pipeline, blackboard, debate-critique,
     market-based, event-swarm, and human-escalation architectures — each tied to a specific operational problem,
     a real agent roster, a named tech stack, and a retrospective on what we'd change.</p>
+    <p class="hero-credit">Created by Naga Gande</p>
     <div class="hero-stats">
       <div class="stat"><b>20</b><span>Telecom</span></div>
       <div class="stat"><b>20</b><span>BSS/OSS</span></div>
@@ -334,6 +412,7 @@
 
 <script id="catalog-data" type="application/json">__DATA_JSON__</script>
 <script>
+const GITHUB_REPO_URL = "__GITHUB_REPO_URL__";
 const PAYLOAD = JSON.parse(document.getElementById('catalog-data').textContent);
 const CATALOG = PAYLOAD.catalog;
 const REFERENCES = PAYLOAD.references || [];
@@ -402,7 +481,7 @@ function openReferencePanel(ref){
     <p class="problem-text">${ref.description}</p>
     ${blueprintBlock}
     <div class="mermaid-wrap">${ref.diagram_svg}</div>
-    <span class="gh-link">Full markdown source: <a href="${ref.path}" target="_blank">${ref.path}</a></span>
+    <span class="gh-link">Full markdown source: <a href="${GITHUB_REPO_URL}/blob/main/${ref.path}" target="_blank">${ref.path}</a></span>
   `;
   document.getElementById('overlay').classList.add('open');
   document.body.style.overflow='hidden';
@@ -688,7 +767,7 @@ function openPanel(uc){
     <ul class="retro-list">${retroItems}</ul>
 
     ${deep8Cross}
-    <span class="gh-link">Full markdown source: <a href="${uc.path}" target="_blank">${uc.path}</a></span>
+    <span class="gh-link">Full markdown source: <a href="${GITHUB_REPO_URL}/blob/main/${uc.path}" target="_blank">${uc.path}</a></span>
   `;
   if(uc.deep8_available){
     document.getElementById('quick-crosslink-deep8').onclick = () => {
@@ -741,7 +820,7 @@ function openDeep8Panel(entry){
     <ol class="build-order-list">${buildOrderItems}</ol>
 
     <div class="crosslink-btn" id="deep8-crosslink-back">⚡ View Quick Reference Architecture</div>
-    <span class="gh-link">Full markdown source: <a href="${entry.path}" target="_blank">${entry.path}</a></span>
+    <span class="gh-link">Full markdown source: <a href="${GITHUB_REPO_URL}/blob/main/${entry.path}" target="_blank">${entry.path}</a></span>
   `;
   document.getElementById('deep8-crosslink-back').onclick = () => {
     const quickUc = CATALOG.find(u=>u.domain_slug===entry.domain_slug && u.id===entry.id);

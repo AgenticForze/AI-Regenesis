@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="{{ '/favicon.svg' | relative_url }}">
+<link rel="alternate icon" href="{{ '/favicon.svg' | relative_url }}">
 <!--
   Analytics — not wired up yet (Phase 0 quick-start item, still open). To activate:
     1. Sign up for Plausible (or swap this for GA4) and get your site's domain registered there.
@@ -46,8 +48,11 @@
   }
   .site-header a.brand{
     color:var(--text); text-decoration:none; font-weight:700; font-size:15px; letter-spacing:.01em;
+    display:inline-flex; align-items:center; gap:8px;
   }
-  .site-header a.brand span{color:var(--accent);}
+  .site-header a.brand img{width:22px; height:22px; border-radius:6px; background:none; padding:0; max-width:none;}
+  .site-header a.brand .brand-text{color:var(--text);}
+  .site-header a.brand .brand-accent{color:var(--accent);}
   .site-header nav a{
     color:var(--text-dim); text-decoration:none; font-size:13px; margin-left:18px;
   }
@@ -82,7 +87,7 @@
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="{{ '/' | relative_url }}">AI-<span>Regenesis</span></a>
+    <a class="brand" href="{{ '/' | relative_url }}"><img src="{{ '/favicon.svg' | relative_url }}" alt=""><span class="brand-text">AI-<span class="brand-accent">Regenesis</span></span></a>
     <nav>
       <a href="{{ '/' | relative_url }}">Browse the catalog</a>
       <a href="{{ '/build/' | relative_url }}">Build Your Own</a>
