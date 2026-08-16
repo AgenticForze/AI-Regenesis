@@ -1,0 +1,45 @@
+---
+title: "<Landscape Topic>"
+sidebar_label: "<N.N> <Short Title>"
+phase: <9 or 14>
+chapter: "<e.g. 9.2>"
+prerequisites: ["<chapter-id>"]
+tags: ['hl-survey']
+---
+
+import ComparisonTable from '@site/src/components/ComparisonTable';
+
+<p className="regai-flight-level">Chapter {frontMatter.chapter} · Phase {frontMatter.phase} · HL Survey</p>
+
+<!--
+  LANDSCAPE CHAPTER CONTRACT — Phases 9 and 14 only (Section 2.1). This is
+  a deliberately lighter four-section template: breadth-first orientation,
+  no implementation detail, no 4x3 use-case grid, no architecture diagram.
+  Those live in the deep-dive chapters this page points to — don't
+  duplicate them here.
+-->
+
+## TL;DR
+
+<!-- 3-5 sentences, no jargon. -->
+
+## High-Level Explanation
+
+<!-- What it is, who's behind it, what it's for. No implementation detail, no code. -->
+
+## Comparison Table
+
+<ComparisonTable
+  columns={['<Option A>', '<Option B>', '<Option C>']}
+  rows={[
+    {aspect: '<HL trade-off, e.g. "Backing org">', values: ['<...>', '<...>', '<...>']},
+    {aspect: '<HL trade-off, e.g. "License">', values: ['<...>', '<...>', '<...>']},
+    {aspect: '<HL trade-off, e.g. "Learning curve">', values: ['<...>', '<...>', '<...>'], decisive: true},
+  ]}
+/>
+
+## Where to Go Deeper
+
+<!-- Point to the corresponding deep-dive chapter(s) elsewhere in the curriculum. -->
+
+- **Deep-dive chapter:** [<Chapter N.N — Title>](<relative-link>)

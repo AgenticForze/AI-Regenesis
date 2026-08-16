@@ -1,0 +1,27 @@
+.card {
+  border: 1px solid var(--regai-hairline);
+  border-radius: var(--ifm-global-radius);
+  padding: 1.5rem;
+  background: var(--regai-paper-raised);
+  position: relative;
+}
+
+.number {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.75rem;
+  color: var(--regai-amber-dim);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.name {
+  margin: 0 0 0.6rem;
+  font-size: 1.1rem;
+}
+
+.description {
+  margin: 0;
+  font-size: 0.92rem;
+  opacity: 0.85;
+  line-height: 1.55;
+}

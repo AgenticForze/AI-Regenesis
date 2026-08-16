@@ -1,0 +1,139 @@
+/**
+ * RegAITraining design tokens — "altitude gauge" system.
+ * The curriculum's own dual-altitude principle (High-Level pass vs.
+ * Deep-Dive pass) is the design's organizing idea: phases are flight
+ * levels, HL content reads "teal / cruising", deep-dive content reads
+ * "amber / instrument". See design plan in chat for rationale.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* Color tokens */
+  --regai-paper: #EDF1F3;
+  --regai-paper-raised: #FFFFFF;
+  --regai-graphite: #12161C;
+  --regai-graphite-soft: #1B2129;
+  --regai-ink: #1A1F26;
+  --regai-amber: #C89B3C;       /* Deep-Dive / instrument mode */
+  --regai-amber-dim: #A87F2C;
+  --regai-teal: #3D8E88;        /* High-Level / cruising mode */
+  --regai-teal-dim: #2F6E69;
+  --regai-hairline: rgba(18, 22, 28, 0.12);
+
+  --ifm-color-primary: #2F6E69;
+  --ifm-color-primary-dark: #2A625D;
+  --ifm-color-primary-darker: #275C57;
+  --ifm-color-primary-darkest: #204B47;
+  --ifm-color-primary-light: #347A74;
+  --ifm-color-primary-lighter: #37807A;
+  --ifm-color-primary-lightest: #3F938C;
+
+  --ifm-background-color: var(--regai-paper);
+  --ifm-font-color-base: var(--regai-ink);
+  --ifm-navbar-background-color: var(--regai-paper-raised);
+  --ifm-footer-background-color: var(--regai-graphite);
+
+  --ifm-font-family-base: 'IBM Plex Sans', system-ui, sans-serif;
+  --ifm-heading-font-family: 'Space Grotesk', var(--ifm-font-family-base);
+  --ifm-font-family-monospace: 'IBM Plex Mono', 'SFMono-Regular', monospace;
+
+  --ifm-heading-font-weight: 600;
+  --ifm-code-font-size: 92%;
+  --ifm-global-radius: 6px;
+  --docusaurus-highlighted-code-line-bg: rgba(200, 155, 60, 0.15);
+}
+
+[data-theme='dark'] {
+  --regai-paper: var(--regai-graphite);
+  --regai-paper-raised: var(--regai-graphite-soft);
+  --regai-ink: #E7EAEE;
+  --regai-hairline: rgba(231, 234, 238, 0.14);
+
+  --ifm-color-primary: #5BB8B1;
+  --ifm-color-primary-dark: #45A9A1;
+  --ifm-color-primary-darker: #3B9F97;
+  --ifm-color-primary-darkest: #30827B;
+  --ifm-color-primary-light: #71C4BE;
+  --ifm-color-primary-lighter: #7ECBC5;
+  --ifm-color-primary-lightest: #A6DBD7;
+
+  --ifm-background-color: var(--regai-graphite);
+  --ifm-font-color-base: var(--regai-ink);
+  --ifm-navbar-background-color: var(--regai-graphite-soft);
+  --docusaurus-highlighted-code-line-bg: rgba(200, 155, 60, 0.22);
+}
+
+/* Chapter numbers / flight-level labels read as instrument readouts */
+.regai-flight-level {
+  font-family: var(--ifm-font-family-monospace);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--regai-amber-dim);
+}
+
+[data-theme='dark'] .regai-flight-level {
+  color: var(--regai-amber);
+}
+
+.navbar__title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.markdown h2 {
+  border-bottom: 1px solid var(--regai-hairline);
+  padding-bottom: 0.4rem;
+  margin-top: 2.5rem;
+}
+
+/* Altitude toggle used inside concept chapters to switch reading register */
+.regai-altitude-toggle {
+  display: inline-flex;
+  gap: 0;
+  border: 1px solid var(--regai-hairline);
+  border-radius: 999px;
+  padding: 3px;
+  margin: 0.5rem 0 1.25rem;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.8rem;
+}
+
+.regai-altitude-toggle button {
+  border: none;
+  background: transparent;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+  color: var(--regai-ink);
+  opacity: 0.55;
+}
+
+.regai-altitude-toggle button.active--hl {
+  background: var(--regai-teal);
+  color: white;
+  opacity: 1;
+}
+
+.regai-altitude-toggle button.active--deep {
+  background: var(--regai-amber);
+  color: var(--regai-graphite);
+  opacity: 1;
+}
+
+/* Shared container for standalone pages (About/Roadmap/Changelog) */
+.regai-page-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+}
+
+.regai-page-container-wide {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+}
+

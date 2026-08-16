@@ -1,0 +1,28 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.1rem;
+  margin-bottom: 3rem;
+}
+
+.section {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--regai-hairline);
+}
+
+.section h2 {
+  font-size: 1.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.section p {
+  opacity: 0.88;
+  line-height: 1.65;
+}

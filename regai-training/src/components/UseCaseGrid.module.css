@@ -1,0 +1,79 @@
+.wrapper {
+  margin: 1.5rem 0 2.5rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--regai-hairline);
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.tab,
+.tabActive {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.85rem;
+  border: none;
+  background: transparent;
+  padding: 0.6rem 0.9rem;
+  cursor: pointer;
+  color: var(--regai-ink);
+  opacity: 0.6;
+  border-bottom: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.tabActive {
+  opacity: 1;
+  border-bottom-color: var(--regai-amber);
+  color: var(--regai-amber-dim);
+}
+
+.count {
+  font-size: 0.7rem;
+  opacity: 0.6;
+  background: var(--regai-hairline);
+  border-radius: 999px;
+  padding: 0 0.4rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  border: 1px solid var(--regai-hairline);
+  border-radius: var(--ifm-global-radius);
+  padding: 1rem 1.1rem;
+  background: var(--regai-paper-raised);
+}
+
+.cardTitle {
+  margin: 0 0 0.6rem;
+  font-size: 1rem;
+}
+
+.label {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.55;
+  margin: 0.6rem 0 0.15rem;
+}
+
+.riskLabel {
+  composes: label;
+  color: var(--regai-amber-dim);
+  opacity: 1;
+}
+
+.risk {
+  border-left: 2px solid var(--regai-amber);
+  padding-left: 0.6rem;
+}

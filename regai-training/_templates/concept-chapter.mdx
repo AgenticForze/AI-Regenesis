@@ -1,0 +1,106 @@
+---
+title: "<Concept Name>"
+sidebar_label: "<N.N> <Short Title>"
+phase: <0-18>
+chapter: "<e.g. 10.4>"
+prerequisites: ["<chapter-id>", "<chapter-id>"]
+tags: []
+---
+
+import ComparisonTable from '@site/src/components/ComparisonTable';
+import ArchitectureDiagram from '@site/src/components/ArchitectureDiagram';
+import UseCaseGrid from '@site/src/components/UseCaseGrid';
+import CheckYourUnderstanding from '@site/src/components/CheckYourUnderstanding';
+
+<p className="regai-flight-level">Chapter {frontMatter.chapter} · Phase {frontMatter.phase}</p>
+
+<!--
+  CHAPTER CONTRACT — every concept chapter must fill in all seven sections
+  below (Section 2 of the curriculum plan). Do not delete a section heading
+  even if a subsection is thin; mark it "N/A for this concept" with a one-
+  line reason instead, so reviewers can tell omission from oversight.
+-->
+
+## TL;DR
+
+<!-- 3-5 sentences, no jargon: the elevator pitch plus one relatable analogy. -->
+
+## High-Level Explanation
+
+<!--
+  How it works conceptually, for a working professional who won't implement
+  it themselves. Include at least one custom diagram/illustration (SVG) —
+  drop it under static/img/illustrations/ and reference it below.
+-->
+
+![Concept illustration](/img/illustrations/REPLACE-ME.svg)
+
+## Deep-Dive Explanation
+
+<!-- Technical mechanics: math, algorithms, pseudo-code, architecture, failure modes, edge cases. -->
+
+## Comparison & Related Concepts
+
+<ComparisonTable
+  columns={['<This Concept>', '<Adjacent Concept A>', '<Adjacent Concept B>']}
+  rows={[
+    {aspect: '<dimension, e.g. "Best for">', values: ['<...>', '<...>', '<...>'], decisive: true},
+    {aspect: '<dimension>', values: ['<...>', '<...>', '<...>']},
+  ]}
+  caption="<one-line takeaway: when to reach for which>"
+/>
+
+## Reference Architecture
+
+<!-- Omit this whole section only if the concept genuinely has no moving parts; note why if so. -->
+
+<ArchitectureDiagram
+  title="<System name>"
+  mermaid={`
+flowchart LR
+  A[Component A] --> B[Component B]
+  B --> C[Component C]
+`}
+  components={[
+    {name: 'Component A', responsibility: '<what it does>'},
+    {name: 'Component B', responsibility: '<what it does>'},
+    {name: 'Component C', responsibility: '<what it does>'},
+  ]}
+/>
+
+## Industry Use Cases
+
+<!-- Exactly 4 use cases per domain (12 total). Each needs problem, solution sketch, and a risk to watch. -->
+
+<UseCaseGrid
+  finance={[
+    {title: '<Use case 1>', problem: '<...>', solution: '<...>', risk: '<...>'},
+    {title: '<Use case 2>', problem: '<...>', solution: '<...>', risk: '<...>'},
+    {title: '<Use case 3>', problem: '<...>', solution: '<...>', risk: '<...>'},
+    {title: '<Use case 4>', problem: '<...>', solution: '<...>', risk: '<...>'},
+  ]}
+  healthcare={[
+    {title: '<Use case 1>', problem: '<...>', solution: '<...>', risk: '<...>'},
+    {title: '<Use case 2>', problem: '<...>', solution: '<...>', risk: '<...>'},
+    {title: '<Use case 3>', problem: '<...>', solution: '<...>', risk: '<...>'},
+    {title: '<Use case 4>', problem: '<...>', solution: '<...>', risk: '<...>'},
+  ]}
+  telecom={[
+    {title: '<Use case 1>', problem: '<...>', solution: '<...>', risk: '<...>'},
+    {title: '<Use case 2>', problem: '<...>', solution: '<...>', risk: '<...>'},
+    {title: '<Use case 3>', problem: '<...>', solution: '<...>', risk: '<...>'},
+    {title: '<Use case 4>', problem: '<...>', solution: '<...>', risk: '<...>'},
+  ]}
+/>
+
+## Check Your Understanding
+
+<CheckYourUnderstanding
+  questions={[
+    {question: '<self-check question 1>', answer: '<answer>'},
+    {question: '<self-check question 2>', answer: '<answer>'},
+    {question: '<self-check question 3>', answer: '<answer>'},
+  ]}
+  exerciseUrl="<link into the capstone repo, if applicable>"
+  exerciseLabel="<short label for the hands-on exercise>"
+/>

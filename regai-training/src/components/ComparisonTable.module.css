@@ -1,0 +1,51 @@
+.figure {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.table th,
+.table td {
+  border: 1px solid var(--regai-hairline);
+  padding: 0.55rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.table thead th {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: var(--regai-paper-raised);
+}
+
+.aspectHeader {
+  width: 160px;
+}
+
+.aspectCell {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.decisiveRow {
+  background: rgba(200, 155, 60, 0.08);
+}
+
+.pin {
+  color: var(--regai-amber);
+  margin-right: 0.35rem;
+  font-size: 0.7rem;
+}
+
+.caption {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}

@@ -1,0 +1,187 @@
+.hero {
+  padding: 4.5rem 1.5rem 3rem;
+  text-align: center;
+  border-bottom: 1px solid var(--regai-hairline);
+}
+
+.heroInner {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.eyebrow,
+.sectionEyebrow {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--regai-amber-dim);
+  margin-bottom: 0.75rem;
+}
+
+.title {
+  font-size: 2.75rem;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  opacity: 0.85;
+  max-width: 620px;
+  margin: 0 auto 2rem;
+}
+
+.heroCtas {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.ctaPrimary {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.9rem;
+  background: var(--regai-amber);
+  color: var(--regai-graphite) !important;
+  padding: 0.65rem 1.3rem;
+  border-radius: 999px;
+  text-decoration: none !important;
+  font-weight: 600;
+}
+
+.ctaSecondary {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.9rem;
+  border: 1px solid var(--regai-hairline);
+  color: var(--regai-ink) !important;
+  padding: 0.65rem 1.3rem;
+  border-radius: 999px;
+  text-decoration: none !important;
+}
+
+.statsBar {
+  border-bottom: 1px solid var(--regai-hairline);
+  background: var(--regai-paper-raised);
+}
+
+.statsInner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.75rem 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  text-align: center;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.statValue {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--regai-amber-dim);
+}
+
+.statLabel {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.65;
+}
+
+.main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 5rem;
+}
+
+.sectionEyebrow {
+  text-align: center;
+}
+
+.pathGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.roles {
+  margin-top: 4rem;
+}
+
+.rolesCard {
+  border: 1px solid var(--regai-hairline);
+  border-radius: var(--ifm-global-radius);
+  padding: 2rem;
+  background: var(--regai-paper-raised);
+  text-align: center;
+}
+
+.rolesLink {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-family: var(--ifm-font-family-monospace);
+  color: var(--regai-teal);
+}
+
+.principlesSection {
+  margin-top: 4rem;
+}
+
+.principlesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.1rem;
+  margin-top: 1.5rem;
+}
+
+.principlesFooter {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.88rem;
+}
+
+.principlesFooter a {
+  color: var(--regai-teal);
+}
+
+.growth {
+  margin-top: 4rem;
+}
+
+.growthCard {
+  border: 1px solid var(--regai-hairline);
+  border-radius: var(--ifm-global-radius);
+  padding: 2rem;
+  text-align: center;
+  background: var(--regai-graphite);
+  color: #E7EAEE;
+}
+
+.growthCard :global(h2) {
+  color: #E7EAEE;
+}
+
+.growthCard a {
+  color: var(--regai-amber);
+}
+
+.growthCard code {
+  background: rgba(255, 255, 255, 0.12);
+  color: inherit;
+}
+
+@media (max-width: 640px) {
+  .title {
+    font-size: 2rem;
+  }
+}

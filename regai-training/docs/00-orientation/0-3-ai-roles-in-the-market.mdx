@@ -1,0 +1,81 @@
+---
+title: "AI Roles in the Market: Definitions, Responsibilities & Your Curriculum Path"
+sidebar_label: "0.3 AI Roles in the Market"
+sidebar_position: 3
+chapter: "0.3"
+tags: ['v5']
+---
+
+<p className="regai-flight-level">Chapter 0.3 · Phase 0 · Added in v5</p>
+
+# AI Roles in the Market
+
+A market map of the fifteen major AI/agentic job roles as of 2026 — from Data Scientist through
+Multi-Agent Systems Architect through AI Governance Specialist — so you can go from **"what job
+am I aiming for"** straight to **"which chapters do I actually need"** without reading all
+nineteen phases to find out. For each role: what they actually do day to day, which curriculum
+phases are core vs. supplementary, and which industry certifications are worth pursuing.
+
+## Role Map
+
+"Core Curriculum Path" lists the phases a role should treat as required reading; everything else
+in the curriculum is optional depth for that role.
+
+| Role | What They Actually Do | Core Curriculum Path | Recommended Certifications |
+|---|---|---|---|
+| **Data Scientist** | EDA, feature engineering, classical ML model selection/tuning, translating findings into business recommendations | Phase 1 (full), 2.1–2.2, 4.1 | AWS Certified Machine Learning Engineer – Associate; Google Cloud Professional Machine Learning Engineer; Azure Data Scientist Associate (DP-100) |
+| **Data Engineer (AI-Focused)** | Builds/maintains ingestion pipelines, feature stores, and the plumbing feeding training data and RAG corpora | 1.7, 6.2–6.4, 6.7, 13.2 (advanced) | Google Cloud Professional Data Engineer; AWS Certified Data Engineer – Associate *(general data-eng certs — complementary, not AI-specific)* |
+| **Generative AI Engineer / LLM App Developer** | Builds production LLM-powered apps: prompt pipelines, RAG integration, vector DB wiring, output validation | Phases 3–6 (full), 5.4, 15.2 | AWS Certified AI Practitioner; Google Cloud Generative AI Leader; Azure AI Engineer Associate (AI-102); Databricks Certified Generative AI Engineer Associate |
+| **Prompt Engineer** *(increasingly folded into GenAI Engineer)* | Prompt design, testing, versioning, few-shot curation, guardrail authoring | Phase 5 (full), esp. 5.1, 5.2, 5.4, 5.6 | Same as GenAI Engineer, above |
+| **LLM / Foundation Model Engineer** | Pretrains and fine-tunes base models; manages distributed training infra; evaluates base-model quality | Phase 2 (full), Phase 7 (full), Phase 13 (full) | NVIDIA-Certified Associate: Generative AI; Databricks Certified Generative AI Engineer Associate (partial); a cloud ML-engineer cert as infra baseline |
+| **AI Agent Developer / Agentic AI Engineer** | Builds single-agent and tool-using agents; implements memory/context management; integrates a framework | Phase 8 (full), Phase 9, Phase 10 (full), relevant part of Phase 12 | No dedicated agentic-AI certification exists industry-wide yet (verified 2026) — closest proxies are framework-specific learning paths (LangChain Academy, CrewAI) and cloud agent-builder training paths (AWS/Google/Azure) |
+| **Multi-Agent Systems Architect** | Designs multi-agent topologies, inter-agent protocols, coordination/consensus strategies at scale | Phase 10 (full, incl. 10.4/10.5), Phase 11 (full), Phase 12 (full) | Same as Agent Developer, above, plus a general architecture credential (e.g., TOGAF) if operating at enterprise-architect level |
+| **AI Solutions / Enterprise Architect** | End-to-end architecture spanning model, data, agent, and platform layers; hyperscaler selection; landing-zone design | Phase 14 (full), Phase 15 (full), relevant Phase 16 domain | Pair a cloud AI cert with that provider's architect cert — e.g. Google Cloud Generative AI Leader + Professional Cloud Architect; AWS Certified AI Practitioner + Solutions Architect Professional; Azure AI Engineer Associate + Solutions Architect Expert; OCI AI Foundations Associate + OCI Generative AI Professional |
+| **MLOps / LLMOps / AgentOps Engineer** | CI/CD for models and agents, evaluation pipelines, observability, FinOps | Phase 15 (full, esp. 15.1–15.3, 15.6, 15.8) | Databricks Certified Generative AI Engineer Associate; a cloud ML-engineer cert; general SRE/DevOps certs as complementary background |
+| **AI Platform / Infrastructure Engineer** | GPU/TPU cluster management, distributed-training infra, inference-serving optimization | 2.8, 13.5, 13.10 | NVIDIA-Certified Associate: Generative AI; NVIDIA AI infrastructure training; cloud architect-level certs |
+| **AI Security Engineer / Red-Teamer** | Adversarial testing, prompt-injection defense, execution-sandboxing review, vulnerability benchmarking | 10.5, 15.2 (red-teaming sub-section), 15.4 | OWASP Top 10 for LLM Applications training/certificate; general security credentials (CISSP, OSCP) as complementary background — no mature AI-specific security cert exists industry-wide yet |
+| **AI Governance, Risk & Compliance (GRC) Specialist** | Regulatory mapping (EU AI Act, NIST AI RMF, ISO 42001), risk assessments, model-risk management | 1.9, 15.6, 15.7, 15.9 | IAPP AI Governance Professional (AIGP); ISO/IEC 42001 Lead Implementer or Lead Auditor; NIST AI RMF practitioner training |
+| **Responsible AI / AI Ethics Lead** | Bias/fairness audits, human-oversight design, ethics-review processes | 1.9, 15.9 | Same governance certs as GRC Specialist, above, plus a university/Coursera Responsible AI specialization |
+| **AI Product Manager** | Defines agentic-product requirements, prioritizes use cases, owns the business case/ROI, cross-functional coordination | Phase 0 (full), 5.7–5.8, relevant Phase 16 domain, **15.11** | Google Cloud Generative AI Leader; an AI-focused product-management certificate program; general PM credentials (CSPO, etc.) as complementary background |
+| **Domain-Specific AI Specialist** *(Quant AI Engineer/Finance, Clinical AI Specialist/Health, Network AI Engineer/Telco)* | Applies the full agentic stack to one regulated domain's workflows | Full technical stack (Phases 5–12) + relevant **Phase 16** domain chapter + 15.6/15.7 mapped to that domain | One hyperscaler AI cert (any provider) **plus** a domain credential — e.g. a finance/AI credential for Quant roles, HIMSS-style health-IT credentials for Clinical AI, TM Forum certifications for Telco |
+
+## Gap Analysis — What This Exercise Found Missing
+
+Building the role map above meant checking every role's real day-to-day needs against the
+nineteen phases already planned. Two genuine gaps surfaced and are now closed:
+
+- **Conversational & Agent UX design** had no home anywhere in the curriculum — prompting
+  (Phase 5) covers how to talk *to* a model, and agent architecture (Phase 8) covers how an agent
+  reasons, but nothing covered how a user-facing agent should *behave toward a human* (when to
+  explain itself, how to recover from a misunderstood request, how to signal it's still working
+  on a long tool call). Closed with new **[Chapter 8.9](/docs/agents-foundations)**.
+- **AI Product Strategy / business case building** was assumed but never taught — the AI Product
+  Manager role showed up constantly in the mapping table but had no chapter that was actually
+  theirs. Closed with new **Chapter 15.11**.
+
+Two other needs surfaced but were deliberately left **out of scope**, with a stated reason rather
+than a chapter added just to check a box:
+
+- **General-purpose data engineering at scale** (Spark/Flink/Airflow, streaming architectures,
+  warehouse modeling) is a full discipline of its own; this curriculum covers the AI-specific
+  slice of it (1.7, 6.2–6.4) and treats broader data-engineering skill as a
+  prerequisite/complementary track rather than something to re-teach here.
+- **Academic ML research methodology** (experimental design, causal inference, novel architecture
+  research) is what separates an Applied Research Scientist from an ML Engineer; this curriculum
+  is built for working professionals applying AI, not for research-degree-level theory, so it
+  points to academic/university resources rather than adding that depth here.
+
+## How This Differs From Chapter 18.4
+
+Chapter 18.4 ("Suggested Certification / External Learning-Path Mapping," Phase 18) isn't
+redundant with this one: **this chapter** is the *entry-point* map — here's the job market,
+here's your role, here's your path — read before you start. **Chapter 18.4** is the *exit-point*
+detail — specific exam-prep guidance, study-plan sequencing, and external course links for the
+certifications you've decided to pursue after finishing your track.
+
+---
+
+*Certifications in the table above were verified against current (2026) provider documentation.
+Sources: [Top AI Certifications from Google, Microsoft & AWS (2026)](https://topaicertifications.com/best-ai-certifications-from-google-microsoft-aws/),
+[Databricks Certified Generative AI Engineer Associate](https://www.databricks.com/learn/certification/genai-engineer-associate),
+[AI Governance Certification Guide 2026](https://www.glacis.io/guide-ai-governance-certification).*

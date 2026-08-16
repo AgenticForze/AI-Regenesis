@@ -1,0 +1,70 @@
+.gauge {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.baseline {
+  stroke: var(--regai-hairline);
+  stroke-width: 1;
+}
+
+.tick {
+  stroke-width: 2;
+}
+
+.foundation { stroke: var(--regai-teal); }
+.practitioner { stroke: var(--regai-amber); }
+.advanced { stroke: var(--regai-ink); opacity: 0.7; }
+
+.tickLabel {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 9px;
+  fill: var(--regai-ink);
+  opacity: 0.55;
+}
+
+.climbPath {
+  stroke: var(--regai-amber);
+  stroke-width: 2.5;
+  stroke-dasharray: 4 4;
+  opacity: 0.85;
+}
+
+.needleTip {
+  fill: var(--regai-amber);
+}
+
+.legend {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.78rem;
+  opacity: 0.75;
+}
+
+.legendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.dotFoundation, .dotPractitioner, .dotAdvanced {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dotFoundation { background: var(--regai-teal); }
+.dotPractitioner { background: var(--regai-amber); }
+.dotAdvanced { background: var(--regai-ink); opacity: 0.7; }
