@@ -3,9 +3,15 @@ branch: main
 
 ## Last sync
 
-date: 2026-08-16T07:44:10Z
+date: 2026-08-18T04:22:10Z
 
 ### Updated in this project
+
+- Finalized: all 240 case assets verified present, every route walked, search now indexes all 60 write-ups and tech stacks, hero overflow and builder layout fixed.
+
+- Builder now renders a real SVG from the spec, with SVG and .zip package downloads.
+- Skills & packs downloads build genuine .zip archives in the browser from the imported `skills/` and `packs/` sources.
+- All 184 diagrams stripped of their white background so they sit on the page ground.
 
 - Imported all 60 use-case write-ups and inlined them: problem statement, agent roster, per-step tech stack, build order and retrospective now render on the page instead of linking out.
 

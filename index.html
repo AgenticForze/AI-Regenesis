@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="_ds/organic-fa127857-12c2-439a-b6a4-af00ce5c481f/styles.css">
   <script src="_ds/organic-fa127857-12c2-439a-b6a4-af00ce5c481f/_ds_bundle.js"></script>
   <script src="case-data.js"></script>
+  <script src="packager.js"></script>
   <style>
     body { background: var(--color-bg); }
     .btn { white-space: nowrap; }
@@ -37,7 +38,7 @@
 
   <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
     <div>
-      <div style="max-width:1180px;margin:0 auto;padding:52px 32px 20px;position:relative;display:flex;gap:40px;align-items:flex-start">
+      <div style="max-width:1180px;margin:0 auto;padding:52px 32px 20px;position:relative;display:flex;gap:40px;align-items:flex-start;overflow:hidden">
         <div style="position:absolute;right:-60px;top:-20px;width:420px;height:420px;border-radius:999px;background:var(--color-accent-2-200);opacity:.45;pointer-events:none"></div>
         <div style="position:absolute;right:250px;top:250px;width:190px;height:190px;border-radius:999px;background:var(--color-accent-200);opacity:.55;pointer-events:none"></div>
         <svg viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg" style="width:300px;flex:none;align-self:center;order:2;pointer-events:none" aria-hidden="true">
@@ -275,14 +276,17 @@
 
       <sc-if value="{{ c.hasRoster }}" hint-placeholder-val="{{ false }}">
         <h3 style="margin-top:40px">Agents &amp; sub-agents</h3>
-        <table class="table" style="margin-top:8px">
-          <thead><tr><th style="width:34%">Agent</th><th>Responsibility</th></tr></thead>
-          <tbody>
-            <sc-for list="{{ c.agents }}" as="a" hint-placeholder-count="6">
-              <tr><td style="font-weight:600">{{ a.name }}</td><td>{{ a.role }}</td></tr>
-            </sc-for>
-          </tbody>
-        </table>
+        <div style="margin-top:10px;border-top:1px solid var(--color-divider)">
+          <div style="display:grid;grid-template-columns:34% 1fr;gap:20px;padding:10px 4px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-700);border-bottom:1px solid var(--color-divider)">
+            <div>Agent</div><div>Responsibility</div>
+          </div>
+          <sc-for list="{{ c.agents }}" as="a" hint-placeholder-count="6">
+            <div style="display:grid;grid-template-columns:34% 1fr;gap:20px;padding:14px 4px;border-bottom:1px solid var(--color-divider);font-size:14.5px;line-height:1.55">
+              <div style="font-weight:600">{{ a.name }}</div>
+              <div style="text-wrap:pretty">{{ a.role }}</div>
+            </div>
+          </sc-for>
+        </div>
       </sc-if>
 
       <sc-if value="{{ showDeep8Cta }}" hint-placeholder-val="{{ true }}">
@@ -303,14 +307,17 @@
 
       <sc-if value="{{ c.hasTech }}" hint-placeholder-val="{{ false }}">
         <h3 style="margin-top:40px">Technologies used, per step</h3>
-        <table class="table" style="margin-top:8px">
-          <thead><tr><th style="width:34%">Step / layer</th><th>Technology</th></tr></thead>
-          <tbody>
-            <sc-for list="{{ c.tech }}" as="t" hint-placeholder-count="8">
-              <tr><td style="font-weight:600">{{ t.step }}</td><td>{{ t.value }}</td></tr>
-            </sc-for>
-          </tbody>
-        </table>
+        <div style="margin-top:10px;border-top:1px solid var(--color-divider)">
+          <div style="display:grid;grid-template-columns:34% 1fr;gap:20px;padding:10px 4px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-700);border-bottom:1px solid var(--color-divider)">
+            <div>Step / layer</div><div>Technology</div>
+          </div>
+          <sc-for list="{{ c.tech }}" as="t" hint-placeholder-count="8">
+            <div style="display:grid;grid-template-columns:34% 1fr;gap:20px;padding:14px 4px;border-bottom:1px solid var(--color-divider);font-size:14.5px;line-height:1.55">
+              <div style="font-weight:600">{{ t.step }}</div>
+              <div style="text-wrap:pretty">{{ t.value }}</div>
+            </div>
+          </sc-for>
+        </div>
       </sc-if>
 
       <sc-if value="{{ c.hasBuild }}" hint-placeholder-val="{{ false }}">
@@ -376,7 +383,7 @@
   <sc-if value="{{ isReference }}">
     <div style="max-width:1100px;margin:0 auto;padding:32px 32px 64px">
       <h1 style="font-size:44px;margin-bottom:8px">Reference architectures</h1>
-      <p style="font-size:17px;max-width:660px;margin-bottom:36px;text-wrap:pretty">Two documents sit outside the 60-use-case catalog. Each shows how the pieces compose into a full system rather than one workflow.</p>
+      <p style="font-size:17px;max-width:660px;margin-bottom:36px;text-wrap:pretty">These sit outside the 60-use-case catalog. Each shows how the pieces compose into a full system rather than one workflow.</p>
 
       <h3>E2E platform architecture</h3>
       <p class="text-muted" style="font-size:14px;max-width:660px;margin-bottom:14px">How channels, orchestration, the agent mesh, and observability/governance fit together across all three domains at once.</p>
@@ -421,8 +428,8 @@
     <div style="max-width:1180px;margin:0 auto;padding:32px 32px 64px">
       <h1 style="font-size:44px;margin-bottom:8px">Build your own</h1>
       <p style="font-size:17px;max-width:640px;margin-bottom:28px;text-wrap:pretty">Describe your use case. The same engine behind the 60 catalog entries renders the diagram and the build order as you type. Free, no signup, nothing stored.</p>
-      <div style="display:grid;grid-template-columns:380px 1fr;gap:28px;align-items:start">
-        <div class="card elev-sm" style="padding:var(--space-4);gap:var(--space-3)">
+      <div style="display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start">
+        <div class="card elev-sm" style="padding:var(--space-4);gap:var(--space-3);flex:0 0 340px;min-width:0">
           <div class="field">
             <label>Use case name</label>
             <input class="input" value="{{ b.name }}" onInput="{{ b.setName }}" placeholder="e.g. Dunning &amp; collections automation">
@@ -455,64 +462,24 @@
             <label>Human checkpoint (leave empty for none)</label>
             <input class="input" value="{{ b.checkpoint }}" onInput="{{ b.setCheckpoint }}">
           </div>
-          <button class="btn btn-primary btn-block" onClick="{{ b.copy }}">{{ b.copyLabel }}</button>
+          <button class="btn btn-primary btn-block" onClick="{{ b.downloadBundle }}">Download package (.zip)</button>
+          <button class="btn btn-secondary btn-block" onClick="{{ b.copy }}">{{ b.copyLabel }}</button>
+          <button class="btn btn-ghost btn-block" onClick="{{ b.downloadSpec }}">Download spec.json</button>
+          <sc-if value="{{ b.showSpecBox }}" hint-placeholder-val="{{ false }}">
+            <textarea class="input" readonly="readonly" style="border-radius:var(--radius-md);min-height:150px;font-family:ui-monospace,monospace;font-size:12px;line-height:1.5" value="{{ b.specText }}" onFocus="{{ b.selectSpec }}" onClick="{{ b.selectSpec }}"></textarea>
+          </sc-if>
         </div>
 
-        <div>
+        <div style="flex:1 1 660px;min-width:0">
           <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:var(--space-6)">
-            <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:18px">
-              <div style="font-family:var(--font-heading);font-size:24px">{{ bdg.title }}</div>
-              <span class="tag tag-accent-2">{{ bdg.patternName }}</span>
+            <div style="display:flex;align-items:flex-start;gap:14px;margin-bottom:18px">
+              <div style="flex:1;min-width:0">
+                <div style="font-family:var(--font-heading);font-size:24px;line-height:1.2">{{ bdg.title }}</div>
+                <div style="font-size:13px;color:var(--color-neutral-700);margin-top:3px">{{ bdg.patternName }}</div>
+              </div>
+              <button class="btn btn-secondary" style="flex:none" onClick="{{ b.downloadSvg }}">Download SVG</button>
             </div>
-            <div style="display:flex;flex-direction:column;gap:18px">
-              <div>
-                <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-700);margin-bottom:8px">Data &amp; integration</div>
-                <div style="display:flex;flex-wrap:wrap;gap:8px">
-                  <sc-for list="{{ bdg.sources }}" as="s" hint-placeholder-count="3">
-                    <div style="background:var(--color-neutral-200);border-radius:999px;padding:8px 14px;font-size:13px">{{ s }}</div>
-                  </sc-for>
-                </div>
-              </div>
-              <div style="height:16px;border-left:2px dashed var(--color-neutral-400);margin-left:22px"></div>
-              <div>
-                <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-700);margin-bottom:8px">Orchestration</div>
-                <div style="background:var(--color-accent-2-500);color:var(--color-bg);border-radius:var(--radius-md);padding:12px 18px;font-family:var(--font-heading);font-size:16px;display:inline-block">{{ bdg.orchestrator }}</div>
-              </div>
-              <div style="height:16px;border-left:2px dashed var(--color-neutral-400);margin-left:22px"></div>
-              <div>
-                <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-700);margin-bottom:8px">Agents</div>
-                <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px">
-                  <sc-for list="{{ bdg.workers }}" as="w" hint-placeholder-count="4">
-                    <div style="background:var(--color-accent-2-200);border:1px solid var(--color-accent-2-300);border-radius:var(--radius-md);padding:12px 14px;font-size:13px;line-height:1.35">{{ w }}</div>
-                  </sc-for>
-                </div>
-              </div>
-              <div style="height:16px;border-left:2px dashed var(--color-neutral-400);margin-left:22px"></div>
-              <div>
-                <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-700);margin-bottom:8px">Action &amp; execution</div>
-                <div style="background:var(--color-accent);color:var(--color-bg);border-radius:var(--radius-md);padding:12px 18px;font-size:14px;display:inline-block">{{ bdg.action }}</div>
-              </div>
-              <div style="border-top:1px solid var(--color-divider);padding-top:16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
-                <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-700)">Observability &amp; governance</div>
-                <div class="tag tag-neutral">Tracing</div>
-                <div class="tag tag-neutral">Audit log</div>
-                <div class="tag tag-neutral">Guardrails</div>
-                <sc-if value="{{ bdg.hasCheckpoint }}">
-                  <div class="tag tag-outline">Human checkpoint: {{ bdg.checkpoint }}</div>
-                </sc-if>
-              </div>
-            </div>
-          </div>
-
-          <div style="margin-top:20px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;background:var(--color-surface);border-radius:var(--radius-lg);padding:var(--space-4)">
-            <div style="background:var(--color-bg);border-radius:var(--radius-md);padding:10px;width:150px;height:100px;display:grid;place-items:center;overflow:hidden;flex:none">
-              <img src="docs/telecom/01-network-fault-rca-remediation/architecture.svg" alt="Rendered SVG output example" style="max-width:100%;max-height:80px;width:auto;height:auto">
-            </div>
-            <div style="flex:1;min-width:240px">
-              <div style="font-family:var(--font-heading);font-size:16px;margin-bottom:4px">The preview above is live; the engine renders SVG</div>
-              <p style="font-size:13px;margin:0;max-width:460px">Run the same spec through the downloadable skill and you get a rendered SVG like the one in the catalog, plus the Mermaid source.</p>
-            </div>
-            <button class="btn btn-secondary" onClick="{{ seeQuickRef }}">See a rendered example</button>
+            {{ bdg.svg }}
           </div>
 
           <h3 style="margin:32px 0 12px">Suggested build order</h3>
@@ -533,7 +500,7 @@
   <sc-if value="{{ isSkills }}">
     <div style="max-width:1000px;margin:0 auto;padding:32px 32px 64px">
       <h1 style="font-size:44px;margin-bottom:8px">Skills &amp; packs</h1>
-      <p style="font-size:17px;max-width:640px;margin-bottom:12px;text-wrap:pretty">Everything here is free right now. Each is a standalone folder — <span style="font-family:var(--font-heading)">SKILL.md</span>, scripts and references — that drops into Claude Code, Claude Cowork or your own Python environment. Packaged archives aren't published yet, so each link opens the source folder on GitHub.</p>
+      <p style="font-size:17px;max-width:640px;margin-bottom:12px;text-wrap:pretty">Everything here is free right now. Each is a standalone folder — <span style="font-family:var(--font-heading)">SKILL.md</span>, scripts and references — that drops into Claude Code, Claude Cowork or your own Python environment. Each download is a real .zip, built in your browser from the live source.</p>
       <p class="text-muted" style="max-width:640px;margin-bottom:32px">Every skill was built, rendered and re-tested from its own packaged file before being listed. Each one's lessons-learned notes document the real issues found doing that.</p>
 
       <h3 style="margin-bottom:14px">Engine skills</h3>
@@ -546,7 +513,7 @@
           <div class="card-title">Quick-Reference Engine</div>
           <p class="card-body">Generates the Quick Reference view — a Mermaid + SVG diagram and a four-phase build order — for any of the 8 named patterns, from one compact spec.</p>
           <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">
-            <a class="btn btn-primary" href="https://github.com/AgenticForze/AI-Regenesis/tree/main/skills/quick-reference-engine" target="_blank">Get the skill</a>
+            <button class="btn btn-primary" onClick="{{ pkg.quick-reference-engine.click }}">{{ pkg.quick-reference-engine.label }}</button>
             <button class="btn btn-secondary" onClick="{{ goBuilder }}">Try it</button>
           </div>
         </div>
@@ -557,7 +524,7 @@
           <div class="card-title">Deep 8-Layer Architecture Engine</div>
           <p class="card-body">The full L1–L8 view: labeled flow diagram, reference blueprint table and agent-level stack. This is the engine behind every Deep 8-Layer page in the catalog.</p>
           <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">
-            <a class="btn btn-primary" href="https://github.com/AgenticForze/AI-Regenesis/tree/main/skills/deep8-architecture-engine" target="_blank">Get the skill</a>
+            <button class="btn btn-primary" onClick="{{ pkg.deep8-architecture-engine.click }}">{{ pkg.deep8-architecture-engine.label }}</button>
             <button class="btn btn-secondary" onClick="{{ seeDeep8 }}">See output</button>
           </div>
         </div>
@@ -568,7 +535,7 @@
           <div class="card-title">Retrospective Generator</div>
           <p class="card-body">An audit tool, not a generation tool. 16 structured questions across the same L1–L8 framework, out comes a governance-style gap report with severity-ranked findings.</p>
           <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">
-            <a class="btn btn-primary" href="https://github.com/AgenticForze/AI-Regenesis/tree/main/skills/retrospective-generator" target="_blank">Get the skill</a>
+            <button class="btn btn-primary" onClick="{{ pkg.retrospective-generator.click }}">{{ pkg.retrospective-generator.label }}</button>
             <button class="btn btn-secondary" onClick="{{ seeDeep8 }}">See framework</button>
           </div>
         </div>
@@ -579,7 +546,7 @@
           <div class="card-title">Proposal Generator</div>
           <p class="card-body">Combines a use case with real engagement details — client, price, timeframe — into client-ready proposal content. Never invents a price or a timeframe.</p>
           <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">
-            <a class="btn btn-primary" href="https://github.com/AgenticForze/AI-Regenesis/tree/main/skills/proposal-generator" target="_blank">Get the skill</a>
+            <button class="btn btn-primary" onClick="{{ pkg.proposal-generator.click }}">{{ pkg.proposal-generator.label }}</button>
             <button class="btn btn-secondary" onClick="{{ goReference }}">See reference</button>
           </div>
         </div>
@@ -595,7 +562,7 @@
           <div class="card-kicker">20 use cases</div>
           <div class="card-title">Telecom Pack v1</div>
           <p class="card-body">Network fault RCA, 5G slicing, fraud, churn and more. 18 of 20 currently have a matching Deep 8-Layer spec.</p>
-          <a class="btn btn-primary btn-block" style="text-align:center" href="https://github.com/AgenticForze/AI-Regenesis/tree/main/packs/telecom-pack-v1" target="_blank">Get the pack</a>
+          <button class="btn btn-primary btn-block" onClick="{{ pkg.telecom-pack-v1.click }}">{{ pkg.telecom-pack-v1.label }}</button>
         </div>
         <div class="card elev-sm">
           <div style="background:var(--color-bg);border-radius:var(--radius-md);padding:var(--space-2);height:150px;display:grid;place-items:center;overflow:hidden">
@@ -604,7 +571,7 @@
           <div class="card-kicker">20 use cases</div>
           <div class="card-title">BSS/OSS Pack v1</div>
           <p class="card-body">Order orchestration, revenue assurance, fallout recovery, mediation pipelines. Full 1:1 coverage across all 20.</p>
-          <a class="btn btn-primary btn-block" style="text-align:center" href="https://github.com/AgenticForze/AI-Regenesis/tree/main/packs/bssoss-pack-v1" target="_blank">Get the pack</a>
+          <button class="btn btn-primary btn-block" onClick="{{ pkg.bssoss-pack-v1.click }}">{{ pkg.bssoss-pack-v1.label }}</button>
         </div>
         <div class="card elev-sm">
           <div style="background:var(--color-bg);border-radius:var(--radius-md);padding:var(--space-2);height:150px;display:grid;place-items:center;overflow:hidden">
@@ -613,7 +580,7 @@
           <div class="card-kicker">20 use cases</div>
           <div class="card-title">Finance Pack v1</div>
           <p class="card-body">AML/SAR filing, credit underwriting, algorithmic trading, KYC onboarding, robo-advisory. Full 1:1 coverage across all 20.</p>
-          <a class="btn btn-primary btn-block" style="text-align:center" href="https://github.com/AgenticForze/AI-Regenesis/tree/main/packs/finance-pack-v1" target="_blank">Get the pack</a>
+          <button class="btn btn-primary btn-block" onClick="{{ pkg.finance-pack-v1.click }}">{{ pkg.finance-pack-v1.label }}</button>
         </div>
       </div>
 
@@ -837,6 +804,121 @@ class Component extends DCLogic {
 
   go = (route, extra) => this.setState(Object.assign({ route: route }, extra || {}));
 
+  wrap = (text, max) => {
+    const words = String(text).split(/\s+/);
+    const lines = [];
+    let cur = "";
+    words.forEach((w) => {
+      if (!cur) { cur = w; return; }
+      if ((cur + " " + w).length <= max) cur += " " + w;
+      else { lines.push(cur); cur = w; }
+    });
+    if (cur) lines.push(cur);
+    return lines.slice(0, 3);
+  };
+
+  esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+  buildSvg = (spec) => {
+    const W = 800;
+    const T = { neu: ["var(--color-neutral-200)", "var(--color-neutral-500)", "var(--color-neutral-900)"],
+                orc: ["var(--color-accent-2-300)", "var(--color-accent-2-600)", "var(--color-accent-2-900)"],
+                agt: ["var(--color-accent-2-100)", "var(--color-accent-2-400)", "var(--color-accent-2-900)"],
+                act: ["var(--color-accent-200)", "var(--color-accent-500)", "var(--color-accent-900)"] };
+    const S = [];
+    const label = (x, y, txt, size, weight, color, family, anchor) =>
+      '<text x="' + x + '" y="' + y + '" text-anchor="' + (anchor || "middle") + '" font-size="' + size +
+      '" font-weight="' + weight + '" fill="' + color + '" font-family="' + (family || "var(--font-body)") + '">' + this.esc(txt) + "</text>";
+    const band = (y, txt) => S.push(label(20, y, txt, 13, 700, "var(--color-neutral-700)", "var(--font-body)", "start"));
+    const box = (x, y, w, h, txt, tone, size, family) => {
+      const c = T[tone];
+      S.push('<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" rx="16" fill="' + c[0] + '" stroke="' + c[1] + '" stroke-width="1.75"></rect>');
+      const lines = this.wrap(txt, Math.floor(w / (size * 0.56)));
+      const lh = size * 1.28;
+      const start = y + h / 2 - ((lines.length - 1) * lh) / 2 + size * 0.35;
+      lines.forEach((ln, i) => S.push(label(x + w / 2, start + i * lh, ln, size, 600, c[2], family)));
+    };
+    const arrow = (x1, y1, x2, y2) => {
+      const my = (y1 + y2) / 2;
+      const d = x1 === x2 ? "M " + x1 + " " + y1 + " L " + x2 + " " + y2
+        : "M " + x1 + " " + y1 + " L " + x1 + " " + my + " L " + x2 + " " + my + " L " + x2 + " " + y2;
+      S.push('<path d="' + d + '" fill="none" stroke="var(--color-neutral-500)" stroke-width="1.75" marker-end="url(#bar)"></path>');
+    };
+
+    let y = 22;
+    band(y, "DATA & INTEGRATION");
+    y += 18;
+    const src = spec.sources.length ? spec.sources : ["Systems of record"];
+    const sw = src.map((t) => Math.max(150, Math.min(360, 22 + t.length * 7.4)));
+    const rowW = sw.reduce((a, b) => a + b, 0) + (src.length - 1) * 14;
+    let sx = Math.max(20, (W - rowW) / 2);
+    const srcY = y;
+    src.forEach((t, i) => { box(sx, srcY, sw[i], 54, t, "neu", 15); sx += sw[i] + 14; });
+    y = srcY + 54;
+
+    const ocx = W / 2, oh = 68, ow = 400;
+    arrow(ocx, y, ocx, y + 46);
+    y += 46;
+    band(y - 12, "ORCHESTRATION");
+    box((W - ow) / 2, y, ow, oh, spec.orchestrator, "orc", 18, "var(--font-heading)");
+    const oBottom = y + oh;
+
+    y = oBottom + 58;
+    band(y - 12, "AGENTS");
+    const ws = spec.workers.length ? spec.workers : ["Specialist agent"];
+    const per = ws.length <= 2 ? ws.length : Math.min(3, Math.max(2, Math.ceil(ws.length / Math.ceil(ws.length / 3))));
+    const bw = 252, bh = 80, gx = 16, gy = 18;
+    const rowsN = Math.ceil(ws.length / per);
+    let agentBottom = y;
+    for (let r = 0; r < rowsN; r++) {
+      const slice = ws.slice(r * per, r * per + per);
+      const tw = slice.length * bw + (slice.length - 1) * gx;
+      let x = (W - tw) / 2;
+      const ry = y + r * (bh + gy);
+      slice.forEach((t) => {
+        if (r === 0) arrow(ocx, oBottom, x + bw / 2, ry);
+        else arrow(x + bw / 2, ry - gy, x + bw / 2, ry);
+        box(x, ry, bw, bh, t, "agt", 15);
+        x += bw + gx;
+      });
+      agentBottom = ry + bh;
+    }
+
+    y = agentBottom + 58;
+    band(y - 12, "ACTION & EXECUTION");
+    arrow(ocx, agentBottom, ocx, y);
+    const aw = Math.max(380, Math.min(W - 40, 50 + spec.action.length * 8.2));
+    box((W - aw) / 2, y, aw, 70, spec.action, "act", 16);
+    y += 70;
+
+    y += 40;
+    S.push('<rect x="20" y="' + y + '" width="' + (W - 40) + '" height="' + (spec.checkpoint ? 92 : 62) + '" rx="16" fill="none" stroke="var(--color-neutral-400)" stroke-width="1.5" stroke-dasharray="7 6"></rect>');
+    S.push(label(40, y + 27, "OBSERVABILITY & GOVERNANCE", 13, 700, "var(--color-neutral-700)", "var(--font-body)", "start"));
+    S.push(label(40, y + 50, "Tracing  ·  Immutable audit log  ·  Guardrails", 14, 500, "var(--color-neutral-800)", "var(--font-body)", "start"));
+    if (spec.checkpoint) S.push(label(40, y + 76, "Human checkpoint: " + spec.checkpoint, 14, 600, "var(--color-accent-800)", "var(--font-body)", "start"));
+    const H = y + (spec.checkpoint ? 92 : 62) + 24;
+
+    const body = '<defs><marker id="bar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">' +
+      '<path d="M0,0 L10,5 L0,10 z" fill="var(--color-neutral-500)"></path></marker></defs>' + S.join("");
+    return {
+      inline: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + W + " " + H + '" style="width:100%;height:auto">' + body + "</svg>",
+      file: '<svg xmlns="http://www.w3.org/2000/svg" width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + " " + H + '">' +
+        this.resolve(body) + "</svg>"
+    };
+  };
+
+  resolve = (svg) => {
+    const V = {
+      "--color-neutral-200": "#eee7db", "--color-neutral-400": "#c0b6a5", "--color-neutral-500": "#a19786",
+      "--color-neutral-700": "#645c50", "--color-neutral-800": "#474238", "--color-neutral-900": "#2e2b25",
+      "--color-accent-200": "#ffe1d0", "--color-accent-500": "#d67f48", "--color-accent-800": "#643312",
+      "--color-accent-900": "#402310", "--color-accent-2-100": "#f0fae1", "--color-accent-2-300": "#ccdbb2",
+      "--color-accent-2-400": "#aebf92", "--color-accent-2-600": "#728157", "--color-accent-2-900": "#272e1b",
+      "--font-body": "Figtree, system-ui, sans-serif", "--font-heading": "Caprasimo, Georgia, serif"
+    };
+    return svg.replace(/var\((--[a-z0-9-]+)\)/g, (m, k) => V[k] || m);
+  };
+
   caseItem = (row) => {
     const d = DOMAINS.find((x) => x.key === row[0]);
     const key = row[0] + "/" + row[2];
@@ -877,6 +959,16 @@ class Component extends DCLogic {
       goHome: () => this.go("home"), goCatalog: () => this.go("catalog", { q: "", pat: null }),
       goPatterns: () => this.go("patterns"), goBuilder: () => this.go("builder"),
       goSkills: () => this.go("skills"), goReference: () => this.go("reference"),
+      pkg: ["quick-reference-engine", "deep8-architecture-engine", "retrospective-generator",
+            "proposal-generator", "telecom-pack-v1", "bssoss-pack-v1", "finance-pack-v1"]
+        .reduce((acc, k) => {
+          const st = (this.state.pkgState || {})[k];
+          acc[k] = {
+            label: st === "working" ? "Packaging…" : st === "done" ? "Downloaded ✓" : st === "error" ? "Retry" : "Download .zip",
+            click: () => window.AIR_PACKAGE(k, (v2) => this.setState({ pkgState: Object.assign({}, this.state.pkgState, { [k]: v2 }) }))
+          };
+          return acc;
+        }, {}),
       seeDeep8: () => this.go("deep8", { caseKey: "telecom/network-fault-rca-remediation" }),
       seeQuickRef: () => this.go("case", { caseKey: "telecom/network-fault-rca-remediation" }),
       layers: LAYERS.map((l) => ({ id: l[0], name: l[1], alias: l[2] })),
@@ -908,8 +1000,12 @@ class Component extends DCLogic {
       if (s.pat && row[4] !== s.pat) return false;
       if (s.dom && row[0] !== s.dom) return false;
       if (!q) return true;
-      const det = DETAIL[row[0] + "/" + row[2]];
-      const hay = [row[3], PATTERNS[row[4]].full, row[0], det ? det.problem : "", det ? det.agents.map((a) => a[0]).join(" ") : ""].join(" ").toLowerCase();
+      const k = row[0] + "/" + row[2];
+      const sc = (typeof window !== "undefined" && window.AIR_CASES) ? window.AIR_CASES[k] : null;
+      const hay = [row[3], PATTERNS[row[4]].full, row[0], k,
+        sc ? sc.problem : "",
+        sc ? sc.agents.map((a) => a[0] + " " + a[1]).join(" ") : "",
+        sc ? sc.tech.map((t) => t[1]).join(" ") : ""].join(" ").toLowerCase();
       return hay.indexOf(q) > -1;
     });
 
@@ -1045,18 +1141,81 @@ class Component extends DCLogic {
         full: PATTERNS[k].full, checked: b.pattern === k,
         pick: () => this.setState({ b: Object.assign({}, this.state.b, { pattern: k }), copied: false })
       })),
-      copyLabel: s.copied ? "Spec copied" : "Copy the spec",
+      copyLabel: s.copied === "ok" ? "Spec copied ✓" : s.copied === "fail" ? "Select the spec below to copy" : "Copy the spec",
+      showSpecBox: s.copied === "fail",
+      specText: JSON.stringify({
+        name: b.name, domain: b.domain, pattern: PATTERNS[b.pattern].full,
+        sources: lines(b.sourcesText), orchestrator: agents[0] || "", workers: agents.slice(1),
+        action: b.action, human_checkpoint: b.checkpoint || null
+      }, null, 2),
+      selectSpec: (e) => e.target.select(),
+      downloadSpec: () => {
+        const nm = (b.name || "spec").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+        window.AIR_SAVE_TEXT(JSON.stringify({
+          name: b.name, domain: b.domain, pattern: PATTERNS[b.pattern].full,
+          sources: lines(b.sourcesText), orchestrator: agents[0] || "", workers: agents.slice(1),
+          action: b.action, human_checkpoint: b.checkpoint || null
+        }, null, 2), nm + "-spec.json", "application/json");
+      },
+      downloadSvg: () => {
+        const nm = (b.name || "architecture").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+        window.AIR_SAVE_SVG(this._svg, nm + ".svg");
+      },
+      downloadBundle: () => {
+        const nm = (b.name || "architecture").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+        const specJson = JSON.stringify({
+          name: b.name, domain: b.domain, pattern: PATTERNS[b.pattern].full,
+          sources: lines(b.sourcesText), orchestrator: agents[0] || "", workers: agents.slice(1),
+          action: b.action, human_checkpoint: b.checkpoint || null
+        }, null, 2);
+        const order = PHASES[b.pattern].map((p) => "## " + p[0] + " — " + p[1] + "\n\n" + p[2] + "\n").join("\n");
+        window.AIR_ZIP_FILES([
+          { name: nm + "/architecture.svg", data: this._svg },
+          { name: nm + "/spec.json", data: specJson },
+          { name: nm + "/BUILD-ORDER.md", data: "# " + (b.name || "Untitled") + " — build order\n\nPattern: " + PATTERNS[b.pattern].full + "\n\n" + order },
+          { name: nm + "/README.txt", data: "Generated by the AI-Regenesis diagram builder.\nRe-render this diagram by feeding spec.json to the Quick-Reference Engine skill.\n" }
+        ], nm + ".zip");
+      },
       copy: () => {
         const spec = JSON.stringify({
           name: b.name, domain: b.domain, pattern: PATTERNS[b.pattern].full,
           sources: lines(b.sourcesText), orchestrator: agents[0] || "", workers: agents.slice(1),
           action: b.action, human_checkpoint: b.checkpoint || null
         }, null, 2);
-        if (navigator.clipboard) navigator.clipboard.writeText(spec);
-        this.setState({ copied: true });
+        // Synchronous copy first — it needs the click's transient activation,
+        // which is already gone by the time an async clipboard rejection lands.
+        let ok = false;
+        try {
+          const ta = document.createElement("textarea");
+          ta.value = spec;
+          ta.setAttribute("readonly", "");
+          ta.style.cssText = "position:fixed;top:0;left:-9999px;opacity:0";
+          document.body.appendChild(ta);
+          ta.select();
+          ta.setSelectionRange(0, spec.length);
+          ok = document.execCommand("copy");
+          ta.remove();
+        } catch (e) { ok = false; }
+        if (ok) { this.setState({ copied: "ok" }); return; }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(spec).then(
+            () => this.setState({ copied: "ok" }),
+            () => this.setState({ copied: "fail" })
+          );
+        } else this.setState({ copied: "fail" });
       }
     };
+    const spec = {
+      sources: lines(b.sourcesText),
+      orchestrator: agents[0] || GENERIC[b.pattern].orch,
+      workers: agents.length > 1 ? agents.slice(1) : GENERIC[b.pattern].workers,
+      action: b.action || "Downstream system of record updated",
+      checkpoint: b.checkpoint.trim()
+    };
+    const built = this.buildSvg(spec);
+    this._svg = built.file;
     v.bdg = {
+      svg: React.createElement("div", { dangerouslySetInnerHTML: { __html: built.inline } }),
       title: b.name || "Untitled use case", patternName: PATTERNS[b.pattern].name,
       sources: lines(b.sourcesText), orchestrator: agents[0] || GENERIC[b.pattern].orch,
       workers: agents.length > 1 ? agents.slice(1) : GENERIC[b.pattern].workers,

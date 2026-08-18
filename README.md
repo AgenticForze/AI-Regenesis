@@ -37,6 +37,8 @@ needed — every asset reference in the page is relative.
 | `AI-Regenesis.dc.html` | The editable source of `index.html` (identical content). |
 | `support.js` | Runtime the page loads. Required. |
 | `case-data.js` | All 60 use-case write-ups — problem, agents, tech stack, build order, retrospective. |
+| `packager.js` | Client-side ZIP writer — powers every download button. |
+| `skills/`, `packs/` | Sources the download packages are built from (copied in as `<name>/`). |
 | `docs/` | The imported SVG diagrams: 60 architecture diagrams, 60 Deep 8-Layer diagram/blueprint pairs, the reference architectures, and the favicon. |
 | `_ds/` | The Organic design system: tokens, stylesheet, component bundle. |
 | `github.md` | Source-repo association and screen map. |
