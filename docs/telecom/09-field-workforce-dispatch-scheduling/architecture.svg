@@ -1,64 +1,64 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 894 826" font-family="'Inter','IBM Plex Sans',-apple-system,sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 894 826" font-family="&#39;Inter&#39;,&#39;IBM Plex Sans&#39;,-apple-system,sans-serif">
 <defs>
 <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-<path d="M0,0 L10,5 L0,10 z" fill="#9AA3AE"/>
+<path d="M0,0 L10,5 L0,10 z" fill="#9AA3AE"></path>
 </marker>
 <filter id="cardshadow" x="-20%" y="-20%" width="140%" height="140%">
-<feDropShadow dx="0" dy="1.5" stdDeviation="2.5" flood-color="#1a1a1a" flood-opacity="0.08"/>
+<feDropShadow dx="0" dy="1.5" stdDeviation="2.5" flood-color="#1a1a1a" flood-opacity="0.08"></feDropShadow>
 </filter>
 </defs>
-<rect x="0" y="0" width="894" height="826" fill="#FFFFFF"/>
-<path d="M 447.0 171.0 L 447.0 249.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
-<path d="M 171.0 577.0 L 171.0 401.0 Q 171.0 413.0 183.0 413.0 L 435.0 413.0 Q 447.0 413.0 447.0 425.0 L 447.0 249.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
-<path d="M 447.0 577.0 L 447.0 249.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
-<path d="M 723.0 577.0 L 723.0 401.0 Q 723.0 413.0 711.0 413.0 L 459.0 413.0 Q 447.0 413.0 447.0 425.0 L 447.0 249.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
-<path d="M 447.0 374.0 L 447.0 502.5 Q 447.0 514.5 435.0 514.5 L 183.0 514.5 Q 171.0 514.5 171.0 526.5 L 171.0 655.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
-<path d="M 447.0 374.0 L 447.0 655.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
-<path d="M 447.0 374.0 L 447.0 502.5 Q 447.0 514.5 459.0 514.5 L 711.0 514.5 Q 723.0 514.5 723.0 526.5 L 723.0 655.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"/>
+<rect x="0" y="0" width="894" height="826" fill="#FFFFFF"></rect>
+<path d="M 447.0 171.0 L 447.0 249.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"></path>
+<path d="M 171.0 577.0 L 171.0 401.0 Q 171.0 413.0 183.0 413.0 L 435.0 413.0 Q 447.0 413.0 447.0 425.0 L 447.0 249.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"></path>
+<path d="M 447.0 577.0 L 447.0 249.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"></path>
+<path d="M 723.0 577.0 L 723.0 401.0 Q 723.0 413.0 711.0 413.0 L 459.0 413.0 Q 447.0 413.0 447.0 425.0 L 447.0 249.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"></path>
+<path d="M 447.0 374.0 L 447.0 502.5 Q 447.0 514.5 435.0 514.5 L 183.0 514.5 Q 171.0 514.5 171.0 526.5 L 171.0 655.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"></path>
+<path d="M 447.0 374.0 L 447.0 655.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"></path>
+<path d="M 447.0 374.0 L 447.0 502.5 Q 447.0 514.5 459.0 514.5 L 711.0 514.5 Q 723.0 514.5 723.0 526.5 L 723.0 655.0" fill="none" stroke="#9AA3AE" stroke-width="1.75" marker-end="url(#arrow)"></path>
 <g filter="url(#cardshadow)">
-<rect x="322.0" y="46.0" width="250" height="125" rx="16" fill="#F2EEE3" stroke="#C7BC9E" stroke-width="1.5"/>
+<rect x="322.0" y="46.0" width="250" height="125" rx="16" fill="#F2EEE3" stroke="#C7BC9E" stroke-width="1.5"></rect>
 </g>
 <text x="447.0" y="95.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#4A4432">Live Market / Resource</text>
 <text x="447.0" y="115.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#4A4432">State</text>
 <text x="447.0" y="132.2" text-anchor="middle" font-size="12.5" fill="#8C8365">Data &amp; Integration</text>
 <g filter="url(#cardshadow)">
-<rect x="322.0" y="249.0" width="250" height="125" rx="16" fill="#DCEBFB" stroke="#5B93C9" stroke-width="1.5"/>
+<rect x="322.0" y="249.0" width="250" height="125" rx="16" fill="#DCEBFB" stroke="#5B93C9" stroke-width="1.5"></rect>
 </g>
 <text x="447.0" y="308.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1C4A73">Dispatch Clearing Agent</text>
 <text x="447.0" y="325.2" text-anchor="middle" font-size="12.5" fill="#3E6D93">Orchestration</text>
 <g filter="url(#cardshadow)">
-<rect x="46.0" y="452.0" width="250" height="125" rx="16" fill="#DBF2E7" stroke="#4FAE83" stroke-width="1.5"/>
+<rect x="46.0" y="452.0" width="250" height="125" rx="16" fill="#DBF2E7" stroke="#4FAE83" stroke-width="1.5"></rect>
 </g>
 <text x="171.0" y="491.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1B5E3D">Technician Agent (per</text>
 <text x="171.0" y="511.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1B5E3D">available technician,</text>
 <text x="171.0" y="531.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1B5E3D">bidding based on…</text>
 <text x="171.0" y="548.2" text-anchor="middle" font-size="12.5" fill="#3D8261">Submits bids</text>
 <g filter="url(#cardshadow)">
-<rect x="322.0" y="452.0" width="250" height="125" rx="16" fill="#DBF2E7" stroke="#4FAE83" stroke-width="1.5"/>
+<rect x="322.0" y="452.0" width="250" height="125" rx="16" fill="#DBF2E7" stroke="#4FAE83" stroke-width="1.5"></rect>
 </g>
 <text x="447.0" y="501.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1B5E3D">Emergency Job Priority</text>
 <text x="447.0" y="521.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1B5E3D">Agent</text>
 <text x="447.0" y="538.2" text-anchor="middle" font-size="12.5" fill="#3D8261">Submits bids</text>
 <g filter="url(#cardshadow)">
-<rect x="598.0" y="452.0" width="250" height="125" rx="16" fill="#DBF2E7" stroke="#4FAE83" stroke-width="1.5"/>
+<rect x="598.0" y="452.0" width="250" height="125" rx="16" fill="#DBF2E7" stroke="#4FAE83" stroke-width="1.5"></rect>
 </g>
 <text x="723.0" y="501.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1B5E3D">Sub-contractor Capacity</text>
 <text x="723.0" y="521.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#1B5E3D">Agent</text>
 <text x="723.0" y="538.2" text-anchor="middle" font-size="12.5" fill="#3D8261">Submits bids</text>
 <g filter="url(#cardshadow)">
-<rect x="46.0" y="655.0" width="250" height="125" rx="16" fill="#FBE8CE" stroke="#D89A3F" stroke-width="1.5"/>
+<rect x="46.0" y="655.0" width="250" height="125" rx="16" fill="#FBE8CE" stroke="#D89A3F" stroke-width="1.5"></rect>
 </g>
 <text x="171.0" y="704.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#7A4E12">Work Order Assignment</text>
 <text x="171.0" y="724.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#7A4E12">System</text>
 <text x="171.0" y="741.2" text-anchor="middle" font-size="12.5" fill="#9C6B22">Action &amp; Execution</text>
 <g filter="url(#cardshadow)">
-<rect x="322.0" y="655.0" width="250" height="125" rx="16" fill="#FBE8CE" stroke="#D89A3F" stroke-width="1.5"/>
+<rect x="322.0" y="655.0" width="250" height="125" rx="16" fill="#FBE8CE" stroke="#D89A3F" stroke-width="1.5"></rect>
 </g>
 <text x="447.0" y="704.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#7A4E12">Technician Mobile App</text>
 <text x="447.0" y="724.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#7A4E12">Push</text>
 <text x="447.0" y="741.2" text-anchor="middle" font-size="12.5" fill="#9C6B22">Action &amp; Execution</text>
 <g filter="url(#cardshadow)">
-<rect x="598.0" y="655.0" width="250" height="125" rx="16" fill="#FBE8CE" stroke="#D89A3F" stroke-width="1.5"/>
+<rect x="598.0" y="655.0" width="250" height="125" rx="16" fill="#FBE8CE" stroke="#D89A3F" stroke-width="1.5"></rect>
 </g>
 <text x="723.0" y="714.6" text-anchor="middle" font-size="15.5" font-weight="600" fill="#7A4E12">SLA Breach Risk Alert</text>
 <text x="723.0" y="731.2" text-anchor="middle" font-size="12.5" fill="#9C6B22">Action &amp; Execution</text>

@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/organic-fa127857-12c2-439a-b6a4-af00ce5c481f/styles.css">
+  <script src="_ds/organic-fa127857-12c2-439a-b6a4-af00ce5c481f/_ds_bundle.js"></script>
+  <script src="case-data.js"></script>
+  <style>
+    body { background: var(--color-bg); }
+    .btn { white-space: nowrap; }
+    a { color: var(--color-accent-700); }
+    a:hover { color: var(--color-accent-600); }
+  </style>
+</helmet>
+
+<div style="min-height:100vh;background:var(--color-bg);color:var(--color-text);font-family:var(--font-body)">
+
+  <div style="position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--color-bg) 92%, transparent);backdrop-filter:blur(8px)">
+    <div style="max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:28px;padding:18px 32px">
+      <a onClick="{{ goHome }}" style="cursor:pointer;font-family:var(--font-heading);font-size:20px;color:var(--color-text);text-decoration:none;margin-right:auto;display:flex;align-items:center;gap:10px">
+        <img src="docs/favicon.svg" alt="" style="width:28px;height:28px">
+        AI-Regenesis
+      </a>
+      <a onClick="{{ goCatalog }}" style="cursor:pointer;font-size:14px;color:var(--color-text);text-decoration:none">Catalog</a>
+      <a onClick="{{ goPatterns }}" style="cursor:pointer;font-size:14px;color:var(--color-text);text-decoration:none">Patterns</a>
+      <a onClick="{{ goReference }}" style="cursor:pointer;font-size:14px;color:var(--color-text);text-decoration:none">Reference</a>
+      <a onClick="{{ goSkills }}" style="cursor:pointer;font-size:14px;color:var(--color-text);text-decoration:none">Skills &amp; packs</a>
+      <button class="btn btn-primary" onClick="{{ goBuilder }}">Build a diagram</button>
+    </div>
+  </div>
+
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+    <div>
+      <div style="max-width:1180px;margin:0 auto;padding:52px 32px 20px;position:relative;display:flex;gap:40px;align-items:flex-start">
+        <div style="position:absolute;right:-60px;top:-20px;width:420px;height:420px;border-radius:999px;background:var(--color-accent-2-200);opacity:.45;pointer-events:none"></div>
+        <div style="position:absolute;right:250px;top:250px;width:190px;height:190px;border-radius:999px;background:var(--color-accent-200);opacity:.55;pointer-events:none"></div>
+        <svg viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg" style="width:300px;flex:none;align-self:center;order:2;pointer-events:none" aria-hidden="true">
+          <g stroke="var(--color-neutral-500)" stroke-width="1.6" fill="none">
+            <path d="M 170 58 L 170 88"></path>
+            <path d="M 100 148 L 100 178"></path>
+            <path d="M 240 148 L 240 178"></path>
+            <path d="M 170 238 L 170 268"></path>
+          </g>
+          <rect x="90" y="6" width="160" height="52" rx="16" fill="var(--color-accent-2-200)" stroke="var(--color-accent-2-500)" stroke-width="1.5"></rect>
+          <text x="170" y="38" text-anchor="middle" font-size="15" font-weight="600" fill="var(--color-accent-2-900)" font-family="var(--font-body)">Orchestrator</text>
+          <rect x="20" y="96" width="140" height="52" rx="16" fill="var(--color-neutral-200)" stroke="var(--color-neutral-500)" stroke-width="1.5"></rect>
+          <text x="90" y="128" text-anchor="middle" font-size="14" font-weight="600" fill="var(--color-neutral-900)" font-family="var(--font-body)">Worker A</text>
+          <rect x="180" y="96" width="140" height="52" rx="16" fill="var(--color-neutral-200)" stroke="var(--color-neutral-500)" stroke-width="1.5"></rect>
+          <text x="250" y="128" text-anchor="middle" font-size="14" font-weight="600" fill="var(--color-neutral-900)" font-family="var(--font-body)">Worker B</text>
+          <rect x="90" y="186" width="160" height="52" rx="16" fill="var(--color-neutral-200)" stroke="var(--color-neutral-500)" stroke-width="1.5"></rect>
+          <text x="170" y="218" text-anchor="middle" font-size="14" font-weight="600" fill="var(--color-neutral-900)" font-family="var(--font-body)">Aggregator</text>
+          <rect x="90" y="276" width="160" height="52" rx="16" fill="var(--color-accent-200)" stroke="var(--color-accent-500)" stroke-width="1.5"></rect>
+          <text x="170" y="308" text-anchor="middle" font-size="15" font-weight="600" fill="var(--color-accent-900)" font-family="var(--font-body)">Action</text>
+        </svg>
+        <div style="position:relative;flex:1;min-width:0;max-width:760px;order:1">
+          <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px">
+            <img src="docs/favicon.svg" alt="" style="width:56px;height:56px">
+            <div style="font-family:var(--font-heading);font-size:52px;line-height:1">AI-<span style="color:var(--color-accent)">Regenesis</span></div>
+          </div>
+          <p style="font-size:20px;margin:0 0 22px;color:var(--color-neutral-800)">The reference architecture library for agentic AI</p>
+
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px">
+            <sc-for list="{{ domainPills }}" as="d" hint-placeholder-count="3">
+              <span class="tag" style="{{ d.style }}" onClick="{{ d.open }}">{{ d.label }}</span>
+            </sc-for>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-neutral-700);margin-bottom:14px">
+            <span style="width:7px;height:7px;border-radius:999px;background:var(--color-accent);display:inline-block"></span>
+            60 use cases · 8 architecture patterns · 3 domains
+          </div>
+
+          <h1 style="font-size:52px;line-height:1.06;margin:0 0 18px;max-width:820px">Where multi-agent systems earn their keep in telecom, BSS/OSS and finance</h1>
+          <p style="font-size:17px;line-height:1.65;max-width:660px;text-wrap:pretty;margin-bottom:18px">
+            A working catalog of orchestrator, hierarchical, pipeline, blackboard, debate-critique, market-based, event-swarm and human-escalation architectures — each tied to a specific operational problem, a real agent roster, a named tech stack, and a retrospective on what we'd change.
+          </p>
+          <p class="text-muted" style="font-size:13px;margin-bottom:28px">Created by Naga Gande</p>
+
+          <div style="display:flex;gap:34px;flex-wrap:wrap;margin-bottom:28px">
+            <sc-for list="{{ statCards }}" as="t" hint-placeholder-count="4">
+              <div style="{{ t.style }}" onClick="{{ t.open }}">
+                <div style="font-family:var(--font-heading);font-size:28px;line-height:1.1">{{ t.n }}</div>
+                <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-700)">{{ t.label }}</div>
+              </div>
+            </sc-for>
+          </div>
+
+          <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap;background:var(--color-accent-2-200);border:1px solid var(--color-accent-2-400);border-radius:var(--radius-lg);padding:16px 22px;cursor:pointer;max-width:660px" onClick="{{ goBuilder }}">
+            <div style="flex:1;min-width:280px">
+              <div style="font-family:var(--font-heading);font-size:17px;color:var(--color-accent-2-800);margin-bottom:2px">Have your own use case? Build the diagram live →</div>
+              <div style="font-size:13px;color:var(--color-neutral-800)">Structured form, instant diagram, same engine as the 60 examples — free, no signup.</div>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:22px">
+            <button class="btn btn-primary" style="font-size:15px;padding:12px 22px" onClick="{{ goBuilder }}">Open the builder</button>
+            <button class="btn btn-secondary" style="font-size:15px;padding:12px 22px" onClick="{{ goReference }}">Reference architectures</button>
+          </div>
+        </div>
+      </div>
+
+      <div style="max-width:1320px;margin:0 auto;padding:44px 32px 64px;display:flex;gap:28px;align-items:flex-start">
+        <div style="width:300px;flex:none;position:sticky;top:88px;background:var(--color-surface);border-radius:var(--radius-lg);padding:var(--space-3);max-height:calc(100vh - 120px);overflow-y:auto">
+          <div style="display:flex;gap:4px;padding:4px;background:var(--color-neutral-200);border-radius:999px;margin-bottom:12px">
+            <sc-for list="{{ viewOpts }}" as="v" hint-placeholder-count="2">
+              <div style="{{ v.style }}" onClick="{{ v.pick }}">{{ v.label }}</div>
+            </sc-for>
+          </div>
+          <input class="input" style="width:100%;margin-bottom:10px" placeholder="Search use cases…" value="{{ q }}" onInput="{{ setQ }}">
+          <sc-if value="{{ hasFilters }}">
+            <div style="cursor:pointer;font-size:12px;color:var(--color-accent-700);margin:0 4px 10px" onClick="{{ clearFilters }}">✕ Clear selection</div>
+          </sc-if>
+
+          <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:14px">
+            <div style="display:flex;align-items:center;gap:9px;padding:10px 12px;border-radius:var(--radius-md);cursor:pointer;background:var(--color-accent-2-200);border:1px solid var(--color-accent-2-400)" onClick="{{ goReference }}">
+              <div>
+                <div style="font-family:var(--font-heading);font-size:13px;line-height:1.3">E2E platform architecture</div>
+                <div style="font-size:11px;color:var(--color-neutral-700)">All three domains at once</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:9px;padding:10px 12px;border-radius:var(--radius-md);cursor:pointer;background:var(--color-accent-200);border:1px solid var(--color-accent-400)" onClick="{{ goReference }}">
+              <div>
+                <div style="font-family:var(--font-heading);font-size:13px;line-height:1.3">Decision Engineering Meta-Architecture</div>
+                <div style="font-size:11px;color:var(--color-neutral-700)">The 8-layer flagship reference</div>
+              </div>
+            </div>
+          </div>
+
+          <sc-for list="{{ tree }}" as="d" hint-placeholder-count="3">
+            <div style="margin-bottom:4px">
+              <div style="display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:var(--radius-md);cursor:pointer;font-family:var(--font-heading);font-size:14px" style-hover="background:var(--color-neutral-200)" onClick="{{ d.toggle }}">
+                <span style="{{ d.chevron }}">›</span>
+                <span style="{{ d.swatch }}"></span>
+                <span style="flex:1">{{ d.name }}</span>
+                <span style="font-size:11px;color:var(--color-neutral-700)">{{ d.count }}</span>
+              </div>
+              <sc-if value="{{ d.open }}">
+                <div style="padding-left:12px">
+                  <sc-for list="{{ d.patterns }}" as="p" hint-placeholder-count="4">
+                    <div style="{{ p.rowStyle }}" style-hover="background:var(--color-neutral-200)" onClick="{{ p.select }}">
+                      <span style="flex:1">{{ p.name }}</span>
+                      <span style="font-size:11px;color:var(--color-neutral-700)">{{ p.count }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="flex:1;min-width:0">
+          <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:16px;flex-wrap:wrap">
+            <div style="font-size:13px;color:var(--color-neutral-700)">{{ crumb }}</div>
+            <div style="font-size:13px;color:var(--color-neutral-700);margin-left:auto">{{ resultCount }} of 60</div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px">
+            <sc-for list="{{ flatCases }}" as="c" hint-placeholder-count="9">
+              <div class="card elev-sm" style="cursor:pointer;transition:box-shadow .15s" style-hover="box-shadow:var(--shadow-md)" onClick="{{ c.open }}">
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px">
+                  <span style="font-size:11px;color:var(--color-neutral-700)">{{ c.num }}</span>
+                  <span class="tag" style="{{ c.domainStyle }}">{{ c.domainShort }}</span>
+                </div>
+                <div class="card-title">{{ c.title }}</div>
+                <p class="card-body" style="display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden">{{ c.blurb }}</p>
+                <div class="card-meta" style="margin-top:auto;display:flex;align-items:center;gap:7px">
+                  <span style="width:6px;height:6px;border-radius:999px;background:var(--color-accent);display:inline-block"></span>
+                  {{ c.patternName }}
+                </div>
+              </div>
+            </sc-for>
+          </div>
+          <sc-if value="{{ isEmpty }}">
+            <div class="card" style="padding:var(--space-6);text-align:center">
+              <div class="card-title">Nothing matched that</div>
+              <p class="card-body">Try a pattern in the sidebar, or a term like fraud, billing, inventory, settlement.</p>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+
+      <sc-if value="{{ showBuilderPromo }}" hint-placeholder-val="{{ true }}">
+      <div style="background:var(--color-accent-2-200)">
+        <div style="max-width:1180px;margin:0 auto;padding:56px 32px;display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center">
+          <div>
+            <h2 style="font-size:34px;margin-bottom:12px">Have your own use case?</h2>
+            <p style="font-size:17px;max-width:460px;text-wrap:pretty">Put it through the same engine. Structured form in, layered diagram and build order out — then download the engine as a skill and run it yourself.</p>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:20px">
+              <button class="btn btn-primary" style="font-size:15px;padding:12px 22px" onClick="{{ goBuilder }}">Open the builder</button>
+              <button class="btn btn-secondary" style="font-size:15px;padding:12px 22px" onClick="{{ goSkills }}">Download the skills</button>
+            </div>
+          </div>
+          <div class="card elev-md" style="background:var(--color-bg);padding:var(--space-3)">
+            <div style="background:var(--color-surface);border-radius:var(--radius-md);padding:var(--space-3);display:grid;place-items:center;overflow:hidden">
+              <img src="docs/telecom/01-network-fault-rca-remediation/architecture.svg" alt="Example generated architecture diagram" style="max-width:100%;max-height:230px;width:auto;height:auto">
+            </div>
+            <div class="card-meta" style="padding:0 var(--space-2)">A diagram, a phased build order, and the spec that regenerates both</div>
+          </div>
+        </div>
+      </div>
+      </sc-if>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isCatalog }}">
+    <div style="max-width:1180px;margin:0 auto;padding:32px 32px 64px">
+      <h1 style="font-size:44px;margin-bottom:8px">Use case catalog</h1>
+      <p class="text-muted" style="margin-bottom:24px">{{ resultCount }} of 60 use cases</p>
+
+      <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:14px">
+        <input class="input" style="max-width:320px" placeholder="Search use cases, agents, patterns" value="{{ q }}" onInput="{{ setQ }}">
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <sc-for list="{{ chips }}" as="c" hint-placeholder-count="8">
+            <div class="tag" style="{{ c.style }}" onClick="{{ c.toggle }}">{{ c.name }}</div>
+          </sc-for>
+        </div>
+        <sc-if value="{{ hasFilters }}">
+          <button class="btn btn-ghost" onClick="{{ clearFilters }}">Clear</button>
+        </sc-if>
+      </div>
+
+      <sc-for list="{{ groups }}" as="g" hint-placeholder-count="3">
+        <div style="margin-top:40px">
+          <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:16px">
+            <h2 style="font-size:28px;margin:0">{{ g.name }}</h2>
+            <span class="text-muted" style="font-size:13px">{{ g.count }} use cases</span>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px">
+            <sc-for list="{{ g.cases }}" as="c" hint-placeholder-count="6">
+              <div class="card elev-sm" style="cursor:pointer;transition:box-shadow .15s" style-hover="box-shadow:var(--shadow-md)" onClick="{{ c.open }}">
+                <div class="card-kicker">{{ c.num }} · {{ c.domainShort }}</div>
+                <div class="card-title">{{ c.title }}</div>
+                <div class="card-meta" style="margin-top:auto">
+                  <span class="tag tag-accent-2">{{ c.patternName }}</span>
+
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+
+      <sc-if value="{{ isEmpty }}">
+        <div class="card" style="margin-top:32px;padding:var(--space-6);text-align:center">
+          <div class="card-title">Nothing matched that</div>
+          <p class="card-body">Try a pattern chip, or a term like fraud, billing, inventory, settlement.</p>
+        </div>
+      </sc-if>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isCase }}" hint-placeholder-val="{{ false }}">
+    <div style="max-width:1000px;margin:0 auto;padding:24px 32px 64px">
+      <a onClick="{{ goCatalog }}" style="cursor:pointer;font-size:14px">← Back to the catalog</a>
+      <div style="display:flex;gap:10px;align-items:center;margin:20px 0 10px">
+        <span class="tag tag-neutral">{{ c.domain }}</span>
+        <span class="tag tag-accent-2" style="cursor:pointer" onClick="{{ c.openPattern }}">{{ c.patternFull }}</span>
+      </div>
+      <h1 style="font-size:44px;margin-bottom:10px">{{ c.title }}</h1>
+
+      <sc-if value="{{ c.hasRoster }}" hint-placeholder-val="{{ false }}">
+        <h3 style="margin-top:36px">Problem statement</h3>
+        <p style="font-size:17px;line-height:1.65;text-wrap:pretty">{{ c.problem }}</p>
+      </sc-if>
+
+
+      <h3 style="margin-top:36px">Architecture</h3>
+      <p class="text-muted" style="font-size:13px;margin-bottom:14px">{{ c.diagramNote }}</p>
+      <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:var(--space-6)">{{ c.diagramEl }}</div>
+
+      <sc-if value="{{ c.hasRoster }}" hint-placeholder-val="{{ false }}">
+        <h3 style="margin-top:40px">Agents &amp; sub-agents</h3>
+        <table class="table" style="margin-top:8px">
+          <thead><tr><th style="width:34%">Agent</th><th>Responsibility</th></tr></thead>
+          <tbody>
+            <sc-for list="{{ c.agents }}" as="a" hint-placeholder-count="6">
+              <tr><td style="font-weight:600">{{ a.name }}</td><td>{{ a.role }}</td></tr>
+            </sc-for>
+          </tbody>
+        </table>
+      </sc-if>
+
+      <sc-if value="{{ showDeep8Cta }}" hint-placeholder-val="{{ true }}">
+      <div style="margin-top:40px;background:var(--color-accent-2-200);border-radius:var(--radius-lg);padding:var(--space-6);display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+        <div style="flex:1;min-width:280px">
+          <div class="card-kicker" style="color:var(--color-accent-2-800)">Deep dive</div>
+          <div style="font-family:var(--font-heading);font-size:22px;margin:4px 0 6px">The same problem, all eight layers</div>
+          <p style="font-size:14px;margin:0;max-width:520px">L1 Foundational Data through L8 Feedback &amp; Reinforcement Loops — governance gates, memory, observability, executive accountability and the regenerative loop, plus an agent-level tools stack and a build order by layer.</p>
+        </div>
+        <sc-if value="{{ c.hasDeep8 }}">
+          <button class="btn btn-primary" onClick="{{ c.openDeep8 }}">Open Deep 8-Layer view</button>
+        </sc-if>
+        <sc-if value="{{ c.noDeep8 }}">
+          <a class="btn btn-primary" href="{{ c.deep8Url }}" target="_blank">Open Deep 8-Layer view</a>
+        </sc-if>
+      </div>
+      </sc-if>
+
+      <sc-if value="{{ c.hasTech }}" hint-placeholder-val="{{ false }}">
+        <h3 style="margin-top:40px">Technologies used, per step</h3>
+        <table class="table" style="margin-top:8px">
+          <thead><tr><th style="width:34%">Step / layer</th><th>Technology</th></tr></thead>
+          <tbody>
+            <sc-for list="{{ c.tech }}" as="t" hint-placeholder-count="8">
+              <tr><td style="font-weight:600">{{ t.step }}</td><td>{{ t.value }}</td></tr>
+            </sc-for>
+          </tbody>
+        </table>
+      </sc-if>
+
+      <sc-if value="{{ c.hasBuild }}" hint-placeholder-val="{{ false }}">
+        <h3 style="margin-top:40px">Suggested build order</h3>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:8px">
+          <sc-for list="{{ c.build }}" as="b" hint-placeholder-count="4">
+            <div class="card elev-sm">
+              <div class="card-kicker">{{ b.label }}</div>
+              <div class="card-title" style="font-size:16px">{{ b.title }}</div>
+              <p class="card-body">{{ b.body }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ c.hasRetro }}" hint-placeholder-val="{{ false }}">
+        <h3 style="margin-top:40px">If we rebuilt this: what would improve</h3>
+        <div style="display:flex;flex-direction:column;gap:0;margin-top:8px">
+          <sc-for list="{{ c.retro }}" as="r" hint-placeholder-count="4">
+            <div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--color-divider);font-size:15px;line-height:1.6">
+              <span style="color:var(--color-accent);flex:none">↻</span>
+              <span style="text-wrap:pretty">{{ r.text }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isDeep8 }}" hint-placeholder-val="{{ false }}">
+    <div style="max-width:1100px;margin:0 auto;padding:24px 32px 64px">
+      <a onClick="{{ d8.back }}" style="cursor:pointer;font-size:14px">← Back to the use case</a>
+      <div style="display:flex;gap:10px;align-items:center;margin:20px 0 10px">
+        <span class="tag tag-neutral">{{ d8.domain }}</span>
+        <span class="tag tag-accent">Deep 8-Layer Regenerative Architecture</span>
+      </div>
+      <h1 style="font-size:44px;margin-bottom:10px">{{ d8.title }}</h1>
+      <p style="font-size:17px;max-width:680px;text-wrap:pretty">The same problem mapped through the Integrated Decision Engineering Meta-Architecture — where the Quick Reference view shows one execution pattern, this shows the enterprise stack that pattern sits inside.</p>
+
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 36px">
+        <sc-for list="{{ layers }}" as="l" hint-placeholder-count="8">
+          <div style="display:flex;align-items:center;gap:8px;background:var(--color-surface);border-radius:999px;padding:7px 16px;font-size:13px">
+            <span style="font-family:var(--font-heading);color:var(--color-accent)">{{ l.id }}</span>{{ l.name }}
+            <span class="text-muted" style="font-size:12px">{{ l.alias }}</span>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:32px">
+        <button class="btn btn-secondary" onClick="{{ d8.back }}">← Quick Reference architecture</button>
+        <span class="text-muted" style="font-size:13px">The single-pattern view of this same use case</span>
+      </div>
+
+      <h3>L1–L8 flow diagram</h3>
+      <p class="text-muted" style="font-size:13px;margin-bottom:14px">Left-margin layer labels, with the governed three-way conditional gate — auto-execute, human review, hold.</p>
+      <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:var(--space-6)">{{ d8.diagramEl }}</div>
+      <h3 style="margin-top:40px">Reference blueprint</h3>
+      <p class="text-muted" style="font-size:13px;margin-bottom:14px">The framework's own reference model beside this use case's specific solution, layer by layer.</p>
+      <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:var(--space-6)">{{ d8.blueprintEl }}</div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isReference }}">
+    <div style="max-width:1100px;margin:0 auto;padding:32px 32px 64px">
+      <h1 style="font-size:44px;margin-bottom:8px">Reference architectures</h1>
+      <p style="font-size:17px;max-width:660px;margin-bottom:36px;text-wrap:pretty">Two documents sit outside the 60-use-case catalog. Each shows how the pieces compose into a full system rather than one workflow.</p>
+
+      <h3>E2E platform architecture</h3>
+      <p class="text-muted" style="font-size:14px;max-width:660px;margin-bottom:14px">How channels, orchestration, the agent mesh, and observability/governance fit together across all three domains at once.</p>
+      <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:var(--space-6)">
+        <img src="docs/architecture/e2e-platform-architecture.svg" alt="End-to-end platform architecture" style="width:100%;height:auto">
+      </div>
+
+      <h3 style="margin-top:44px">Decision Engineering Meta-Architecture</h3>
+      <p class="text-muted" style="font-size:14px;max-width:660px;margin-bottom:14px">The 8-layer flagship reference — the Base, the Brain, the Agent Plane, the Conscience, the Tool Registry, the Nervous System, the Leadership Portal and the Self-Healing Loop — applied end to end to one high-stakes decision, with the AI Gateway, conditional routing, and internal/external data stores all made explicit.</p>
+      <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:var(--space-6)">
+        <img src="docs/architecture/decision-engineering-meta-architecture.svg" alt="Decision Engineering Meta-Architecture" style="width:100%;height:auto">
+      </div>
+
+      <h3 style="margin-top:44px">Meta-architecture blueprint</h3>
+      <p class="text-muted" style="font-size:14px;max-width:660px;margin-bottom:14px">The same eight layers as a reference model table — what each layer owns, and what it hands to the next.</p>
+      <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:var(--space-6)">
+        <img src="docs/architecture/decision-engineering-meta-architecture-blueprint.svg" alt="Meta-architecture reference blueprint" style="width:100%;height:auto">
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isPatterns }}">
+    <div style="max-width:1000px;margin:0 auto;padding:32px 32px 64px">
+      <h1 style="font-size:44px;margin-bottom:8px">Architecture patterns</h1>
+      <p style="font-size:17px;max-width:640px;margin-bottom:28px;text-wrap:pretty">Every diagram in the catalog uses the same layered visual language. Eight patterns cover all 60 use cases — pick by the shape of the problem, not the technology.</p>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <sc-for list="{{ patternRows }}" as="p" hint-placeholder-count="8">
+          <div class="card elev-sm" style="cursor:pointer;flex-direction:row;align-items:center;gap:var(--space-4);padding:var(--space-4)" onClick="{{ p.open }}">
+            <span style="font-family:var(--font-heading);font-size:30px;color:var(--color-accent);width:52px;flex:none">{{ p.count }}</span>
+            <div style="flex:1">
+              <div class="card-title" style="font-size:19px">{{ p.full }}</div>
+              <p class="card-body" style="margin-top:4px">Best for: {{ p.best }}</p>
+            </div>
+            <span class="text-muted" style="font-size:20px">→</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isBuilder }}">
+    <div style="max-width:1180px;margin:0 auto;padding:32px 32px 64px">
+      <h1 style="font-size:44px;margin-bottom:8px">Build your own</h1>
+      <p style="font-size:17px;max-width:640px;margin-bottom:28px;text-wrap:pretty">Describe your use case. The same engine behind the 60 catalog entries renders the diagram and the build order as you type. Free, no signup, nothing stored.</p>
+      <div style="display:grid;grid-template-columns:380px 1fr;gap:28px;align-items:start">
+        <div class="card elev-sm" style="padding:var(--space-4);gap:var(--space-3)">
+          <div class="field">
+            <label>Use case name</label>
+            <input class="input" value="{{ b.name }}" onInput="{{ b.setName }}" placeholder="e.g. Dunning &amp; collections automation">
+          </div>
+          <div class="field">
+            <label>Domain</label>
+            <input class="input" value="{{ b.domain }}" onInput="{{ b.setDomain }}" placeholder="e.g. BSS/OSS">
+          </div>
+          <div class="field">
+            <label>Architecture pattern</label>
+            <div style="display:flex;flex-direction:column;gap:6px;margin-top:4px">
+              <sc-for list="{{ b.patternOpts }}" as="o" hint-placeholder-count="8">
+                <label class="radio"><input type="radio" name="bpattern" checked="{{ o.checked }}" onChange="{{ o.pick }}"><span class="dot"></span>{{ o.full }}</label>
+              </sc-for>
+            </div>
+          </div>
+          <div class="field">
+            <label>Data sources, one per line</label>
+            <textarea class="input" style="border-radius:var(--radius-md);min-height:76px" value="{{ b.sourcesText }}" onInput="{{ b.setSources }}"></textarea>
+          </div>
+          <div class="field">
+            <label>Agents, one per line — first is the orchestrator</label>
+            <textarea class="input" style="border-radius:var(--radius-md);min-height:120px" value="{{ b.agentsText }}" onInput="{{ b.setAgents }}"></textarea>
+          </div>
+          <div class="field">
+            <label>Action / execution step</label>
+            <input class="input" value="{{ b.action }}" onInput="{{ b.setAction }}">
+          </div>
+          <div class="field">
+            <label>Human checkpoint (leave empty for none)</label>
+            <input class="input" value="{{ b.checkpoint }}" onInput="{{ b.setCheckpoint }}">
+          </div>
+          <button class="btn btn-primary btn-block" onClick="{{ b.copy }}">{{ b.copyLabel }}</button>
+        </div>
+
+        <div>
+          <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:var(--space-6)">
+            <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:18px">
+              <div style="font-family:var(--font-heading);font-size:24px">{{ bdg.title }}</div>
+              <span class="tag tag-accent-2">{{ bdg.patternName }}</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:18px">
+              <div>
+                <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-700);margin-bottom:8px">Data &amp; integration</div>
+                <div style="display:flex;flex-wrap:wrap;gap:8px">
+                  <sc-for list="{{ bdg.sources }}" as="s" hint-placeholder-count="3">
+                    <div style="background:var(--color-neutral-200);border-radius:999px;padding:8px 14px;font-size:13px">{{ s }}</div>
+                  </sc-for>
+                </div>
+              </div>
+              <div style="height:16px;border-left:2px dashed var(--color-neutral-400);margin-left:22px"></div>
+              <div>
+                <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-700);margin-bottom:8px">Orchestration</div>
+                <div style="background:var(--color-accent-2-500);color:var(--color-bg);border-radius:var(--radius-md);padding:12px 18px;font-family:var(--font-heading);font-size:16px;display:inline-block">{{ bdg.orchestrator }}</div>
+              </div>
+              <div style="height:16px;border-left:2px dashed var(--color-neutral-400);margin-left:22px"></div>
+              <div>
+                <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-700);margin-bottom:8px">Agents</div>
+                <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px">
+                  <sc-for list="{{ bdg.workers }}" as="w" hint-placeholder-count="4">
+                    <div style="background:var(--color-accent-2-200);border:1px solid var(--color-accent-2-300);border-radius:var(--radius-md);padding:12px 14px;font-size:13px;line-height:1.35">{{ w }}</div>
+                  </sc-for>
+                </div>
+              </div>
+              <div style="height:16px;border-left:2px dashed var(--color-neutral-400);margin-left:22px"></div>
+              <div>
+                <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-700);margin-bottom:8px">Action &amp; execution</div>
+                <div style="background:var(--color-accent);color:var(--color-bg);border-radius:var(--radius-md);padding:12px 18px;font-size:14px;display:inline-block">{{ bdg.action }}</div>
+              </div>
+              <div style="border-top:1px solid var(--color-divider);padding-top:16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+                <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-700)">Observability &amp; governance</div>
+                <div class="tag tag-neutral">Tracing</div>
+                <div class="tag tag-neutral">Audit log</div>
+                <div class="tag tag-neutral">Guardrails</div>
+                <sc-if value="{{ bdg.hasCheckpoint }}">
+                  <div class="tag tag-outline">Human checkpoint: {{ bdg.checkpoint }}</div>
+                </sc-if>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:20px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;background:var(--color-surface);border-radius:var(--radius-lg);padding:var(--space-4)">
+            <div style="background:var(--color-bg);border-radius:var(--radius-md);padding:10px;width:150px;height:100px;display:grid;place-items:center;overflow:hidden;flex:none">
+              <img src="docs/telecom/01-network-fault-rca-remediation/architecture.svg" alt="Rendered SVG output example" style="max-width:100%;max-height:80px;width:auto;height:auto">
+            </div>
+            <div style="flex:1;min-width:240px">
+              <div style="font-family:var(--font-heading);font-size:16px;margin-bottom:4px">The preview above is live; the engine renders SVG</div>
+              <p style="font-size:13px;margin:0;max-width:460px">Run the same spec through the downloadable skill and you get a rendered SVG like the one in the catalog, plus the Mermaid source.</p>
+            </div>
+            <button class="btn btn-secondary" onClick="{{ seeQuickRef }}">See a rendered example</button>
+          </div>
+
+          <h3 style="margin:32px 0 12px">Suggested build order</h3>
+          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px">
+            <sc-for list="{{ bdg.phases }}" as="p" hint-placeholder-count="4">
+              <div class="card elev-sm">
+                <div class="card-kicker">{{ p.label }}</div>
+                <div class="card-title" style="font-size:16px">{{ p.title }}</div>
+                <p class="card-body">{{ p.body }}</p>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isSkills }}">
+    <div style="max-width:1000px;margin:0 auto;padding:32px 32px 64px">
+      <h1 style="font-size:44px;margin-bottom:8px">Skills &amp; packs</h1>
+      <p style="font-size:17px;max-width:640px;margin-bottom:12px;text-wrap:pretty">Everything here is free right now. Each is a standalone folder — <span style="font-family:var(--font-heading)">SKILL.md</span>, scripts and references — that drops into Claude Code, Claude Cowork or your own Python environment. Packaged archives aren't published yet, so each link opens the source folder on GitHub.</p>
+      <p class="text-muted" style="max-width:640px;margin-bottom:32px">Every skill was built, rendered and re-tested from its own packaged file before being listed. Each one's lessons-learned notes document the real issues found doing that.</p>
+
+      <h3 style="margin-bottom:14px">Engine skills</h3>
+      <p class="text-muted" style="margin-bottom:14px">Each card shows a real diagram this engine produced — the same output you get from your own spec.</p>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px">
+        <div class="card elev-sm" style="padding:var(--space-4)">
+          <div style="background:var(--color-bg);border-radius:var(--radius-md);padding:var(--space-3);height:190px;display:grid;place-items:center;overflow:hidden">
+            <img src="docs/telecom/01-network-fault-rca-remediation/architecture.svg" alt="Example Quick Reference architecture diagram" style="max-width:100%;max-height:160px;width:auto;height:auto">
+          </div>
+          <div class="card-title">Quick-Reference Engine</div>
+          <p class="card-body">Generates the Quick Reference view — a Mermaid + SVG diagram and a four-phase build order — for any of the 8 named patterns, from one compact spec.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">
+            <a class="btn btn-primary" href="https://github.com/AgenticForze/AI-Regenesis/tree/main/skills/quick-reference-engine" target="_blank">Get the skill</a>
+            <button class="btn btn-secondary" onClick="{{ goBuilder }}">Try it</button>
+          </div>
+        </div>
+        <div class="card elev-sm" style="padding:var(--space-4)">
+          <div style="background:var(--color-bg);border-radius:var(--radius-md);padding:var(--space-3);height:190px;display:grid;place-items:center;overflow:hidden">
+            <img src="docs/deep8/telecom/01-network-fault-rca-remediation/diagram.svg" alt="Example Deep 8-Layer flow diagram" style="max-width:100%;max-height:160px;width:auto;height:auto">
+          </div>
+          <div class="card-title">Deep 8-Layer Architecture Engine</div>
+          <p class="card-body">The full L1–L8 view: labeled flow diagram, reference blueprint table and agent-level stack. This is the engine behind every Deep 8-Layer page in the catalog.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">
+            <a class="btn btn-primary" href="https://github.com/AgenticForze/AI-Regenesis/tree/main/skills/deep8-architecture-engine" target="_blank">Get the skill</a>
+            <button class="btn btn-secondary" onClick="{{ seeDeep8 }}">See output</button>
+          </div>
+        </div>
+        <div class="card elev-sm" style="padding:var(--space-4)">
+          <div style="background:var(--color-bg);border-radius:var(--radius-md);padding:var(--space-3);height:190px;display:grid;place-items:center;overflow:hidden">
+            <img src="docs/deep8/finance/01-aml-transaction-monitoring-sar/blueprint.svg" alt="Example L1–L8 blueprint the audit report is scored against" style="max-width:100%;max-height:160px;width:auto;height:auto">
+          </div>
+          <div class="card-title">Retrospective Generator</div>
+          <p class="card-body">An audit tool, not a generation tool. 16 structured questions across the same L1–L8 framework, out comes a governance-style gap report with severity-ranked findings.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">
+            <a class="btn btn-primary" href="https://github.com/AgenticForze/AI-Regenesis/tree/main/skills/retrospective-generator" target="_blank">Get the skill</a>
+            <button class="btn btn-secondary" onClick="{{ seeDeep8 }}">See framework</button>
+          </div>
+        </div>
+        <div class="card elev-sm" style="padding:var(--space-4)">
+          <div style="background:var(--color-bg);border-radius:var(--radius-md);padding:var(--space-3);height:190px;display:grid;place-items:center;overflow:hidden">
+            <img src="docs/architecture/e2e-platform-architecture.svg" alt="E2E platform architecture, the reference a proposal is framed against" style="max-width:100%;max-height:160px;width:auto;height:auto">
+          </div>
+          <div class="card-title">Proposal Generator</div>
+          <p class="card-body">Combines a use case with real engagement details — client, price, timeframe — into client-ready proposal content. Never invents a price or a timeframe.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">
+            <a class="btn btn-primary" href="https://github.com/AgenticForze/AI-Regenesis/tree/main/skills/proposal-generator" target="_blank">Get the skill</a>
+            <button class="btn btn-secondary" onClick="{{ goReference }}">See reference</button>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="margin:36px 0 14px">Vertical content packs</h3>
+      <p class="text-muted" style="margin-bottom:14px">Pure data — the 20 use cases for one domain, Quick Reference and Deep 8-Layer specs, no engine code.</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
+        <div class="card elev-sm">
+          <div style="background:var(--color-bg);border-radius:var(--radius-md);padding:var(--space-2);height:150px;display:grid;place-items:center;overflow:hidden">
+            <img src="docs/telecom/04-self-healing-network-closed-loop/architecture.svg" alt="Self-healing network architecture from the telecom pack" style="max-width:100%;max-height:130px;width:auto;height:auto">
+          </div>
+          <div class="card-kicker">20 use cases</div>
+          <div class="card-title">Telecom Pack v1</div>
+          <p class="card-body">Network fault RCA, 5G slicing, fraud, churn and more. 18 of 20 currently have a matching Deep 8-Layer spec.</p>
+          <a class="btn btn-primary btn-block" style="text-align:center" href="https://github.com/AgenticForze/AI-Regenesis/tree/main/packs/telecom-pack-v1" target="_blank">Get the pack</a>
+        </div>
+        <div class="card elev-sm">
+          <div style="background:var(--color-bg);border-radius:var(--radius-md);padding:var(--space-2);height:150px;display:grid;place-items:center;overflow:hidden">
+            <img src="docs/bssoss/03-revenue-assurance-leakage-detection/architecture.svg" alt="Revenue assurance architecture from the BSS/OSS pack" style="max-width:100%;max-height:130px;width:auto;height:auto">
+          </div>
+          <div class="card-kicker">20 use cases</div>
+          <div class="card-title">BSS/OSS Pack v1</div>
+          <p class="card-body">Order orchestration, revenue assurance, fallout recovery, mediation pipelines. Full 1:1 coverage across all 20.</p>
+          <a class="btn btn-primary btn-block" style="text-align:center" href="https://github.com/AgenticForze/AI-Regenesis/tree/main/packs/bssoss-pack-v1" target="_blank">Get the pack</a>
+        </div>
+        <div class="card elev-sm">
+          <div style="background:var(--color-bg);border-radius:var(--radius-md);padding:var(--space-2);height:150px;display:grid;place-items:center;overflow:hidden">
+            <img src="docs/finance/04-card-not-present-fraud-detection/architecture.svg" alt="Card-not-present fraud architecture from the finance pack" style="max-width:100%;max-height:130px;width:auto;height:auto">
+          </div>
+          <div class="card-kicker">20 use cases</div>
+          <div class="card-title">Finance Pack v1</div>
+          <p class="card-body">AML/SAR filing, credit underwriting, algorithmic trading, KYC onboarding, robo-advisory. Full 1:1 coverage across all 20.</p>
+          <a class="btn btn-primary btn-block" style="text-align:center" href="https://github.com/AgenticForze/AI-Regenesis/tree/main/packs/finance-pack-v1" target="_blank">Get the pack</a>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:32px;padding:var(--space-6);background:var(--color-accent-2-200)">
+        <div class="card-title" style="font-size:20px">What's not here yet, on purpose</div>
+        <p class="card-body" style="font-size:14px;opacity:1;max-width:640px">Pricing, checkout and licensed bundles are intentionally not built yet — that work is paused until download activity or direct inbound interest says it's worth building. If you'd use a paid tier of any of this, saying so is more useful to us right now than the pricing page would be.</p>
+      </div>
+    </div>
+  </sc-if>
+
+  <div style="border-top:1px solid var(--color-divider)">
+    <div style="max-width:1180px;margin:0 auto;padding:36px 32px;display:flex;gap:24px;flex-wrap:wrap;align-items:center;font-size:13px">
+      <span>Created by Naga Gande · The Regenerative Agentic Architecture Framework</span>
+      <span class="text-muted" style="margin-left:auto">Code MIT · Content CC BY-NC 4.0</span>
+      <a onClick="{{ goCatalog }}" style="cursor:pointer">Browse the catalog</a>
+    </div>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showPatternStrip&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Home&quot;},&quot;showBuilderPromo&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Home&quot;},&quot;showDeep8Cta&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Use case page&quot;}}">
+const PATTERNS = {
+  OW: { name: "Orchestrator-Worker", full: "Orchestrator-Worker (Supervisor fan-out/fan-in)", best: "fan-out independent sub-investigations, fan-in to one decision (fraud checks, onboarding, RCA)" },
+  HM: { name: "Hierarchical", full: "Hierarchical Multi-Agent (Manager-of-Managers)", best: "domains-of-domains where each manager resolves local trade-offs (network domains, deal workstreams)" },
+  SP: { name: "Sequential Pipeline", full: "Sequential Pipeline", best: "linear workflows with strict step dependencies and durability needs (billing disputes, settlement)" },
+  BB: { name: "Blackboard", full: "Blackboard / Shared-Memory", best: "accumulating heterogeneous partial evidence, no single agent has the full picture (fleet health, firm-wide risk)" },
+  DC: { name: "Debate-Critique", full: "Debate-Critique-Arbiter (Reflective Loop)", best: "high-stakes judgment calls prone to single-pass confirmation bias (fraud, surveillance, recommendations)" },
+  MB: { name: "Market-Based", full: "Market-Based / Auction Agents", best: "resource allocation among competing semi-autonomous stakeholders (dispatch, capacity trading, trading desks)" },
+  ES: { name: "Event Swarm", full: "Event-Driven Reactive Swarm", best: "latency-critical always-on monitoring where central orchestration adds unacceptable lag (self-healing, CNP fraud)" },
+  HE: { name: "Human Escalation", full: "Human-in-the-Loop Escalation Chain", best: "regulated, high-consequence decisions needing a confidence or risk gate before autonomy" }
+};
+
+const DOMAINS = [
+  { key: "telecom", name: "Telecommunications", short: "Telecom", blurb: "Network fault RCA, 5G slicing, self-healing loops, churn win-back, SIM-swap fraud, SOC threat hunting, field dispatch." },
+  { key: "bssoss", name: "BSS/OSS", short: "BSS/OSS", blurb: "Order-to-activation, catalog automation, revenue assurance, fallout recovery, mediation, portability, collections." },
+  { key: "finance", name: "Financial Services", short: "Finance", blurb: "AML and SAR filing, credit underwriting, algorithmic trading, CNP fraud, M&A diligence, surveillance, advisory." }
+];
+
+const CASES = [
+  ["telecom", 1, "network-fault-rca-remediation", "Multi-Agent Network Fault RCA & Auto-Remediation", "OW"],
+  ["telecom", 2, "5g-network-slicing-orchestration", "5G Network Slice Lifecycle Orchestration", "HM"],
+  ["telecom", 3, "capacity-planning-traffic-forecasting", "Proactive Capacity Planning & Traffic Forecasting", "SP"],
+  ["telecom", 4, "self-healing-network-closed-loop", "Self-Healing Network (Closed-Loop Automation)", "ES"],
+  ["telecom", 5, "churn-prediction-winback", "Customer Churn Prediction & Win-Back Orchestration", "OW"],
+  ["telecom", 6, "contact-center-triage-resolution", "Intelligent Contact Center Triage & Resolution", "HM"],
+  ["telecom", 7, "sim-swap-fraud-detection", "SIM-Swap & Account-Takeover Fraud Detection", "DC"],
+  ["telecom", 8, "telecom-soc-threat-hunting", "Telecom SOC Threat Hunting & Incident Response", "OW"],
+  ["telecom", 9, "field-workforce-dispatch-scheduling", "Field Workforce Dispatch & Dynamic Scheduling", "MB"],
+  ["telecom", 10, "billing-dispute-resolution", "Billing Dispute Investigation & Resolution", "SP"],
+  ["telecom", 11, "line-onboarding-kyc-automation", "New Line/Device Onboarding & KYC Automation", "OW"],
+  ["telecom", 12, "rf-cell-site-planning-optimization", "RF / Cell-Site Planning & Optimization", "HM"],
+  ["telecom", 13, "roaming-settlement-reconciliation", "Roaming Partner Settlement Reconciliation", "SP"],
+  ["telecom", 14, "iot-fleet-anomaly-detection", "IoT Device Fleet Anomaly Detection & Remediation", "BB"],
+  ["telecom", 15, "sentiment-social-listening-action", "Customer Sentiment & Social Listening to Action", "ES"],
+  ["telecom", 16, "spectrum-interference-detection", "Spectrum Interference Detection & Mitigation", "OW"],
+  ["telecom", 17, "enterprise-sla-compliance-monitoring", "Enterprise SLA Compliance Monitoring & Credit Automation", "SP"],
+  ["telecom", 18, "wholesale-bandwidth-marketplace", "Wholesale Bandwidth Marketplace (Capacity Trading)", "MB"],
+  ["telecom", 19, "predictive-maintenance-network-hardware", "Predictive Maintenance for Network Hardware", "OW"],
+  ["telecom", 20, "personalized-plan-upsell-agent", "Personalized Plan Recommendation & Upsell Agent", "DC"],
+  ["bssoss", 1, "order-to-activation-orchestration", "Order-to-Activation Orchestration", "SP"],
+  ["bssoss", 2, "product-catalog-offer-management", "Product Catalog & Offer Management Automation", "HM"],
+  ["bssoss", 3, "revenue-assurance-leakage-detection", "Revenue Assurance & Leakage Detection", "BB"],
+  ["bssoss", 4, "order-fallout-detection-recovery", "Order Fallout Detection & Auto-Recovery", "ES"],
+  ["bssoss", 5, "network-inventory-discovery-reconciliation", "Network Inventory Discovery & Reconciliation", "OW"],
+  ["bssoss", 6, "mediation-cdr-xdr-processing", "Mediation & CDR/xDR Processing Pipeline", "SP"],
+  ["bssoss", 7, "charging-rating-anomaly-detection", "Charging & Rating Engine Anomaly Detection", "DC"],
+  ["bssoss", 8, "customer-360-master-data-unification", "Customer 360 / Master Data Unification", "BB"],
+  ["bssoss", 9, "subscription-lifecycle-entitlement", "Subscription Lifecycle & Entitlement Management", "HM"],
+  ["bssoss", 10, "number-portability-orchestration", "Number Portability Orchestration", "SP"],
+  ["bssoss", 11, "wholesale-partner-interconnect-onboarding", "Wholesale/Partner Interconnect Onboarding", "OW"],
+  ["bssoss", 12, "service-catalog-network-activation-mapping", "Service Catalog-to-Network Activation Mapping (TMF Open APIs)", "HM"],
+  ["bssoss", 13, "trouble-ticket-cross-domain-assurance", "Trouble Ticket Management & Cross-Domain Assurance (OSS)", "OW"],
+  ["bssoss", 14, "digital-bss-oss-migration-reconciliation", "Digital BSS/OSS Migration & Data Reconciliation", "SP"],
+  ["bssoss", 15, "promotions-campaign-configuration-engine", "Promotions & Campaign Configuration Engine", "DC"],
+  ["bssoss", 16, "dunning-collections-automation", "Dunning & Prepaid/Postpaid Collections Automation", "HE"],
+  ["bssoss", 17, "api-gateway-tmf-governance", "API Gateway & TMF Open API Orchestration Governance", "ES"],
+  ["bssoss", 18, "credit-limit-fraud-threshold-management", "Credit Limit & Fraud Threshold Management (BSS)", "DC"],
+  ["bssoss", 19, "partner-revenue-share-settlement", "Partner Revenue Share & Settlement Automation", "MB"],
+  ["bssoss", 20, "legacy-system-decommissioning-archival", "Legacy System Decommissioning & Data Archival", "OW"],
+  ["finance", 1, "aml-transaction-monitoring-sar", "AML Transaction Monitoring & SAR Filing", "OW"],
+  ["finance", 2, "credit-underwriting-loan-origination", "Credit Underwriting & Loan Origination", "HM"],
+  ["finance", 3, "algo-trading-strategy-orchestration", "Algorithmic Trading Strategy Orchestration", "MB"],
+  ["finance", 4, "card-not-present-fraud-detection", "Fraud Detection - Card-Not-Present Transactions", "ES"],
+  ["finance", 5, "customer-onboarding-kyc-finance", "Customer Onboarding & KYC (Retail & Business Banking)", "OW"],
+  ["finance", 6, "robo-advisory-portfolio-rebalancing", "Wealth Management: Robo-Advisory Portfolio Rebalancing", "SP"],
+  ["finance", 7, "regulatory-compliance-monitoring-reporting", "Regulatory Compliance Monitoring & Reg Reporting", "HM"],
+  ["finance", 8, "insurance-claims-processing-fraud", "Insurance Claims Processing & Fraud Detection", "OW"],
+  ["finance", 9, "contract-loan-document-review", "Contract & Loan Document Review (Legal/Credit Agent)", "DC"],
+  ["finance", 10, "fpna-forecasting", "Financial Planning & Analysis (FP&A) Forecasting", "SP"],
+  ["finance", 11, "chargeback-dispute-resolution", "Customer Dispute & Chargeback Resolution", "SP"],
+  ["finance", 12, "market-risk-var-monitoring", "Market Risk Management / VaR Monitoring", "BB"],
+  ["finance", 13, "collections-delinquency-management", "Collections & Delinquency Management", "OW"],
+  ["finance", 14, "ma-due-diligence", "Mergers & Acquisitions Due Diligence", "HM"],
+  ["finance", 15, "esg-investment-screening", "ESG Investment Screening & Compliance", "SP"],
+  ["finance", 16, "treasury-cash-liquidity-forecasting", "Treasury Cash Management & Liquidity Forecasting", "OW"],
+  ["finance", 17, "insider-trading-surveillance", "Insider Trading & Market Abuse Surveillance", "DC"],
+  ["finance", 18, "complaint-handling-regulatory-compliance", "Customer Complaint Handling (Regulatory Compliance)", "HM"],
+  ["finance", 19, "trade-settlement-reconciliation", "Trade Settlement Reconciliation", "SP"],
+  ["finance", 20, "personalized-financial-advisory-nba", "Personalized Financial Advisory & Next-Best-Action", "DC"]
+];
+
+const DETAIL = {
+  "telecom/network-fault-rca-remediation": {
+    problem: "A tier-1 operator's NOC receives thousands of correlated alarms per hour across RAN, transport, and core domains during a fault storm (e.g., a fiber cut or a core VNF crash). Human engineers spend 40-60 minutes just correlating alarms to find the true root cause before remediation even starts, driving SLA breaches and customer complaints. The goal is to compress alarm storms into a single root-cause hypothesis with confidence score and, where safe, trigger auto-remediation within minutes instead of hours.",
+    agents: [
+      ["NOC Incident Orchestrator", "Fans out alarm bursts to domain agents, aggregates hypotheses, ranks root cause by confidence"],
+      ["RAN Alarm Correlation Agent", "Deduplicates and correlates RAN alarms (cell down, PCI conflicts) against topology"],
+      ["Transport/IP Topology Agent", "Traces fiber/microwave/IP path failures using topology graph traversal"],
+      ["Core Network Agent", "Inspects 5GC/EPC VNF health, pod restarts, and signaling failures via Kubernetes/OSS APIs"],
+      ["Performance-KPI Deviation Agent", "Detects statistically abnormal KPI drops (drop call rate, throughput) via time-series models"],
+      ["Historical Ticket Similarity Agent", "RAG search over past incident tickets to suggest proven fixes"],
+      ["Remediation Execution Agent", "Generates and (post-approval) executes Ansible/NETCONF playbooks"]
+    ],
+    sources: ["Kafka + FM/PM adapters (SNMP/gNMI)", "Neo4j network topology graph", "Vector DB of past incident tickets"],
+    action: "Remediation Execution Agent — Ansible AWX / NETCONF with dry-run diff",
+    checkpoint: "SRE approval for high-blast-radius actions"
+  },
+  "finance/aml-transaction-monitoring-sar": {
+    problem: "Banks generate thousands of AML alerts daily from rules-based monitoring, of which 90-95% are false positives, yet each still requires investigator review to avoid regulatory penalty for missed suspicious activity. Investigators spend hours per alert gathering evidence across systems before deciding whether to file a Suspicious Activity Report (SAR). An agent team can pre-investigate every alert, assembling evidence and a draft narrative, so human investigators focus on judgment rather than data-gathering.",
+    agents: [
+      ["AML Case Orchestrator", "Fans out an alert to evidence-gathering agents, aggregates findings into a case file with a preliminary risk rating"],
+      ["Transaction Pattern Analysis Agent", "Detects structuring, layering, and velocity patterns in the alerted account's transaction history"],
+      ["Customer/Entity Risk Profile Agent", "Assesses whether behavior deviates from the customer's declared occupation/expected activity"],
+      ["Adverse Media & Sanctions Screening Agent", "Screens involved parties against sanctions, PEP, and adverse media"],
+      ["Network/Relationship Graph Agent", "Maps connections to other flagged accounts/entities to detect mule networks"],
+      ["SAR Narrative Drafting Agent", "Synthesizes all evidence into a structured, regulator-ready draft narrative"]
+    ],
+    sources: ["AML rules engine alerts (Actimize/SAS)", "Core banking transaction history", "Sanctions / PEP / adverse-media API", "Neo4j entity-relationship graph"],
+    action: "SAR narrative → FinCEN BSA E-Filing / goAML XML, case pushed to NICE Case Manager",
+    checkpoint: "Licensed AML investigator final determination & sign-off"
+  },
+  "bssoss/revenue-assurance-leakage-detection": {
+    problem: "Revenue leakage — unbilled usage, mis-rated services, un-activated but delivered services, discount misapplication — typically runs 1-3% of telecom revenue and is notoriously hard to find because evidence is scattered across mediation, rating, billing, and provisioning systems. A blackboard of specialized leakage detectors, synthesized by a controller, surfaces high-confidence, high-value leakage cases for recovery.",
+    agents: [
+      ["Revenue Assurance Controller Agent", "Synthesizes blackboard findings into prioritized leakage cases ranked by recovery value"],
+      ["Usage-to-Billing Reconciliation Agent", "Compares network usage records (mediation output) against what was actually billed"],
+      ["Discount Misapplication Agent", "Detects discounts applied outside eligibility rules or beyond promotional end-dates"],
+      ["Un-activated Service Agent", "Finds services provisioned and delivered in the network but never activated in billing"],
+      ["Rating Configuration Drift Agent", "Detects rating engine configuration changes that silently under-charge a usage category"],
+      ["Zero-Usage/Zero-Billing Anomaly Agent", "Flags active subscriptions generating usage but zero corresponding billing records"]
+    ],
+    sources: ["Mediation platform", "Rating engine", "Billing system", "Provisioning / OSS inventory", "Snowflake blackboard store"],
+    action: "Re-billing trigger for policy-approved corrections + finance dashboard of recovered vs at-risk revenue",
+    checkpoint: ""
+  },
+  "telecom/sim-swap-fraud-detection": {
+    problem: "SIM-swap fraud is used to bypass SMS-based 2FA and take over banking/crypto accounts. Static rules generate too many false positives (blocking legitimate swaps for lost phones) or miss adversarial patterns. A reflective multi-agent design — a proposer that flags suspicious swaps and a critic that actively tries to find legitimate explanations — reduces both fraud loss and customer friction.",
+    agents: [
+      ["Fraud Decision Arbiter Agent", "Weighs proposer vs. critic evidence, sets final risk tier and required action"],
+      ["Fraud Hypothesis Proposer Agent", "Flags a swap request as suspicious based on velocity, geo-mismatch, and known fraud-ring signatures"],
+      ["Legitimate-Explanation Critic Agent", "Actively searches for evidence supporting a legitimate reason (travel, new device, verified store visit)"],
+      ["Step-up Verification Agent", "Orchestrates additional identity checks (video KYC, security questions) when arbiter requests it"],
+      ["Fraud Ring Pattern-Matching Agent", "Cross-references request against graph of known fraud rings/mule device clusters"]
+    ],
+    sources: ["Neo4j fraud graph (devices, SIMs, accounts, IPs)", "Behavioral biometrics service", "Feature store for sub-second scoring"],
+    action: "Risk tier → allow, step-up verification, or block; case written to the fraud case system",
+    checkpoint: ""
+  }
+};
+
+const GENERIC = {
+  OW: { workers: ["Worker agent — sub-investigation A", "Worker agent — sub-investigation B", "Worker agent — sub-investigation C", "Evidence synthesis"], orch: "Supervisor / orchestrator agent" },
+  HM: { workers: ["Domain manager — A", "Domain manager — B", "Specialist agents under each manager"], orch: "Top-level manager agent" },
+  SP: { workers: ["Step 1 agent", "Step 2 agent", "Step 3 agent", "Step 4 agent"], orch: "Durable workflow coordinator" },
+  BB: { workers: ["Detector agent — signal A", "Detector agent — signal B", "Detector agent — signal C"], orch: "Controller agent over the shared blackboard" },
+  DC: { workers: ["Proposer agent", "Critic agent (independent context)", "Evidence retrieval agent"], orch: "Arbiter agent" },
+  MB: { workers: ["Bidding agent — stakeholder A", "Bidding agent — stakeholder B", "Valuation agent"], orch: "Auctioneer / clearing agent" },
+  ES: { workers: ["Reactive agent — event class A", "Reactive agent — event class B", "Local decision agent"], orch: "Event bus (no central orchestrator)" },
+  HE: { workers: ["Tier-1 automated agent", "Tier-2 reasoning agent", "Escalation router"], orch: "Confidence / risk gate" }
+};
+
+const PHASES = {
+  OW: [["Phase 1", "One worker, no fan-out", "Wire a single path end to end — one worker producing a real result, the orchestrator just passing data through. Prove the pipeline before adding parallelism."], ["Phase 2", "Add the fan-out", "Bring the remaining workers online in parallel and build the aggregation logic. Race conditions and partial-failure handling show up here."], ["Phase 3", "Add the governance gate", "Wire in the human checkpoint and the confidence threshold that decides when it fires."], ["Phase 4", "Observability and feedback", "Trace every worker call, monitor decision quality against real outcomes, and catch drift before it becomes an incident."]],
+  BB: [["Phase 1", "One agent writing to the blackboard", "One detector reading and writing the shared store, the controller just reading it back out. Prove the shared-state mechanics before adding writers."], ["Phase 2", "Add the remaining detectors", "Each writes independently. Build the controller's synthesis logic for partial, sometimes-conflicting findings."], ["Phase 3", "Add a minimum-evidence threshold", "Early blackboards over-synthesize from sparse data — require corroborating findings before surfacing a conclusion."], ["Phase 4", "Observability and feedback", "Snapshot blackboard state history so any conclusion traces back to the findings that produced it."]],
+  DC: [["Phase 1", "The proposer alone", "A single-pass classifier producing a hypothesis from real data, no critic yet. That's fine at this stage."], ["Phase 2", "Add the critic, fully independent", "Separate context, separate prompt, no visibility into the proposer's reasoning. That independence is the whole pattern."], ["Phase 3", "Add the arbiter and calibrate", "Run against cases with known-correct outcomes to calibrate how much weight the critic's pushback carries."], ["Phase 4", "Observability and feedback", "Track how often the arbiter overrides the proposer, and whether those overrides were right."]],
+  SP: [["Phase 1", "One step, end to end", "Real input, real output, one step. Durability and retry semantics before breadth."], ["Phase 2", "Extend the chain", "Add the remaining steps with explicit contracts between them and idempotent retries."], ["Phase 3", "Add compensation", "Every step needs a defined rollback — pipelines fail mid-flight, not at the boundaries."], ["Phase 4", "Observability and feedback", "Trace per-step latency and failure class; the bottleneck is rarely where you expect."]],
+  HM: [["Phase 1", "One manager, one specialist", "Prove the delegation contract on a single branch before growing the tree."], ["Phase 2", "Add sibling managers", "Each resolves local trade-offs; the top-level manager arbitrates only what crosses boundaries."], ["Phase 3", "Add the escalation path", "Define what a manager must escalate rather than decide, and the gate that enforces it."], ["Phase 4", "Observability and feedback", "Trace decisions across levels — context loss between tiers is the usual failure."]],
+  MB: [["Phase 1", "One bidder, fixed prices", "Prove allocation mechanics with a single bidding agent and no dynamic pricing."], ["Phase 2", "Add competing bidders", "Multiple stakeholders bidding; build the clearing rule and watch for starvation."], ["Phase 3", "Add fairness and floors", "Constrain the market so no stakeholder is systematically priced out."], ["Phase 4", "Observability and feedback", "Track allocation outcomes against the objective the market was meant to optimize."]],
+  ES: [["Phase 1", "One reactive agent", "Single event class, local decision, sub-second path. No central coordination."], ["Phase 2", "Add the swarm", "More event classes reacting independently. Watch for conflicting simultaneous actions."], ["Phase 3", "Add arbitration and rate limits", "A conflict resolver and a global rate limit stop the swarm fighting itself."], ["Phase 4", "Observability and feedback", "Reconstruct the event timeline for any action taken — this is the only way to debug a swarm."]],
+  HE: [["Phase 1", "Automation with a hard stop", "Tier-1 agent handles the clear cases and escalates everything else. Coverage comes later."], ["Phase 2", "Add the reasoning tier", "Tier-2 handles the ambiguous middle; measure how much it takes off the human queue."], ["Phase 3", "Calibrate the gate", "Tune the confidence and risk thresholds against reviewed outcomes, not intuition."], ["Phase 4", "Observability and feedback", "Log every escalation and override; that record is the training set for the next threshold change."]]
+};
+
+const SITE = "https://agenticforze.github.io/AI-Regenesis";
+
+const SVGS = {
+  "telecom/network-fault-rca-remediation": "docs/telecom/01-network-fault-rca-remediation/architecture.svg",
+  "telecom/sim-swap-fraud-detection": "docs/telecom/07-sim-swap-fraud-detection/architecture.svg",
+  "bssoss/revenue-assurance-leakage-detection": "docs/bssoss/03-revenue-assurance-leakage-detection/architecture.svg",
+  "finance/aml-transaction-monitoring-sar": "docs/finance/01-aml-transaction-monitoring-sar/architecture.svg"
+};
+
+const DEEP8 = {
+  "telecom/network-fault-rca-remediation": ["docs/deep8/telecom/01-network-fault-rca-remediation/diagram.svg", "docs/deep8/telecom/01-network-fault-rca-remediation/blueprint.svg"],
+  "telecom/sim-swap-fraud-detection": ["docs/deep8/telecom/07-sim-swap-fraud-detection/diagram.svg", "docs/deep8/telecom/07-sim-swap-fraud-detection/blueprint.svg"],
+  "bssoss/revenue-assurance-leakage-detection": ["docs/deep8/bssoss/03-revenue-assurance-leakage-detection/diagram.svg", "docs/deep8/bssoss/03-revenue-assurance-leakage-detection/blueprint.svg"],
+  "finance/aml-transaction-monitoring-sar": ["docs/deep8/finance/01-aml-transaction-monitoring-sar/diagram.svg", "docs/deep8/finance/01-aml-transaction-monitoring-sar/blueprint.svg"]
+};
+
+const LAYERS = [
+  ["L1", "Foundational Data & Infrastructure", "The Base"],
+  ["L2", "Agent Intelligence & Models", "The Brain"],
+  ["L3", "Agentic Core (Orchestration & Reasoning)", "Agent Plane"],
+  ["L4", "Decisions Engineering & SECI Framework", "The Conscience"],
+  ["L5", "Execution & Interaction", "Tool Registry"],
+  ["L6", "End-to-End Observability", "Nervous System"],
+  ["L7", "Leadership Dashboard Layer", "Leadership Portal"],
+  ["L8", "Feedback & Reinforcement Loops", "Self-Healing Loop"]
+];
+
+class Component extends DCLogic {
+  state = {
+    route: "home", caseKey: null, q: "", pat: null, copied: false, view: "quick", dom: null, openDomains: {},
+    b: {
+      name: "Dunning & collections automation", domain: "BSS/OSS", pattern: "HE",
+      sourcesText: "Billing system (invoice + aging)\nPayment gateway events\nCustomer contact history",
+      agentsText: "Collections risk gate\nTier-1 reminder agent\nPayment-plan negotiation agent\nDispute detection agent\nEscalation router",
+      action: "Send reminder, offer a payment plan, or route to a human collections agent",
+      checkpoint: "Collections manager approval before service suspension"
+    }
+  };
+
+  go = (route, extra) => this.setState(Object.assign({ route: route }, extra || {}));
+
+  caseItem = (row) => {
+    const d = DOMAINS.find((x) => x.key === row[0]);
+    const key = row[0] + "/" + row[2];
+    return {
+      key: key, domain: d.name, domainShort: d.short,
+      num: String(row[1]).padStart(2, "0"), title: row[3],
+      patternName: PATTERNS[row[4]].name, patternFull: PATTERNS[row[4]].full, patKey: row[4],
+      detailed: !!DETAIL[key],
+      open: () => this.go(this.state.view === "deep8" ? "deep8" : "case", { caseKey: key })
+    };
+  };
+
+  diagramFor = (row, key) => {
+    const det = DETAIL[key];
+    const g = GENERIC[row[4]];
+    if (det) {
+      return {
+        sources: det.sources, orchestrator: det.agents[0][0],
+        workers: det.agents.slice(1).map((a) => a[0]),
+        action: det.action, checkpoint: det.checkpoint, hasCheckpoint: !!det.checkpoint
+      };
+    }
+    return {
+      sources: ["Domain systems of record", "Event stream", "Retrieval store over past cases"],
+      orchestrator: g.orch, workers: g.workers,
+      action: "Downstream system of record updated, with a dry-run diff before write",
+      checkpoint: "", hasCheckpoint: false
+    };
+  };
+
+  renderVals() {
+    const s = this.state;
+    const r = s.route;
+    const v = {
+      isHome: r === "home", isCatalog: r === "catalog", isCase: r === "case",
+      isPatterns: r === "patterns", isBuilder: r === "builder", isSkills: r === "skills",
+      isDeep8: r === "deep8", isReference: r === "reference",
+      goHome: () => this.go("home"), goCatalog: () => this.go("catalog", { q: "", pat: null }),
+      goPatterns: () => this.go("patterns"), goBuilder: () => this.go("builder"),
+      goSkills: () => this.go("skills"), goReference: () => this.go("reference"),
+      seeDeep8: () => this.go("deep8", { caseKey: "telecom/network-fault-rca-remediation" }),
+      seeQuickRef: () => this.go("case", { caseKey: "telecom/network-fault-rca-remediation" }),
+      layers: LAYERS.map((l) => ({ id: l[0], name: l[1], alias: l[2] })),
+      showPatternStrip: this.props.showPatternStrip ?? true,
+      showBuilderPromo: this.props.showBuilderPromo ?? true,
+      showDeep8Cta: this.props.showDeep8Cta ?? true
+    };
+
+    const counts = {};
+    CASES.forEach((c) => { counts[c[4]] = (counts[c[4]] || 0) + 1; });
+
+    v.domainCards = DOMAINS.map((d) => {
+      const rows = CASES.filter((c) => c[0] === d.key);
+      const pats = new Set(rows.map((c) => c[4]));
+      return { name: d.name, blurb: d.blurb, count: rows.length, patterns: pats.size, open: () => this.go("catalog", { q: "", pat: null }) };
+    });
+
+    v.patternStrip = Object.keys(PATTERNS).map((k) => ({
+      name: PATTERNS[k].name, count: counts[k] || 0, open: () => this.go("catalog", { pat: k, q: "" })
+    }));
+
+    v.patternRows = Object.keys(PATTERNS).map((k) => ({
+      full: PATTERNS[k].full, best: PATTERNS[k].best, count: counts[k] || 0,
+      open: () => this.go("catalog", { pat: k, q: "" })
+    }));
+
+    const q = s.q.trim().toLowerCase();
+    const matches = CASES.filter((row) => {
+      if (s.pat && row[4] !== s.pat) return false;
+      if (s.dom && row[0] !== s.dom) return false;
+      if (!q) return true;
+      const det = DETAIL[row[0] + "/" + row[2]];
+      const hay = [row[3], PATTERNS[row[4]].full, row[0], det ? det.problem : "", det ? det.agents.map((a) => a[0]).join(" ") : ""].join(" ").toLowerCase();
+      return hay.indexOf(q) > -1;
+    });
+
+    v.q = s.q;
+    v.setQ = (e) => this.setState({ q: e.target.value });
+    v.resultCount = matches.length;
+    v.isEmpty = matches.length === 0;
+    v.hasFilters = !!(s.pat || s.q || s.dom);
+    v.clearFilters = () => this.setState({ q: "", pat: null, dom: null });
+    v.chips = Object.keys(PATTERNS).map((k) => ({
+      name: PATTERNS[k].name,
+      style: s.pat === k
+        ? "cursor:pointer;font-size:12px;padding:6px 14px;background:var(--color-accent);color:var(--color-bg)"
+        : "cursor:pointer;font-size:12px;padding:6px 14px;background:var(--color-neutral-200);color:var(--color-neutral-800)",
+      toggle: () => this.setState({ pat: s.pat === k ? null : k })
+    }));
+    const DTINT = {
+      telecom: "background:var(--color-accent-2-200);color:var(--color-accent-2-800);font-size:11px;padding:3px 10px",
+      bssoss: "background:var(--color-accent-200);color:var(--color-accent-800);font-size:11px;padding:3px 10px",
+      finance: "background:var(--color-neutral-200);color:var(--color-neutral-800);font-size:11px;padding:3px 10px"
+    };
+    const DSW = {
+      telecom: "width:9px;height:9px;border-radius:999px;background:var(--color-accent-2-500);display:inline-block;flex:none",
+      bssoss: "width:9px;height:9px;border-radius:999px;background:var(--color-accent-500);display:inline-block;flex:none",
+      finance: "width:9px;height:9px;border-radius:999px;background:var(--color-neutral-500);display:inline-block;flex:none"
+    };
+    v.domainPills = [["telecom", "Telecom", "accent-2"], ["bssoss", "BSS/OSS", "accent"], ["finance", "Finance", "neutral"]].map((d) => ({
+      label: d[1],
+      style: "cursor:pointer;font-size:13px;padding:7px 16px;background:var(--color-" + d[2] + "-" + (s.dom === d[0] ? "400" : "200") + ");color:var(--color-" + d[2] + "-800);border:1px solid var(--color-" + d[2] + "-400)",
+      open: () => this.setState({ dom: s.dom === d[0] ? null : d[0], pat: null })
+    }));
+    v.viewOpts = [["quick", "Quick Reference"], ["deep8", "Deep 8-Layer"]].map((o) => ({
+      label: o[1],
+      style: (s.view || "quick") === o[0]
+        ? "flex:1;text-align:center;padding:8px 6px;border-radius:999px;font-size:12px;font-weight:600;cursor:pointer;background:var(--color-accent);color:var(--color-bg)"
+        : "flex:1;text-align:center;padding:8px 6px;border-radius:999px;font-size:12px;font-weight:600;cursor:pointer;color:var(--color-neutral-800)",
+      pick: () => this.setState({ view: o[0] })
+    }));
+    const openD = s.openDomains || {};
+    v.tree = DOMAINS.map((d) => {
+      const rows = CASES.filter((c) => c[0] === d.key);
+      const pc = {};
+      rows.forEach((c) => { pc[c[4]] = (pc[c[4]] || 0) + 1; });
+      const isOpen = openD[d.key] !== false;
+      return {
+        name: d.name, count: rows.length, open: isOpen,
+        swatch: DSW[d.key],
+        chevron: "font-size:11px;color:var(--color-neutral-700);display:inline-block;transition:transform .15s;transform:rotate(" + (isOpen ? 90 : 0) + "deg)",
+        toggle: () => this.setState({ openDomains: Object.assign({}, openD, { [d.key]: !isOpen }), dom: s.dom === d.key ? null : d.key, pat: null }),
+        patterns: Object.keys(pc).map((k) => ({
+          name: PATTERNS[k].name, count: pc[k],
+          rowStyle: "display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:var(--radius-md);cursor:pointer;font-size:12.5px;" + (s.pat === k ? "background:var(--color-accent-200);color:var(--color-accent-800)" : "color:var(--color-neutral-800)"),
+          select: () => this.setState({ pat: s.pat === k ? null : k })
+        }))
+      };
+    });
+    const blurb = (row) => {
+      const sc = (typeof window !== "undefined" && window.AIR_CASES) ? window.AIR_CASES[row[0] + "/" + row[2]] : null;
+      return sc && sc.problem ? sc.problem : PATTERNS[row[4]].best;
+    };
+    v.flatCases = matches.map((row) => {
+      const it = this.caseItem(row);
+      it.blurb = blurb(row);
+      it.domainStyle = DTINT[row[0]];
+      return it;
+    });
+    const domName = s.dom ? DOMAINS.find((x) => x.key === s.dom).name : null;
+    v.crumb = [domName, s.pat ? PATTERNS[s.pat].full : null].filter(Boolean).join(" · ") || "All use cases";
+    v.statCards = [["telecom", "20", "Telecom", "accent-2"], ["bssoss", "20", "BSS/OSS", "accent"], ["finance", "20", "Financial services", "neutral"], [null, "8", "Patterns", "accent-2"]].map((t) => ({
+      n: t[1], label: t[2],
+      style: "border-left:3px solid var(--color-" + t[3] + "-400);padding-left:14px;cursor:pointer",
+      open: t[0] ? () => this.setState({ dom: s.dom === t[0] ? null : t[0], pat: null }) : () => this.go("patterns")
+    }));
+    v.groups = DOMAINS.map((d) => {
+      const rows = matches.filter((c) => c[0] === d.key);
+      return { name: d.name, count: rows.length, cases: rows.map(this.caseItem) };
+    }).filter((g) => g.count > 0);
+
+    const row = s.caseKey ? CASES.find((c) => c[0] + "/" + c[2] === s.caseKey) : null;
+    if (row) {
+      const key = s.caseKey;
+      const det = DETAIL[key];
+      const src = (typeof window !== "undefined" && window.AIR_CASES) ? window.AIR_CASES[key] : null;
+      const g = GENERIC[row[4]];
+      v.c = {
+        title: row[3], domain: DOMAINS.find((x) => x.key === row[0]).name,
+        patternFull: PATTERNS[row[4]].full,
+        openPattern: () => this.go("catalog", { pat: row[4], q: "" }),
+        problem: src ? src.problem : (det ? det.problem : ""),
+        hasRoster: !!(src || det),
+        tech: src ? src.tech.map((t) => ({ step: t[0], value: t[1] })) : [],
+        hasTech: !!(src && src.tech.length),
+        build: src ? src.build.map((b) => ({ label: b[0], title: b[1], body: b[2] })) : [],
+        hasBuild: !!(src && src.build.length),
+        retro: src ? src.retro.map((r) => ({ text: r })) : [],
+        hasRetro: !!(src && src.retro.length),
+        diagramNote: "Layered architecture: data & integration → orchestration → agents → action & execution, with a cross-cutting observability & governance layer.",
+        agents: (src ? src.agents : (det ? det.agents : [])).map((a) => ({ name: a[0], role: a[1] })),
+        patternBest: PATTERNS[row[4]].best,
+        deep8Url: SITE + "/deep8/" + row[0] + "/" + String(row[1]).padStart(2, "0") + "-" + row[2] + "/",
+        srcUrl: SITE + "/" + row[0] + "/" + String(row[1]).padStart(2, "0") + "-" + row[2] + "/",
+        notDetailed: !det,
+        diagramEl: React.createElement("img", {
+          src: "docs/" + row[0] + "/" + String(row[1]).padStart(2, "0") + "-" + row[2] + "/architecture.svg",
+          alt: row[3] + " architecture diagram",
+          style: { width: "100%", height: "auto" }
+        }),
+        hasDeep8: true,
+        noDeep8: false,
+        openDeep8: () => this.go("deep8", { caseKey: key })
+      };
+      v.dg = this.diagramFor(row, key);
+      const base = "docs/deep8/" + row[0] + "/" + String(row[1]).padStart(2, "0") + "-" + row[2] + "/";
+      v.d8 = {
+        title: row[3], domain: DOMAINS.find((x) => x.key === row[0]).name,
+        patternFull: PATTERNS[row[4]].full,
+        diagramEl: React.createElement("img", { src: base + "diagram.svg", alt: row[3] + " Deep 8-Layer flow diagram", style: { width: "100%", height: "auto" } }),
+        blueprintEl: React.createElement("img", { src: base + "blueprint.svg", alt: row[3] + " Deep 8-Layer reference blueprint", style: { width: "100%", height: "auto" } }),
+        back: () => this.go("case", { caseKey: key })
+      };
+    }
+
+    const b = s.b;
+    const setB = (k) => (e) => this.setState({ b: Object.assign({}, this.state.b, { [k]: e.target.value }), copied: false });
+    const lines = (t) => t.split("\n").map((x) => x.trim()).filter(Boolean);
+    const agents = lines(b.agentsText);
+    v.b = {
+      name: b.name, domain: b.domain, sourcesText: b.sourcesText, agentsText: b.agentsText,
+      action: b.action, checkpoint: b.checkpoint,
+      setName: setB("name"), setDomain: setB("domain"), setSources: setB("sourcesText"),
+      setAgents: setB("agentsText"), setAction: setB("action"), setCheckpoint: setB("checkpoint"),
+      patternOpts: Object.keys(PATTERNS).map((k) => ({
+        full: PATTERNS[k].full, checked: b.pattern === k,
+        pick: () => this.setState({ b: Object.assign({}, this.state.b, { pattern: k }), copied: false })
+      })),
+      copyLabel: s.copied ? "Spec copied" : "Copy the spec",
+      copy: () => {
+        const spec = JSON.stringify({
+          name: b.name, domain: b.domain, pattern: PATTERNS[b.pattern].full,
+          sources: lines(b.sourcesText), orchestrator: agents[0] || "", workers: agents.slice(1),
+          action: b.action, human_checkpoint: b.checkpoint || null
+        }, null, 2);
+        if (navigator.clipboard) navigator.clipboard.writeText(spec);
+        this.setState({ copied: true });
+      }
+    };
+    v.bdg = {
+      title: b.name || "Untitled use case", patternName: PATTERNS[b.pattern].name,
+      sources: lines(b.sourcesText), orchestrator: agents[0] || GENERIC[b.pattern].orch,
+      workers: agents.length > 1 ? agents.slice(1) : GENERIC[b.pattern].workers,
+      action: b.action || "Downstream system of record updated",
+      checkpoint: b.checkpoint, hasCheckpoint: !!b.checkpoint.trim(),
+      phases: PHASES[b.pattern].map((p) => ({ label: p[0], title: p[1], body: p[2] }))
+    };
+
+    return v;
+  }
+}
+
+</script>
+</body>
+</html>

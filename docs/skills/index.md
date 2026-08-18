@@ -30,7 +30,7 @@ order — for any of the 8 named multi-agent patterns (Orchestrator-Worker, Hier
 Blackboard, Debate-Critique-Arbiter, Market-Based, Event-Driven Swarm, Human-in-the-Loop Escalation), from
 one compact spec per use case.
 
-[**Download `quick-reference-engine.skill`**](/downloads/skills/quick-reference-engine.skill){: .download-link data-download="quick-reference-engine" }
+[**Download `quick-reference-engine.skill`**]({{ '/downloads/skills/quick-reference-engine.skill' | relative_url }}){: .download-link data-download="quick-reference-engine" }
 &nbsp;·&nbsp; [Try it live in your browser, no download]({{ '/build/' | relative_url }})
 
 </div>
@@ -44,7 +44,7 @@ Feedback & Reinforcement Loops) — a labeled flow diagram, a reference blueprin
 tools/technologies stack, from one compact spec per use case. This is the engine behind every Deep 8-Layer
 page in the catalog.
 
-[**Download `deep8-architecture-engine.skill`**](/downloads/skills/deep8-architecture-engine.skill){: .download-link data-download="deep8-architecture-engine" }
+[**Download `deep8-architecture-engine.skill`**]({{ '/downloads/skills/deep8-architecture-engine.skill' | relative_url }}){: .download-link data-download="deep8-architecture-engine" }
 
 </div>
 
@@ -57,7 +57,7 @@ An **audit tool**, not a generation tool — interviews you about a real, alread
 severity-ranked findings and actionable recommendations. The automated version of the Architecture Audit
 consulting engagement below.
 
-[**Download `retrospective-generator.skill`**](/downloads/skills/retrospective-generator.skill){: .download-link data-download="retrospective-generator" }
+[**Download `retrospective-generator.skill`**]({{ '/downloads/skills/retrospective-generator.skill' | relative_url }}){: .download-link data-download="retrospective-generator" }
 
 </div>
 
@@ -69,7 +69,7 @@ Combines a Quick-Reference use case (and optionally its Deep 8-Layer spec) with 
 details — client name, price, timeframe — into client-ready proposal content, ready to hand to a Word or
 slide-deck skill. Never invents a price or timeframe; both are required inputs.
 
-[**Download `proposal-generator.skill`**](/downloads/skills/proposal-generator.skill){: .download-link data-download="proposal-generator" }
+[**Download `proposal-generator.skill`**]({{ '/downloads/skills/proposal-generator.skill' | relative_url }}){: .download-link data-download="proposal-generator" }
 
 </div>
 
@@ -86,7 +86,7 @@ as a reference for writing your own specs.
 20 telecom use cases (network fault RCA, 5G slicing, fraud, churn, and more). 18 of the 20 currently have a
 matching Deep 8-Layer spec — see the pack's own `README.md` for exactly which two don't yet.
 
-[**Download `telecom-pack-v1.zip`**](/downloads/packs/telecom-pack-v1.zip){: .download-link data-download="telecom-pack" }
+[**Download `telecom-pack-v1.zip`**]({{ '/downloads/packs/telecom-pack-v1.zip' | relative_url }}){: .download-link data-download="telecom-pack" }
 
 </div>
 
@@ -97,7 +97,7 @@ matching Deep 8-Layer spec — see the pack's own `README.md` for exactly which 
 20 telecom back-office use cases (order orchestration, revenue assurance, fallout recovery, mediation
 pipelines, and more). Full 1:1 Quick-Reference / Deep 8-Layer coverage across all 20.
 
-[**Download `bssoss-pack-v1.zip`**](/downloads/packs/bssoss-pack-v1.zip){: .download-link data-download="bssoss-pack" }
+[**Download `bssoss-pack-v1.zip`**]({{ '/downloads/packs/bssoss-pack-v1.zip' | relative_url }}){: .download-link data-download="bssoss-pack" }
 
 </div>
 
@@ -108,7 +108,7 @@ pipelines, and more). Full 1:1 Quick-Reference / Deep 8-Layer coverage across al
 20 financial-services use cases (AML/SAR filing, credit underwriting, algorithmic trading, KYC onboarding,
 robo-advisory, and more). Full 1:1 Quick-Reference / Deep 8-Layer coverage across all 20.
 
-[**Download `finance-pack-v1.zip`**](/downloads/packs/finance-pack-v1.zip){: .download-link data-download="finance-pack" }
+[**Download `finance-pack-v1.zip`**]({{ '/downloads/packs/finance-pack-v1.zip' | relative_url }}){: .download-link data-download="finance-pack" }
 
 </div>
 

@@ -1,15 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1340 1079" font-family="'Inter','IBM Plex Sans',-apple-system,sans-serif">
-<rect width="1340" height="1079" fill="#FFFFFF"/>
-<rect x="0" y="0" width="1340" height="50" fill="#F4F5F7"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1340 1079" font-family="&#39;Inter&#39;,&#39;IBM Plex Sans&#39;,-apple-system,sans-serif">
+<rect width="1340" height="1079" fill="#FFFFFF"></rect>
+<rect x="0" y="0" width="1340" height="50" fill="#F4F5F7"></rect>
 <text x="200.0" y="30.0" text-anchor="middle" font-size="13" font-weight="700" fill="#333B4A">Reference Blueprint (Manuscript Model)</text>
 <text x="660.0" y="30.0" text-anchor="middle" font-size="13" font-weight="700" fill="#333B4A">Use Case Blueprint — Architecture &amp; Solution</text>
 <text x="1130.0" y="30.0" text-anchor="middle" font-size="13" font-weight="700" fill="#333B4A">Tools &amp; Technologies</text>
-<line x1="0" y1="50" x2="1340" y2="50" stroke="#D8DCE2" stroke-width="1.5"/>
-<line x1="400" y1="0" x2="400" y2="1079" stroke="#E2E5EA" stroke-width="1"/>
-<line x1="920" y1="0" x2="920" y2="1079" stroke="#E2E5EA" stroke-width="1"/>
-<rect x="0" y="50.0" width="1340" height="131.0" fill="#FFFFFF"/>
-<rect x="0" y="50.0" width="5" height="131.0" fill="#AEB4C0"/>
-<circle cx="38" cy="80.0" r="18" fill="#EDEFF3" stroke="#AEB4C0" stroke-width="1.5"/>
+<line x1="0" y1="50" x2="1340" y2="50" stroke="#D8DCE2" stroke-width="1.5"></line>
+<line x1="400" y1="0" x2="400" y2="1079" stroke="#E2E5EA" stroke-width="1"></line>
+<line x1="920" y1="0" x2="920" y2="1079" stroke="#E2E5EA" stroke-width="1"></line>
+<rect x="0" y="50.0" width="1340" height="131.0" fill="#FFFFFF"></rect>
+<rect x="0" y="50.0" width="5" height="131.0" fill="#AEB4C0"></rect>
+<circle cx="38" cy="80.0" r="18" fill="#EDEFF3" stroke="#AEB4C0" stroke-width="1.5"></circle>
 <text x="38" y="85.0" text-anchor="middle" font-size="13.5" font-weight="700" fill="#333B4A">L8</text>
 <text x="68" y="76.0" font-size="14.5" font-weight="700" fill="#333B4A">Feedback &amp;</text>
 <text x="68" y="97.0" font-size="14.5" font-weight="700" fill="#333B4A">Reinforcement Loops</text>
@@ -20,12 +20,12 @@
 <text x="418" y="95.0" font-size="12" fill="#374151">cause; Remediation Playbook Retraining Trigger fires on</text>
 <text x="418" y="112.0" font-size="12" fill="#374151">accuracy degradation; Runbook &amp; Policy Memory Updater writes</text>
 <text x="418" y="129.0" font-size="12" fill="#374151">new rules back into L3.</text>
-<text x="938" y="78.0" font-size="11.5" font-family="'IBM Plex Mono',monospace" fill="#3E6D93">Automated retraining pipeline · accuracy-</text>
-<text x="938" y="95.0" font-size="11.5" font-family="'IBM Plex Mono',monospace" fill="#3E6D93">threshold monitors · versioned runbook store</text>
-<line x1="0" y1="181.0" x2="1340" y2="181.0" stroke="#EDEEF1" stroke-width="1"/>
-<rect x="0" y="181.0" width="1340" height="131.0" fill="#FBFBFA"/>
-<rect x="0" y="181.0" width="5" height="131.0" fill="#D9748C"/>
-<circle cx="38" cy="211.0" r="18" fill="#FBE1E6" stroke="#D9748C" stroke-width="1.5"/>
+<text x="938" y="78.0" font-size="11.5" font-family="&#39;IBM Plex Mono&#39;,monospace" fill="#3E6D93">Automated retraining pipeline · accuracy-</text>
+<text x="938" y="95.0" font-size="11.5" font-family="&#39;IBM Plex Mono&#39;,monospace" fill="#3E6D93">threshold monitors · versioned runbook store</text>
+<line x1="0" y1="181.0" x2="1340" y2="181.0" stroke="#EDEEF1" stroke-width="1"></line>
+<rect x="0" y="181.0" width="1340" height="131.0" fill="#FBFBFA"></rect>
+<rect x="0" y="181.0" width="5" height="131.0" fill="#D9748C"></rect>
+<circle cx="38" cy="211.0" r="18" fill="#FBE1E6" stroke="#D9748C" stroke-width="1.5"></circle>
 <text x="38" y="216.0" text-anchor="middle" font-size="13.5" font-weight="700" fill="#7A2B3F">L7</text>
 <text x="68" y="207.0" font-size="14.5" font-weight="700" fill="#7A2B3F">Leadership Dashboard</text>
 <text x="68" y="228.0" font-size="14.5" font-weight="700" fill="#7A2B3F">Layer</text>
@@ -36,12 +36,12 @@
 <text x="418" y="226.0" font-size="12" fill="#374151">Automation Coverage &amp; Cost-Avoidance View give NOC and</text>
 <text x="418" y="243.0" font-size="12" fill="#374151">network leadership a real-time link between automation and</text>
 <text x="418" y="260.0" font-size="12" fill="#374151">reliability outcomes.</text>
-<text x="938" y="209.0" font-size="11.5" font-family="'IBM Plex Mono',monospace" fill="#3E6D93">BI dashboard (Looker/Tableau) wired directly</text>
-<text x="938" y="226.0" font-size="11.5" font-family="'IBM Plex Mono',monospace" fill="#3E6D93">to incident and cost-avoidance data</text>
-<line x1="0" y1="312.0" x2="1340" y2="312.0" stroke="#EDEEF1" stroke-width="1"/>
-<rect x="0" y="312.0" width="1340" height="131.0" fill="#FFFFFF"/>
-<rect x="0" y="312.0" width="5" height="131.0" fill="#9575CD"/>
-<circle cx="38" cy="342.0" r="18" fill="#EAE1F8" stroke="#9575CD" stroke-width="1.5"/>
+<text x="938" y="209.0" font-size="11.5" font-family="&#39;IBM Plex Mono&#39;,monospace" fill="#3E6D93">BI dashboard (Looker/Tableau) wired directly</text>
+<text x="938" y="226.0" font-size="11.5" font-family="&#39;IBM Plex Mono&#39;,monospace" fill="#3E6D93">to incident and cost-avoidance data</text>
+<line x1="0" y1="312.0" x2="1340" y2="312.0" stroke="#EDEEF1" stroke-width="1"></line>
+<rect x="0" y="312.0" width="1340" height="131.0" fill="#FFFFFF"></rect>
+<rect x="0" y="312.0" width="5" height="131.0" fill="#9575CD"></rect>
+<circle cx="38" cy="342.0" r="18" fill="#EAE1F8" stroke="#9575CD" stroke-width="1.5"></circle>
 <text x="38" y="347.0" text-anchor="middle" font-size="13.5" font-weight="700" fill="#4A2E7A">L6</text>
 <text x="68" y="338.0" font-size="14.5" font-weight="700" fill="#4A2E7A">End-to-End</text>
 <text x="68" y="359.0" font-size="14.5" font-weight="700" fill="#4A2E7A">Observability</text>
@@ -52,12 +52,12 @@
 <text x="418" y="357.0" font-size="12" fill="#374151">Detector, and a Blast-Radius Auditor that flags any</text>
 <text x="418" y="374.0" font-size="12" fill="#374151">remediation whose real-world impact exceeded its predicted</text>
 <text x="418" y="391.0" font-size="12" fill="#374151">scope.</text>
-<text x="938" y="340.0" font-size="11.5" font-family="'IBM Plex Mono',monospace" fill="#3E6D93">Streaming anomaly detection · automated</text>
-<text x="938" y="357.0" font-size="11.5" font-family="'IBM Plex Mono',monospace" fill="#3E6D93">blast-radius audit service</text>
-<line x1="0" y1="443.0" x2="1340" y2="443.0" stroke="#EDEEF1" stroke-width="1"/>
-<rect x="0" y="443.0" width="1340" height="131.0" fill="#FBFBFA"/>
-<rect x="0" y="443.0" width="5" height="131.0" fill="#D89A3F"/>
-<circle cx="38" cy="473.0" r="18" fill="#FBE8CE" stroke="#D89A3F" stroke-width="1.5"/>
+<text x="938" y="340.0" font-size="11.5" font-family="&#39;IBM Plex Mono&#39;,monospace" fill="#3E6D93">Streaming anomaly detection · automated</text>
+<text x="938" y="357.0" font-size="11.5" font-family="&#39;IBM Plex Mono&#39;,monospace" fill="#3E6D93">blast-radius audit service</text>
+<line x1="0" y1="443.0" x2="1340" y2="443.0" stroke="#EDEEF1" stroke-width="1"></line>
+<rect x="0" y="443.0" width="1340" height="131.0" fill="#FBFBFA"></rect>
+<rect x="0" y="443.0" width="5" height="131.0" fill="#D89A3F"></rect>
+<circle cx="38" cy="473.0" r="18" fill="#FBE8CE" stroke="#D89A3F" stroke-width="1.5"></circle>
 <text x="38" y="478.0" text-anchor="middle" font-size="13.5" font-weight="700" fill="#7A4E12">L5</text>
 <text x="68" y="469.0" font-size="14.5" font-weight="700" fill="#7A4E12">Execution &amp;</text>
 <text x="68" y="490.0" font-size="14.5" font-weight="700" fill="#7A4E12">Interaction</text>
@@ -68,12 +68,12 @@
 <text x="418" y="488.0" font-size="12" fill="#374151">ServiceNow update, NOC/Slack alert), an SRE approval gate,</text>
 <text x="418" y="505.0" font-size="12" fill="#374151">and an on-call escalation queue for the three conditional</text>
 <text x="418" y="522.0" font-size="12" fill="#374151">routes.</text>
-<text x="938" y="471.0" font-size="11.5" font-family="'IBM Plex Mono',monospace" fill="#3E6D93">Ansible/NETCONF automation · ServiceNow API</text>
-<text x="938" y="488.0" font-size="11.5" font-family="'IBM Plex Mono',monospace" fill="#3E6D93">· Slack/PagerDuty integration</text>
-<line x1="0" y1="574.0" x2="1340" y2="574.0" stroke="#EDEEF1" stroke-width="1"/>
-<rect x="0" y="574.0" width="1340" height="131.0" fill="#FFFFFF"/>
-<rect x="0" y="574.0" width="5" height="131.0" fill="#5B93C9"/>
-<circle cx="38" cy="604.0" r="18" fill="#DCEBFB" stroke="#5B93C9" stroke-width="1.5"/>
+<text x="938" y="471.0" font-size="11.5" font-family="&#39;IBM Plex Mono&#39;,monospace" fill="#3E6D93">Ansible/NETCONF automation · ServiceNow API</text>
+<text x="938" y="488.0" font-size="11.5" font-family="&#39;IBM Plex Mono&#39;,monospace" fill="#3E6D93">· Slack/PagerDuty integration</text>
+<line x1="0" y1="574.0" x2="1340" y2="574.0" stroke="#EDEEF1" stroke-width="1"></line>
+<rect x="0" y="574.0" width="1340" height="131.0" fill="#FFFFFF"></rect>
+<rect x="0" y="574.0" width="5" height="131.0" fill="#5B93C9"></rect>
+<circle cx="38" cy="604.0" r="18" fill="#DCEBFB" stroke="#5B93C9" stroke-width="1.5"></circle>
 <text x="38" y="609.0" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1C4A73">L4</text>
 <text x="68" y="600.0" font-size="14.5" font-weight="700" fill="#1C4A73">Decisions Engineering</text>
 <text x="68" y="621.0" font-size="14.5" font-weight="700" fill="#1C4A73">&amp; SECI Framework</text>
@@ -83,13 +83,13 @@
 <text x="418" y="602.0" font-size="12" fill="#374151">Blast-Radius Risk Policy Engine, Change-Management</text>
 <text x="418" y="619.0" font-size="12" fill="#374151">Compliance Engine, and an SRE Runbook Rule Engine gate every</text>
 <text x="418" y="636.0" font-size="12" fill="#374151">remediation before it can reach the Action Layer.</text>
-<text x="938" y="602.0" font-size="11.5" font-family="'IBM Plex Mono',monospace" fill="#3E6D93">Rules engine · change-management (CAB)</text>
-<text x="938" y="619.0" font-size="11.5" font-family="'IBM Plex Mono',monospace" fill="#3E6D93">policy integration · SRE runbook</text>
-<text x="938" y="636.0" font-size="11.5" font-family="'IBM Plex Mono',monospace" fill="#3E6D93">codification</text>
-<line x1="0" y1="705.0" x2="1340" y2="705.0" stroke="#EDEEF1" stroke-width="1"/>
-<rect x="0" y="705.0" width="1340" height="110.0" fill="#FBFBFA"/>
-<rect x="0" y="705.0" width="5" height="110.0" fill="#4FAE83"/>
-<circle cx="38" cy="735.0" r="18" fill="#DBF2E7" stroke="#4FAE83" stroke-width="1.5"/>
+<text x="938" y="602.0" font-size="11.5" font-family="&#39;IBM Plex Mono&#39;,monospace" fill="#3E6D93">Rules engine · change-management (CAB)</text>
+<text x="938" y="619.0" font-size="11.5" font-family="&#39;IBM Plex Mono&#39;,monospace" fill="#3E6D93">policy integration · SRE runbook</text>
+<text x="938" y="636.0" font-size="11.5" font-family="&#39;IBM Plex Mono&#39;,monospace" fill="#3E6D93">codification</text>
+<line x1="0" y1="705.0" x2="1340" y2="705.0" stroke="#EDEEF1" stroke-width="1"></line>
+<rect x="0" y="705.0" width="1340" height="110.0" fill="#FBFBFA"></rect>
+<rect x="0" y="705.0" width="5" height="110.0" fill="#4FAE83"></rect>
+<circle cx="38" cy="735.0" r="18" fill="#DBF2E7" stroke="#4FAE83" stroke-width="1.5"></circle>
 <text x="38" y="740.0" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1B5E3D">L3</text>
 <text x="68" y="731.0" font-size="14.5" font-weight="700" fill="#1B5E3D">Agentic Core</text>
 <text x="20" y="757.0" font-size="11.5" fill="#6B7280">The Logic Engine — where agents</text>
@@ -99,13 +99,13 @@
 <text x="418" y="750.0" font-size="12" fill="#374151">agents (RAN, Transport, Core, KPI, Historical Ticket) plus</text>
 <text x="418" y="767.0" font-size="12" fill="#374151">the four-part Memory Layer: Working, Episodic, Semantic, and</text>
 <text x="418" y="784.0" font-size="12" fill="#374151">Policy Memory.</text>
-<text x="938" y="733.0" font-size="11.5" font-family="'IBM Plex Mono',monospace" fill="#3E6D93">Orchestrator-worker agent graph · vector DB</text>
-<text x="938" y="750.0" font-size="11.5" font-family="'IBM Plex Mono',monospace" fill="#3E6D93">for episodic &amp; semantic memory · versioned</text>
-<text x="938" y="767.0" font-size="11.5" font-family="'IBM Plex Mono',monospace" fill="#3E6D93">rules store for policy memory</text>
-<line x1="0" y1="815.0" x2="1340" y2="815.0" stroke="#EDEEF1" stroke-width="1"/>
-<rect x="0" y="815.0" width="1340" height="131.0" fill="#FFFFFF"/>
-<rect x="0" y="815.0" width="5" height="131.0" fill="#5FA3C0"/>
-<circle cx="38" cy="845.0" r="18" fill="#E4F0F6" stroke="#5FA3C0" stroke-width="1.5"/>
+<text x="938" y="733.0" font-size="11.5" font-family="&#39;IBM Plex Mono&#39;,monospace" fill="#3E6D93">Orchestrator-worker agent graph · vector DB</text>
+<text x="938" y="750.0" font-size="11.5" font-family="&#39;IBM Plex Mono&#39;,monospace" fill="#3E6D93">for episodic &amp; semantic memory · versioned</text>
+<text x="938" y="767.0" font-size="11.5" font-family="&#39;IBM Plex Mono&#39;,monospace" fill="#3E6D93">rules store for policy memory</text>
+<line x1="0" y1="815.0" x2="1340" y2="815.0" stroke="#EDEEF1" stroke-width="1"></line>
+<rect x="0" y="815.0" width="1340" height="131.0" fill="#FFFFFF"></rect>
+<rect x="0" y="815.0" width="5" height="131.0" fill="#5FA3C0"></rect>
+<circle cx="38" cy="845.0" r="18" fill="#E4F0F6" stroke="#5FA3C0" stroke-width="1.5"></circle>
 <text x="38" y="850.0" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1D4E5F">L2</text>
 <text x="68" y="841.0" font-size="14.5" font-weight="700" fill="#1D4E5F">Agent Intelligence &amp;</text>
 <text x="68" y="862.0" font-size="14.5" font-weight="700" fill="#1D4E5F">Models</text>
@@ -114,12 +114,12 @@
 <text x="20" y="922.0" font-size="11.5" fill="#6B7280">graphs.</text>
 <text x="418" y="843.0" font-size="12" fill="#374151">AI Gateway fronting the LLM reasoning core and a network</text>
 <text x="418" y="860.0" font-size="12" fill="#374151">topology knowledge graph.</text>
-<text x="938" y="843.0" font-size="11.5" font-family="'IBM Plex Mono',monospace" fill="#3E6D93">Claude via a model-routing gateway · graph</text>
-<text x="938" y="860.0" font-size="11.5" font-family="'IBM Plex Mono',monospace" fill="#3E6D93">database (Neo4j)</text>
-<line x1="0" y1="946.0" x2="1340" y2="946.0" stroke="#EDEEF1" stroke-width="1"/>
-<rect x="0" y="946.0" width="1340" height="131.0" fill="#FBFBFA"/>
-<rect x="0" y="946.0" width="5" height="131.0" fill="#C7BC9E"/>
-<circle cx="38" cy="976.0" r="18" fill="#F2EEE3" stroke="#C7BC9E" stroke-width="1.5"/>
+<text x="938" y="843.0" font-size="11.5" font-family="&#39;IBM Plex Mono&#39;,monospace" fill="#3E6D93">Claude via a model-routing gateway · graph</text>
+<text x="938" y="860.0" font-size="11.5" font-family="&#39;IBM Plex Mono&#39;,monospace" fill="#3E6D93">database (Neo4j)</text>
+<line x1="0" y1="946.0" x2="1340" y2="946.0" stroke="#EDEEF1" stroke-width="1"></line>
+<rect x="0" y="946.0" width="1340" height="131.0" fill="#FBFBFA"></rect>
+<rect x="0" y="946.0" width="5" height="131.0" fill="#C7BC9E"></rect>
+<circle cx="38" cy="976.0" r="18" fill="#F2EEE3" stroke="#C7BC9E" stroke-width="1.5"></circle>
 <text x="38" y="981.0" text-anchor="middle" font-size="13.5" font-weight="700" fill="#4A4432">L1</text>
 <text x="68" y="972.0" font-size="14.5" font-weight="700" fill="#4A4432">Foundational Data &amp;</text>
 <text x="68" y="993.0" font-size="14.5" font-weight="700" fill="#4A4432">Infrastructure</text>
@@ -129,7 +129,7 @@
 <text x="418" y="974.0" font-size="12" fill="#374151">Internal data stores (network topology, streaming telemetry,</text>
 <text x="418" y="991.0" font-size="12" fill="#374151">past incident tickets) and an external data store (vendor</text>
 <text x="418" y="1008.0" font-size="12" fill="#374151">EMS advisory feed).</text>
-<text x="938" y="974.0" font-size="11.5" font-family="'IBM Plex Mono',monospace" fill="#3E6D93">Netbox inventory · Kafka/gNMI telemetry</text>
-<text x="938" y="991.0" font-size="11.5" font-family="'IBM Plex Mono',monospace" fill="#3E6D93">pipeline · ServiceNow · vendor EMS API</text>
-<line x1="0" y1="1077.0" x2="1340" y2="1077.0" stroke="#EDEEF1" stroke-width="1"/>
+<text x="938" y="974.0" font-size="11.5" font-family="&#39;IBM Plex Mono&#39;,monospace" fill="#3E6D93">Netbox inventory · Kafka/gNMI telemetry</text>
+<text x="938" y="991.0" font-size="11.5" font-family="&#39;IBM Plex Mono&#39;,monospace" fill="#3E6D93">pipeline · ServiceNow · vendor EMS API</text>
+<line x1="0" y1="1077.0" x2="1340" y2="1077.0" stroke="#EDEEF1" stroke-width="1"></line>
 </svg>

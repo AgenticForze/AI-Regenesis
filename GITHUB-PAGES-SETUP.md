@@ -3,6 +3,10 @@
 This repo serves as a real, SEO-crawlable Jekyll site directly from GitHub Pages, zero external hosting
 needed. It's live at **https://agenticforze.github.io/AI-Regenesis/**.
 
+**Testing locally by double-clicking files will not fully work** — this is a Jekyll site, and most pages
+need Jekyll's compilation step to become real, navigable HTML. See [`LOCAL-DEV.md`](LOCAL-DEV.md) for why,
+and for the two ways to actually run/test it locally.
+
 ## Current status: configured and live
 
 - `docs/_config.yml`'s `url`/`baseurl` are set for the current deployment — no placeholders left.

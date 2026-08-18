@@ -1,9 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#0B0E13"/>
-  <!-- Regenerative loop accent: three short arcs in the three domain colors, orbiting the monogram -->
-  <path d="M 32 8 A 24 24 0 0 1 54 24" fill="none" stroke="#2FD3C7" stroke-width="4" stroke-linecap="round"/>
-  <path d="M 56 34 A 24 24 0 0 1 42 54" fill="none" stroke="#E8B23C" stroke-width="4" stroke-linecap="round"/>
-  <path d="M 32 56 A 24 24 0 0 1 10 40" fill="none" stroke="#FF7A66" stroke-width="4" stroke-linecap="round"/>
-  <text x="32" y="41" text-anchor="middle" font-family="'IBM Plex Sans', Arial, sans-serif" font-weight="700"
-        font-size="24" fill="#8C7CFF">AR</text>
+  <rect width="64" height="64" rx="14" fill="#0B0E13"></rect>
+  
+  <path d="M 32 8 A 24 24 0 0 1 54 24" fill="none" stroke="#2FD3C7" stroke-width="4" stroke-linecap="round"></path>
+  <path d="M 56 34 A 24 24 0 0 1 42 54" fill="none" stroke="#E8B23C" stroke-width="4" stroke-linecap="round"></path>
+  <path d="M 32 56 A 24 24 0 0 1 10 40" fill="none" stroke="#FF7A66" stroke-width="4" stroke-linecap="round"></path>
+  <text x="32" y="41" text-anchor="middle" font-family="&#39;IBM Plex Sans&#39;, Arial, sans-serif" font-weight="700" font-size="24" fill="#8C7CFF">AR</text>
 </svg>

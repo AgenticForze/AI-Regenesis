@@ -312,9 +312,9 @@ def main():
         qslug = slug_num(uc)
         deep_dir = os.path.join(DOCS, "deep8", dslug, qslug)
         os.makedirs(deep_dir, exist_ok=True)
-        with open(os.path.join(deep_dir, "diagram.svg"), "w", encoding="utf-8") as f:
+        with open(os.path.join(deep_dir, "diagram.svg"), "w") as f:
             f.write(diagram_svg)
-        with open(os.path.join(deep_dir, "blueprint.svg"), "w", encoding="utf-8") as f:
+        with open(os.path.join(deep_dir, "blueprint.svg"), "w") as f:
             f.write(blueprint_svg)
         quick_permalink = f"/{dslug}/{qslug}/"
         deep8_permalink = f"/deep8/{dslug}/{qslug}/"
@@ -324,7 +324,7 @@ def main():
             "agent_stack": agent_stack, "build_order": build_order, "domain": domain,
         }
         deep_md = render_deep8_md(pilot_like, quick_permalink, "blueprint.svg", "diagram.svg", deep8_permalink)
-        with open(os.path.join(deep_dir, "README.md"), "w", encoding="utf-8") as f:
+        with open(os.path.join(deep_dir, "README.md"), "w") as f:
             f.write(deep_md)
 
         deep8_lookup[(dslug, ucid)] = deep8_permalink
@@ -372,11 +372,11 @@ def main():
             os.makedirs(ucdir, exist_ok=True)
             deep8_path = deep8_lookup.get((dslug, uc["id"]))
             md = render_usecase_md(domain, dslug, uc, diagram, deep8_path)
-            with open(os.path.join(ucdir, "README.md"), "w", encoding="utf-8") as f:
+            with open(os.path.join(ucdir, "README.md"), "w") as f:
                 f.write(md)
-            with open(os.path.join(ucdir, "architecture.mmd"), "w", encoding="utf-8") as f:
+            with open(os.path.join(ucdir, "architecture.mmd"), "w") as f:
                 f.write(diagram)
-            with open(os.path.join(ucdir, "architecture.svg"), "w", encoding="utf-8") as f:
+            with open(os.path.join(ucdir, "architecture.svg"), "w") as f:
                 f.write(diagram_svg)
             all_for_patterns.append((domain, dslug, uc))
             catalog_json.append({
@@ -393,18 +393,18 @@ def main():
                 "available": (dslug, uc["id"]) in deep8_available_ids,
                 "qslug": slug_num(uc),
             })
-        with open(os.path.join(ddir, "README.md"), "w", encoding="utf-8") as f:
+        with open(os.path.join(ddir, "README.md"), "w") as f:
             f.write(render_domain_index(domain, dslug, use_cases))
 
     # patterns
     pdir = os.path.join(DOCS, "patterns")
     os.makedirs(pdir, exist_ok=True)
     for pkey, label in PATTERNS.items():
-        with open(os.path.join(pdir, f"{pkey}.md"), "w", encoding="utf-8") as f:
+        with open(os.path.join(pdir, f"{pkey}.md"), "w") as f:
             f.write(render_pattern_doc(pkey, label, all_for_patterns))
 
-    with open(os.path.join(ROOT, "website", "data.json"), "w", encoding="utf-8") as f:
-        json.dump(catalog_json, f, ensure_ascii=False)
+    with open(os.path.join(ROOT, "website", "data.json"), "w") as f:
+        json.dump(catalog_json, f)
 
     # Deep 8-Layer index page (roadmap: what's built, what's coming)
     deep8_dir = os.path.join(DOCS, "deep8")
@@ -443,14 +443,14 @@ stack and a suggested build order by layer. This is a deeper, slower-to-build co
 ---
 [← Back to home]({{{{ '/' | relative_url }}}})
 """
-    with open(os.path.join(deep8_dir, "README.md"), "w", encoding="utf-8") as f:
+    with open(os.path.join(deep8_dir, "README.md"), "w") as f:
         f.write(deep8_index_md)
 
     # Generate the E2E platform diagram in the same SVG card style and write it alongside its doc
     arch_dir = os.path.join(DOCS, "architecture")
     os.makedirs(arch_dir, exist_ok=True)
     platform_svg = e2e_platform()
-    with open(os.path.join(arch_dir, "e2e-platform-architecture.svg"), "w", encoding="utf-8") as f:
+    with open(os.path.join(arch_dir, "e2e-platform-architecture.svg"), "w") as f:
         f.write(platform_svg)
     platform_entry = {
         "title": "E2E Platform Reference Architecture",
@@ -465,10 +465,10 @@ stack and a suggested build order by layer. This is a deeper, slower-to-build co
 
     # Generate the 8-layer Decision Engineering Meta-Architecture flagship example
     deme_svg = decision_engineering_meta_architecture()
-    with open(os.path.join(arch_dir, "decision-engineering-meta-architecture.svg"), "w", encoding="utf-8") as f:
+    with open(os.path.join(arch_dir, "decision-engineering-meta-architecture.svg"), "w") as f:
         f.write(deme_svg)
     deme_blueprint_svg = blueprint_table()
-    with open(os.path.join(arch_dir, "decision-engineering-meta-architecture-blueprint.svg"), "w", encoding="utf-8") as f:
+    with open(os.path.join(arch_dir, "decision-engineering-meta-architecture-blueprint.svg"), "w") as f:
         f.write(deme_blueprint_svg)
     deme_entry = {
         "title": "Decision Engineering Meta-Architecture (8-Layer)",
@@ -487,7 +487,7 @@ stack and a suggested build order by layer. This is a deeper, slower-to-build co
     # Inline everything into the website template so index.html works standalone
     tmpl_path = os.path.join(ROOT, "website", "index.template.html")
     if os.path.exists(tmpl_path):
-        with open(tmpl_path, encoding="utf-8") as f:
+        with open(tmpl_path) as f:
             tmpl = f.read()
         payload = {
             "catalog": catalog_json,
@@ -495,15 +495,15 @@ stack and a suggested build order by layer. This is a deeper, slower-to-build co
             "deep8": deep8_json,
             "deep8_roadmap": deep8_roadmap,
         }
-        html = tmpl.replace("__DATA_JSON__", json.dumps(payload, ensure_ascii=False))
+        html = tmpl.replace("__DATA_JSON__", json.dumps(payload))
         html = html.replace("__SITE_URL__", SITE_URL)
         html = html.replace("__GITHUB_REPO_URL__", GITHUB_REPO_URL)
-        with open(os.path.join(ROOT, "website", "index.html"), "w", encoding="utf-8") as f:
+        with open(os.path.join(ROOT, "website", "index.html"), "w") as f:
             f.write(html)
         # Also write to docs/index.html — this is the file GitHub Pages actually serves as the homepage
         # once Pages is set to build from /docs. No Jekyll front matter here on purpose (starts with
         # <!DOCTYPE html>, not "---"), so Jekyll copies it through untouched rather than trying to process it.
-        with open(os.path.join(DOCS, "index.html"), "w", encoding="utf-8") as f:
+        with open(os.path.join(DOCS, "index.html"), "w") as f:
             f.write(html)
         # website/index.html references favicon.svg by a plain relative path (same convention as
         # docs/index.html) — copy the real file alongside it so that copy isn't a broken image reference.
