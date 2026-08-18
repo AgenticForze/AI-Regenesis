@@ -19,6 +19,13 @@ then open http://localhost:8000/
 2. Settings → Pages → Source: *Deploy from a branch*, pick that branch and `/ (root)`.
 3. The site serves from `index.html`.
 
+**Keep the `.nojekyll` file at the repo root.** GitHub Pages runs Jekyll by default,
+and Jekyll refuses to publish any folder whose name starts with an underscore — which
+would drop `_ds/` and serve the site with no stylesheet at all. The empty `.nojekyll`
+file turns Jekyll off. It is a hidden file, so check it survived the copy:
+
+    ls -a
+
 If you publish it under a repository subpath (`user.github.io/repo/`), no change is
 needed — every asset reference in the page is relative.
 
@@ -33,6 +40,7 @@ needed — every asset reference in the page is relative.
 | `docs/` | The imported SVG diagrams: 60 architecture diagrams, 60 Deep 8-Layer diagram/blueprint pairs, the reference architectures, and the favicon. |
 | `_ds/` | The Organic design system: tokens, stylesheet, component bundle. |
 | `github.md` | Source-repo association and screen map. |
+| `.nojekyll` | Required for GitHub Pages — see above. Hidden file; don't lose it. |
 
 ## Content sources
 
