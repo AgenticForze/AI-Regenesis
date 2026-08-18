@@ -3,9 +3,11 @@ branch: main
 
 ## Last sync
 
-date: 2026-08-18T04:22:10Z
+date: 2026-08-18T20:08:46Z
 
 ### Updated in this project
+
+- Favicon: original repo geometry restored, re-tinted to the Organic ramps (sage/terracotta arcs, cream monogram on warm charcoal).
 
 - Finalized: all 240 case assets verified present, every route walked, search now indexes all 60 write-ups and tech stacks, hero overflow and builder layout fixed.
 

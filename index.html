@@ -60,10 +60,6 @@
           <text x="170" y="308" text-anchor="middle" font-size="15" font-weight="600" fill="var(--color-accent-900)" font-family="var(--font-body)">Action</text>
         </svg>
         <div style="position:relative;flex:1;min-width:0;max-width:760px;order:1">
-          <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px">
-            <img src="docs/favicon.svg" alt="" style="width:56px;height:56px">
-            <div style="font-family:var(--font-heading);font-size:52px;line-height:1">AI-<span style="color:var(--color-accent)">Regenesis</span></div>
-          </div>
           <p style="font-size:20px;margin:0 0 22px;color:var(--color-neutral-800)">The reference architecture library for agentic AI</p>
 
           <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px">
@@ -272,7 +268,8 @@
 
       <h3 style="margin-top:36px">Architecture</h3>
       <p class="text-muted" style="font-size:13px;margin-bottom:14px">{{ c.diagramNote }}</p>
-      <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:var(--space-6)">{{ c.diagramEl }}</div>
+      <div style="margin-left:50%;transform:translateX(-50%);width:min(1506px, calc(100vw - 40px));overflow-x:auto;background:var(--color-surface);border-radius:var(--radius-lg);padding:var(--space-6)">{{ c.diagramEl }}</div>
+      <div style="margin-top:8px;font-size:13px"><a href="{{ c.svgFile }}" target="_blank" rel="noopener" onClick="{{ c.openSvg }}">Open the diagram full size ↗</a></div>
 
       <sc-if value="{{ c.hasRoster }}" hint-placeholder-val="{{ false }}">
         <h3 style="margin-top:40px">Agents &amp; sub-agents</h3>
@@ -373,10 +370,12 @@
 
       <h3>L1–L8 flow diagram</h3>
       <p class="text-muted" style="font-size:13px;margin-bottom:14px">Left-margin layer labels, with the governed three-way conditional gate — auto-execute, human review, hold.</p>
-      <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:var(--space-6)">{{ d8.diagramEl }}</div>
+      <div style="margin-left:50%;transform:translateX(-50%);width:min(1846px, calc(100vw - 40px));overflow-x:auto;background:var(--color-surface);border-radius:var(--radius-lg);padding:var(--space-6)">{{ d8.diagramEl }}</div>
+      <div style="margin-top:8px;font-size:13px"><a href="{{ d8.diagramFile }}" target="_blank" rel="noopener" onClick="{{ d8.openDiagram }}">Open the diagram full size ↗</a></div>
       <h3 style="margin-top:40px">Reference blueprint</h3>
       <p class="text-muted" style="font-size:13px;margin-bottom:14px">The framework's own reference model beside this use case's specific solution, layer by layer.</p>
-      <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:var(--space-6)">{{ d8.blueprintEl }}</div>
+      <div style="margin-left:50%;transform:translateX(-50%);width:min(1400px, calc(100vw - 40px));overflow-x:auto;background:var(--color-surface);border-radius:var(--radius-lg);padding:var(--space-6)">{{ d8.blueprintEl }}</div>
+      <div style="margin-top:8px;font-size:13px"><a href="{{ d8.blueprintFile }}" target="_blank" rel="noopener" onClick="{{ d8.openBlueprint }}">Open the blueprint full size ↗</a></div>
     </div>
   </sc-if>
 
@@ -387,20 +386,20 @@
 
       <h3>E2E platform architecture</h3>
       <p class="text-muted" style="font-size:14px;max-width:660px;margin-bottom:14px">How channels, orchestration, the agent mesh, and observability/governance fit together across all three domains at once.</p>
-      <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:var(--space-6)">
-        <img src="docs/architecture/e2e-platform-architecture.svg" alt="End-to-end platform architecture" style="width:100%;height:auto">
+      <div style="margin-left:50%;transform:translateX(-50%);width:min(1660px, calc(100vw - 40px));overflow-x:auto;background:var(--color-surface);border-radius:var(--radius-lg);padding:var(--space-6)">
+        <img src="docs/architecture/e2e-platform-architecture.svg" alt="End-to-end platform architecture" style="display:block;width:100%;min-width:1600px;height:auto">
       </div>
 
       <h3 style="margin-top:44px">Decision Engineering Meta-Architecture</h3>
       <p class="text-muted" style="font-size:14px;max-width:660px;margin-bottom:14px">The 8-layer flagship reference — the Base, the Brain, the Agent Plane, the Conscience, the Tool Registry, the Nervous System, the Leadership Portal and the Self-Healing Loop — applied end to end to one high-stakes decision, with the AI Gateway, conditional routing, and internal/external data stores all made explicit.</p>
-      <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:var(--space-6)">
-        <img src="docs/architecture/decision-engineering-meta-architecture.svg" alt="Decision Engineering Meta-Architecture" style="width:100%;height:auto">
+      <div style="margin-left:50%;transform:translateX(-50%);width:min(1460px, calc(100vw - 40px));overflow-x:auto;background:var(--color-surface);border-radius:var(--radius-lg);padding:var(--space-6)">
+        <img src="docs/architecture/decision-engineering-meta-architecture.svg" alt="Decision Engineering Meta-Architecture" style="display:block;width:100%;min-width:1400px;height:auto">
       </div>
 
       <h3 style="margin-top:44px">Meta-architecture blueprint</h3>
       <p class="text-muted" style="font-size:14px;max-width:660px;margin-bottom:14px">The same eight layers as a reference model table — what each layer owns, and what it hands to the next.</p>
-      <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:var(--space-6)">
-        <img src="docs/architecture/decision-engineering-meta-architecture-blueprint.svg" alt="Meta-architecture reference blueprint" style="width:100%;height:auto">
+      <div style="margin-left:50%;transform:translateX(-50%);width:min(1400px, calc(100vw - 40px));overflow-x:auto;background:var(--color-surface);border-radius:var(--radius-lg);padding:var(--space-6)">
+        <img src="docs/architecture/decision-engineering-meta-architecture-blueprint.svg" alt="Meta-architecture reference blueprint" style="display:block;width:100%;min-width:1340px;height:auto">
       </div>
     </div>
   </sc-if>
@@ -907,6 +906,31 @@ class Component extends DCLogic {
     };
   };
 
+  // Fetch-then-blob, so it works both deployed and inside a token-guarded preview frame.
+  openFile = (url) => (e) => {
+    if (e && e.preventDefault) e.preventDefault();
+    fetch(url).then((r) => {
+      if (!r.ok) throw new Error(r.status);
+      return r.text();
+    }).then((txt) => {
+      const blob = new Blob([txt], { type: "image/svg+xml" });
+      const href = URL.createObjectURL(blob);
+      const w = window.open(href, "_blank");
+      if (!w) {
+        const a = document.createElement("a");
+        a.href = href;
+        a.download = url.split("/").pop();
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+      }
+      setTimeout(() => URL.revokeObjectURL(href), 60000);
+    }).catch(() => {
+      const abs = new URL(url, document.baseURI).href;
+      window.open(abs, "_blank");
+    });
+  };
+
   resolve = (svg) => {
     const V = {
       "--color-neutral-200": "#eee7db", "--color-neutral-400": "#c0b6a5", "--color-neutral-500": "#a19786",
@@ -1111,8 +1135,10 @@ class Component extends DCLogic {
         diagramEl: React.createElement("img", {
           src: "docs/" + row[0] + "/" + String(row[1]).padStart(2, "0") + "-" + row[2] + "/architecture.svg",
           alt: row[3] + " architecture diagram",
-          style: { width: "100%", height: "auto" }
+          style: { display: "block", width: "100%", minWidth: "1446px", height: "auto" }
         }),
+        svgFile: "docs/" + row[0] + "/" + String(row[1]).padStart(2, "0") + "-" + row[2] + "/architecture.svg",
+        openSvg: this.openFile("docs/" + row[0] + "/" + String(row[1]).padStart(2, "0") + "-" + row[2] + "/architecture.svg"),
         hasDeep8: true,
         noDeep8: false,
         openDeep8: () => this.go("deep8", { caseKey: key })
@@ -1122,8 +1148,12 @@ class Component extends DCLogic {
       v.d8 = {
         title: row[3], domain: DOMAINS.find((x) => x.key === row[0]).name,
         patternFull: PATTERNS[row[4]].full,
-        diagramEl: React.createElement("img", { src: base + "diagram.svg", alt: row[3] + " Deep 8-Layer flow diagram", style: { width: "100%", height: "auto" } }),
-        blueprintEl: React.createElement("img", { src: base + "blueprint.svg", alt: row[3] + " Deep 8-Layer reference blueprint", style: { width: "100%", height: "auto" } }),
+        diagramEl: React.createElement("img", { src: base + "diagram.svg", alt: row[3] + " Deep 8-Layer flow diagram", style: { display: "block", width: "100%", minWidth: "1786px", height: "auto" } }),
+        diagramFile: base + "diagram.svg",
+        openDiagram: this.openFile(base + "diagram.svg"),
+        blueprintEl: React.createElement("img", { src: base + "blueprint.svg", alt: row[3] + " Deep 8-Layer reference blueprint", style: { display: "block", width: "100%", minWidth: "1340px", height: "auto" } }),
+        blueprintFile: base + "blueprint.svg",
+        openBlueprint: this.openFile(base + "blueprint.svg"),
         back: () => this.go("case", { caseKey: key })
       };
     }
