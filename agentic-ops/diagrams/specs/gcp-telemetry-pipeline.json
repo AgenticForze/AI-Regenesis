@@ -1,0 +1,437 @@
+{
+ "title": "Telemetry pipeline from agents to evaluation",
+ "width": 1260,
+ "height": 530,
+ "zones": [
+  {
+   "x": 10,
+   "y": 20,
+   "w": 230,
+   "h": 470,
+   "title": "Sources",
+   "color": "l0"
+  },
+  {
+   "x": 270,
+   "y": 100,
+   "w": 230,
+   "h": 300,
+   "title": "Collection",
+   "color": "l8"
+  },
+  {
+   "x": 520,
+   "y": 50,
+   "w": 230,
+   "h": 380,
+   "title": "Google Cloud backends",
+   "color": "l8"
+  },
+  {
+   "x": 770,
+   "y": 50,
+   "w": 230,
+   "h": 380,
+   "title": "Agent observability lake",
+   "color": "l7"
+  },
+  {
+   "x": 1020,
+   "y": 20,
+   "w": 230,
+   "h": 500,
+   "title": "Consumption",
+   "color": "l2"
+  }
+ ],
+ "nodes": [
+  {
+   "id": "agents-adk",
+   "x": 25,
+   "y": 60,
+   "title": "Agents (ADK)",
+   "sub": "Agent Engine spans",
+   "icon": "agent",
+   "color": "l2"
+  },
+  {
+   "id": "model-servers",
+   "x": 25,
+   "y": 145,
+   "title": "Model servers",
+   "sub": "Gateway, tokens, GPU",
+   "icon": "chip",
+   "color": "l4"
+  },
+  {
+   "id": "mcp-tools",
+   "x": 25,
+   "y": 230,
+   "title": "MCP tools",
+   "sub": "Side effects, status",
+   "icon": "wrench",
+   "color": "l6"
+  },
+  {
+   "id": "infrastructure",
+   "x": 25,
+   "y": 315,
+   "title": "Infrastructure",
+   "sub": "GKE, Cloud Run, GCE",
+   "icon": "server",
+   "color": "l0"
+  },
+  {
+   "id": "apigee-armor-iam",
+   "x": 25,
+   "y": 400,
+   "title": "Apigee, Armor, IAM",
+   "sub": "Audit, safety events",
+   "icon": "shieldscan",
+   "color": "l1"
+  },
+  {
+   "id": "otel-collector",
+   "x": 285,
+   "y": 145,
+   "title": "OTel Collector",
+   "sub": "DaemonSet, sidecar",
+   "icon": "trace",
+   "color": "l8"
+  },
+  {
+   "id": "tail-sampling",
+   "x": 285,
+   "y": 230,
+   "title": "Tail sampling",
+   "sub": "Keep errors, HITL, cost",
+   "icon": "sampling",
+   "color": "l8"
+  },
+  {
+   "id": "dlp-redaction",
+   "x": 285,
+   "y": 315,
+   "title": "DLP redaction",
+   "sub": "Strip PII from prompts",
+   "icon": "filter",
+   "color": "l8"
+  },
+  {
+   "id": "cloud-logging",
+   "x": 535,
+   "y": 90,
+   "title": "Cloud Logging",
+   "sub": "Log Analytics",
+   "icon": "log",
+   "color": "l8"
+  },
+  {
+   "id": "cloud-trace",
+   "x": 535,
+   "y": 215,
+   "title": "Cloud Trace",
+   "sub": "Episode waterfalls",
+   "icon": "trace",
+   "color": "l8"
+  },
+  {
+   "id": "prometheus",
+   "x": 535,
+   "y": 340,
+   "title": "Prometheus",
+   "sub": "Managed, Cloud Monitoring",
+   "icon": "chart",
+   "color": "l8"
+  },
+  {
+   "id": "log-router-sinks",
+   "x": 785,
+   "y": 90,
+   "title": "Log Router sinks",
+   "sub": "Filtered exports",
+   "icon": "egress",
+   "color": "l7"
+  },
+  {
+   "id": "dataflow",
+   "x": 785,
+   "y": 215,
+   "title": "Dataflow",
+   "sub": "Enrich cost, owner",
+   "icon": "pipeline",
+   "color": "l7"
+  },
+  {
+   "id": "bigquery",
+   "x": 785,
+   "y": 340,
+   "title": "BigQuery",
+   "sub": "All agent telemetry",
+   "icon": "table",
+   "color": "l7"
+  },
+  {
+   "id": "google-secops",
+   "x": 1035,
+   "y": 60,
+   "title": "Google SecOps",
+   "sub": "AI threat detection",
+   "icon": "target",
+   "color": "risk"
+  },
+  {
+   "id": "looker",
+   "x": 1035,
+   "y": 160,
+   "title": "Looker",
+   "sub": "Exec, SRE, FinOps views",
+   "icon": "dashboard",
+   "color": "l2"
+  },
+  {
+   "id": "gen-ai-evaluation",
+   "x": 1035,
+   "y": 260,
+   "title": "Gen AI Evaluation",
+   "sub": "Quality scoring",
+   "icon": "check",
+   "color": "l8"
+  },
+  {
+   "id": "eval-datasets",
+   "x": 1035,
+   "y": 360,
+   "title": "Eval datasets",
+   "sub": "Built from overrides",
+   "icon": "database",
+   "color": "auto"
+  },
+  {
+   "id": "slos-and-alerts",
+   "x": 1035,
+   "y": 440,
+   "title": "SLOs and alerts",
+   "sub": "Quality pages owners",
+   "icon": "bell",
+   "color": "gate"
+  }
+ ],
+ "edges": [
+  {
+   "points": [
+    "agents-adk.r",
+    [
+     255.0,
+     88.0
+    ],
+    [
+     255.0,
+     173.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    "model-servers.r",
+    [
+     255.0,
+     173.0
+    ],
+    [
+     255.0,
+     173.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    "mcp-tools.r",
+    [
+     255.0,
+     258.0
+    ],
+    [
+     255.0,
+     173.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    "infrastructure.r",
+    [
+     255.0,
+     343.0
+    ],
+    [
+     255.0,
+     173.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    [
+     255.0,
+     173.0
+    ],
+    "otel-collector.l"
+   ]
+  },
+  {
+   "from": "otel-collector.b",
+   "to": "tail-sampling.t",
+   "route": "straight"
+  },
+  {
+   "from": "tail-sampling.b",
+   "to": "dlp-redaction.t",
+   "route": "straight"
+  },
+  {
+   "points": [
+    "dlp-redaction.r",
+    [
+     512.0,
+     343.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    [
+     512.0,
+     118.0
+    ],
+    [
+     512.0,
+     368.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    [
+     512.0,
+     118.0
+    ],
+    "cloud-logging.l"
+   ]
+  },
+  {
+   "points": [
+    [
+     512.0,
+     243.0
+    ],
+    "cloud-trace.l"
+   ]
+  },
+  {
+   "points": [
+    [
+     512.0,
+     368.0
+    ],
+    "prometheus.l"
+   ]
+  },
+  {
+   "from": "apigee-armor-iam.r",
+   "to": "cloud-logging.l+12",
+   "route": "hv",
+   "mid": 494,
+   "style": "dash",
+   "label": "audit logs",
+   "at": [
+    380.0,
+    428.0
+   ]
+  },
+  {
+   "from": "cloud-logging.r",
+   "to": "log-router-sinks.l",
+   "route": "straight"
+  },
+  {
+   "from": "cloud-trace.r",
+   "to": "dataflow.l",
+   "route": "straight"
+  },
+  {
+   "from": "log-router-sinks.b",
+   "to": "dataflow.t",
+   "route": "straight"
+  },
+  {
+   "from": "dataflow.b",
+   "to": "bigquery.t",
+   "route": "straight"
+  },
+  {
+   "from": "log-router-sinks.r-8",
+   "to": "google-secops.l",
+   "route": "hv",
+   "mid": 1008
+  },
+  {
+   "points": [
+    "bigquery.r",
+    [
+     1012.0,
+     368.0
+    ],
+    [
+     1012.0,
+     188.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    [
+     1012.0,
+     188.0
+    ],
+    "looker.l"
+   ]
+  },
+  {
+   "points": [
+    [
+     1012.0,
+     288.0
+    ],
+    "gen-ai-evaluation.l"
+   ]
+  },
+  {
+   "from": "gen-ai-evaluation.b",
+   "to": "eval-datasets.t",
+   "route": "straight"
+  },
+  {
+   "points": [
+    "prometheus.b",
+    [
+     635.0,
+     468.0
+    ],
+    "slos-and-alerts.l"
+   ],
+   "label": "SLO metrics",
+   "at": [
+    900.0,
+    468.0
+   ]
+  }
+ ]
+}

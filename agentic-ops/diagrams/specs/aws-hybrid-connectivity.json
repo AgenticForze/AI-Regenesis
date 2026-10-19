@@ -1,0 +1,532 @@
+{
+ "title": "AWS hybrid connectivity with Direct Connect primary and VPN backup",
+ "width": 1335,
+ "height": 600,
+ "zones": [
+  {
+   "x": 20,
+   "y": 20,
+   "w": 230,
+   "h": 560,
+   "title": "On-premises",
+   "color": "l0"
+  },
+  {
+   "x": 290,
+   "y": 20,
+   "w": 220,
+   "h": 420,
+   "title": "Direct Connect locations",
+   "color": "l0"
+  },
+  {
+   "x": 545,
+   "y": 20,
+   "w": 480,
+   "h": 560,
+   "title": "Network account",
+   "color": "l3"
+  },
+  {
+   "x": 560,
+   "y": 45,
+   "w": 230,
+   "h": 240,
+   "title": "Region A",
+   "color": "l3",
+   "style": "solid"
+  },
+  {
+   "x": 560,
+   "y": 305,
+   "w": 230,
+   "h": 250,
+   "title": "Region B",
+   "color": "l3",
+   "style": "solid"
+  },
+  {
+   "x": 1055,
+   "y": 20,
+   "w": 230,
+   "h": 310,
+   "title": "Spoke VPCs (accounts)",
+   "color": "l2"
+  },
+  {
+   "x": 1055,
+   "y": 380,
+   "w": 230,
+   "h": 130,
+   "title": "Restricted enclave",
+   "color": "risk"
+  }
+ ],
+ "nodes": [
+  {
+   "id": "dc1-edge-routers",
+   "x": 35,
+   "y": 90,
+   "title": "DC1 edge routers",
+   "sub": "AS 65010",
+   "icon": "building",
+   "color": "l0"
+  },
+  {
+   "id": "dc2-edge-routers",
+   "x": 35,
+   "y": 330,
+   "title": "DC2 edge routers",
+   "sub": "AS 65020",
+   "icon": "building",
+   "color": "l0"
+  },
+  {
+   "id": "branch-partners",
+   "x": 35,
+   "y": 500,
+   "title": "Branch, partners",
+   "sub": "Site-to-site IPsec",
+   "icon": "briefcase",
+   "color": "l0"
+  },
+  {
+   "id": "dx-location-a1",
+   "x": 300,
+   "y": 60,
+   "title": "DX location A1",
+   "sub": "10 / 100G, MACsec",
+   "icon": "link",
+   "color": "l3"
+  },
+  {
+   "id": "dx-location-a2",
+   "x": 300,
+   "y": 140,
+   "title": "DX location A2",
+   "sub": "10 / 100G, MACsec",
+   "icon": "link",
+   "color": "l3"
+  },
+  {
+   "id": "dx-location-b1",
+   "x": 300,
+   "y": 280,
+   "title": "DX location B1",
+   "sub": "10 / 100G, MACsec",
+   "icon": "link",
+   "color": "l3"
+  },
+  {
+   "id": "dx-location-b2",
+   "x": 300,
+   "y": 360,
+   "title": "DX location B2",
+   "sub": "10 / 100G, MACsec",
+   "icon": "link",
+   "color": "l3"
+  },
+  {
+   "id": "transit-vif-a1",
+   "x": 575,
+   "y": 75,
+   "title": "Transit VIF A1",
+   "sub": "BGP, local pref high",
+   "icon": "router",
+   "color": "l3"
+  },
+  {
+   "id": "transit-vif-a2",
+   "x": 575,
+   "y": 140,
+   "title": "Transit VIF A2",
+   "sub": "BGP, local pref high",
+   "icon": "router",
+   "color": "l3"
+  },
+  {
+   "id": "s2s-vpn-to-tgw-a",
+   "x": 575,
+   "y": 205,
+   "title": "S2S VPN to TGW A",
+   "sub": "Accelerated, 2 tunnels",
+   "icon": "tunnel",
+   "color": "l3"
+  },
+  {
+   "id": "transit-vif-b1",
+   "x": 575,
+   "y": 335,
+   "title": "Transit VIF B1",
+   "sub": "BGP, local pref high",
+   "icon": "router",
+   "color": "l3"
+  },
+  {
+   "id": "transit-vif-b2",
+   "x": 575,
+   "y": 400,
+   "title": "Transit VIF B2",
+   "sub": "BGP, local pref high",
+   "icon": "router",
+   "color": "l3"
+  },
+  {
+   "id": "s2s-vpn-to-tgw-b",
+   "x": 575,
+   "y": 465,
+   "title": "S2S VPN to TGW B",
+   "sub": "Accelerated, 2 tunnels",
+   "icon": "tunnel",
+   "color": "l3"
+  },
+  {
+   "id": "azure-and-gcp",
+   "x": 815,
+   "y": 60,
+   "title": "Azure and GCP",
+   "sub": "Partner interconnect",
+   "icon": "cloud",
+   "color": "l0"
+  },
+  {
+   "id": "dx-gateway-tgw",
+   "x": 815,
+   "y": 250,
+   "title": "DX Gateway + TGW",
+   "sub": "Route tables, domains",
+   "icon": "hub",
+   "color": "l3"
+  },
+  {
+   "id": "network-firewall",
+   "x": 815,
+   "y": 350,
+   "title": "Network Firewall",
+   "sub": "Inspection VPC",
+   "icon": "firewall",
+   "color": "l3"
+  },
+  {
+   "id": "platform-vpc-prod",
+   "x": 1070,
+   "y": 60,
+   "title": "Platform VPC prod",
+   "sub": "RAM-shared subnets",
+   "icon": "mesh",
+   "color": "l2"
+  },
+  {
+   "id": "platform-nonprod",
+   "x": 1070,
+   "y": 145,
+   "title": "Platform nonprod",
+   "sub": "Dev, test, replay",
+   "icon": "mesh",
+   "color": "l2"
+  },
+  {
+   "id": "workload-vpcs",
+   "x": 1070,
+   "y": 230,
+   "title": "Workload VPCs",
+   "sub": "Business unit accounts",
+   "icon": "server",
+   "color": "l0"
+  },
+  {
+   "id": "enclave-vpc",
+   "x": 1070,
+   "y": 425,
+   "title": "Enclave VPC",
+   "sub": "No IGW, no NAT",
+   "icon": "lock",
+   "color": "risk"
+  }
+ ],
+ "edges": [
+  {
+   "from": "dc1-edge-routers.r-8",
+   "to": "dx-location-a1.l",
+   "route": "hv",
+   "mid": 268,
+   "label": "MACsec",
+   "at": [
+    268.0,
+    110.0
+   ]
+  },
+  {
+   "from": "dc1-edge-routers.r+8",
+   "to": "dx-location-a2.l",
+   "route": "hv",
+   "mid": 268
+  },
+  {
+   "from": "dc2-edge-routers.r-8",
+   "to": "dx-location-b1.l",
+   "route": "hv",
+   "mid": 268,
+   "label": "MACsec",
+   "at": [
+    268.0,
+    330.0
+   ]
+  },
+  {
+   "from": "dc2-edge-routers.r+8",
+   "to": "dx-location-b2.l",
+   "route": "hv",
+   "mid": 268
+  },
+  {
+   "from": "dx-location-a1.r",
+   "to": "transit-vif-a1.l",
+   "route": "hv",
+   "mid": 540
+  },
+  {
+   "points": [
+    "dx-location-a2.r",
+    [
+     530.0,
+     168.0
+    ],
+    "transit-vif-a2.l"
+   ]
+  },
+  {
+   "from": "dx-location-b1.r",
+   "to": "transit-vif-b1.l",
+   "route": "hv",
+   "mid": 540
+  },
+  {
+   "from": "dx-location-b2.r",
+   "to": "transit-vif-b2.l",
+   "route": "hv",
+   "mid": 530
+  },
+  {
+   "points": [
+    "dc1-edge-routers.b-60",
+    [
+     75.0,
+     240.0
+    ],
+    [
+     555.0,
+     240.0
+    ],
+    [
+     555.0,
+     233.0
+    ],
+    "s2s-vpn-to-tgw-a.l"
+   ],
+   "style": "dash",
+   "color": "gate",
+   "label": "IPsec backup",
+   "at": [
+    420.0,
+    240.0
+   ]
+  },
+  {
+   "points": [
+    "dc2-edge-routers.b-60",
+    [
+     75.0,
+     460.0
+    ],
+    [
+     520.0,
+     460.0
+    ],
+    [
+     520.0,
+     493.0
+    ],
+    "s2s-vpn-to-tgw-b.l"
+   ],
+   "style": "dash",
+   "color": "gate",
+   "label": "IPsec backup",
+   "at": [
+    420.0,
+    460.0
+   ]
+  },
+  {
+   "from": "branch-partners.r",
+   "to": "s2s-vpn-to-tgw-b.l+7",
+   "route": "hv",
+   "mid": 550,
+   "style": "dash",
+   "color": "gate"
+  },
+  {
+   "points": [
+    "transit-vif-a1.r",
+    [
+     800.0,
+     103.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    "transit-vif-a2.r",
+    [
+     800.0,
+     168.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    "s2s-vpn-to-tgw-a.r",
+    [
+     800.0,
+     233.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    "transit-vif-b1.r",
+    [
+     800.0,
+     363.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    "transit-vif-b2.r",
+    [
+     800.0,
+     428.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    "s2s-vpn-to-tgw-b.r",
+    [
+     800.0,
+     493.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    [
+     800.0,
+     103.0
+    ],
+    [
+     800.0,
+     493.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    [
+     800.0,
+     278.0
+    ],
+    "dx-gateway-tgw.l"
+   ]
+  },
+  {
+   "points": [
+    "azure-and-gcp.l",
+    [
+     800.0,
+     88.0
+    ],
+    [
+     800.0,
+     103.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "from": "dx-gateway-tgw.b",
+   "to": "network-firewall.t",
+   "route": "straight"
+  },
+  {
+   "points": [
+    "network-firewall.r",
+    [
+     1040.0,
+     378.0
+    ],
+    [
+     1040.0,
+     88.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    [
+     1040.0,
+     88.0
+    ],
+    "platform-vpc-prod.l"
+   ]
+  },
+  {
+   "points": [
+    [
+     1040.0,
+     173.0
+    ],
+    "platform-nonprod.l"
+   ]
+  },
+  {
+   "points": [
+    [
+     1040.0,
+     258.0
+    ],
+    "workload-vpcs.l"
+   ]
+  },
+  {
+   "points": [
+    "platform-vpc-prod.r",
+    [
+     1292.0,
+     88.0
+    ],
+    [
+     1292.0,
+     453.0
+    ],
+    "enclave-vpc.r"
+   ],
+   "style": "dash",
+   "color": "risk",
+   "label": "PrivateLink only",
+   "at": [
+    1292.0,
+    360.0
+   ]
+  }
+ ]
+}

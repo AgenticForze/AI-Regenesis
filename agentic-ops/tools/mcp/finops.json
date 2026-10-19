@@ -1,0 +1,88 @@
+{
+ "server": "finops",
+ "tools": [
+  {
+   "name": "finops.cost_breakdown",
+   "description": "Cost by service, label or tag over a period, with anomalies.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "scope": {
+      "type": "string"
+     },
+     "days": {
+      "type": "integer",
+      "maximum": 400
+     }
+    },
+    "required": [
+     "scope",
+     "days"
+    ],
+    "additionalProperties": false
+   },
+   "annotations": {
+    "title": "finops.cost_breakdown",
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+   },
+   "x-agentops": {
+    "category": "read",
+    "dry_run": false,
+    "default_autonomy": "L4",
+    "max_autonomy": "L4",
+    "blast_radius": "none",
+    "approval": null,
+    "gates": [
+     "G7"
+    ],
+    "gcp": "Cloud Billing export to BigQuery",
+    "aws": "Cost Explorer / CUR in S3 Tables"
+   }
+  },
+  {
+   "name": "finops.apply_rightsizing",
+   "description": "Apply a provider rightsizing recommendation to a non-production resource. Production resources require approval.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "recommendation_id": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "recommendation_id",
+     "reason"
+    ],
+    "additionalProperties": false
+   },
+   "annotations": {
+    "title": "finops.apply_rightsizing",
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+   },
+   "x-agentops": {
+    "category": "act",
+    "dry_run": true,
+    "default_autonomy": "L1",
+    "max_autonomy": "L3",
+    "blast_radius": "single-service",
+    "approval": null,
+    "gates": [
+     "G9",
+     "G11",
+     "G12"
+    ],
+    "gcp": "Recommender API",
+    "aws": "Compute Optimizer"
+   }
+  }
+ ]
+}

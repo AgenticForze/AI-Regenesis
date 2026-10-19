@@ -1,0 +1,233 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1260 530" role="img" aria-label="AWS telemetry pipeline from agents to evaluation" class="aodiagram" style="font-family:var(--diagram-font,'IBM Plex Sans','Segoe UI',Roboto,Helvetica,Arial,sans-serif)">
+<title>AWS telemetry pipeline from agents to evaluation</title><defs>
+<marker id="ar-ink-2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:var(--ink-2)"/></marker>
+<marker id="ar-risk" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:var(--risk)"/></marker>
+<marker id="ar-auto" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:var(--auto)"/></marker>
+<marker id="ar-gate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:var(--gate)"/></marker>
+<marker id="ar-signal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:var(--signal)"/></marker>
+<symbol id="i-agent" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><rect x="4.5" y="8" width="15" height="11" rx="3"/><path d="M12 4.5V8M9.5 16h5"/><circle cx="12" cy="3.5" r="1.2"/><circle cx="9.3" cy="12.5" r="1.1"/><circle cx="14.7" cy="12.5" r="1.1"/><path d="M2.5 12v3M21.5 12v3"/></g></symbol>
+<symbol id="i-bell" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M6 16v-5a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></g></symbol>
+<symbol id="i-chart" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M4 4v16h16"/><path d="M7.5 15l4-4.5 3 3 5-6"/></g></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M7.5 8.5l1.5 1.5 3-3M14 9h3M7.5 15l1.5 1.5 3-3M14 15.5h3"/></g></symbol>
+<symbol id="i-chip" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M9.5 3v4M14.5 3v4M9.5 17v4M14.5 17v4M3 9.5h4M3 14.5h4M17 9.5h4M17 14.5h4"/><rect x="10" y="10" width="4" height="4" rx=".5"/></g></symbol>
+<symbol id="i-dashboard" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 16v-3M11 16V9M15 16v-5M19 16v-2"/></g></symbol>
+<symbol id="i-database" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><ellipse cx="12" cy="5.5" rx="7" ry="2.5"/><path d="M5 5.5v13c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-13M5 12c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5"/></g></symbol>
+<symbol id="i-egress" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M10 14L20 4M14 4h6v6"/><path d="M19 13v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5"/></g></symbol>
+<symbol id="i-filter" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M3 5h18l-7 8v6l-4 2v-8z"/></g></symbol>
+<symbol id="i-log" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8.5 8h7M8.5 12h7M8.5 16h4"/></g></symbol>
+<symbol id="i-pipeline" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><circle cx="4.5" cy="12" r="2"/><circle cx="12" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><circle cx="19.5" cy="12" r="2"/><path d="M6.3 11l4-3.6M6.3 13l4 3.6M13.8 7l4 3.6M13.8 17l4-3.6"/></g></symbol>
+<symbol id="i-sampling" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M3 12h3l2-5 3 10 2-7 2 4h6"/></g></symbol>
+<symbol id="i-server" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><rect x="4" y="4" width="16" height="7" rx="1.5"/><rect x="4" y="13" width="16" height="7" rx="1.5"/><path d="M8 7.5h.01M8 16.5h.01M12 7.5h4M12 16.5h4"/></g></symbol>
+<symbol id="i-shieldscan" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 10h6M9 13h6M9 16h3"/></g></symbol>
+<symbol id="i-table" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M3 14.5h18M9.5 9v11"/></g></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1"/><path d="M12 1.5v4M12 18.5v4M1.5 12h4M18.5 12h4"/></g></symbol>
+<symbol id="i-trace" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M4 4v16"/><path d="M4 6.5h9M7 11h11M10 15.5h7M8 20h5"/></g></symbol>
+<symbol id="i-wrench" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M14.5 4a5 5 0 0 0 5.5 6.5l-9.3 9.3a2.2 2.2 0 0 1-3.1-3.1L16.9 7.4A5 5 0 0 1 14.5 4z"/></g></symbol>
+</defs>
+<g class="zone" data-title="Sources" data-layer="l0">
+<rect x="10" y="20" width="230" height="470" rx="12" style="fill:color-mix(in srgb,var(--l0) 5%,transparent);stroke:color-mix(in srgb,var(--l0) 55%,transparent);stroke-width:1.3;stroke-dasharray:6 5"/>
+<rect x="22" y="10" width="66.19999999999999" height="20" rx="10" style="fill:var(--l0)"/>
+<text x="55.099999999999994" y="24" text-anchor="middle" style="fill:var(--sheet);font-size:11px;font-weight:600">Sources</text>
+</g>
+<g class="zone" data-title="Collection" data-layer="l8">
+<rect x="270" y="100" width="230" height="300" rx="12" style="fill:color-mix(in srgb,var(--l8) 5%,transparent);stroke:color-mix(in srgb,var(--l8) 55%,transparent);stroke-width:1.3;stroke-dasharray:6 5"/>
+<rect x="282" y="90" width="86.0" height="20" rx="10" style="fill:var(--l8)"/>
+<text x="325.0" y="104" text-anchor="middle" style="fill:var(--sheet);font-size:11px;font-weight:600">Collection</text>
+</g>
+<g class="zone" data-title="AWS backends" data-layer="l8">
+<rect x="520" y="50" width="230" height="380" rx="12" style="fill:color-mix(in srgb,var(--l8) 5%,transparent);stroke:color-mix(in srgb,var(--l8) 55%,transparent);stroke-width:1.3;stroke-dasharray:6 5"/>
+<rect x="532" y="40" width="99.19999999999999" height="20" rx="10" style="fill:var(--l8)"/>
+<text x="581.6" y="54" text-anchor="middle" style="fill:var(--sheet);font-size:11px;font-weight:600">AWS backends</text>
+</g>
+<g class="zone" data-title="Agent observability lake" data-layer="l7">
+<rect x="770" y="50" width="230" height="380" rx="12" style="fill:color-mix(in srgb,var(--l7) 5%,transparent);stroke:color-mix(in srgb,var(--l7) 55%,transparent);stroke-width:1.3;stroke-dasharray:6 5"/>
+<rect x="782" y="40" width="178.39999999999998" height="20" rx="10" style="fill:var(--l7)"/>
+<text x="871.2" y="54" text-anchor="middle" style="fill:var(--sheet);font-size:11px;font-weight:600">Agent observability lake</text>
+</g>
+<g class="zone" data-title="Consumption" data-layer="l2">
+<rect x="1020" y="20" width="230" height="500" rx="12" style="fill:color-mix(in srgb,var(--l2) 5%,transparent);stroke:color-mix(in srgb,var(--l2) 55%,transparent);stroke-width:1.3;stroke-dasharray:6 5"/>
+<rect x="1032" y="10" width="92.6" height="20" rx="10" style="fill:var(--l2)"/>
+<text x="1078.3" y="24" text-anchor="middle" style="fill:var(--sheet);font-size:11px;font-weight:600">Consumption</text>
+</g>
+<path class="edge" data-from="agents-strands" data-to="" d="M225.0 88.0 L255.0 88.0 L255.0 173.0" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="model-servers" data-to="" d="M225.0 173.0 L255.0 173.0 L255.0 173.0" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="mcp-tools" data-to="" d="M225.0 258.0 L255.0 258.0 L255.0 173.0" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="infrastructure" data-to="" d="M225.0 343.0 L255.0 343.0 L255.0 173.0" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="" data-to="adot-collector" d="M255.0 173.0 L285.0 173.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="adot-collector" data-to="tail-sampling" d="M385.0 201.0 L385.0 230.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="tail-sampling" data-to="pii-redaction" d="M385.0 286.0 L385.0 315.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="pii-redaction" data-to="" d="M485.0 343.0 L512.0 343.0" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="" data-to="" d="M512.0 118.0 L512.0 368.0" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="" data-to="cloudwatch-logs" d="M512.0 118.0 L535.0 118.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="" data-to="aws-x-ray" d="M512.0 243.0 L535.0 243.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="" data-to="prometheus" d="M512.0 368.0 L535.0 368.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="api-gw-waf-iam" data-to="cloudwatch-logs" d="M225.0 428.0 L494.0 428.0 L494.0 130.0 L535.0 130.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:5 4;stroke-linejoin:round"/>
+<path class="edge" data-from="cloudwatch-logs" data-to="data-firehose" d="M735.0 118.0 L785.0 118.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="aws-x-ray" data-to="glue-lambda" d="M735.0 243.0 L785.0 243.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="data-firehose" data-to="glue-lambda" d="M885.0 146.0 L885.0 215.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="glue-lambda" data-to="s3-tables-athena" d="M885.0 271.0 L885.0 340.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="data-firehose" data-to="security-lake" d="M985.0 110.0 L1008.0 110.0 L1008.0 88.0 L1035.0 88.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="s3-tables-athena" data-to="" d="M985.0 368.0 L1012.0 368.0 L1012.0 188.0" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="" data-to="managed-grafana" d="M1012.0 188.0 L1035.0 188.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="" data-to="agentcore-evals" d="M1012.0 288.0 L1035.0 288.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="agentcore-evals" data-to="eval-datasets" d="M1135.0 316.0 L1135.0 360.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="prometheus" data-to="slos-and-alarms" d="M635.0 396.0 L635.0 468.0 L1035.0 468.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<g class="node" data-id="agents-strands" data-layer="l2" tabindex="0" role="button" aria-label="Agents (Strands)">
+<rect class="node-box" x="25" y="60" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l2) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="25" y="68" width="3" height="40" rx="1.5" style="fill:var(--l2)"/>
+<rect x="35" y="69.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l2) 14%,var(--sheet))"/>
+<use href="#i-agent" xlink:href="#i-agent" x="43" y="77.0" width="22" height="22" style="color:var(--l2)"/>
+<text x="83" y="85.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Agents (Strands)</text>
+<text x="83" y="100.0" style="fill:var(--ink-2);font-size:10.5px">AgentCore spans</text>
+</g>
+<g class="node" data-id="model-servers" data-layer="l4" tabindex="0" role="button" aria-label="Model servers">
+<rect class="node-box" x="25" y="145" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l4) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="25" y="153" width="3" height="40" rx="1.5" style="fill:var(--l4)"/>
+<rect x="35" y="154.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l4) 14%,var(--sheet))"/>
+<use href="#i-chip" xlink:href="#i-chip" x="43" y="162.0" width="22" height="22" style="color:var(--l4)"/>
+<text x="83" y="170.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Model servers</text>
+<text x="83" y="185.0" style="fill:var(--ink-2);font-size:10.5px">Gateway, tokens, GPU</text>
+</g>
+<g class="node" data-id="mcp-tools" data-layer="l6" tabindex="0" role="button" aria-label="MCP tools">
+<rect class="node-box" x="25" y="230" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l6) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="25" y="238" width="3" height="40" rx="1.5" style="fill:var(--l6)"/>
+<rect x="35" y="239.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l6) 14%,var(--sheet))"/>
+<use href="#i-wrench" xlink:href="#i-wrench" x="43" y="247.0" width="22" height="22" style="color:var(--l6)"/>
+<text x="83" y="255.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">MCP tools</text>
+<text x="83" y="270.0" style="fill:var(--ink-2);font-size:10.5px">Side effects, status</text>
+</g>
+<g class="node" data-id="infrastructure" data-layer="l0" tabindex="0" role="button" aria-label="Infrastructure">
+<rect class="node-box" x="25" y="315" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l0) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="25" y="323" width="3" height="40" rx="1.5" style="fill:var(--l0)"/>
+<rect x="35" y="324.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l0) 14%,var(--sheet))"/>
+<use href="#i-server" xlink:href="#i-server" x="43" y="332.0" width="22" height="22" style="color:var(--l0)"/>
+<text x="83" y="340.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Infrastructure</text>
+<text x="83" y="355.0" style="fill:var(--ink-2);font-size:10.5px">EKS, Lambda, EC2</text>
+</g>
+<g class="node" data-id="api-gw-waf-iam" data-layer="l1" tabindex="0" role="button" aria-label="API GW, WAF, IAM">
+<rect class="node-box" x="25" y="400" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l1) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="25" y="408" width="3" height="40" rx="1.5" style="fill:var(--l1)"/>
+<rect x="35" y="409.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l1) 14%,var(--sheet))"/>
+<use href="#i-shieldscan" xlink:href="#i-shieldscan" x="43" y="417.0" width="22" height="22" style="color:var(--l1)"/>
+<text x="83" y="425.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">API GW, WAF, IAM</text>
+<text x="83" y="440.0" style="fill:var(--ink-2);font-size:10.5px">CloudTrail, guardrails</text>
+</g>
+<g class="node" data-id="adot-collector" data-layer="l8" tabindex="0" role="button" aria-label="ADOT Collector">
+<rect class="node-box" x="285" y="145" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l8) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="285" y="153" width="3" height="40" rx="1.5" style="fill:var(--l8)"/>
+<rect x="295" y="154.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l8) 14%,var(--sheet))"/>
+<use href="#i-trace" xlink:href="#i-trace" x="303" y="162.0" width="22" height="22" style="color:var(--l8)"/>
+<text x="343" y="170.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">ADOT Collector</text>
+<text x="343" y="185.0" style="fill:var(--ink-2);font-size:10.5px">DaemonSet, sidecar</text>
+</g>
+<g class="node" data-id="tail-sampling" data-layer="l8" tabindex="0" role="button" aria-label="Tail sampling">
+<rect class="node-box" x="285" y="230" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l8) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="285" y="238" width="3" height="40" rx="1.5" style="fill:var(--l8)"/>
+<rect x="295" y="239.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l8) 14%,var(--sheet))"/>
+<use href="#i-sampling" xlink:href="#i-sampling" x="303" y="247.0" width="22" height="22" style="color:var(--l8)"/>
+<text x="343" y="255.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Tail sampling</text>
+<text x="343" y="270.0" style="fill:var(--ink-2);font-size:10.5px">Keep errors, HITL, cost</text>
+</g>
+<g class="node" data-id="pii-redaction" data-layer="l8" tabindex="0" role="button" aria-label="PII redaction">
+<rect class="node-box" x="285" y="315" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l8) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="285" y="323" width="3" height="40" rx="1.5" style="fill:var(--l8)"/>
+<rect x="295" y="324.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l8) 14%,var(--sheet))"/>
+<use href="#i-filter" xlink:href="#i-filter" x="303" y="332.0" width="22" height="22" style="color:var(--l8)"/>
+<text x="343" y="340.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">PII redaction</text>
+<text x="343" y="355.0" style="fill:var(--ink-2);font-size:10.5px">Comprehend PII filter</text>
+</g>
+<g class="node" data-id="cloudwatch-logs" data-layer="l8" tabindex="0" role="button" aria-label="CloudWatch Logs">
+<rect class="node-box" x="535" y="90" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l8) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="535" y="98" width="3" height="40" rx="1.5" style="fill:var(--l8)"/>
+<rect x="545" y="99.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l8) 14%,var(--sheet))"/>
+<use href="#i-log" xlink:href="#i-log" x="553" y="107.0" width="22" height="22" style="color:var(--l8)"/>
+<text x="593" y="115.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">CloudWatch Logs</text>
+<text x="593" y="130.0" style="fill:var(--ink-2);font-size:10.5px">Logs Insights</text>
+</g>
+<g class="node" data-id="aws-x-ray" data-layer="l8" tabindex="0" role="button" aria-label="AWS X-Ray">
+<rect class="node-box" x="535" y="215" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l8) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="535" y="223" width="3" height="40" rx="1.5" style="fill:var(--l8)"/>
+<rect x="545" y="224.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l8) 14%,var(--sheet))"/>
+<use href="#i-trace" xlink:href="#i-trace" x="553" y="232.0" width="22" height="22" style="color:var(--l8)"/>
+<text x="593" y="240.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">AWS X-Ray</text>
+<text x="593" y="255.0" style="fill:var(--ink-2);font-size:10.5px">Transaction Search</text>
+</g>
+<g class="node" data-id="prometheus" data-layer="l8" tabindex="0" role="button" aria-label="Prometheus">
+<rect class="node-box" x="535" y="340" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l8) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="535" y="348" width="3" height="40" rx="1.5" style="fill:var(--l8)"/>
+<rect x="545" y="349.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l8) 14%,var(--sheet))"/>
+<use href="#i-chart" xlink:href="#i-chart" x="553" y="357.0" width="22" height="22" style="color:var(--l8)"/>
+<text x="593" y="365.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Prometheus</text>
+<text x="593" y="380.0" style="fill:var(--ink-2);font-size:10.5px">Amazon Managed Service</text>
+</g>
+<g class="node" data-id="data-firehose" data-layer="l7" tabindex="0" role="button" aria-label="Data Firehose">
+<rect class="node-box" x="785" y="90" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l7) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="785" y="98" width="3" height="40" rx="1.5" style="fill:var(--l7)"/>
+<rect x="795" y="99.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l7) 14%,var(--sheet))"/>
+<use href="#i-egress" xlink:href="#i-egress" x="803" y="107.0" width="22" height="22" style="color:var(--l7)"/>
+<text x="843" y="115.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Data Firehose</text>
+<text x="843" y="130.0" style="fill:var(--ink-2);font-size:10.5px">Log subscriptions</text>
+</g>
+<g class="node" data-id="glue-lambda" data-layer="l7" tabindex="0" role="button" aria-label="Glue, Lambda">
+<rect class="node-box" x="785" y="215" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l7) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="785" y="223" width="3" height="40" rx="1.5" style="fill:var(--l7)"/>
+<rect x="795" y="224.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l7) 14%,var(--sheet))"/>
+<use href="#i-pipeline" xlink:href="#i-pipeline" x="803" y="232.0" width="22" height="22" style="color:var(--l7)"/>
+<text x="843" y="240.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Glue, Lambda</text>
+<text x="843" y="255.0" style="fill:var(--ink-2);font-size:10.5px">Enrich cost, owner</text>
+</g>
+<g class="node" data-id="s3-tables-athena" data-layer="l7" tabindex="0" role="button" aria-label="S3 Tables, Athena">
+<rect class="node-box" x="785" y="340" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l7) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="785" y="348" width="3" height="40" rx="1.5" style="fill:var(--l7)"/>
+<rect x="795" y="349.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l7) 14%,var(--sheet))"/>
+<use href="#i-table" xlink:href="#i-table" x="803" y="357.0" width="22" height="22" style="color:var(--l7)"/>
+<text x="843" y="365.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">S3 Tables, Athena</text>
+<text x="843" y="380.0" style="fill:var(--ink-2);font-size:10.5px">All agent telemetry</text>
+</g>
+<g class="node" data-id="security-lake" data-layer="risk" tabindex="0" role="button" aria-label="Security Lake">
+<rect class="node-box" x="1035" y="60" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--risk) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="1035" y="68" width="3" height="40" rx="1.5" style="fill:var(--risk)"/>
+<rect x="1045" y="69.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--risk) 14%,var(--sheet))"/>
+<use href="#i-target" xlink:href="#i-target" x="1053" y="77.0" width="22" height="22" style="color:var(--risk)"/>
+<text x="1093" y="85.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Security Lake</text>
+<text x="1093" y="100.0" style="fill:var(--ink-2);font-size:10.5px">SIEM detections</text>
+</g>
+<g class="node" data-id="managed-grafana" data-layer="l2" tabindex="0" role="button" aria-label="Managed Grafana">
+<rect class="node-box" x="1035" y="160" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l2) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="1035" y="168" width="3" height="40" rx="1.5" style="fill:var(--l2)"/>
+<rect x="1045" y="169.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l2) 14%,var(--sheet))"/>
+<use href="#i-dashboard" xlink:href="#i-dashboard" x="1053" y="177.0" width="22" height="22" style="color:var(--l2)"/>
+<text x="1093" y="185.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Managed Grafana</text>
+<text x="1093" y="200.0" style="fill:var(--ink-2);font-size:10.5px">Exec, SRE, FinOps views</text>
+</g>
+<g class="node" data-id="agentcore-evals" data-layer="l8" tabindex="0" role="button" aria-label="AgentCore Evals">
+<rect class="node-box" x="1035" y="260" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l8) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="1035" y="268" width="3" height="40" rx="1.5" style="fill:var(--l8)"/>
+<rect x="1045" y="269.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l8) 14%,var(--sheet))"/>
+<use href="#i-check" xlink:href="#i-check" x="1053" y="277.0" width="22" height="22" style="color:var(--l8)"/>
+<text x="1093" y="285.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">AgentCore Evals</text>
+<text x="1093" y="300.0" style="fill:var(--ink-2);font-size:10.5px">Quality scoring</text>
+</g>
+<g class="node" data-id="eval-datasets" data-layer="auto" tabindex="0" role="button" aria-label="Eval datasets">
+<rect class="node-box" x="1035" y="360" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--auto) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="1035" y="368" width="3" height="40" rx="1.5" style="fill:var(--auto)"/>
+<rect x="1045" y="369.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--auto) 14%,var(--sheet))"/>
+<use href="#i-database" xlink:href="#i-database" x="1053" y="377.0" width="22" height="22" style="color:var(--auto)"/>
+<text x="1093" y="385.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Eval datasets</text>
+<text x="1093" y="400.0" style="fill:var(--ink-2);font-size:10.5px">Built from overrides</text>
+</g>
+<g class="node" data-id="slos-and-alarms" data-layer="gate" tabindex="0" role="button" aria-label="SLOs and alarms">
+<rect class="node-box" x="1035" y="440" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--gate) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="1035" y="448" width="3" height="40" rx="1.5" style="fill:var(--gate)"/>
+<rect x="1045" y="449.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--gate) 14%,var(--sheet))"/>
+<use href="#i-bell" xlink:href="#i-bell" x="1053" y="457.0" width="22" height="22" style="color:var(--gate)"/>
+<text x="1093" y="465.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">SLOs and alarms</text>
+<text x="1093" y="480.0" style="fill:var(--ink-2);font-size:10.5px">Application Signals</text>
+</g>
+<g class="edge-label" data-from="api-gw-waf-iam" data-to="cloudwatch-logs">
+<rect x="345.0" y="419.0" width="70.0" height="18" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--ink-2) 50%,var(--rule));stroke-width:1"/>
+<text x="380.0" y="431.6" text-anchor="middle" style="fill:var(--ink-2);font-size:10px;font-weight:500">audit logs</text></g>
+<g class="edge-label" data-from="prometheus" data-to="slos-and-alarms">
+<rect x="862.2" y="459.0" width="75.6" height="18" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--ink-2) 50%,var(--rule));stroke-width:1"/>
+<text x="900.0" y="471.6" text-anchor="middle" style="fill:var(--ink-2);font-size:10px;font-weight:500">SLO metrics</text></g>
+</svg>

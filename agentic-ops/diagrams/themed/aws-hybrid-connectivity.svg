@@ -1,0 +1,256 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1335 600" role="img" aria-label="AWS hybrid connectivity with Direct Connect primary and VPN backup" class="aodiagram" style="font-family:var(--diagram-font,'IBM Plex Sans','Segoe UI',Roboto,Helvetica,Arial,sans-serif)">
+<title>AWS hybrid connectivity with Direct Connect primary and VPN backup</title><defs>
+<marker id="ar-ink-2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:var(--ink-2)"/></marker>
+<marker id="ar-risk" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:var(--risk)"/></marker>
+<marker id="ar-auto" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:var(--auto)"/></marker>
+<marker id="ar-gate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:var(--gate)"/></marker>
+<marker id="ar-signal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:var(--signal)"/></marker>
+<symbol id="i-briefcase" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2M3 13h18"/></g></symbol>
+<symbol id="i-building" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8 7h2M14 7h2M8 11h2M14 11h2M8 15h2M14 15h2M10 21v-3h4v3"/></g></symbol>
+<symbol id="i-cloud" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M7 18a5 5 0 0 1-.6-9.96A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9z"/></g></symbol>
+<symbol id="i-firewall" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 9.7h18M3 14.3h18M9 5v4.7M15 5v4.7M6 9.7v4.6M12 9.7v4.6M18 9.7v4.6M9 14.3V19M15 14.3V19"/></g></symbol>
+<symbol id="i-hub" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="3.5" r="1.8"/><circle cx="20.5" cy="12" r="1.8"/><circle cx="12" cy="20.5" r="1.8"/><circle cx="3.5" cy="12" r="1.8"/><path d="M12 5.3V9M18.7 12H15M12 18.7V15M5.3 12H9"/></g></symbol>
+<symbol id="i-link" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M9.5 14.5l5-5"/><path d="M11 7l1.7-1.7a4 4 0 0 1 5.7 5.7L16.7 12.7M13 17l-1.7 1.7a4 4 0 0 1-5.7-5.7L7.3 11.3"/></g></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3M12 15v2"/></g></symbol>
+<symbol id="i-mesh" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M8 6h8M6 8v8M18 8v8M8 18h8M7.5 7.5l9 9"/></g></symbol>
+<symbol id="i-router" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="12" r="9"/><path d="M7 10h9l-2.5-2.5M17 14H8l2.5 2.5"/></g></symbol>
+<symbol id="i-server" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><rect x="4" y="4" width="16" height="7" rx="1.5"/><rect x="4" y="13" width="16" height="7" rx="1.5"/><path d="M8 7.5h.01M8 16.5h.01M12 7.5h4M12 16.5h4"/></g></symbol>
+<symbol id="i-tunnel" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M2.5 19v-7a9.5 9.5 0 0 1 19 0v7"/><path d="M7 19v-6.5a5 5 0 0 1 10 0V19"/><path d="M2 19h20"/><circle cx="12" cy="15.5" r="1.3"/></g></symbol>
+</defs>
+<g class="zone" data-title="On-premises" data-layer="l0">
+<rect x="20" y="20" width="230" height="560" rx="12" style="fill:color-mix(in srgb,var(--l0) 5%,transparent);stroke:color-mix(in srgb,var(--l0) 55%,transparent);stroke-width:1.3;stroke-dasharray:6 5"/>
+<rect x="32" y="10" width="92.6" height="20" rx="10" style="fill:var(--l0)"/>
+<text x="78.3" y="24" text-anchor="middle" style="fill:var(--sheet);font-size:11px;font-weight:600">On-premises</text>
+</g>
+<g class="zone" data-title="Direct Connect locations" data-layer="l0">
+<rect x="290" y="20" width="220" height="420" rx="12" style="fill:color-mix(in srgb,var(--l0) 5%,transparent);stroke:color-mix(in srgb,var(--l0) 55%,transparent);stroke-width:1.3;stroke-dasharray:6 5"/>
+<rect x="302" y="10" width="178.39999999999998" height="20" rx="10" style="fill:var(--l0)"/>
+<text x="391.2" y="24" text-anchor="middle" style="fill:var(--sheet);font-size:11px;font-weight:600">Direct Connect locations</text>
+</g>
+<g class="zone" data-title="Network account" data-layer="l3">
+<rect x="545" y="20" width="480" height="560" rx="12" style="fill:color-mix(in srgb,var(--l3) 5%,transparent);stroke:color-mix(in srgb,var(--l3) 55%,transparent);stroke-width:1.3;stroke-dasharray:6 5"/>
+<rect x="557" y="10" width="119.0" height="20" rx="10" style="fill:var(--l3)"/>
+<text x="616.5" y="24" text-anchor="middle" style="fill:var(--sheet);font-size:11px;font-weight:600">Network account</text>
+</g>
+<g class="zone" data-title="Region A" data-layer="l3">
+<rect x="560" y="45" width="230" height="240" rx="12" style="fill:color-mix(in srgb,var(--l3) 5%,transparent);stroke:color-mix(in srgb,var(--l3) 55%,transparent);stroke-width:1.3;stroke-dasharray:none"/>
+<rect x="572" y="35" width="72.8" height="20" rx="10" style="fill:var(--l3)"/>
+<text x="608.4" y="49" text-anchor="middle" style="fill:var(--sheet);font-size:11px;font-weight:600">Region A</text>
+</g>
+<g class="zone" data-title="Region B" data-layer="l3">
+<rect x="560" y="305" width="230" height="250" rx="12" style="fill:color-mix(in srgb,var(--l3) 5%,transparent);stroke:color-mix(in srgb,var(--l3) 55%,transparent);stroke-width:1.3;stroke-dasharray:none"/>
+<rect x="572" y="295" width="72.8" height="20" rx="10" style="fill:var(--l3)"/>
+<text x="608.4" y="309" text-anchor="middle" style="fill:var(--sheet);font-size:11px;font-weight:600">Region B</text>
+</g>
+<g class="zone" data-title="Spoke VPCs (accounts)" data-layer="l2">
+<rect x="1055" y="20" width="230" height="310" rx="12" style="fill:color-mix(in srgb,var(--l2) 5%,transparent);stroke:color-mix(in srgb,var(--l2) 55%,transparent);stroke-width:1.3;stroke-dasharray:6 5"/>
+<rect x="1067" y="10" width="158.6" height="20" rx="10" style="fill:var(--l2)"/>
+<text x="1146.3" y="24" text-anchor="middle" style="fill:var(--sheet);font-size:11px;font-weight:600">Spoke VPCs (accounts)</text>
+</g>
+<g class="zone" data-title="Restricted enclave" data-layer="risk">
+<rect x="1055" y="380" width="230" height="130" rx="12" style="fill:color-mix(in srgb,var(--risk) 5%,transparent);stroke:color-mix(in srgb,var(--risk) 55%,transparent);stroke-width:1.3;stroke-dasharray:6 5"/>
+<rect x="1067" y="370" width="138.8" height="20" rx="10" style="fill:var(--risk)"/>
+<text x="1136.4" y="384" text-anchor="middle" style="fill:var(--sheet);font-size:11px;font-weight:600">Restricted enclave</text>
+</g>
+<path class="edge" data-from="dc1-edge-routers" data-to="dx-location-a1" d="M235.0 110.0 L268.0 110.0 L268.0 88.0 L300.0 88.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="dc1-edge-routers" data-to="dx-location-a2" d="M235.0 126.0 L268.0 126.0 L268.0 168.0 L300.0 168.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="dc2-edge-routers" data-to="dx-location-b1" d="M235.0 350.0 L268.0 350.0 L268.0 308.0 L300.0 308.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="dc2-edge-routers" data-to="dx-location-b2" d="M235.0 366.0 L268.0 366.0 L268.0 388.0 L300.0 388.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="dx-location-a1" data-to="transit-vif-a1" d="M500.0 88.0 L540.0 88.0 L540.0 103.0 L575.0 103.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="dx-location-a2" data-to="transit-vif-a2" d="M500.0 168.0 L530.0 168.0 L575.0 168.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="dx-location-b1" data-to="transit-vif-b1" d="M500.0 308.0 L540.0 308.0 L540.0 363.0 L575.0 363.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="dx-location-b2" data-to="transit-vif-b2" d="M500.0 388.0 L530.0 388.0 L530.0 428.0 L575.0 428.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="dc1-edge-routers" data-to="s2s-vpn-to-tgw-a" d="M75.0 146.0 L75.0 240.0 L555.0 240.0 L555.0 233.0 L575.0 233.0" marker-end="url(#ar-gate)" style="fill:none;stroke:var(--gate);stroke-width:1.6;stroke-dasharray:5 4;stroke-linejoin:round"/>
+<path class="edge" data-from="dc2-edge-routers" data-to="s2s-vpn-to-tgw-b" d="M75.0 386.0 L75.0 460.0 L520.0 460.0 L520.0 493.0 L575.0 493.0" marker-end="url(#ar-gate)" style="fill:none;stroke:var(--gate);stroke-width:1.6;stroke-dasharray:5 4;stroke-linejoin:round"/>
+<path class="edge" data-from="branch-partners" data-to="s2s-vpn-to-tgw-b" d="M235.0 528.0 L550.0 528.0 L550.0 500.0 L575.0 500.0" marker-end="url(#ar-gate)" style="fill:none;stroke:var(--gate);stroke-width:1.6;stroke-dasharray:5 4;stroke-linejoin:round"/>
+<path class="edge" data-from="transit-vif-a1" data-to="" d="M775.0 103.0 L800.0 103.0" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="transit-vif-a2" data-to="" d="M775.0 168.0 L800.0 168.0" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="s2s-vpn-to-tgw-a" data-to="" d="M775.0 233.0 L800.0 233.0" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="transit-vif-b1" data-to="" d="M775.0 363.0 L800.0 363.0" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="transit-vif-b2" data-to="" d="M775.0 428.0 L800.0 428.0" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="s2s-vpn-to-tgw-b" data-to="" d="M775.0 493.0 L800.0 493.0" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="" data-to="" d="M800.0 103.0 L800.0 493.0" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="" data-to="dx-gateway-tgw" d="M800.0 278.0 L815.0 278.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="azure-and-gcp" data-to="" d="M815.0 88.0 L800.0 88.0 L800.0 103.0" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="dx-gateway-tgw" data-to="network-firewall" d="M915.0 306.0 L915.0 350.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="network-firewall" data-to="" d="M1015.0 378.0 L1040.0 378.0 L1040.0 88.0" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="" data-to="platform-vpc-prod" d="M1040.0 88.0 L1070.0 88.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="" data-to="platform-nonprod" d="M1040.0 173.0 L1070.0 173.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="" data-to="workload-vpcs" d="M1040.0 258.0 L1070.0 258.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="platform-vpc-prod" data-to="enclave-vpc" d="M1270.0 88.0 L1292.0 88.0 L1292.0 453.0 L1270.0 453.0" marker-end="url(#ar-risk)" style="fill:none;stroke:var(--risk);stroke-width:1.6;stroke-dasharray:5 4;stroke-linejoin:round"/>
+<g class="node" data-id="dc1-edge-routers" data-layer="l0" tabindex="0" role="button" aria-label="DC1 edge routers">
+<rect class="node-box" x="35" y="90" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l0) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="35" y="98" width="3" height="40" rx="1.5" style="fill:var(--l0)"/>
+<rect x="45" y="99.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l0) 14%,var(--sheet))"/>
+<use href="#i-building" xlink:href="#i-building" x="53" y="107.0" width="22" height="22" style="color:var(--l0)"/>
+<text x="93" y="115.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">DC1 edge routers</text>
+<text x="93" y="130.0" style="fill:var(--ink-2);font-size:10.5px">AS 65010</text>
+</g>
+<g class="node" data-id="dc2-edge-routers" data-layer="l0" tabindex="0" role="button" aria-label="DC2 edge routers">
+<rect class="node-box" x="35" y="330" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l0) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="35" y="338" width="3" height="40" rx="1.5" style="fill:var(--l0)"/>
+<rect x="45" y="339.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l0) 14%,var(--sheet))"/>
+<use href="#i-building" xlink:href="#i-building" x="53" y="347.0" width="22" height="22" style="color:var(--l0)"/>
+<text x="93" y="355.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">DC2 edge routers</text>
+<text x="93" y="370.0" style="fill:var(--ink-2);font-size:10.5px">AS 65020</text>
+</g>
+<g class="node" data-id="branch-partners" data-layer="l0" tabindex="0" role="button" aria-label="Branch, partners">
+<rect class="node-box" x="35" y="500" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l0) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="35" y="508" width="3" height="40" rx="1.5" style="fill:var(--l0)"/>
+<rect x="45" y="509.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l0) 14%,var(--sheet))"/>
+<use href="#i-briefcase" xlink:href="#i-briefcase" x="53" y="517.0" width="22" height="22" style="color:var(--l0)"/>
+<text x="93" y="525.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Branch, partners</text>
+<text x="93" y="540.0" style="fill:var(--ink-2);font-size:10.5px">Site-to-site IPsec</text>
+</g>
+<g class="node" data-id="dx-location-a1" data-layer="l3" tabindex="0" role="button" aria-label="DX location A1">
+<rect class="node-box" x="300" y="60" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l3) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="300" y="68" width="3" height="40" rx="1.5" style="fill:var(--l3)"/>
+<rect x="310" y="69.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l3) 14%,var(--sheet))"/>
+<use href="#i-link" xlink:href="#i-link" x="318" y="77.0" width="22" height="22" style="color:var(--l3)"/>
+<text x="358" y="85.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">DX location A1</text>
+<text x="358" y="100.0" style="fill:var(--ink-2);font-size:10.5px">10 / 100G, MACsec</text>
+</g>
+<g class="node" data-id="dx-location-a2" data-layer="l3" tabindex="0" role="button" aria-label="DX location A2">
+<rect class="node-box" x="300" y="140" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l3) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="300" y="148" width="3" height="40" rx="1.5" style="fill:var(--l3)"/>
+<rect x="310" y="149.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l3) 14%,var(--sheet))"/>
+<use href="#i-link" xlink:href="#i-link" x="318" y="157.0" width="22" height="22" style="color:var(--l3)"/>
+<text x="358" y="165.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">DX location A2</text>
+<text x="358" y="180.0" style="fill:var(--ink-2);font-size:10.5px">10 / 100G, MACsec</text>
+</g>
+<g class="node" data-id="dx-location-b1" data-layer="l3" tabindex="0" role="button" aria-label="DX location B1">
+<rect class="node-box" x="300" y="280" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l3) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="300" y="288" width="3" height="40" rx="1.5" style="fill:var(--l3)"/>
+<rect x="310" y="289.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l3) 14%,var(--sheet))"/>
+<use href="#i-link" xlink:href="#i-link" x="318" y="297.0" width="22" height="22" style="color:var(--l3)"/>
+<text x="358" y="305.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">DX location B1</text>
+<text x="358" y="320.0" style="fill:var(--ink-2);font-size:10.5px">10 / 100G, MACsec</text>
+</g>
+<g class="node" data-id="dx-location-b2" data-layer="l3" tabindex="0" role="button" aria-label="DX location B2">
+<rect class="node-box" x="300" y="360" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l3) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="300" y="368" width="3" height="40" rx="1.5" style="fill:var(--l3)"/>
+<rect x="310" y="369.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l3) 14%,var(--sheet))"/>
+<use href="#i-link" xlink:href="#i-link" x="318" y="377.0" width="22" height="22" style="color:var(--l3)"/>
+<text x="358" y="385.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">DX location B2</text>
+<text x="358" y="400.0" style="fill:var(--ink-2);font-size:10.5px">10 / 100G, MACsec</text>
+</g>
+<g class="node" data-id="transit-vif-a1" data-layer="l3" tabindex="0" role="button" aria-label="Transit VIF A1">
+<rect class="node-box" x="575" y="75" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l3) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="575" y="83" width="3" height="40" rx="1.5" style="fill:var(--l3)"/>
+<rect x="585" y="84.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l3) 14%,var(--sheet))"/>
+<use href="#i-router" xlink:href="#i-router" x="593" y="92.0" width="22" height="22" style="color:var(--l3)"/>
+<text x="633" y="100.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Transit VIF A1</text>
+<text x="633" y="115.0" style="fill:var(--ink-2);font-size:10.5px">BGP, local pref high</text>
+</g>
+<g class="node" data-id="transit-vif-a2" data-layer="l3" tabindex="0" role="button" aria-label="Transit VIF A2">
+<rect class="node-box" x="575" y="140" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l3) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="575" y="148" width="3" height="40" rx="1.5" style="fill:var(--l3)"/>
+<rect x="585" y="149.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l3) 14%,var(--sheet))"/>
+<use href="#i-router" xlink:href="#i-router" x="593" y="157.0" width="22" height="22" style="color:var(--l3)"/>
+<text x="633" y="165.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Transit VIF A2</text>
+<text x="633" y="180.0" style="fill:var(--ink-2);font-size:10.5px">BGP, local pref high</text>
+</g>
+<g class="node" data-id="s2s-vpn-to-tgw-a" data-layer="l3" tabindex="0" role="button" aria-label="S2S VPN to TGW A">
+<rect class="node-box" x="575" y="205" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l3) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="575" y="213" width="3" height="40" rx="1.5" style="fill:var(--l3)"/>
+<rect x="585" y="214.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l3) 14%,var(--sheet))"/>
+<use href="#i-tunnel" xlink:href="#i-tunnel" x="593" y="222.0" width="22" height="22" style="color:var(--l3)"/>
+<text x="633" y="230.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">S2S VPN to TGW A</text>
+<text x="633" y="245.0" style="fill:var(--ink-2);font-size:10.5px">Accelerated, 2 tunnels</text>
+</g>
+<g class="node" data-id="transit-vif-b1" data-layer="l3" tabindex="0" role="button" aria-label="Transit VIF B1">
+<rect class="node-box" x="575" y="335" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l3) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="575" y="343" width="3" height="40" rx="1.5" style="fill:var(--l3)"/>
+<rect x="585" y="344.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l3) 14%,var(--sheet))"/>
+<use href="#i-router" xlink:href="#i-router" x="593" y="352.0" width="22" height="22" style="color:var(--l3)"/>
+<text x="633" y="360.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Transit VIF B1</text>
+<text x="633" y="375.0" style="fill:var(--ink-2);font-size:10.5px">BGP, local pref high</text>
+</g>
+<g class="node" data-id="transit-vif-b2" data-layer="l3" tabindex="0" role="button" aria-label="Transit VIF B2">
+<rect class="node-box" x="575" y="400" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l3) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="575" y="408" width="3" height="40" rx="1.5" style="fill:var(--l3)"/>
+<rect x="585" y="409.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l3) 14%,var(--sheet))"/>
+<use href="#i-router" xlink:href="#i-router" x="593" y="417.0" width="22" height="22" style="color:var(--l3)"/>
+<text x="633" y="425.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Transit VIF B2</text>
+<text x="633" y="440.0" style="fill:var(--ink-2);font-size:10.5px">BGP, local pref high</text>
+</g>
+<g class="node" data-id="s2s-vpn-to-tgw-b" data-layer="l3" tabindex="0" role="button" aria-label="S2S VPN to TGW B">
+<rect class="node-box" x="575" y="465" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l3) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="575" y="473" width="3" height="40" rx="1.5" style="fill:var(--l3)"/>
+<rect x="585" y="474.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l3) 14%,var(--sheet))"/>
+<use href="#i-tunnel" xlink:href="#i-tunnel" x="593" y="482.0" width="22" height="22" style="color:var(--l3)"/>
+<text x="633" y="490.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">S2S VPN to TGW B</text>
+<text x="633" y="505.0" style="fill:var(--ink-2);font-size:10.5px">Accelerated, 2 tunnels</text>
+</g>
+<g class="node" data-id="azure-and-gcp" data-layer="l0" tabindex="0" role="button" aria-label="Azure and GCP">
+<rect class="node-box" x="815" y="60" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l0) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="815" y="68" width="3" height="40" rx="1.5" style="fill:var(--l0)"/>
+<rect x="825" y="69.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l0) 14%,var(--sheet))"/>
+<use href="#i-cloud" xlink:href="#i-cloud" x="833" y="77.0" width="22" height="22" style="color:var(--l0)"/>
+<text x="873" y="85.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Azure and GCP</text>
+<text x="873" y="100.0" style="fill:var(--ink-2);font-size:10.5px">Partner interconnect</text>
+</g>
+<g class="node" data-id="dx-gateway-tgw" data-layer="l3" tabindex="0" role="button" aria-label="DX Gateway + TGW">
+<rect class="node-box" x="815" y="250" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l3) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="815" y="258" width="3" height="40" rx="1.5" style="fill:var(--l3)"/>
+<rect x="825" y="259.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l3) 14%,var(--sheet))"/>
+<use href="#i-hub" xlink:href="#i-hub" x="833" y="267.0" width="22" height="22" style="color:var(--l3)"/>
+<text x="873" y="275.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">DX Gateway + TGW</text>
+<text x="873" y="290.0" style="fill:var(--ink-2);font-size:10.5px">Route tables, domains</text>
+</g>
+<g class="node" data-id="network-firewall" data-layer="l3" tabindex="0" role="button" aria-label="Network Firewall">
+<rect class="node-box" x="815" y="350" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l3) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="815" y="358" width="3" height="40" rx="1.5" style="fill:var(--l3)"/>
+<rect x="825" y="359.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l3) 14%,var(--sheet))"/>
+<use href="#i-firewall" xlink:href="#i-firewall" x="833" y="367.0" width="22" height="22" style="color:var(--l3)"/>
+<text x="873" y="375.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Network Firewall</text>
+<text x="873" y="390.0" style="fill:var(--ink-2);font-size:10.5px">Inspection VPC</text>
+</g>
+<g class="node" data-id="platform-vpc-prod" data-layer="l2" tabindex="0" role="button" aria-label="Platform VPC prod">
+<rect class="node-box" x="1070" y="60" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l2) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="1070" y="68" width="3" height="40" rx="1.5" style="fill:var(--l2)"/>
+<rect x="1080" y="69.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l2) 14%,var(--sheet))"/>
+<use href="#i-mesh" xlink:href="#i-mesh" x="1088" y="77.0" width="22" height="22" style="color:var(--l2)"/>
+<text x="1128" y="85.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Platform VPC prod</text>
+<text x="1128" y="100.0" style="fill:var(--ink-2);font-size:10.5px">RAM-shared subnets</text>
+</g>
+<g class="node" data-id="platform-nonprod" data-layer="l2" tabindex="0" role="button" aria-label="Platform nonprod">
+<rect class="node-box" x="1070" y="145" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l2) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="1070" y="153" width="3" height="40" rx="1.5" style="fill:var(--l2)"/>
+<rect x="1080" y="154.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l2) 14%,var(--sheet))"/>
+<use href="#i-mesh" xlink:href="#i-mesh" x="1088" y="162.0" width="22" height="22" style="color:var(--l2)"/>
+<text x="1128" y="170.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Platform nonprod</text>
+<text x="1128" y="185.0" style="fill:var(--ink-2);font-size:10.5px">Dev, test, replay</text>
+</g>
+<g class="node" data-id="workload-vpcs" data-layer="l0" tabindex="0" role="button" aria-label="Workload VPCs">
+<rect class="node-box" x="1070" y="230" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l0) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="1070" y="238" width="3" height="40" rx="1.5" style="fill:var(--l0)"/>
+<rect x="1080" y="239.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l0) 14%,var(--sheet))"/>
+<use href="#i-server" xlink:href="#i-server" x="1088" y="247.0" width="22" height="22" style="color:var(--l0)"/>
+<text x="1128" y="255.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Workload VPCs</text>
+<text x="1128" y="270.0" style="fill:var(--ink-2);font-size:10.5px">Business unit accounts</text>
+</g>
+<g class="node" data-id="enclave-vpc" data-layer="risk" tabindex="0" role="button" aria-label="Enclave VPC">
+<rect class="node-box" x="1070" y="425" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--risk) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="1070" y="433" width="3" height="40" rx="1.5" style="fill:var(--risk)"/>
+<rect x="1080" y="434.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--risk) 14%,var(--sheet))"/>
+<use href="#i-lock" xlink:href="#i-lock" x="1088" y="442.0" width="22" height="22" style="color:var(--risk)"/>
+<text x="1128" y="450.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Enclave VPC</text>
+<text x="1128" y="465.0" style="fill:var(--ink-2);font-size:10.5px">No IGW, no NAT</text>
+</g>
+<g class="edge-label" data-from="dc1-edge-routers" data-to="dx-location-a1">
+<rect x="244.2" y="101.0" width="47.6" height="18" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--ink-2) 50%,var(--rule));stroke-width:1"/>
+<text x="268.0" y="113.6" text-anchor="middle" style="fill:var(--ink-2);font-size:10px;font-weight:500">MACsec</text></g>
+<g class="edge-label" data-from="dc2-edge-routers" data-to="dx-location-b1">
+<rect x="244.2" y="321.0" width="47.6" height="18" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--ink-2) 50%,var(--rule));stroke-width:1"/>
+<text x="268.0" y="333.6" text-anchor="middle" style="fill:var(--ink-2);font-size:10px;font-weight:500">MACsec</text></g>
+<g class="edge-label" data-from="dc1-edge-routers" data-to="s2s-vpn-to-tgw-a">
+<rect x="379.4" y="231.0" width="81.2" height="18" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--gate) 50%,var(--rule));stroke-width:1"/>
+<text x="420.0" y="243.6" text-anchor="middle" style="fill:var(--gate);font-size:10px;font-weight:500">IPsec backup</text></g>
+<g class="edge-label" data-from="dc2-edge-routers" data-to="s2s-vpn-to-tgw-b">
+<rect x="379.4" y="451.0" width="81.2" height="18" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--gate) 50%,var(--rule));stroke-width:1"/>
+<text x="420.0" y="463.6" text-anchor="middle" style="fill:var(--gate);font-size:10px;font-weight:500">IPsec backup</text></g>
+<g class="edge-label" data-from="platform-vpc-prod" data-to="enclave-vpc">
+<rect x="1240.2" y="351.0" width="103.6" height="18" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--risk) 50%,var(--rule));stroke-width:1"/>
+<text x="1292.0" y="363.6" text-anchor="middle" style="fill:var(--risk);font-size:10px;font-weight:500">PrivateLink only</text></g>
+</svg>

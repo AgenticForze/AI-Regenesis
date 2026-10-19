@@ -1,0 +1,152 @@
+{
+ "server": "itsm",
+ "tools": [
+  {
+   "name": "itsm.create_incident",
+   "description": "Open an incident linked to the trace ID.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "title": {
+      "type": "string"
+     },
+     "service": {
+      "type": "string"
+     },
+     "priority": {
+      "type": "string",
+      "enum": [
+       "P1",
+       "P2",
+       "P3",
+       "P4"
+      ]
+     },
+     "trace_id": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "title",
+     "service",
+     "priority",
+     "trace_id"
+    ],
+    "additionalProperties": false
+   },
+   "annotations": {
+    "title": "itsm.create_incident",
+    "readOnlyHint": false,
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false
+   },
+   "x-agentops": {
+    "category": "workflow",
+    "dry_run": false,
+    "default_autonomy": "L4",
+    "max_autonomy": "L4",
+    "blast_radius": "none",
+    "approval": null,
+    "gates": [
+     "G12"
+    ],
+    "gcp": "ServiceNow or Jira via Integration Connectors",
+    "aws": "ServiceNow or Jira via AgentCore Gateway target"
+   }
+  },
+  {
+   "name": "itsm.update_incident",
+   "description": "Add work notes, change status or resolve with an RCA summary.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "incident_id": {
+      "type": "string"
+     },
+     "note": {
+      "type": "string"
+     },
+     "status": {
+      "type": "string",
+      "enum": [
+       "in_progress",
+       "resolved",
+       "escalated"
+      ]
+     }
+    },
+    "required": [
+     "incident_id",
+     "note"
+    ],
+    "additionalProperties": false
+   },
+   "annotations": {
+    "title": "itsm.update_incident",
+    "readOnlyHint": false,
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false
+   },
+   "x-agentops": {
+    "category": "workflow",
+    "dry_run": false,
+    "default_autonomy": "L4",
+    "max_autonomy": "L4",
+    "blast_radius": "none",
+    "approval": null,
+    "gates": [
+     "G8",
+     "G12"
+    ],
+    "gcp": "ServiceNow or Jira via Integration Connectors",
+    "aws": "ServiceNow or Jira via AgentCore Gateway target"
+   }
+  },
+  {
+   "name": "itsm.open_change",
+   "description": "Open a change request with plan, risk score, blast radius and rollback.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "summary": {
+      "type": "string"
+     },
+     "plan_ref": {
+      "type": "string"
+     },
+     "risk_score": {
+      "type": "number"
+     }
+    },
+    "required": [
+     "summary",
+     "plan_ref",
+     "risk_score"
+    ],
+    "additionalProperties": false
+   },
+   "annotations": {
+    "title": "itsm.open_change",
+    "readOnlyHint": false,
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false
+   },
+   "x-agentops": {
+    "category": "workflow",
+    "dry_run": false,
+    "default_autonomy": "L4",
+    "max_autonomy": "L4",
+    "blast_radius": "none",
+    "approval": null,
+    "gates": [
+     "G12"
+    ],
+    "gcp": "ServiceNow or Jira",
+    "aws": "ServiceNow, Jira or SSM Change Manager"
+   }
+  }
+ ]
+}

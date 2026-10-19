@@ -1,0 +1,437 @@
+{
+ "title": "AWS telemetry pipeline from agents to evaluation",
+ "width": 1260,
+ "height": 530,
+ "zones": [
+  {
+   "x": 10,
+   "y": 20,
+   "w": 230,
+   "h": 470,
+   "title": "Sources",
+   "color": "l0"
+  },
+  {
+   "x": 270,
+   "y": 100,
+   "w": 230,
+   "h": 300,
+   "title": "Collection",
+   "color": "l8"
+  },
+  {
+   "x": 520,
+   "y": 50,
+   "w": 230,
+   "h": 380,
+   "title": "AWS backends",
+   "color": "l8"
+  },
+  {
+   "x": 770,
+   "y": 50,
+   "w": 230,
+   "h": 380,
+   "title": "Agent observability lake",
+   "color": "l7"
+  },
+  {
+   "x": 1020,
+   "y": 20,
+   "w": 230,
+   "h": 500,
+   "title": "Consumption",
+   "color": "l2"
+  }
+ ],
+ "nodes": [
+  {
+   "id": "agents-strands",
+   "x": 25,
+   "y": 60,
+   "title": "Agents (Strands)",
+   "sub": "AgentCore spans",
+   "icon": "agent",
+   "color": "l2"
+  },
+  {
+   "id": "model-servers",
+   "x": 25,
+   "y": 145,
+   "title": "Model servers",
+   "sub": "Gateway, tokens, GPU",
+   "icon": "chip",
+   "color": "l4"
+  },
+  {
+   "id": "mcp-tools",
+   "x": 25,
+   "y": 230,
+   "title": "MCP tools",
+   "sub": "Side effects, status",
+   "icon": "wrench",
+   "color": "l6"
+  },
+  {
+   "id": "infrastructure",
+   "x": 25,
+   "y": 315,
+   "title": "Infrastructure",
+   "sub": "EKS, Lambda, EC2",
+   "icon": "server",
+   "color": "l0"
+  },
+  {
+   "id": "api-gw-waf-iam",
+   "x": 25,
+   "y": 400,
+   "title": "API GW, WAF, IAM",
+   "sub": "CloudTrail, guardrails",
+   "icon": "shieldscan",
+   "color": "l1"
+  },
+  {
+   "id": "adot-collector",
+   "x": 285,
+   "y": 145,
+   "title": "ADOT Collector",
+   "sub": "DaemonSet, sidecar",
+   "icon": "trace",
+   "color": "l8"
+  },
+  {
+   "id": "tail-sampling",
+   "x": 285,
+   "y": 230,
+   "title": "Tail sampling",
+   "sub": "Keep errors, HITL, cost",
+   "icon": "sampling",
+   "color": "l8"
+  },
+  {
+   "id": "pii-redaction",
+   "x": 285,
+   "y": 315,
+   "title": "PII redaction",
+   "sub": "Comprehend PII filter",
+   "icon": "filter",
+   "color": "l8"
+  },
+  {
+   "id": "cloudwatch-logs",
+   "x": 535,
+   "y": 90,
+   "title": "CloudWatch Logs",
+   "sub": "Logs Insights",
+   "icon": "log",
+   "color": "l8"
+  },
+  {
+   "id": "aws-x-ray",
+   "x": 535,
+   "y": 215,
+   "title": "AWS X-Ray",
+   "sub": "Transaction Search",
+   "icon": "trace",
+   "color": "l8"
+  },
+  {
+   "id": "prometheus",
+   "x": 535,
+   "y": 340,
+   "title": "Prometheus",
+   "sub": "Amazon Managed Service",
+   "icon": "chart",
+   "color": "l8"
+  },
+  {
+   "id": "data-firehose",
+   "x": 785,
+   "y": 90,
+   "title": "Data Firehose",
+   "sub": "Log subscriptions",
+   "icon": "egress",
+   "color": "l7"
+  },
+  {
+   "id": "glue-lambda",
+   "x": 785,
+   "y": 215,
+   "title": "Glue, Lambda",
+   "sub": "Enrich cost, owner",
+   "icon": "pipeline",
+   "color": "l7"
+  },
+  {
+   "id": "s3-tables-athena",
+   "x": 785,
+   "y": 340,
+   "title": "S3 Tables, Athena",
+   "sub": "All agent telemetry",
+   "icon": "table",
+   "color": "l7"
+  },
+  {
+   "id": "security-lake",
+   "x": 1035,
+   "y": 60,
+   "title": "Security Lake",
+   "sub": "SIEM detections",
+   "icon": "target",
+   "color": "risk"
+  },
+  {
+   "id": "managed-grafana",
+   "x": 1035,
+   "y": 160,
+   "title": "Managed Grafana",
+   "sub": "Exec, SRE, FinOps views",
+   "icon": "dashboard",
+   "color": "l2"
+  },
+  {
+   "id": "agentcore-evals",
+   "x": 1035,
+   "y": 260,
+   "title": "AgentCore Evals",
+   "sub": "Quality scoring",
+   "icon": "check",
+   "color": "l8"
+  },
+  {
+   "id": "eval-datasets",
+   "x": 1035,
+   "y": 360,
+   "title": "Eval datasets",
+   "sub": "Built from overrides",
+   "icon": "database",
+   "color": "auto"
+  },
+  {
+   "id": "slos-and-alarms",
+   "x": 1035,
+   "y": 440,
+   "title": "SLOs and alarms",
+   "sub": "Application Signals",
+   "icon": "bell",
+   "color": "gate"
+  }
+ ],
+ "edges": [
+  {
+   "points": [
+    "agents-strands.r",
+    [
+     255.0,
+     88.0
+    ],
+    [
+     255.0,
+     173.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    "model-servers.r",
+    [
+     255.0,
+     173.0
+    ],
+    [
+     255.0,
+     173.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    "mcp-tools.r",
+    [
+     255.0,
+     258.0
+    ],
+    [
+     255.0,
+     173.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    "infrastructure.r",
+    [
+     255.0,
+     343.0
+    ],
+    [
+     255.0,
+     173.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    [
+     255.0,
+     173.0
+    ],
+    "adot-collector.l"
+   ]
+  },
+  {
+   "from": "adot-collector.b",
+   "to": "tail-sampling.t",
+   "route": "straight"
+  },
+  {
+   "from": "tail-sampling.b",
+   "to": "pii-redaction.t",
+   "route": "straight"
+  },
+  {
+   "points": [
+    "pii-redaction.r",
+    [
+     512.0,
+     343.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    [
+     512.0,
+     118.0
+    ],
+    [
+     512.0,
+     368.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    [
+     512.0,
+     118.0
+    ],
+    "cloudwatch-logs.l"
+   ]
+  },
+  {
+   "points": [
+    [
+     512.0,
+     243.0
+    ],
+    "aws-x-ray.l"
+   ]
+  },
+  {
+   "points": [
+    [
+     512.0,
+     368.0
+    ],
+    "prometheus.l"
+   ]
+  },
+  {
+   "from": "api-gw-waf-iam.r",
+   "to": "cloudwatch-logs.l+12",
+   "route": "hv",
+   "mid": 494,
+   "style": "dash",
+   "label": "audit logs",
+   "at": [
+    380.0,
+    428.0
+   ]
+  },
+  {
+   "from": "cloudwatch-logs.r",
+   "to": "data-firehose.l",
+   "route": "straight"
+  },
+  {
+   "from": "aws-x-ray.r",
+   "to": "glue-lambda.l",
+   "route": "straight"
+  },
+  {
+   "from": "data-firehose.b",
+   "to": "glue-lambda.t",
+   "route": "straight"
+  },
+  {
+   "from": "glue-lambda.b",
+   "to": "s3-tables-athena.t",
+   "route": "straight"
+  },
+  {
+   "from": "data-firehose.r-8",
+   "to": "security-lake.l",
+   "route": "hv",
+   "mid": 1008
+  },
+  {
+   "points": [
+    "s3-tables-athena.r",
+    [
+     1012.0,
+     368.0
+    ],
+    [
+     1012.0,
+     188.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    [
+     1012.0,
+     188.0
+    ],
+    "managed-grafana.l"
+   ]
+  },
+  {
+   "points": [
+    [
+     1012.0,
+     288.0
+    ],
+    "agentcore-evals.l"
+   ]
+  },
+  {
+   "from": "agentcore-evals.b",
+   "to": "eval-datasets.t",
+   "route": "straight"
+  },
+  {
+   "points": [
+    "prometheus.b",
+    [
+     635.0,
+     468.0
+    ],
+    "slos-and-alarms.l"
+   ],
+   "label": "SLO metrics",
+   "at": [
+    900.0,
+    468.0
+   ]
+  }
+ ]
+}

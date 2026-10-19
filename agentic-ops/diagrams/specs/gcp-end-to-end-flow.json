@@ -1,0 +1,662 @@
+{
+ "title": "End-to-end agentic operations flow",
+ "width": 1270,
+ "height": 830,
+ "zones": [
+  {
+   "x": 10,
+   "y": 20,
+   "w": 230,
+   "h": 380,
+   "title": "L0 Triggers",
+   "color": "l0"
+  },
+  {
+   "x": 260,
+   "y": 20,
+   "w": 230,
+   "h": 380,
+   "title": "L1 Edge and safety",
+   "color": "l1"
+  },
+  {
+   "x": 510,
+   "y": 20,
+   "w": 230,
+   "h": 570,
+   "title": "L2 Orchestration",
+   "color": "l2"
+  },
+  {
+   "x": 760,
+   "y": 20,
+   "w": 230,
+   "h": 380,
+   "title": "Domain agents over A2A",
+   "color": "l2"
+  },
+  {
+   "x": 1010,
+   "y": 20,
+   "w": 250,
+   "h": 380,
+   "title": "L3 Gateway, L4 models",
+   "color": "l4"
+  },
+  {
+   "x": 760,
+   "y": 430,
+   "w": 230,
+   "h": 170,
+   "title": "L5 Knowledge",
+   "color": "l5"
+  },
+  {
+   "x": 510,
+   "y": 610,
+   "w": 230,
+   "h": 100,
+   "title": "L6 Tools",
+   "color": "l6"
+  },
+  {
+   "x": 260,
+   "y": 610,
+   "w": 230,
+   "h": 100,
+   "title": "Managed estate",
+   "color": "l0"
+  },
+  {
+   "x": 760,
+   "y": 630,
+   "w": 500,
+   "h": 180,
+   "title": "L8 Observability and learning",
+   "color": "l8"
+  }
+ ],
+ "nodes": [
+  {
+   "id": "alerts",
+   "x": 25,
+   "y": 60,
+   "title": "Alerts",
+   "sub": "Cloud Monitoring",
+   "icon": "bell",
+   "color": "l0"
+  },
+  {
+   "id": "itsm-tickets",
+   "x": 25,
+   "y": 145,
+   "title": "ITSM tickets",
+   "sub": "ServiceNow, Jira",
+   "icon": "ticket",
+   "color": "l0"
+  },
+  {
+   "id": "chat-gemini-ent",
+   "x": 25,
+   "y": 230,
+   "title": "Chat, Gemini Ent.",
+   "sub": "Human requests",
+   "icon": "chat",
+   "color": "l0"
+  },
+  {
+   "id": "events-schedules",
+   "x": 25,
+   "y": 315,
+   "title": "Events, schedules",
+   "sub": "Eventarc, Scheduler",
+   "icon": "clock",
+   "color": "l0"
+  },
+  {
+   "id": "cloud-armor-lb",
+   "x": 275,
+   "y": 80,
+   "title": "Cloud Armor + LB",
+   "sub": "WAF, DDoS",
+   "icon": "shield",
+   "color": "l1"
+  },
+  {
+   "id": "apigee-ai-gateway",
+   "x": 275,
+   "y": 175,
+   "title": "Apigee AI gateway",
+   "sub": "AuthN, quotas",
+   "icon": "gateway",
+   "color": "l1"
+  },
+  {
+   "id": "model-armor-dlp",
+   "x": 275,
+   "y": 270,
+   "title": "Model Armor + DLP",
+   "sub": "Injection, PII scan",
+   "icon": "shieldscan",
+   "color": "l1"
+  },
+  {
+   "id": "triage-agent",
+   "x": 525,
+   "y": 60,
+   "title": "Triage agent",
+   "sub": "SLM classifier",
+   "icon": "filter",
+   "color": "l2"
+  },
+  {
+   "id": "supervisor",
+   "x": 525,
+   "y": 175,
+   "title": "Supervisor",
+   "sub": "Plans, delegates",
+   "icon": "supervisor",
+   "color": "l2"
+  },
+  {
+   "id": "policy-engine",
+   "x": 525,
+   "y": 370,
+   "title": "Policy engine",
+   "sub": "Allow, deny, approve",
+   "icon": "policy",
+   "color": "l2"
+  },
+  {
+   "id": "human-approval",
+   "x": 525,
+   "y": 480,
+   "title": "Human approval",
+   "sub": "Chat card, Workflows",
+   "icon": "approve",
+   "color": "gate"
+  },
+  {
+   "id": "incident-agent",
+   "x": 775,
+   "y": 60,
+   "title": "Incident agent",
+   "sub": "RCA, remediation",
+   "icon": "agent",
+   "color": "l2"
+  },
+  {
+   "id": "change-agent",
+   "x": 775,
+   "y": 145,
+   "title": "Change agent",
+   "sub": "Risk, canary, rollback",
+   "icon": "agent",
+   "color": "l2"
+  },
+  {
+   "id": "capacity-finops",
+   "x": 775,
+   "y": 230,
+   "title": "Capacity + FinOps",
+   "sub": "Rightsizing, spend",
+   "icon": "agent",
+   "color": "l2"
+  },
+  {
+   "id": "security-agent",
+   "x": 775,
+   "y": 315,
+   "title": "Security agent",
+   "sub": "Triage, containment",
+   "icon": "agent",
+   "color": "l2"
+  },
+  {
+   "id": "llm-router",
+   "x": 1025,
+   "y": 60,
+   "title": "LLM router",
+   "sub": "Cache, budget, fallback",
+   "icon": "router",
+   "color": "l3",
+   "w": 205
+  },
+  {
+   "id": "slms",
+   "x": 1025,
+   "y": 160,
+   "title": "SLMs",
+   "sub": "Cloud Run GPU",
+   "icon": "chip",
+   "color": "l4",
+   "w": 205
+  },
+  {
+   "id": "in-house-llm",
+   "x": 1025,
+   "y": 240,
+   "title": "In-house LLM",
+   "sub": "GKE, vLLM",
+   "icon": "neural",
+   "color": "l4",
+   "w": 205
+  },
+  {
+   "id": "gemini",
+   "x": 1025,
+   "y": 320,
+   "title": "Gemini",
+   "sub": "Vertex AI",
+   "icon": "neural",
+   "color": "l4",
+   "w": 205
+  },
+  {
+   "id": "rag-engine-search",
+   "x": 775,
+   "y": 465,
+   "title": "RAG Engine, Search",
+   "sub": "Runbooks, postmortems",
+   "icon": "search",
+   "color": "l5"
+  },
+  {
+   "id": "graph-and-memory",
+   "x": 775,
+   "y": 530,
+   "title": "Graph and memory",
+   "sub": "Spanner, Memory Bank",
+   "icon": "graph",
+   "color": "l5"
+  },
+  {
+   "id": "mcp-executors",
+   "x": 525,
+   "y": 632,
+   "title": "MCP executors",
+   "sub": "Dry-run, idempotent",
+   "icon": "wrench",
+   "color": "l6"
+  },
+  {
+   "id": "gke-vms-saas",
+   "x": 275,
+   "y": 632,
+   "title": "GKE, VMs, SaaS",
+   "sub": "Production systems",
+   "icon": "server",
+   "color": "l0"
+  },
+  {
+   "id": "otel-collector",
+   "x": 775,
+   "y": 660,
+   "title": "OTel Collector",
+   "sub": "Spans, metrics, logs",
+   "icon": "trace",
+   "color": "l8"
+  },
+  {
+   "id": "trace-logging",
+   "x": 1025,
+   "y": 660,
+   "title": "Trace, Logging",
+   "sub": "Managed Prometheus",
+   "icon": "eye",
+   "color": "l8",
+   "w": 205
+  },
+  {
+   "id": "bigquery-agent-lake",
+   "x": 775,
+   "y": 735,
+   "title": "BigQuery agent lake",
+   "sub": "Cost, quality, outcome",
+   "icon": "table",
+   "color": "l8"
+  },
+  {
+   "id": "gen-ai-evaluation",
+   "x": 1025,
+   "y": 735,
+   "title": "Gen AI Evaluation",
+   "sub": "Online and offline",
+   "icon": "check",
+   "color": "l8",
+   "w": 205
+  }
+ ],
+ "edges": [
+  {
+   "points": [
+    "alerts.r",
+    [
+     250.0,
+     88.0
+    ],
+    [
+     250.0,
+     108.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    "itsm-tickets.r",
+    [
+     250.0,
+     173.0
+    ],
+    [
+     250.0,
+     108.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    "chat-gemini-ent.r",
+    [
+     250.0,
+     258.0
+    ],
+    [
+     250.0,
+     108.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    "events-schedules.r",
+    [
+     250.0,
+     343.0
+    ],
+    [
+     250.0,
+     108.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    [
+     250.0,
+     108.0
+    ],
+    "cloud-armor-lb.l"
+   ]
+  },
+  {
+   "from": "cloud-armor-lb.b",
+   "to": "apigee-ai-gateway.t",
+   "route": "straight"
+  },
+  {
+   "from": "apigee-ai-gateway.b",
+   "to": "model-armor-dlp.t",
+   "route": "straight"
+  },
+  {
+   "from": "model-armor-dlp.r",
+   "to": "triage-agent.l",
+   "route": "hv",
+   "mid": 500
+  },
+  {
+   "from": "triage-agent.b",
+   "to": "supervisor.t",
+   "route": "straight",
+   "label": "P1-P4",
+   "at": [
+    625.0,
+    145.5
+   ]
+  },
+  {
+   "points": [
+    "supervisor.r",
+    [
+     760.0,
+     203.0
+    ]
+   ],
+   "label": "A2A",
+   "at": [
+    748.0,
+    203.0
+   ]
+  },
+  {
+   "points": [
+    [
+     990.0,
+     110.0
+    ],
+    [
+     1005.0,
+     110.0
+    ],
+    [
+     1005.0,
+     88.0
+    ],
+    "llm-router.l"
+   ]
+  },
+  {
+   "points": [
+    "llm-router.r",
+    [
+     1248.0,
+     88.0
+    ],
+    [
+     1248.0,
+     348.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    [
+     1248.0,
+     188.0
+    ],
+    "slms.r"
+   ]
+  },
+  {
+   "points": [
+    [
+     1248.0,
+     268.0
+    ],
+    "in-house-llm.r"
+   ]
+  },
+  {
+   "points": [
+    [
+     1248.0,
+     348.0
+    ],
+    "gemini.r"
+   ]
+  },
+  {
+   "points": [
+    [
+     875.0,
+     400.0
+    ],
+    [
+     875.0,
+     430.0
+    ]
+   ],
+   "label": "ground",
+   "at": [
+    918.0,
+    415.0
+   ]
+  },
+  {
+   "points": [
+    [
+     775.0,
+     385.0
+    ],
+    [
+     755.0,
+     385.0
+    ],
+    [
+     755.0,
+     398.0
+    ],
+    "policy-engine.r"
+   ],
+   "label": "propose",
+   "at": [
+    755,
+    414
+   ]
+  },
+  {
+   "from": "policy-engine.b",
+   "to": "human-approval.t",
+   "route": "straight",
+   "label": "high risk",
+   "at": [
+    625.0,
+    453.0
+   ]
+  },
+  {
+   "points": [
+    "policy-engine.l",
+    [
+     500.0,
+     398.0
+    ],
+    [
+     500.0,
+     650.0
+    ],
+    "mcp-executors.l-10"
+   ],
+   "label": "low risk",
+   "at": [
+    500.0,
+    560.0
+   ]
+  },
+  {
+   "from": "human-approval.b",
+   "to": "mcp-executors.t",
+   "route": "straight",
+   "label": "approved",
+   "at": [
+    625.0,
+    584.0
+   ]
+  },
+  {
+   "points": [
+    "mcp-executors.l+10",
+    [
+     480.0,
+     670.0
+    ],
+    "gke-vms-saas.r+10"
+   ]
+  },
+  {
+   "points": [
+    "gke-vms-saas.b",
+    [
+     375.0,
+     800.0
+    ],
+    [
+     745.0,
+     800.0
+    ],
+    [
+     745.0,
+     700.0
+    ],
+    "otel-collector.l+12"
+   ],
+   "style": "dot",
+   "label": "telemetry",
+   "at": [
+    560.0,
+    800.0
+   ]
+  },
+  {
+   "from": "mcp-executors.r",
+   "to": "otel-collector.l-10",
+   "route": "straight",
+   "style": "dot",
+   "label": "spans",
+   "at": [
+    750.0,
+    669.0
+   ]
+  },
+  {
+   "from": "otel-collector.r",
+   "to": "trace-logging.l",
+   "route": "straight"
+  },
+  {
+   "from": "otel-collector.b",
+   "to": "bigquery-agent-lake.t",
+   "route": "straight"
+  },
+  {
+   "from": "bigquery-agent-lake.r",
+   "to": "gen-ai-evaluation.l",
+   "route": "straight"
+  },
+  {
+   "points": [
+    "gen-ai-evaluation.r",
+    [
+     1250.0,
+     763.0
+    ],
+    [
+     1250.0,
+     610.0
+    ],
+    [
+     1000.0,
+     610.0
+    ],
+    [
+     1000.0,
+     493.0
+    ],
+    "rag-engine-search.r"
+   ],
+   "style": "dot",
+   "color": "auto",
+   "label": "memory, fine-tuning",
+   "at": [
+    1125.0,
+    610.0
+   ]
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you reference this architecture, please cite it as below."
+title: "Agentic Ops Reference Architecture: Governed AI Agents for Enterprise Operations on Google Cloud and AWS"
+type: software
+authors:
+  - family-names: "Gande"
+    given-names: "Naga"
+version: "1.1.0"
+date-released: "2026-10-17"
+license: CC-BY-4.0
+repository-code: "https://github.com/AgenticForze/AI-Regenesis/tree/main/agentic-ops"
+url: "https://agenticforze.github.io/AI-Regenesis/agentic-ops/"
+keywords:
+  - agentic AI
+  - AIOps
+  - enterprise architecture
+  - site reliability engineering
+  - Google Cloud
+  - Vertex AI
+  - AWS
+  - Amazon Bedrock
+  - observability
+  - AI security

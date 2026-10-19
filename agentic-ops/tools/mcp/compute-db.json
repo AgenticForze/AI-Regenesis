@@ -1,0 +1,145 @@
+{
+ "server": "compute-db",
+ "tools": [
+  {
+   "name": "compute.restart_instance",
+   "description": "Restart a VM instance that is part of a managed group.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "instance": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "instance",
+     "reason"
+    ],
+    "additionalProperties": false
+   },
+   "annotations": {
+    "title": "compute.restart_instance",
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+   },
+   "x-agentops": {
+    "category": "act",
+    "dry_run": false,
+    "default_autonomy": "L1",
+    "max_autonomy": "L3",
+    "blast_radius": "single-service",
+    "approval": null,
+    "gates": [
+     "G9",
+     "G11",
+     "G12"
+    ],
+    "gcp": "Compute Engine",
+    "aws": "Amazon EC2 via Systems Manager Automation"
+   }
+  },
+  {
+   "name": "db.failover",
+   "description": "Fail a managed database over to its standby or replica.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "database": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "database",
+     "reason"
+    ],
+    "additionalProperties": false
+   },
+   "annotations": {
+    "title": "db.failover",
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+   },
+   "x-agentops": {
+    "category": "act",
+    "dry_run": false,
+    "default_autonomy": "L1",
+    "max_autonomy": "L2",
+    "blast_radius": "multi-service",
+    "approval": "always",
+    "gates": [
+     "G9",
+     "G10",
+     "G11",
+     "G12"
+    ],
+    "gcp": "Cloud SQL / AlloyDB",
+    "aws": "Amazon RDS / Aurora"
+   }
+  },
+  {
+   "name": "flags.set_feature_flag",
+   "description": "Toggle a feature flag to disable a faulty code path. Global scope always requires approval.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "flag": {
+      "type": "string"
+     },
+     "enabled": {
+      "type": "boolean"
+     },
+     "scope": {
+      "type": "string",
+      "enum": [
+       "canary",
+       "region",
+       "global"
+      ]
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "flag",
+     "enabled",
+     "scope",
+     "reason"
+    ],
+    "additionalProperties": false
+   },
+   "annotations": {
+    "title": "flags.set_feature_flag",
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": true,
+    "openWorldHint": false
+   },
+   "x-agentops": {
+    "category": "act",
+    "dry_run": true,
+    "default_autonomy": "L1",
+    "max_autonomy": "L3",
+    "blast_radius": "single-service",
+    "approval": null,
+    "gates": [
+     "G9",
+     "G11",
+     "G12"
+    ],
+    "gcp": "Firebase Remote Config or your flag service",
+    "aws": "AWS AppConfig"
+   }
+  }
+ ]
+}

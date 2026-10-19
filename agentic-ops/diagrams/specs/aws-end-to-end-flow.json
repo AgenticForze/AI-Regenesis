@@ -1,0 +1,662 @@
+{
+ "title": "AWS end-to-end agentic operations flow",
+ "width": 1270,
+ "height": 830,
+ "zones": [
+  {
+   "x": 10,
+   "y": 20,
+   "w": 230,
+   "h": 380,
+   "title": "L0 Triggers",
+   "color": "l0"
+  },
+  {
+   "x": 260,
+   "y": 20,
+   "w": 230,
+   "h": 380,
+   "title": "L1 Edge and safety",
+   "color": "l1"
+  },
+  {
+   "x": 510,
+   "y": 20,
+   "w": 230,
+   "h": 570,
+   "title": "L2 Orchestration",
+   "color": "l2"
+  },
+  {
+   "x": 760,
+   "y": 20,
+   "w": 230,
+   "h": 380,
+   "title": "Domain agents over A2A",
+   "color": "l2"
+  },
+  {
+   "x": 1010,
+   "y": 20,
+   "w": 250,
+   "h": 380,
+   "title": "L3 Gateway, L4 models",
+   "color": "l4"
+  },
+  {
+   "x": 760,
+   "y": 430,
+   "w": 230,
+   "h": 170,
+   "title": "L5 Knowledge",
+   "color": "l5"
+  },
+  {
+   "x": 510,
+   "y": 610,
+   "w": 230,
+   "h": 100,
+   "title": "L6 Tools",
+   "color": "l6"
+  },
+  {
+   "x": 260,
+   "y": 610,
+   "w": 230,
+   "h": 100,
+   "title": "Managed estate",
+   "color": "l0"
+  },
+  {
+   "x": 760,
+   "y": 630,
+   "w": 500,
+   "h": 180,
+   "title": "L8 Observability and learning",
+   "color": "l8"
+  }
+ ],
+ "nodes": [
+  {
+   "id": "alarms",
+   "x": 25,
+   "y": 60,
+   "title": "Alarms",
+   "sub": "CloudWatch",
+   "icon": "bell",
+   "color": "l0"
+  },
+  {
+   "id": "itsm-tickets",
+   "x": 25,
+   "y": 145,
+   "title": "ITSM tickets",
+   "sub": "ServiceNow, Jira",
+   "icon": "ticket",
+   "color": "l0"
+  },
+  {
+   "id": "chat-quick-suite",
+   "x": 25,
+   "y": 230,
+   "title": "Chat, Quick Suite",
+   "sub": "Slack, Teams, humans",
+   "icon": "chat",
+   "color": "l0"
+  },
+  {
+   "id": "events-schedules",
+   "x": 25,
+   "y": 315,
+   "title": "Events, schedules",
+   "sub": "EventBridge",
+   "icon": "clock",
+   "color": "l0"
+  },
+  {
+   "id": "waf-cloudfront",
+   "x": 275,
+   "y": 80,
+   "title": "WAF + CloudFront",
+   "sub": "Shield Advanced",
+   "icon": "shield",
+   "color": "l1"
+  },
+  {
+   "id": "api-gateway",
+   "x": 275,
+   "y": 175,
+   "title": "API Gateway",
+   "sub": "AuthN, usage plans",
+   "icon": "gateway",
+   "color": "l1"
+  },
+  {
+   "id": "bedrock-guardrails",
+   "x": 275,
+   "y": 270,
+   "title": "Bedrock Guardrails",
+   "sub": "Injection, PII filters",
+   "icon": "shieldscan",
+   "color": "l1"
+  },
+  {
+   "id": "triage-agent",
+   "x": 525,
+   "y": 60,
+   "title": "Triage agent",
+   "sub": "SLM classifier",
+   "icon": "filter",
+   "color": "l2"
+  },
+  {
+   "id": "supervisor",
+   "x": 525,
+   "y": 175,
+   "title": "Supervisor",
+   "sub": "Strands, plans, delegates",
+   "icon": "supervisor",
+   "color": "l2"
+  },
+  {
+   "id": "agentcore-policy",
+   "x": 525,
+   "y": 370,
+   "title": "AgentCore Policy",
+   "sub": "Cedar allow, deny",
+   "icon": "policy",
+   "color": "l2"
+  },
+  {
+   "id": "human-approval",
+   "x": 525,
+   "y": 480,
+   "title": "Human approval",
+   "sub": "Step Functions, Slack",
+   "icon": "approve",
+   "color": "gate"
+  },
+  {
+   "id": "incident-agent",
+   "x": 775,
+   "y": 60,
+   "title": "Incident agent",
+   "sub": "RCA, remediation",
+   "icon": "agent",
+   "color": "l2"
+  },
+  {
+   "id": "change-agent",
+   "x": 775,
+   "y": 145,
+   "title": "Change agent",
+   "sub": "Risk, canary, rollback",
+   "icon": "agent",
+   "color": "l2"
+  },
+  {
+   "id": "capacity-finops",
+   "x": 775,
+   "y": 230,
+   "title": "Capacity + FinOps",
+   "sub": "Rightsizing, spend",
+   "icon": "agent",
+   "color": "l2"
+  },
+  {
+   "id": "security-agent",
+   "x": 775,
+   "y": 315,
+   "title": "Security agent",
+   "sub": "Triage, containment",
+   "icon": "agent",
+   "color": "l2"
+  },
+  {
+   "id": "llm-router",
+   "x": 1025,
+   "y": 60,
+   "title": "LLM router",
+   "sub": "Cache, budget, fallback",
+   "icon": "router",
+   "color": "l3",
+   "w": 205
+  },
+  {
+   "id": "slms",
+   "x": 1025,
+   "y": 160,
+   "title": "SLMs",
+   "sub": "EKS, Inferentia",
+   "icon": "chip",
+   "color": "l4",
+   "w": 205
+  },
+  {
+   "id": "in-house-llm",
+   "x": 1025,
+   "y": 240,
+   "title": "In-house LLM",
+   "sub": "EKS, vLLM, Trainium",
+   "icon": "neural",
+   "color": "l4",
+   "w": 205
+  },
+  {
+   "id": "bedrock-models",
+   "x": 1025,
+   "y": 320,
+   "title": "Bedrock models",
+   "sub": "Nova, Claude",
+   "icon": "neural",
+   "color": "l4",
+   "w": 205
+  },
+  {
+   "id": "knowledge-bases",
+   "x": 775,
+   "y": 465,
+   "title": "Knowledge Bases",
+   "sub": "Runbooks, postmortems",
+   "icon": "search",
+   "color": "l5"
+  },
+  {
+   "id": "graph-and-memory",
+   "x": 775,
+   "y": 530,
+   "title": "Graph and memory",
+   "sub": "Neptune, AgentCore",
+   "icon": "graph",
+   "color": "l5"
+  },
+  {
+   "id": "mcp-executors",
+   "x": 525,
+   "y": 632,
+   "title": "MCP executors",
+   "sub": "AgentCore Gateway",
+   "icon": "wrench",
+   "color": "l6"
+  },
+  {
+   "id": "eks-ec2-saas",
+   "x": 275,
+   "y": 632,
+   "title": "EKS, EC2, SaaS",
+   "sub": "Production systems",
+   "icon": "server",
+   "color": "l0"
+  },
+  {
+   "id": "adot-collector",
+   "x": 775,
+   "y": 660,
+   "title": "ADOT Collector",
+   "sub": "Spans, metrics, logs",
+   "icon": "trace",
+   "color": "l8"
+  },
+  {
+   "id": "x-ray-cloudwatch",
+   "x": 1025,
+   "y": 660,
+   "title": "X-Ray, CloudWatch",
+   "sub": "Managed Prometheus",
+   "icon": "eye",
+   "color": "l8",
+   "w": 205
+  },
+  {
+   "id": "agent-data-lake",
+   "x": 775,
+   "y": 735,
+   "title": "Agent data lake",
+   "sub": "S3 Tables, Athena",
+   "icon": "table",
+   "color": "l8"
+  },
+  {
+   "id": "agentcore-evals",
+   "x": 1025,
+   "y": 735,
+   "title": "AgentCore Evals",
+   "sub": "Online and offline",
+   "icon": "check",
+   "color": "l8",
+   "w": 205
+  }
+ ],
+ "edges": [
+  {
+   "points": [
+    "alarms.r",
+    [
+     250.0,
+     88.0
+    ],
+    [
+     250.0,
+     108.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    "itsm-tickets.r",
+    [
+     250.0,
+     173.0
+    ],
+    [
+     250.0,
+     108.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    "chat-quick-suite.r",
+    [
+     250.0,
+     258.0
+    ],
+    [
+     250.0,
+     108.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    "events-schedules.r",
+    [
+     250.0,
+     343.0
+    ],
+    [
+     250.0,
+     108.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    [
+     250.0,
+     108.0
+    ],
+    "waf-cloudfront.l"
+   ]
+  },
+  {
+   "from": "waf-cloudfront.b",
+   "to": "api-gateway.t",
+   "route": "straight"
+  },
+  {
+   "from": "api-gateway.b",
+   "to": "bedrock-guardrails.t",
+   "route": "straight"
+  },
+  {
+   "from": "bedrock-guardrails.r",
+   "to": "triage-agent.l",
+   "route": "hv",
+   "mid": 500
+  },
+  {
+   "from": "triage-agent.b",
+   "to": "supervisor.t",
+   "route": "straight",
+   "label": "P1-P4",
+   "at": [
+    625.0,
+    145.5
+   ]
+  },
+  {
+   "points": [
+    "supervisor.r",
+    [
+     760.0,
+     203.0
+    ]
+   ],
+   "label": "A2A",
+   "at": [
+    748.0,
+    203.0
+   ]
+  },
+  {
+   "points": [
+    [
+     990.0,
+     110.0
+    ],
+    [
+     1005.0,
+     110.0
+    ],
+    [
+     1005.0,
+     88.0
+    ],
+    "llm-router.l"
+   ]
+  },
+  {
+   "points": [
+    "llm-router.r",
+    [
+     1248.0,
+     88.0
+    ],
+    [
+     1248.0,
+     348.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    [
+     1248.0,
+     188.0
+    ],
+    "slms.r"
+   ]
+  },
+  {
+   "points": [
+    [
+     1248.0,
+     268.0
+    ],
+    "in-house-llm.r"
+   ]
+  },
+  {
+   "points": [
+    [
+     1248.0,
+     348.0
+    ],
+    "bedrock-models.r"
+   ]
+  },
+  {
+   "points": [
+    [
+     875.0,
+     400.0
+    ],
+    [
+     875.0,
+     430.0
+    ]
+   ],
+   "label": "ground",
+   "at": [
+    918.0,
+    415.0
+   ]
+  },
+  {
+   "points": [
+    [
+     775.0,
+     385.0
+    ],
+    [
+     755.0,
+     385.0
+    ],
+    [
+     755.0,
+     398.0
+    ],
+    "agentcore-policy.r"
+   ],
+   "label": "propose",
+   "at": [
+    755,
+    414
+   ]
+  },
+  {
+   "from": "agentcore-policy.b",
+   "to": "human-approval.t",
+   "route": "straight",
+   "label": "high risk",
+   "at": [
+    625.0,
+    453.0
+   ]
+  },
+  {
+   "points": [
+    "agentcore-policy.l",
+    [
+     500.0,
+     398.0
+    ],
+    [
+     500.0,
+     650.0
+    ],
+    "mcp-executors.l-10"
+   ],
+   "label": "low risk",
+   "at": [
+    500.0,
+    560.0
+   ]
+  },
+  {
+   "from": "human-approval.b",
+   "to": "mcp-executors.t",
+   "route": "straight",
+   "label": "approved",
+   "at": [
+    625.0,
+    584.0
+   ]
+  },
+  {
+   "points": [
+    "mcp-executors.l+10",
+    [
+     480.0,
+     670.0
+    ],
+    "eks-ec2-saas.r+10"
+   ]
+  },
+  {
+   "points": [
+    "eks-ec2-saas.b",
+    [
+     375.0,
+     800.0
+    ],
+    [
+     745.0,
+     800.0
+    ],
+    [
+     745.0,
+     700.0
+    ],
+    "adot-collector.l+12"
+   ],
+   "style": "dot",
+   "label": "telemetry",
+   "at": [
+    560.0,
+    800.0
+   ]
+  },
+  {
+   "from": "mcp-executors.r",
+   "to": "adot-collector.l-10",
+   "route": "straight",
+   "style": "dot",
+   "label": "spans",
+   "at": [
+    750.0,
+    669.0
+   ]
+  },
+  {
+   "from": "adot-collector.r",
+   "to": "x-ray-cloudwatch.l",
+   "route": "straight"
+  },
+  {
+   "from": "adot-collector.b",
+   "to": "agent-data-lake.t",
+   "route": "straight"
+  },
+  {
+   "from": "agent-data-lake.r",
+   "to": "agentcore-evals.l",
+   "route": "straight"
+  },
+  {
+   "points": [
+    "agentcore-evals.r",
+    [
+     1250.0,
+     763.0
+    ],
+    [
+     1250.0,
+     610.0
+    ],
+    [
+     1000.0,
+     610.0
+    ],
+    [
+     1000.0,
+     493.0
+    ],
+    "knowledge-bases.r"
+   ],
+   "style": "dot",
+   "color": "auto",
+   "label": "memory, fine-tuning",
+   "at": [
+    1125.0,
+    610.0
+   ]
+  }
+ ]
+}

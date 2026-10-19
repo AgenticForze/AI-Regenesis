@@ -1,0 +1,163 @@
+{
+ "server": "k8s",
+ "tools": [
+  {
+   "name": "k8s.restart_pods",
+   "description": "Rolling restart of a deployment's pods.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "cluster": {
+      "type": "string"
+     },
+     "namespace": {
+      "type": "string"
+     },
+     "deployment": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "cluster",
+     "namespace",
+     "deployment",
+     "reason"
+    ],
+    "additionalProperties": false
+   },
+   "annotations": {
+    "title": "k8s.restart_pods",
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+   },
+   "x-agentops": {
+    "category": "act",
+    "dry_run": true,
+    "default_autonomy": "L1",
+    "max_autonomy": "L4",
+    "blast_radius": "single-service",
+    "approval": null,
+    "gates": [
+     "G9",
+     "G11",
+     "G12"
+    ],
+    "gcp": "GKE",
+    "aws": "Amazon EKS"
+   }
+  },
+  {
+   "name": "k8s.scale_deployment",
+   "description": "Set replica count, bounded by a maximum change percentage from policy.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "cluster": {
+      "type": "string"
+     },
+     "namespace": {
+      "type": "string"
+     },
+     "deployment": {
+      "type": "string"
+     },
+     "replicas": {
+      "type": "integer",
+      "minimum": 0
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "cluster",
+     "namespace",
+     "deployment",
+     "replicas",
+     "reason"
+    ],
+    "additionalProperties": false
+   },
+   "annotations": {
+    "title": "k8s.scale_deployment",
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": true,
+    "openWorldHint": false
+   },
+   "x-agentops": {
+    "category": "act",
+    "dry_run": true,
+    "default_autonomy": "L1",
+    "max_autonomy": "L4",
+    "blast_radius": "single-service",
+    "approval": null,
+    "gates": [
+     "G9",
+     "G11",
+     "G12"
+    ],
+    "gcp": "GKE",
+    "aws": "Amazon EKS"
+   }
+  },
+  {
+   "name": "k8s.rollback_deployment",
+   "description": "Roll a deployment back to its previous revision.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "cluster": {
+      "type": "string"
+     },
+     "namespace": {
+      "type": "string"
+     },
+     "deployment": {
+      "type": "string"
+     },
+     "to_revision": {
+      "type": "integer"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "cluster",
+     "namespace",
+     "deployment",
+     "reason"
+    ],
+    "additionalProperties": false
+   },
+   "annotations": {
+    "title": "k8s.rollback_deployment",
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+   },
+   "x-agentops": {
+    "category": "act",
+    "dry_run": true,
+    "default_autonomy": "L1",
+    "max_autonomy": "L3",
+    "blast_radius": "single-service",
+    "approval": null,
+    "gates": [
+     "G9",
+     "G11",
+     "G12"
+    ],
+    "gcp": "GKE",
+    "aws": "Amazon EKS"
+   }
+  }
+ ]
+}

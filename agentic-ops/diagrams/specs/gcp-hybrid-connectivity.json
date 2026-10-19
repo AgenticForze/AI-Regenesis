@@ -1,0 +1,532 @@
+{
+ "title": "Hybrid connectivity with Interconnect primary and HA VPN backup",
+ "width": 1335,
+ "height": 600,
+ "zones": [
+  {
+   "x": 20,
+   "y": 20,
+   "w": 230,
+   "h": 560,
+   "title": "On-premises",
+   "color": "l0"
+  },
+  {
+   "x": 290,
+   "y": 20,
+   "w": 220,
+   "h": 420,
+   "title": "Colocation metros",
+   "color": "l0"
+  },
+  {
+   "x": 545,
+   "y": 20,
+   "w": 480,
+   "h": 560,
+   "title": "Network hub project",
+   "color": "l3"
+  },
+  {
+   "x": 560,
+   "y": 45,
+   "w": 230,
+   "h": 240,
+   "title": "Region A",
+   "color": "l3",
+   "style": "solid"
+  },
+  {
+   "x": 560,
+   "y": 305,
+   "w": 230,
+   "h": 250,
+   "title": "Region B",
+   "color": "l3",
+   "style": "solid"
+  },
+  {
+   "x": 1055,
+   "y": 20,
+   "w": 230,
+   "h": 310,
+   "title": "Spoke VPCs",
+   "color": "l2"
+  },
+  {
+   "x": 1055,
+   "y": 380,
+   "w": 230,
+   "h": 130,
+   "title": "Restricted enclave",
+   "color": "risk"
+  }
+ ],
+ "nodes": [
+  {
+   "id": "dc1-edge-routers",
+   "x": 35,
+   "y": 90,
+   "title": "DC1 edge routers",
+   "sub": "AS 65010",
+   "icon": "building",
+   "color": "l0"
+  },
+  {
+   "id": "dc2-edge-routers",
+   "x": 35,
+   "y": 330,
+   "title": "DC2 edge routers",
+   "sub": "AS 65020",
+   "icon": "building",
+   "color": "l0"
+  },
+  {
+   "id": "branch-partners",
+   "x": 35,
+   "y": 500,
+   "title": "Branch, partners",
+   "sub": "Site-to-site IPsec",
+   "icon": "briefcase",
+   "color": "l0"
+  },
+  {
+   "id": "metro-a-zone-1",
+   "x": 300,
+   "y": 60,
+   "title": "Metro A, zone 1",
+   "sub": "10 / 100G",
+   "icon": "link",
+   "color": "l3"
+  },
+  {
+   "id": "metro-a-zone-2",
+   "x": 300,
+   "y": 140,
+   "title": "Metro A, zone 2",
+   "sub": "10 / 100G",
+   "icon": "link",
+   "color": "l3"
+  },
+  {
+   "id": "metro-b-zone-1",
+   "x": 300,
+   "y": 280,
+   "title": "Metro B, zone 1",
+   "sub": "10 / 100G",
+   "icon": "link",
+   "color": "l3"
+  },
+  {
+   "id": "metro-b-zone-2",
+   "x": 300,
+   "y": 360,
+   "title": "Metro B, zone 2",
+   "sub": "10 / 100G",
+   "icon": "link",
+   "color": "l3"
+  },
+  {
+   "id": "cloud-router-a1",
+   "x": 575,
+   "y": 75,
+   "title": "Cloud Router A1",
+   "sub": "MED 100",
+   "icon": "router",
+   "color": "l3"
+  },
+  {
+   "id": "cloud-router-a2",
+   "x": 575,
+   "y": 140,
+   "title": "Cloud Router A2",
+   "sub": "MED 100",
+   "icon": "router",
+   "color": "l3"
+  },
+  {
+   "id": "ha-vpn-gateway-a",
+   "x": 575,
+   "y": 205,
+   "title": "HA VPN gateway A",
+   "sub": "2 ifaces, MED 200",
+   "icon": "tunnel",
+   "color": "l3"
+  },
+  {
+   "id": "cloud-router-b1",
+   "x": 575,
+   "y": 335,
+   "title": "Cloud Router B1",
+   "sub": "MED 100",
+   "icon": "router",
+   "color": "l3"
+  },
+  {
+   "id": "cloud-router-b2",
+   "x": 575,
+   "y": 400,
+   "title": "Cloud Router B2",
+   "sub": "MED 100",
+   "icon": "router",
+   "color": "l3"
+  },
+  {
+   "id": "ha-vpn-gateway-b",
+   "x": 575,
+   "y": 465,
+   "title": "HA VPN gateway B",
+   "sub": "2 ifaces, MED 200",
+   "icon": "tunnel",
+   "color": "l3"
+  },
+  {
+   "id": "aws-and-azure",
+   "x": 815,
+   "y": 60,
+   "title": "AWS and Azure",
+   "sub": "Cross-Cloud, MACsec",
+   "icon": "cloud",
+   "color": "l0"
+  },
+  {
+   "id": "ncc-hub",
+   "x": 815,
+   "y": 250,
+   "title": "NCC hub",
+   "sub": "Transit, route exchange",
+   "icon": "hub",
+   "color": "l3"
+  },
+  {
+   "id": "cloud-ngfw",
+   "x": 815,
+   "y": 350,
+   "title": "Cloud NGFW",
+   "sub": "IPS inspection",
+   "icon": "firewall",
+   "color": "l3"
+  },
+  {
+   "id": "shared-vpc-prod",
+   "x": 1070,
+   "y": 60,
+   "title": "Shared VPC prod",
+   "sub": "Agent platform",
+   "icon": "mesh",
+   "color": "l2"
+  },
+  {
+   "id": "shared-vpc-nonprod",
+   "x": 1070,
+   "y": 145,
+   "title": "Shared VPC nonprod",
+   "sub": "Dev, test, replay",
+   "icon": "mesh",
+   "color": "l2"
+  },
+  {
+   "id": "workload-vpcs",
+   "x": 1070,
+   "y": 230,
+   "title": "Workload VPCs",
+   "sub": "Business units",
+   "icon": "server",
+   "color": "l0"
+  },
+  {
+   "id": "enclave-vpc",
+   "x": 1070,
+   "y": 425,
+   "title": "Enclave VPC",
+   "sub": "No internet routes",
+   "icon": "lock",
+   "color": "risk"
+  }
+ ],
+ "edges": [
+  {
+   "from": "dc1-edge-routers.r-8",
+   "to": "metro-a-zone-1.l",
+   "route": "hv",
+   "mid": 268,
+   "label": "MACsec",
+   "at": [
+    268.0,
+    110.0
+   ]
+  },
+  {
+   "from": "dc1-edge-routers.r+8",
+   "to": "metro-a-zone-2.l",
+   "route": "hv",
+   "mid": 268
+  },
+  {
+   "from": "dc2-edge-routers.r-8",
+   "to": "metro-b-zone-1.l",
+   "route": "hv",
+   "mid": 268,
+   "label": "MACsec",
+   "at": [
+    268.0,
+    330.0
+   ]
+  },
+  {
+   "from": "dc2-edge-routers.r+8",
+   "to": "metro-b-zone-2.l",
+   "route": "hv",
+   "mid": 268
+  },
+  {
+   "from": "metro-a-zone-1.r",
+   "to": "cloud-router-a1.l",
+   "route": "hv",
+   "mid": 540
+  },
+  {
+   "points": [
+    "metro-a-zone-2.r",
+    [
+     530.0,
+     168.0
+    ],
+    "cloud-router-a2.l"
+   ]
+  },
+  {
+   "from": "metro-b-zone-1.r",
+   "to": "cloud-router-b1.l",
+   "route": "hv",
+   "mid": 540
+  },
+  {
+   "from": "metro-b-zone-2.r",
+   "to": "cloud-router-b2.l",
+   "route": "hv",
+   "mid": 530
+  },
+  {
+   "points": [
+    "dc1-edge-routers.b-60",
+    [
+     75.0,
+     240.0
+    ],
+    [
+     555.0,
+     240.0
+    ],
+    [
+     555.0,
+     233.0
+    ],
+    "ha-vpn-gateway-a.l"
+   ],
+   "style": "dash",
+   "color": "gate",
+   "label": "IPsec backup",
+   "at": [
+    420.0,
+    240.0
+   ]
+  },
+  {
+   "points": [
+    "dc2-edge-routers.b-60",
+    [
+     75.0,
+     460.0
+    ],
+    [
+     520.0,
+     460.0
+    ],
+    [
+     520.0,
+     493.0
+    ],
+    "ha-vpn-gateway-b.l"
+   ],
+   "style": "dash",
+   "color": "gate",
+   "label": "IPsec backup",
+   "at": [
+    420.0,
+    460.0
+   ]
+  },
+  {
+   "from": "branch-partners.r",
+   "to": "ha-vpn-gateway-b.l+7",
+   "route": "hv",
+   "mid": 550,
+   "style": "dash",
+   "color": "gate"
+  },
+  {
+   "points": [
+    "cloud-router-a1.r",
+    [
+     800.0,
+     103.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    "cloud-router-a2.r",
+    [
+     800.0,
+     168.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    "ha-vpn-gateway-a.r",
+    [
+     800.0,
+     233.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    "cloud-router-b1.r",
+    [
+     800.0,
+     363.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    "cloud-router-b2.r",
+    [
+     800.0,
+     428.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    "ha-vpn-gateway-b.r",
+    [
+     800.0,
+     493.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    [
+     800.0,
+     103.0
+    ],
+    [
+     800.0,
+     493.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    [
+     800.0,
+     278.0
+    ],
+    "ncc-hub.l"
+   ]
+  },
+  {
+   "points": [
+    "aws-and-azure.l",
+    [
+     800.0,
+     88.0
+    ],
+    [
+     800.0,
+     103.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "from": "ncc-hub.b",
+   "to": "cloud-ngfw.t",
+   "route": "straight"
+  },
+  {
+   "points": [
+    "cloud-ngfw.r",
+    [
+     1040.0,
+     378.0
+    ],
+    [
+     1040.0,
+     88.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    [
+     1040.0,
+     88.0
+    ],
+    "shared-vpc-prod.l"
+   ]
+  },
+  {
+   "points": [
+    [
+     1040.0,
+     173.0
+    ],
+    "shared-vpc-nonprod.l"
+   ]
+  },
+  {
+   "points": [
+    [
+     1040.0,
+     258.0
+    ],
+    "workload-vpcs.l"
+   ]
+  },
+  {
+   "points": [
+    "shared-vpc-prod.r",
+    [
+     1292.0,
+     88.0
+    ],
+    [
+     1292.0,
+     453.0
+    ],
+    "enclave-vpc.r"
+   ],
+   "style": "dash",
+   "color": "risk",
+   "label": "bridge only",
+   "at": [
+    1292.0,
+    360.0
+   ]
+  }
+ ]
+}

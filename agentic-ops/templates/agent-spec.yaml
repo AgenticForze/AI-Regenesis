@@ -1,0 +1,92 @@
+# Agent specification template
+# One file per agent, versioned in Git and deployed through the same pipeline as the agent itself.
+# The platform reads this to create identities, register the agent card, set budgets and
+# configure policy. Values below are an illustrative incident agent.
+
+apiVersion: agentops/v1
+kind: AgentSpec
+metadata:
+  name: incident-agent
+  version: 1.4.0
+  domain: itops
+  owner:
+    team: sre-platform
+    oncall: sre-platform-primary
+    accountable_exec: head-of-sre
+  risk_tier: high            # low | medium | high; drives review depth and audit retention
+  description: Diagnoses production incidents and applies approved remediations.
+
+runtime:
+  platform: gcp              # gcp | aws
+  runtime: agent-engine      # agent-engine | agentcore-runtime | gke | eks
+  framework: adk             # adk | strands | langgraph | other
+  regions: [region-a, region-b]
+  max_concurrency: 200
+
+identity:
+  reasoning_identity: sa-incident-agent          # can call models, retrieval, A2A; cannot mutate systems
+  acts_on_behalf_of_user: false                 # true for request-driven agents (service desk)
+  allowed_callers: [ops-supervisor, triage-agent]
+  allowed_delegates: [k8s-executor, db-executor, itsm-executor]
+
+models:
+  capabilities:              # agents ask for capabilities; the gateway picks the model
+    - name: rca
+      data_class: internal   # public | internal | confidential | restricted
+    - name: summarise
+      data_class: internal
+  restricted_data_route: in-house-llm
+
+knowledge:
+  sources: [topology-graph, runbooks, postmortems, episodic-memory, live-metrics]
+  acl_mode: requester        # requester | agent
+
+tools:                       # every tool is an MCP server behind the executor boundary
+  - name: k8s.scale_deployment
+    executor: k8s-executor
+    supports_dry_run: true
+  - name: k8s.restart_pods
+    executor: k8s-executor
+    supports_dry_run: true
+  - name: db.failover
+    executor: db-executor
+    supports_dry_run: false
+  - name: itsm.update_incident
+    executor: itsm-executor
+    supports_dry_run: false
+
+autonomy:                    # per action type, never per agent
+  default: L0
+  actions:
+    k8s.restart_pods:      { level: L4, blast_radius: single-service }
+    k8s.scale_deployment:  { level: L4, blast_radius: single-service, max_change_pct: 100 }
+    db.failover:           { level: L2, blast_radius: multi-service, approver_group: db-owners }
+    itsm.update_incident:  { level: L4, blast_radius: none }
+  change_windows:
+    freeze_calendar: corp-change-freeze
+  demotion_on_sev1_levels: 2
+
+guardrails:
+  max_steps_per_episode: 25
+  max_wall_clock_minutes: 20
+  token_budget:
+    per_episode: 200000
+    per_day: 50000000
+  kill_switch_flag: agents/incident-agent/enabled
+
+slo:
+  availability: "99.9%"
+  p90_time_to_first_diagnosis_minutes: 3
+  autonomous_action_correctness: "99%"
+
+evaluation:
+  golden_set: evals/incident-agent/golden-v7
+  release_gate:
+    min_score_vs_previous: 0.0     # must not regress
+    max_cost_increase_pct: 10
+  online_sample_rate: 0.05
+
+telemetry:
+  trace_sampling: tail           # keep all errors, approvals and high-cost episodes
+  redact_pii: true
+  cost_labels: { cost_center: cc-1234, use_case: incident-remediation }

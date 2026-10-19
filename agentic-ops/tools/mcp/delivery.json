@@ -1,0 +1,180 @@
+{
+ "server": "delivery",
+ "tools": [
+  {
+   "name": "delivery.pause_rollout",
+   "description": "Pause an in-progress progressive rollout.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "pipeline": {
+      "type": "string"
+     },
+     "release": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "pipeline",
+     "release",
+     "reason"
+    ],
+    "additionalProperties": false
+   },
+   "annotations": {
+    "title": "delivery.pause_rollout",
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+   },
+   "x-agentops": {
+    "category": "act",
+    "dry_run": false,
+    "default_autonomy": "L2",
+    "max_autonomy": "L4",
+    "blast_radius": "single-service",
+    "approval": null,
+    "gates": [
+     "G9",
+     "G11",
+     "G12"
+    ],
+    "gcp": "Cloud Deploy",
+    "aws": "CodePipeline / CodeDeploy"
+   }
+  },
+  {
+   "name": "delivery.rollback_release",
+   "description": "Roll a release back to the last known-good version.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "pipeline": {
+      "type": "string"
+     },
+     "target_release": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "pipeline",
+     "target_release",
+     "reason"
+    ],
+    "additionalProperties": false
+   },
+   "annotations": {
+    "title": "delivery.rollback_release",
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+   },
+   "x-agentops": {
+    "category": "act",
+    "dry_run": false,
+    "default_autonomy": "L1",
+    "max_autonomy": "L3",
+    "blast_radius": "single-service",
+    "approval": null,
+    "gates": [
+     "G9",
+     "G11",
+     "G12"
+    ],
+    "gcp": "Cloud Deploy",
+    "aws": "CodeDeploy"
+   }
+  },
+  {
+   "name": "iac.plan",
+   "description": "Produce an infrastructure-as-code plan and a risk summary without applying it.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "stack": {
+      "type": "string"
+     },
+     "change_ref": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "stack",
+     "change_ref"
+    ],
+    "additionalProperties": false
+   },
+   "annotations": {
+    "title": "iac.plan",
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+   },
+   "x-agentops": {
+    "category": "read",
+    "dry_run": false,
+    "default_autonomy": "L4",
+    "max_autonomy": "L4",
+    "blast_radius": "none",
+    "approval": null,
+    "gates": [
+     "G7"
+    ],
+    "gcp": "Infrastructure Manager (Terraform)",
+    "aws": "CloudFormation change sets / Terraform in CodeBuild"
+   }
+  },
+  {
+   "name": "iac.apply",
+   "description": "Apply a previously generated and approved plan, by plan ID only. Applies only plans produced by iac.plan; free-form infrastructure changes are not possible.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "plan_id": {
+      "type": "string"
+     },
+     "change_request": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "plan_id",
+     "change_request"
+    ],
+    "additionalProperties": false
+   },
+   "annotations": {
+    "title": "iac.apply",
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+   },
+   "x-agentops": {
+    "category": "act",
+    "dry_run": false,
+    "default_autonomy": "L1",
+    "max_autonomy": "L2",
+    "blast_radius": "multi-service",
+    "approval": "always",
+    "gates": [
+     "G9",
+     "G10",
+     "G11",
+     "G12"
+    ],
+    "gcp": "Infrastructure Manager (Terraform)",
+    "aws": "CloudFormation / Terraform in CodeBuild"
+   }
+  }
+ ]
+}
