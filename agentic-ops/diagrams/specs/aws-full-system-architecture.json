@@ -1,0 +1,831 @@
+{
+ "title": "AWS full system architecture across trust zones",
+ "width": 1520,
+ "height": 1070,
+ "zones": [
+  {
+   "x": 20,
+   "y": 20,
+   "w": 240,
+   "h": 1030,
+   "title": "Z0 External",
+   "color": "l0"
+  },
+  {
+   "x": 290,
+   "y": 20,
+   "w": 250,
+   "h": 410,
+   "title": "Z1 Global edge",
+   "color": "l1"
+  },
+  {
+   "x": 290,
+   "y": 460,
+   "w": 250,
+   "h": 590,
+   "title": "Z2 Network account",
+   "color": "l3"
+  },
+  {
+   "x": 570,
+   "y": 20,
+   "w": 500,
+   "h": 640,
+   "title": "Z3 Platform core",
+   "color": "l2",
+   "sub": "private VPCs, SCP fenced"
+  },
+  {
+   "x": 1100,
+   "y": 20,
+   "w": 400,
+   "h": 200,
+   "title": "AWS services via PrivateLink",
+   "color": "l4"
+  },
+  {
+   "x": 1100,
+   "y": 250,
+   "w": 400,
+   "h": 190,
+   "title": "Z4 Restricted enclave",
+   "color": "risk",
+   "sub": "separate account"
+  },
+  {
+   "x": 1100,
+   "y": 470,
+   "w": 400,
+   "h": 190,
+   "title": "Managed estate",
+   "color": "l0"
+  },
+  {
+   "x": 570,
+   "y": 690,
+   "w": 930,
+   "h": 290,
+   "title": "Z5 Security and Log Archive",
+   "color": "l9",
+   "sub": "delegated admin accounts"
+  }
+ ],
+ "nodes": [
+  {
+   "id": "employees",
+   "x": 40,
+   "y": 70,
+   "title": "Employees",
+   "sub": "Managed devices, SSO",
+   "icon": "users",
+   "color": "l0"
+  },
+  {
+   "id": "partners-vendors",
+   "x": 40,
+   "y": 160,
+   "title": "Partners, vendors",
+   "sub": "Federated identity",
+   "icon": "briefcase",
+   "color": "l0"
+  },
+  {
+   "id": "saas-platforms",
+   "x": 40,
+   "y": 250,
+   "title": "SaaS platforms",
+   "sub": "ITSM, paging, Git, chat",
+   "icon": "cloud",
+   "color": "l0"
+  },
+  {
+   "id": "on-prem-dcs",
+   "x": 40,
+   "y": 500,
+   "title": "On-prem DCs",
+   "sub": "DC1 and DC2",
+   "icon": "building",
+   "color": "l0"
+  },
+  {
+   "id": "other-clouds",
+   "x": 40,
+   "y": 640,
+   "title": "Other clouds",
+   "sub": "Azure, Google Cloud",
+   "icon": "cloud",
+   "color": "l0"
+  },
+  {
+   "id": "verified-access",
+   "x": 315,
+   "y": 70,
+   "title": "Verified Access",
+   "sub": "Zero-trust user access",
+   "icon": "id",
+   "color": "l1"
+  },
+  {
+   "id": "waf-shield",
+   "x": 315,
+   "y": 160,
+   "title": "WAF + Shield",
+   "sub": "Advanced DDoS, bot, geo",
+   "icon": "shield",
+   "color": "l1"
+  },
+  {
+   "id": "cloudfront-alb",
+   "x": 315,
+   "y": 250,
+   "title": "CloudFront + ALB",
+   "sub": "ACM-managed TLS",
+   "icon": "balancer",
+   "color": "l1"
+  },
+  {
+   "id": "iam-identity-center",
+   "x": 315,
+   "y": 340,
+   "title": "IAM Identity Center",
+   "sub": "SSO, MFA, OIDC",
+   "icon": "lock",
+   "color": "l1"
+  },
+  {
+   "id": "direct-connect",
+   "x": 315,
+   "y": 500,
+   "title": "Direct Connect",
+   "sub": "Dedicated, MACsec",
+   "icon": "link",
+   "color": "l3"
+  },
+  {
+   "id": "site-to-site-vpn",
+   "x": 315,
+   "y": 578,
+   "title": "Site-to-Site VPN",
+   "sub": "IPsec backup, partners",
+   "icon": "tunnel",
+   "color": "l3"
+  },
+  {
+   "id": "cloud-wan",
+   "x": 315,
+   "y": 656,
+   "title": "Cloud WAN",
+   "sub": "Global segments",
+   "icon": "link",
+   "color": "l3"
+  },
+  {
+   "id": "transit-gateway",
+   "x": 315,
+   "y": 734,
+   "title": "Transit Gateway",
+   "sub": "Hub, route domains",
+   "icon": "hub",
+   "color": "l3"
+  },
+  {
+   "id": "network-firewall",
+   "x": 315,
+   "y": 812,
+   "title": "Network Firewall",
+   "sub": "Inspection VPC, IPS",
+   "icon": "firewall",
+   "color": "l3"
+  },
+  {
+   "id": "egress-inspection",
+   "x": 315,
+   "y": 890,
+   "title": "Egress inspection",
+   "sub": "Domain allow-list, NAT",
+   "icon": "egress",
+   "color": "l3"
+  },
+  {
+   "id": "route-53-resolver",
+   "x": 315,
+   "y": 968,
+   "title": "Route 53 Resolver",
+   "sub": "DNS Firewall, endpoints",
+   "icon": "dns",
+   "color": "l3"
+  },
+  {
+   "id": "api-gateway",
+   "x": 595,
+   "y": 70,
+   "title": "API Gateway",
+   "sub": "Private REST, WAF",
+   "icon": "gateway",
+   "color": "l2"
+  },
+  {
+   "id": "bedrock-guardrails",
+   "x": 595,
+   "y": 165,
+   "title": "Bedrock Guardrails",
+   "sub": "Injection, PII filters",
+   "icon": "shieldscan",
+   "color": "l1"
+  },
+  {
+   "id": "agentcore-runtime",
+   "x": 595,
+   "y": 260,
+   "title": "AgentCore Runtime",
+   "sub": "Supervisor, all agents",
+   "icon": "agent",
+   "color": "l2"
+  },
+  {
+   "id": "agentcore-policy",
+   "x": 595,
+   "y": 355,
+   "title": "AgentCore Policy",
+   "sub": "Cedar, per tool call",
+   "icon": "policy",
+   "color": "l2"
+  },
+  {
+   "id": "hitl-approvals",
+   "x": 595,
+   "y": 450,
+   "title": "HITL approvals",
+   "sub": "Step Functions, Slack",
+   "icon": "approve",
+   "color": "gate"
+  },
+  {
+   "id": "mcp-tool-executors",
+   "x": 595,
+   "y": 545,
+   "title": "MCP tool executors",
+   "sub": "AgentCore Gateway, SSM",
+   "icon": "wrench",
+   "color": "l6"
+  },
+  {
+   "id": "event-backbone",
+   "x": 845,
+   "y": 70,
+   "title": "Event backbone",
+   "sub": "EventBridge, SQS",
+   "icon": "stream",
+   "color": "l7"
+  },
+  {
+   "id": "agent-registry",
+   "x": 845,
+   "y": 165,
+   "title": "Agent registry",
+   "sub": "AgentCore Registry",
+   "icon": "table",
+   "color": "l2"
+  },
+  {
+   "id": "llm-gateway",
+   "x": 845,
+   "y": 260,
+   "title": "LLM gateway",
+   "sub": "Router, cache, quotas",
+   "icon": "router",
+   "color": "l3"
+  },
+  {
+   "id": "slm-serving",
+   "x": 845,
+   "y": 355,
+   "title": "SLM serving",
+   "sub": "EKS, Inferentia, GPU",
+   "icon": "chip",
+   "color": "l4"
+  },
+  {
+   "id": "knowledge-and-memory",
+   "x": 845,
+   "y": 450,
+   "title": "Knowledge and memory",
+   "sub": "KB, vectors, Neptune",
+   "icon": "database",
+   "color": "l5"
+  },
+  {
+   "id": "amazon-bedrock-models",
+   "x": 1125,
+   "y": 70,
+   "title": "Amazon Bedrock models",
+   "sub": "Nova, Claude, Llama, Mistral",
+   "icon": "neural",
+   "color": "l4",
+   "w": 350
+  },
+  {
+   "id": "s3-opensearch-knowledge-base",
+   "x": 1125,
+   "y": 145,
+   "title": "S3, OpenSearch, Knowledge Bases",
+   "sub": "Interface endpoints, endpoint policies",
+   "icon": "search",
+   "color": "l4",
+   "w": 350
+  },
+  {
+   "id": "in-house-llm",
+   "x": 1125,
+   "y": 295,
+   "title": "In-house LLM",
+   "sub": "EKS on Nitro, vLLM, Trainium / GPU",
+   "icon": "neural",
+   "color": "risk",
+   "w": 350
+  },
+  {
+   "id": "regulated-data",
+   "x": 1125,
+   "y": 368,
+   "title": "Regulated data",
+   "sub": "KMS external key store, no egress",
+   "icon": "lock",
+   "color": "risk",
+   "w": 350
+  },
+  {
+   "id": "workload-clusters",
+   "x": 1125,
+   "y": 510,
+   "title": "Workload clusters",
+   "sub": "EKS, ECS, Lambda",
+   "icon": "server",
+   "color": "l0",
+   "w": 350
+  },
+  {
+   "id": "instances-and-databases",
+   "x": 1125,
+   "y": 585,
+   "title": "Instances and databases",
+   "sub": "EC2, RDS, Aurora, on-prem apps",
+   "icon": "database",
+   "color": "l0",
+   "w": 350
+  },
+  {
+   "id": "aws-kms-cloudhsm",
+   "x": 820,
+   "y": 740,
+   "title": "AWS KMS, CloudHSM",
+   "sub": "CMKs everywhere",
+   "icon": "key",
+   "color": "l9"
+  },
+  {
+   "id": "secrets-manager",
+   "x": 1045,
+   "y": 740,
+   "title": "Secrets Manager",
+   "sub": "Rotated, short-lived",
+   "icon": "vault",
+   "color": "l9"
+  },
+  {
+   "id": "temporary-access",
+   "x": 1270,
+   "y": 740,
+   "title": "Temporary access",
+   "sub": "JIT, break-glass",
+   "icon": "id",
+   "color": "l9"
+  },
+  {
+   "id": "telemetry",
+   "x": 595,
+   "y": 860,
+   "title": "Telemetry",
+   "sub": "X-Ray, CloudWatch, flows",
+   "icon": "eye",
+   "color": "l8"
+  },
+  {
+   "id": "cloudtrail-lake",
+   "x": 820,
+   "y": 860,
+   "title": "CloudTrail Lake",
+   "sub": "Log Archive account",
+   "icon": "log",
+   "color": "l9"
+  },
+  {
+   "id": "security-lake",
+   "x": 1045,
+   "y": 860,
+   "title": "Security Lake",
+   "sub": "SIEM, SOAR, Detective",
+   "icon": "target",
+   "color": "risk"
+  },
+  {
+   "id": "security-hub",
+   "x": 1270,
+   "y": 860,
+   "title": "Security Hub",
+   "sub": "GuardDuty, Inspector",
+   "icon": "radar",
+   "color": "l9"
+  }
+ ],
+ "edges": [
+  {
+   "from": "employees.r",
+   "to": "verified-access.l",
+   "route": "straight"
+  },
+  {
+   "from": "partners-vendors.r",
+   "to": "waf-shield.l-8",
+   "route": "hv",
+   "mid": 272
+  },
+  {
+   "from": "saas-platforms.r",
+   "to": "waf-shield.l+8",
+   "route": "hv",
+   "mid": 272,
+   "label": "webhooks",
+   "at": [
+    272.0,
+    268.0
+   ]
+  },
+  {
+   "from": "verified-access.b",
+   "to": "waf-shield.t",
+   "route": "straight"
+  },
+  {
+   "from": "waf-shield.b",
+   "to": "cloudfront-alb.t",
+   "route": "straight"
+  },
+  {
+   "from": "cloudfront-alb.b",
+   "to": "iam-identity-center.t",
+   "route": "straight"
+  },
+  {
+   "from": "iam-identity-center.r",
+   "to": "api-gateway.l",
+   "route": "hv",
+   "mid": 560
+  },
+  {
+   "from": "on-prem-dcs.r",
+   "to": "direct-connect.l",
+   "route": "straight",
+   "label": "primary",
+   "at": [
+    282.0,
+    528.0
+   ]
+  },
+  {
+   "from": "on-prem-dcs.r+14",
+   "to": "site-to-site-vpn.l",
+   "route": "hv",
+   "mid": 275,
+   "style": "dash",
+   "label": "backup",
+   "at": [
+    275.0,
+    574.0
+   ]
+  },
+  {
+   "from": "other-clouds.r",
+   "to": "cloud-wan.l",
+   "route": "straight"
+  },
+  {
+   "points": [
+    "direct-connect.r",
+    [
+     528.0,
+     528.0
+    ],
+    [
+     528.0,
+     762.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    "site-to-site-vpn.r",
+    [
+     528.0,
+     606.0
+    ],
+    [
+     528.0,
+     762.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    "cloud-wan.r",
+    [
+     528.0,
+     684.0
+    ],
+    [
+     528.0,
+     762.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    [
+     528.0,
+     762.0
+    ],
+    "transit-gateway.r"
+   ]
+  },
+  {
+   "from": "transit-gateway.b",
+   "to": "network-firewall.t",
+   "route": "straight"
+  },
+  {
+   "from": "network-firewall.r-8",
+   "to": "api-gateway.l+14",
+   "route": "hv",
+   "mid": 552,
+   "label": "north-south",
+   "at": [
+    552.0,
+    180.0
+   ]
+  },
+  {
+   "from": "api-gateway.b",
+   "to": "bedrock-guardrails.t",
+   "route": "straight"
+  },
+  {
+   "from": "bedrock-guardrails.b",
+   "to": "agentcore-runtime.t",
+   "route": "straight"
+  },
+  {
+   "from": "agentcore-runtime.b",
+   "to": "agentcore-policy.t",
+   "route": "straight"
+  },
+  {
+   "from": "agentcore-policy.b",
+   "to": "hitl-approvals.t",
+   "route": "straight",
+   "label": "needs approval",
+   "at": [
+    695.0,
+    430.5
+   ]
+  },
+  {
+   "from": "hitl-approvals.b",
+   "to": "mcp-tool-executors.t",
+   "route": "straight"
+  },
+  {
+   "points": [
+    "agentcore-policy.l+8",
+    [
+     583.0,
+     391.0
+    ],
+    [
+     583.0,
+     563.0
+    ],
+    "mcp-tool-executors.l-10"
+   ],
+   "label": "allow",
+   "at": [
+    583.0,
+    430.0
+   ]
+  },
+  {
+   "from": "agentcore-runtime.r",
+   "to": "llm-gateway.l",
+   "route": "straight"
+  },
+  {
+   "from": "event-backbone.l",
+   "to": "agentcore-runtime.r-16",
+   "route": "hv",
+   "mid": 822
+  },
+  {
+   "points": [
+    "agent-registry.l",
+    [
+     812.0,
+     193.0
+    ],
+    [
+     812.0,
+     270.0
+    ]
+   ],
+   "style": "dot",
+   "arrow": false
+  },
+  {
+   "from": "agentcore-runtime.r+12",
+   "to": "knowledge-and-memory.l",
+   "route": "hv",
+   "mid": 832,
+   "label": "ground",
+   "at": [
+    832.0,
+    420.0
+   ]
+  },
+  {
+   "from": "llm-gateway.b",
+   "to": "slm-serving.t",
+   "route": "straight"
+  },
+  {
+   "from": "llm-gateway.r-10",
+   "to": "amazon-bedrock-models.l",
+   "route": "hv",
+   "mid": 1085,
+   "label": "PrivateLink",
+   "at": [
+    1085.0,
+    188.0
+   ]
+  },
+  {
+   "from": "llm-gateway.r+10",
+   "to": "in-house-llm.l",
+   "route": "hv",
+   "mid": 1085,
+   "label": "bridge, mTLS",
+   "at": [
+    1085.0,
+    330.0
+   ]
+  },
+  {
+   "from": "in-house-llm.b",
+   "to": "regulated-data.t",
+   "route": "straight"
+  },
+  {
+   "from": "mcp-tool-executors.r",
+   "to": "workload-clusters.l",
+   "route": "hv",
+   "mid": 1075,
+   "label": "VPC Lattice",
+   "at": [
+    930.0,
+    573.0
+   ]
+  },
+  {
+   "points": [
+    "mcp-tool-executors.l+14",
+    [
+     578.0,
+     587.0
+    ],
+    [
+     578.0,
+     850.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    [
+     578.0,
+     850.0
+    ],
+    [
+     560.0,
+     850.0
+    ],
+    "network-firewall.r+8"
+   ],
+   "label": "to on-prem",
+   "at": [
+    560.0,
+    835.0
+   ]
+  },
+  {
+   "points": [
+    "network-firewall.r+8",
+    [
+     548.0,
+     848.0
+    ],
+    [
+     548.0,
+     918.0
+    ],
+    "egress-inspection.r"
+   ],
+   "arrow": false
+  },
+  {
+   "from": "egress-inspection.l",
+   "to": "saas-platforms.r+12",
+   "route": "hv",
+   "mid": 300,
+   "style": "dash",
+   "label": "to SaaS",
+   "at": [
+    300,
+    437
+   ]
+  },
+  {
+   "from": "mcp-tool-executors.b-40",
+   "to": "telemetry.t-40",
+   "route": "straight",
+   "style": "dot",
+   "label": "telemetry",
+   "at": [
+    655.0,
+    650.0
+   ]
+  },
+  {
+   "from": "telemetry.r",
+   "to": "cloudtrail-lake.l",
+   "route": "straight"
+  },
+  {
+   "from": "cloudtrail-lake.r",
+   "to": "security-lake.l",
+   "route": "straight"
+  },
+  {
+   "from": "security-hub.l",
+   "to": "security-lake.r",
+   "route": "straight"
+  },
+  {
+   "from": "security-lake.t",
+   "to": "secrets-manager.b",
+   "route": "straight",
+   "style": "dash",
+   "color": "risk",
+   "label": "SOAR containment",
+   "at": [
+    1145.0,
+    833.0
+   ]
+  },
+  {
+   "points": [
+    "aws-kms-cloudhsm.t-40",
+    [
+     880.0,
+     675.0
+    ],
+    [
+     1000.0,
+     675.0
+    ],
+    [
+     1000.0,
+     478.0
+    ],
+    "knowledge-and-memory.r"
+   ],
+   "style": "dot",
+   "label": "KMS",
+   "at": [
+    1000.0,
+    600.0
+   ]
+  }
+ ]
+}

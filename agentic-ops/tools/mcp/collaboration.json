@@ -1,0 +1,94 @@
+{
+ "server": "collaboration",
+ "tools": [
+  {
+   "name": "hitl.request_approval",
+   "description": "Send an interactive approval card to the owning group and wait durably for a decision. Separation of duties is enforced; the requester can never approve.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "action": {
+      "type": "string"
+     },
+     "evidence_url": {
+      "type": "string"
+     },
+     "approver_group": {
+      "type": "string"
+     },
+     "timeout_minutes": {
+      "type": "integer",
+      "maximum": 240
+     }
+    },
+    "required": [
+     "action",
+     "evidence_url",
+     "approver_group",
+     "timeout_minutes"
+    ],
+    "additionalProperties": false
+   },
+   "annotations": {
+    "title": "hitl.request_approval",
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false
+   },
+   "x-agentops": {
+    "category": "workflow",
+    "dry_run": false,
+    "default_autonomy": "L4",
+    "max_autonomy": "L4",
+    "blast_radius": "none",
+    "approval": null,
+    "gates": [
+     "G10"
+    ],
+    "gcp": "Google Chat cards + Workflows",
+    "aws": "Slack or Teams cards + Step Functions task tokens"
+   }
+  },
+  {
+   "name": "chat.post_update",
+   "description": "Post a status update to an incident channel.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "channel": {
+      "type": "string"
+     },
+     "message": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "channel",
+     "message"
+    ],
+    "additionalProperties": false
+   },
+   "annotations": {
+    "title": "chat.post_update",
+    "readOnlyHint": false,
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false
+   },
+   "x-agentops": {
+    "category": "workflow",
+    "dry_run": false,
+    "default_autonomy": "L4",
+    "max_autonomy": "L4",
+    "blast_radius": "none",
+    "approval": null,
+    "gates": [
+     "G8"
+    ],
+    "gcp": "Google Chat",
+    "aws": "Slack or Microsoft Teams"
+   }
+  }
+ ]
+}

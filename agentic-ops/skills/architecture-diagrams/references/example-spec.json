@@ -1,0 +1,30 @@
+{
+ "title": "Example: request path through the gateway",
+ "width": 900,
+ "height": 280,
+ "zones": [
+  {"x": 20, "y": 30, "w": 240, "h": 220, "title": "Callers", "color": "l0"},
+  {"x": 300, "y": 30, "w": 280, "h": 220, "title": "Platform core", "color": "l2", "sub": "private network"},
+  {"x": 620, "y": 30, "w": 260, "h": 220, "title": "Models", "color": "l4"}
+ ],
+ "nodes": [
+  {"id": "agent", "x": 40, "y": 70, "title": "Incident agent", "sub": "Agent runtime", "icon": "agent", "color": "l2"},
+  {"id": "alarm", "x": 40, "y": 160, "title": "Alerts", "sub": "Monitoring", "icon": "bell", "color": "l0"},
+  {"id": "gateway", "x": 340, "y": 70, "title": "LLM gateway", "sub": "Router, cache, budget", "icon": "router", "color": "l3"},
+  {"id": "policy", "x": 340, "y": 160, "title": "Policy engine", "sub": "Rules as code", "icon": "policy", "color": "l2"},
+  {"id": "slm", "x": 650, "y": 70, "title": "SLM", "sub": "Small model on GPU", "icon": "chip", "color": "l4"},
+  {"id": "llm", "x": 650, "y": 160, "title": "Frontier model", "sub": "Managed API", "icon": "neural", "color": "l4"}
+ ],
+ "edges": [
+  {"from": "agent.r", "to": "gateway.l", "label": "capability"},
+  {"from": "alarm.r", "to": "policy.l", "style": "dot"},
+  {"from": "gateway.r", "to": "slm.l", "label": "low complexity"},
+  {"from": "gateway.r+10", "to": "llm.l", "route": "hv", "mid": 600, "style": "dash", "color": "gate", "label": "escalate", "at": [600, 140]},
+  {"from": "gateway.b", "to": "policy.t"}
+ ],
+ "legend": [
+  {"label": "request", "color": "ink-2"},
+  {"label": "escalation", "color": "gate", "style": "dash"}
+ ],
+ "legend_at": [560, 268]
+}

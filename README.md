@@ -42,7 +42,21 @@ needed — every asset reference in the page is relative.
 | `docs/` | The imported SVG diagrams: 60 architecture diagrams, 60 Deep 8-Layer diagram/blueprint pairs, the reference architectures, and the favicon. |
 | `_ds/` | The Organic design system: tokens, stylesheet, component bundle. |
 | `github.md` | Source-repo association and screen map. |
+| `agentic-ops/` | Agentic Ops reference architecture (Google Cloud and AWS): chapters, diagrams, tool catalogue, templates, ADRs, Claude skill and the Architecture Explorer source. See its [README](agentic-ops/README.md). |
+| `docs/agentic-ops/` | Published copy of the Agentic Ops pages and explorer, refreshed by `agentic-ops/scripts/publish-site.sh`. |
 | `.nojekyll` | Required for GitHub Pages — see above. Hidden file; don't lose it. |
+
+## Agentic Ops reference architecture
+
+An enterprise blueprint for running operations through governed AI agents, on Google Cloud and AWS:
+eleven layers, earned autonomy, a central model gateway, end-to-end tracing and twelve runtime security gates.
+
+- Overview page: `/architecture/agentic-ops-reference-architecture/`
+- Architecture Explorer: `/agentic-ops/explorer/`
+- Source: [`agentic-ops/`](agentic-ops/README.md)
+
+After editing anything under `agentic-ops/`, run `agentic-ops/scripts/publish-site.sh` and commit the
+refreshed `docs/agentic-ops/` folder.
 
 ## Content sources
 

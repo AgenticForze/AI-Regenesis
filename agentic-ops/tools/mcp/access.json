@@ -1,0 +1,61 @@
+{
+ "server": "access",
+ "tools": [
+  {
+   "name": "access.grant_temporary",
+   "description": "Grant a pre-approved role to a user on a resource for a bounded time, on behalf of that user. Only roles on the entitlement catalogue; owner, admin and organisation roles are forbidden by policy.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "principal": {
+      "type": "string"
+     },
+     "role": {
+      "type": "string"
+     },
+     "resource": {
+      "type": "string"
+     },
+     "hours": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 8
+     },
+     "justification": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "principal",
+     "role",
+     "resource",
+     "hours",
+     "justification"
+    ],
+    "additionalProperties": false
+   },
+   "annotations": {
+    "title": "access.grant_temporary",
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+   },
+   "x-agentops": {
+    "category": "act",
+    "dry_run": true,
+    "default_autonomy": "L2",
+    "max_autonomy": "L3",
+    "blast_radius": "single-service",
+    "approval": null,
+    "gates": [
+     "G9",
+     "G11",
+     "G12"
+    ],
+    "gcp": "IAM conditional bindings / Privileged Access Manager",
+    "aws": "IAM Identity Center permission sets with expiry"
+   }
+  }
+ ]
+}

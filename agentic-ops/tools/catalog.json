@@ -1,0 +1,975 @@
+{
+ "version": "1.0.0",
+ "servers": [
+  {
+   "id": "observability",
+   "title": "Observability reader",
+   "description": "Read metrics, logs, traces and alerts for diagnosis.",
+   "identity": "read-only on monitoring and logging"
+  },
+  {
+   "id": "knowledge",
+   "title": "Knowledge and topology",
+   "description": "Query the service graph, recent changes, runbooks and past incidents.",
+   "identity": "read-only on graph, search indexes and memory"
+  },
+  {
+   "id": "k8s",
+   "title": "Kubernetes executor",
+   "description": "Workload operations on managed Kubernetes clusters.",
+   "identity": "namespaced, scoped role per cluster"
+  },
+  {
+   "id": "compute-db",
+   "title": "Compute and database executor",
+   "description": "Instance, managed database and feature-flag operations.",
+   "identity": "scoped role per project or account"
+  },
+  {
+   "id": "delivery",
+   "title": "Delivery executor",
+   "description": "Infrastructure-as-code plans, applies and release controls.",
+   "identity": "CI/CD service identity with plan/apply split"
+  },
+  {
+   "id": "itsm",
+   "title": "ITSM executor",
+   "description": "Incident, change and request records in the service management tool.",
+   "identity": "integration user with record-level permissions"
+  },
+  {
+   "id": "collaboration",
+   "title": "Approvals and collaboration",
+   "description": "Human-in-the-loop approval cards and notifications in chat.",
+   "identity": "chat app identity"
+  },
+  {
+   "id": "finops",
+   "title": "FinOps executor",
+   "description": "Cost, quota and rightsizing data and actions.",
+   "identity": "billing viewer plus scoped compute rightsizing"
+  },
+  {
+   "id": "secops",
+   "title": "Security operations executor",
+   "description": "Finding enrichment and containment playbooks.",
+   "identity": "SOAR integration identity"
+  },
+  {
+   "id": "access",
+   "title": "Access executor",
+   "description": "Time-bound, conditional access grants for service requests.",
+   "identity": "can assign only pre-approved, time-bound roles; cannot create roles"
+  },
+  {
+   "id": "platform",
+   "title": "Platform control (operators only)",
+   "description": "Controls over the agent platform itself. Never callable by agents.",
+   "identity": "operator group via privileged access with justification"
+  }
+ ],
+ "tools": [
+  {
+   "name": "obs.query_metrics",
+   "server": "observability",
+   "category": "read",
+   "description": "Query a time series (PromQL or the native query language) over a window.",
+   "mutating": false,
+   "dry_run": false,
+   "default_autonomy": "L4",
+   "max_autonomy": "L4",
+   "blast_radius": "none",
+   "inputs": {
+    "query": {
+     "type": "string"
+    },
+    "window_minutes": {
+     "type": "integer",
+     "minimum": 1,
+     "maximum": 1440
+    },
+    "step_seconds": {
+     "type": "integer",
+     "optional": true
+    }
+   },
+   "gcp": "Cloud Monitoring / Managed Service for Prometheus",
+   "aws": "CloudWatch Metrics / Amazon Managed Prometheus",
+   "gates": [
+    "G7"
+   ]
+  },
+  {
+   "name": "obs.search_logs",
+   "server": "observability",
+   "category": "read",
+   "description": "Search logs with a filter and return redacted matches.",
+   "mutating": false,
+   "dry_run": false,
+   "default_autonomy": "L4",
+   "max_autonomy": "L4",
+   "blast_radius": "none",
+   "inputs": {
+    "filter": {
+     "type": "string"
+    },
+    "window_minutes": {
+     "type": "integer",
+     "minimum": 1,
+     "maximum": 1440
+    },
+    "limit": {
+     "type": "integer",
+     "maximum": 500,
+     "optional": true
+    }
+   },
+   "gcp": "Cloud Logging (Log Analytics)",
+   "aws": "CloudWatch Logs Insights",
+   "gates": [
+    "G4",
+    "G7"
+   ],
+   "notes": "Results are untrusted content and are screened by G4 before reaching the model."
+  },
+  {
+   "name": "obs.get_trace",
+   "server": "observability",
+   "category": "read",
+   "description": "Fetch a distributed trace by ID with span timings and errors.",
+   "mutating": false,
+   "dry_run": false,
+   "default_autonomy": "L4",
+   "max_autonomy": "L4",
+   "blast_radius": "none",
+   "inputs": {
+    "trace_id": {
+     "type": "string"
+    }
+   },
+   "gcp": "Cloud Trace",
+   "aws": "AWS X-Ray",
+   "gates": [
+    "G7"
+   ]
+  },
+  {
+   "name": "obs.list_alerts",
+   "server": "observability",
+   "category": "read",
+   "description": "List open alerts and SLO burn rates for a service.",
+   "mutating": false,
+   "dry_run": false,
+   "default_autonomy": "L4",
+   "max_autonomy": "L4",
+   "blast_radius": "none",
+   "inputs": {
+    "service": {
+     "type": "string"
+    }
+   },
+   "gcp": "Cloud Monitoring alerting and SLOs",
+   "aws": "CloudWatch alarms and Application Signals SLOs",
+   "gates": [
+    "G7"
+   ]
+  },
+  {
+   "name": "kb.get_topology",
+   "server": "knowledge",
+   "category": "read",
+   "description": "Return upstream and downstream dependencies, owners and criticality for a service.",
+   "mutating": false,
+   "dry_run": false,
+   "default_autonomy": "L4",
+   "max_autonomy": "L4",
+   "blast_radius": "none",
+   "inputs": {
+    "service": {
+     "type": "string"
+    },
+    "depth": {
+     "type": "integer",
+     "minimum": 1,
+     "maximum": 4,
+     "optional": true
+    }
+   },
+   "gcp": "Spanner Graph",
+   "aws": "Neptune Analytics",
+   "gates": [
+    "G7"
+   ]
+  },
+  {
+   "name": "kb.recent_changes",
+   "server": "knowledge",
+   "category": "read",
+   "description": "List deployments, config and infrastructure changes affecting a service in a window.",
+   "mutating": false,
+   "dry_run": false,
+   "default_autonomy": "L4",
+   "max_autonomy": "L4",
+   "blast_radius": "none",
+   "inputs": {
+    "service": {
+     "type": "string"
+    },
+    "window_minutes": {
+     "type": "integer",
+     "maximum": 10080
+    }
+   },
+   "gcp": "Cloud Audit Logs, Cloud Deploy, Cloud Asset Inventory",
+   "aws": "CloudTrail, AWS Config, CodePipeline",
+   "gates": [
+    "G7"
+   ]
+  },
+  {
+   "name": "kb.search_runbooks",
+   "server": "knowledge",
+   "category": "read",
+   "description": "Hybrid search over runbooks, postmortems and architecture docs, filtered by the requester's entitlements.",
+   "mutating": false,
+   "dry_run": false,
+   "default_autonomy": "L4",
+   "max_autonomy": "L4",
+   "blast_radius": "none",
+   "inputs": {
+    "query": {
+     "type": "string"
+    },
+    "top_k": {
+     "type": "integer",
+     "maximum": 20,
+     "optional": true
+    }
+   },
+   "gcp": "Vertex AI Search / RAG Engine",
+   "aws": "Bedrock Knowledge Bases",
+   "gates": [
+    "G4",
+    "G7"
+   ]
+  },
+  {
+   "name": "kb.similar_incidents",
+   "server": "knowledge",
+   "category": "read",
+   "description": "Retrieve past incidents similar to the current one, with their resolutions.",
+   "mutating": false,
+   "dry_run": false,
+   "default_autonomy": "L4",
+   "max_autonomy": "L4",
+   "blast_radius": "none",
+   "inputs": {
+    "summary": {
+     "type": "string"
+    },
+    "service": {
+     "type": "string",
+     "optional": true
+    }
+   },
+   "gcp": "Agent Engine Memory Bank, Vector Search",
+   "aws": "AgentCore Memory, OpenSearch Serverless",
+   "gates": [
+    "G7"
+   ]
+  },
+  {
+   "name": "k8s.restart_pods",
+   "server": "k8s",
+   "category": "act",
+   "description": "Rolling restart of a deployment's pods.",
+   "mutating": true,
+   "dry_run": true,
+   "default_autonomy": "L1",
+   "max_autonomy": "L4",
+   "blast_radius": "single-service",
+   "inputs": {
+    "cluster": {
+     "type": "string"
+    },
+    "namespace": {
+     "type": "string"
+    },
+    "deployment": {
+     "type": "string"
+    },
+    "reason": {
+     "type": "string"
+    }
+   },
+   "gcp": "GKE",
+   "aws": "Amazon EKS",
+   "gates": [
+    "G9",
+    "G11",
+    "G12"
+   ]
+  },
+  {
+   "name": "k8s.scale_deployment",
+   "server": "k8s",
+   "category": "act",
+   "description": "Set replica count, bounded by a maximum change percentage from policy.",
+   "mutating": true,
+   "dry_run": true,
+   "default_autonomy": "L1",
+   "max_autonomy": "L4",
+   "blast_radius": "single-service",
+   "inputs": {
+    "cluster": {
+     "type": "string"
+    },
+    "namespace": {
+     "type": "string"
+    },
+    "deployment": {
+     "type": "string"
+    },
+    "replicas": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "reason": {
+     "type": "string"
+    }
+   },
+   "gcp": "GKE",
+   "aws": "Amazon EKS",
+   "gates": [
+    "G9",
+    "G11",
+    "G12"
+   ]
+  },
+  {
+   "name": "k8s.rollback_deployment",
+   "server": "k8s",
+   "category": "act",
+   "description": "Roll a deployment back to its previous revision.",
+   "mutating": true,
+   "dry_run": true,
+   "default_autonomy": "L1",
+   "max_autonomy": "L3",
+   "blast_radius": "single-service",
+   "inputs": {
+    "cluster": {
+     "type": "string"
+    },
+    "namespace": {
+     "type": "string"
+    },
+    "deployment": {
+     "type": "string"
+    },
+    "to_revision": {
+     "type": "integer",
+     "optional": true
+    },
+    "reason": {
+     "type": "string"
+    }
+   },
+   "gcp": "GKE",
+   "aws": "Amazon EKS",
+   "gates": [
+    "G9",
+    "G11",
+    "G12"
+   ]
+  },
+  {
+   "name": "compute.restart_instance",
+   "server": "compute-db",
+   "category": "act",
+   "description": "Restart a VM instance that is part of a managed group.",
+   "mutating": true,
+   "dry_run": false,
+   "default_autonomy": "L1",
+   "max_autonomy": "L3",
+   "blast_radius": "single-service",
+   "inputs": {
+    "instance": {
+     "type": "string"
+    },
+    "reason": {
+     "type": "string"
+    }
+   },
+   "gcp": "Compute Engine",
+   "aws": "Amazon EC2 via Systems Manager Automation",
+   "gates": [
+    "G9",
+    "G11",
+    "G12"
+   ]
+  },
+  {
+   "name": "db.failover",
+   "server": "compute-db",
+   "category": "act",
+   "description": "Fail a managed database over to its standby or replica.",
+   "mutating": true,
+   "dry_run": false,
+   "default_autonomy": "L1",
+   "max_autonomy": "L2",
+   "blast_radius": "multi-service",
+   "approval": "always",
+   "inputs": {
+    "database": {
+     "type": "string"
+    },
+    "reason": {
+     "type": "string"
+    }
+   },
+   "gcp": "Cloud SQL / AlloyDB",
+   "aws": "Amazon RDS / Aurora",
+   "gates": [
+    "G9",
+    "G10",
+    "G11",
+    "G12"
+   ]
+  },
+  {
+   "name": "flags.set_feature_flag",
+   "server": "compute-db",
+   "category": "act",
+   "description": "Toggle a feature flag to disable a faulty code path.",
+   "mutating": true,
+   "dry_run": true,
+   "default_autonomy": "L1",
+   "max_autonomy": "L3",
+   "blast_radius": "single-service",
+   "inputs": {
+    "flag": {
+     "type": "string"
+    },
+    "enabled": {
+     "type": "boolean"
+    },
+    "scope": {
+     "type": "string",
+     "enum": [
+      "canary",
+      "region",
+      "global"
+     ]
+    },
+    "reason": {
+     "type": "string"
+    }
+   },
+   "gcp": "Firebase Remote Config or your flag service",
+   "aws": "AWS AppConfig",
+   "gates": [
+    "G9",
+    "G11",
+    "G12"
+   ],
+   "notes": "Global scope always requires approval."
+  },
+  {
+   "name": "delivery.pause_rollout",
+   "server": "delivery",
+   "category": "act",
+   "description": "Pause an in-progress progressive rollout.",
+   "mutating": true,
+   "dry_run": false,
+   "default_autonomy": "L2",
+   "max_autonomy": "L4",
+   "blast_radius": "single-service",
+   "inputs": {
+    "pipeline": {
+     "type": "string"
+    },
+    "release": {
+     "type": "string"
+    },
+    "reason": {
+     "type": "string"
+    }
+   },
+   "gcp": "Cloud Deploy",
+   "aws": "CodePipeline / CodeDeploy",
+   "gates": [
+    "G9",
+    "G11",
+    "G12"
+   ]
+  },
+  {
+   "name": "delivery.rollback_release",
+   "server": "delivery",
+   "category": "act",
+   "description": "Roll a release back to the last known-good version.",
+   "mutating": true,
+   "dry_run": false,
+   "default_autonomy": "L1",
+   "max_autonomy": "L3",
+   "blast_radius": "single-service",
+   "inputs": {
+    "pipeline": {
+     "type": "string"
+    },
+    "target_release": {
+     "type": "string"
+    },
+    "reason": {
+     "type": "string"
+    }
+   },
+   "gcp": "Cloud Deploy",
+   "aws": "CodeDeploy",
+   "gates": [
+    "G9",
+    "G11",
+    "G12"
+   ]
+  },
+  {
+   "name": "iac.plan",
+   "server": "delivery",
+   "category": "read",
+   "description": "Produce an infrastructure-as-code plan and a risk summary without applying it.",
+   "mutating": false,
+   "dry_run": false,
+   "default_autonomy": "L4",
+   "max_autonomy": "L4",
+   "blast_radius": "none",
+   "inputs": {
+    "stack": {
+     "type": "string"
+    },
+    "change_ref": {
+     "type": "string"
+    }
+   },
+   "gcp": "Infrastructure Manager (Terraform)",
+   "aws": "CloudFormation change sets / Terraform in CodeBuild",
+   "gates": [
+    "G7"
+   ]
+  },
+  {
+   "name": "iac.apply",
+   "server": "delivery",
+   "category": "act",
+   "description": "Apply a previously generated and approved plan, by plan ID only.",
+   "mutating": true,
+   "dry_run": false,
+   "default_autonomy": "L1",
+   "max_autonomy": "L2",
+   "blast_radius": "multi-service",
+   "approval": "always",
+   "inputs": {
+    "plan_id": {
+     "type": "string"
+    },
+    "change_request": {
+     "type": "string"
+    }
+   },
+   "gcp": "Infrastructure Manager (Terraform)",
+   "aws": "CloudFormation / Terraform in CodeBuild",
+   "gates": [
+    "G9",
+    "G10",
+    "G11",
+    "G12"
+   ],
+   "notes": "Applies only plans produced by iac.plan; free-form infrastructure changes are not possible."
+  },
+  {
+   "name": "itsm.create_incident",
+   "server": "itsm",
+   "category": "workflow",
+   "description": "Open an incident linked to the trace ID.",
+   "mutating": true,
+   "dry_run": false,
+   "default_autonomy": "L4",
+   "max_autonomy": "L4",
+   "blast_radius": "none",
+   "inputs": {
+    "title": {
+     "type": "string"
+    },
+    "service": {
+     "type": "string"
+    },
+    "priority": {
+     "type": "string",
+     "enum": [
+      "P1",
+      "P2",
+      "P3",
+      "P4"
+     ]
+    },
+    "trace_id": {
+     "type": "string"
+    }
+   },
+   "gcp": "ServiceNow or Jira via Integration Connectors",
+   "aws": "ServiceNow or Jira via AgentCore Gateway target",
+   "gates": [
+    "G12"
+   ]
+  },
+  {
+   "name": "itsm.update_incident",
+   "server": "itsm",
+   "category": "workflow",
+   "description": "Add work notes, change status or resolve with an RCA summary.",
+   "mutating": true,
+   "dry_run": false,
+   "default_autonomy": "L4",
+   "max_autonomy": "L4",
+   "blast_radius": "none",
+   "inputs": {
+    "incident_id": {
+     "type": "string"
+    },
+    "note": {
+     "type": "string"
+    },
+    "status": {
+     "type": "string",
+     "enum": [
+      "in_progress",
+      "resolved",
+      "escalated"
+     ],
+     "optional": true
+    }
+   },
+   "gcp": "ServiceNow or Jira via Integration Connectors",
+   "aws": "ServiceNow or Jira via AgentCore Gateway target",
+   "gates": [
+    "G8",
+    "G12"
+   ]
+  },
+  {
+   "name": "itsm.open_change",
+   "server": "itsm",
+   "category": "workflow",
+   "description": "Open a change request with plan, risk score, blast radius and rollback.",
+   "mutating": true,
+   "dry_run": false,
+   "default_autonomy": "L4",
+   "max_autonomy": "L4",
+   "blast_radius": "none",
+   "inputs": {
+    "summary": {
+     "type": "string"
+    },
+    "plan_ref": {
+     "type": "string"
+    },
+    "risk_score": {
+     "type": "number"
+    }
+   },
+   "gcp": "ServiceNow or Jira",
+   "aws": "ServiceNow, Jira or SSM Change Manager",
+   "gates": [
+    "G12"
+   ]
+  },
+  {
+   "name": "hitl.request_approval",
+   "server": "collaboration",
+   "category": "workflow",
+   "description": "Send an interactive approval card to the owning group and wait durably for a decision.",
+   "mutating": false,
+   "dry_run": false,
+   "default_autonomy": "L4",
+   "max_autonomy": "L4",
+   "blast_radius": "none",
+   "inputs": {
+    "action": {
+     "type": "string"
+    },
+    "evidence_url": {
+     "type": "string"
+    },
+    "approver_group": {
+     "type": "string"
+    },
+    "timeout_minutes": {
+     "type": "integer",
+     "maximum": 240
+    }
+   },
+   "gcp": "Google Chat cards + Workflows",
+   "aws": "Slack or Teams cards + Step Functions task tokens",
+   "gates": [
+    "G10"
+   ],
+   "notes": "Separation of duties is enforced; the requester can never approve."
+  },
+  {
+   "name": "chat.post_update",
+   "server": "collaboration",
+   "category": "workflow",
+   "description": "Post a status update to an incident channel.",
+   "mutating": true,
+   "dry_run": false,
+   "default_autonomy": "L4",
+   "max_autonomy": "L4",
+   "blast_radius": "none",
+   "inputs": {
+    "channel": {
+     "type": "string"
+    },
+    "message": {
+     "type": "string"
+    }
+   },
+   "gcp": "Google Chat",
+   "aws": "Slack or Microsoft Teams",
+   "gates": [
+    "G8"
+   ]
+  },
+  {
+   "name": "finops.cost_breakdown",
+   "server": "finops",
+   "category": "read",
+   "description": "Cost by service, label or tag over a period, with anomalies.",
+   "mutating": false,
+   "dry_run": false,
+   "default_autonomy": "L4",
+   "max_autonomy": "L4",
+   "blast_radius": "none",
+   "inputs": {
+    "scope": {
+     "type": "string"
+    },
+    "days": {
+     "type": "integer",
+     "maximum": 400
+    }
+   },
+   "gcp": "Cloud Billing export to BigQuery",
+   "aws": "Cost Explorer / CUR in S3 Tables",
+   "gates": [
+    "G7"
+   ]
+  },
+  {
+   "name": "finops.apply_rightsizing",
+   "server": "finops",
+   "category": "act",
+   "description": "Apply a provider rightsizing recommendation to a non-production resource.",
+   "mutating": true,
+   "dry_run": true,
+   "default_autonomy": "L1",
+   "max_autonomy": "L3",
+   "blast_radius": "single-service",
+   "inputs": {
+    "recommendation_id": {
+     "type": "string"
+    },
+    "reason": {
+     "type": "string"
+    }
+   },
+   "gcp": "Recommender API",
+   "aws": "Compute Optimizer",
+   "gates": [
+    "G9",
+    "G11",
+    "G12"
+   ],
+   "notes": "Production resources require approval."
+  },
+  {
+   "name": "sec.enrich_finding",
+   "server": "secops",
+   "category": "read",
+   "description": "Enrich a security finding with asset, identity and threat-intelligence context.",
+   "mutating": false,
+   "dry_run": false,
+   "default_autonomy": "L4",
+   "max_autonomy": "L4",
+   "blast_radius": "none",
+   "inputs": {
+    "finding_id": {
+     "type": "string"
+    }
+   },
+   "gcp": "Google SecOps, Security Command Center",
+   "aws": "Security Hub, GuardDuty, Detective",
+   "gates": [
+    "G7"
+   ]
+  },
+  {
+   "name": "sec.isolate_workload",
+   "server": "secops",
+   "category": "act",
+   "description": "Isolate a workload by applying a deny network tag or quarantine security group.",
+   "mutating": true,
+   "dry_run": true,
+   "default_autonomy": "L1",
+   "max_autonomy": "L3",
+   "blast_radius": "single-service",
+   "inputs": {
+    "resource": {
+     "type": "string"
+    },
+    "finding_id": {
+     "type": "string"
+    }
+   },
+   "gcp": "Cloud NGFW secure tags via SecOps SOAR",
+   "aws": "Security group swap via Step Functions playbook",
+   "gates": [
+    "G9",
+    "G11",
+    "G12"
+   ]
+  },
+  {
+   "name": "access.grant_temporary",
+   "server": "access",
+   "category": "act",
+   "description": "Grant a pre-approved role to a user on a resource for a bounded time, on behalf of that user.",
+   "mutating": true,
+   "dry_run": true,
+   "default_autonomy": "L2",
+   "max_autonomy": "L3",
+   "blast_radius": "single-service",
+   "inputs": {
+    "principal": {
+     "type": "string"
+    },
+    "role": {
+     "type": "string"
+    },
+    "resource": {
+     "type": "string"
+    },
+    "hours": {
+     "type": "integer",
+     "minimum": 1,
+     "maximum": 8
+    },
+    "justification": {
+     "type": "string"
+    }
+   },
+   "gcp": "IAM conditional bindings / Privileged Access Manager",
+   "aws": "IAM Identity Center permission sets with expiry",
+   "gates": [
+    "G9",
+    "G11",
+    "G12"
+   ],
+   "notes": "Only roles on the entitlement catalogue; owner, admin and organisation roles are forbidden by policy."
+  },
+  {
+   "name": "platform.set_kill_switch",
+   "server": "platform",
+   "category": "control",
+   "description": "Disable an agent or an action type platform-wide.",
+   "mutating": true,
+   "dry_run": false,
+   "default_autonomy": "L0",
+   "max_autonomy": "L0",
+   "blast_radius": "platform",
+   "approval": "operators only",
+   "inputs": {
+    "target": {
+     "type": "string"
+    },
+    "enabled": {
+     "type": "boolean"
+    },
+    "reason": {
+     "type": "string"
+    }
+   },
+   "gcp": "Feature flag in Firestore / Config",
+   "aws": "AWS AppConfig",
+   "gates": [
+    "G2",
+    "G12"
+   ]
+  },
+  {
+   "name": "platform.set_autonomy_level",
+   "server": "platform",
+   "category": "control",
+   "description": "Promote or demote an action type's autonomy level after the promotion checklist.",
+   "mutating": true,
+   "dry_run": false,
+   "default_autonomy": "L0",
+   "max_autonomy": "L0",
+   "blast_radius": "platform",
+   "approval": "operators only",
+   "inputs": {
+    "agent": {
+     "type": "string"
+    },
+    "action": {
+     "type": "string"
+    },
+    "level": {
+     "type": "string",
+     "enum": [
+      "L0",
+      "L1",
+      "L2",
+      "L3",
+      "L4"
+     ]
+    },
+    "checklist_url": {
+     "type": "string"
+    }
+   },
+   "gcp": "Policy bundle in Git, deployed by Cloud Build",
+   "aws": "Cedar policy in Git, deployed to AgentCore Policy",
+   "gates": [
+    "G2",
+    "G12"
+   ]
+  },
+  {
+   "name": "platform.run_evaluation",
+   "server": "platform",
+   "category": "control",
+   "description": "Run the offline evaluation suite for an agent version against its golden set.",
+   "mutating": false,
+   "dry_run": false,
+   "default_autonomy": "L0",
+   "max_autonomy": "L0",
+   "blast_radius": "none",
+   "approval": "operators only",
+   "inputs": {
+    "agent": {
+     "type": "string"
+    },
+    "version": {
+     "type": "string"
+    },
+    "golden_set": {
+     "type": "string"
+    }
+   },
+   "gcp": "Vertex AI Pipelines + Gen AI Evaluation Service",
+   "aws": "SageMaker Pipelines + AgentCore Evaluations",
+   "gates": [
+    "G2"
+   ]
+  }
+ ]
+}

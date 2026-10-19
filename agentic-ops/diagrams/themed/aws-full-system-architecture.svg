@@ -1,0 +1,492 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1520 1070" role="img" aria-label="AWS full system architecture across trust zones" class="aodiagram" style="font-family:var(--diagram-font,'IBM Plex Sans','Segoe UI',Roboto,Helvetica,Arial,sans-serif)">
+<title>AWS full system architecture across trust zones</title><defs>
+<marker id="ar-ink-2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:var(--ink-2)"/></marker>
+<marker id="ar-risk" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:var(--risk)"/></marker>
+<marker id="ar-auto" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:var(--auto)"/></marker>
+<marker id="ar-gate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:var(--gate)"/></marker>
+<marker id="ar-signal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:var(--signal)"/></marker>
+<symbol id="i-agent" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><rect x="4.5" y="8" width="15" height="11" rx="3"/><path d="M12 4.5V8M9.5 16h5"/><circle cx="12" cy="3.5" r="1.2"/><circle cx="9.3" cy="12.5" r="1.1"/><circle cx="14.7" cy="12.5" r="1.1"/><path d="M2.5 12v3M21.5 12v3"/></g></symbol>
+<symbol id="i-approve" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><circle cx="10" cy="8" r="3.5"/><path d="M3 20c0-3.6 3-6 7-6 1.3 0 2.5.3 3.5.8M15 18l2 2 4.5-4.5"/></g></symbol>
+<symbol id="i-balancer" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="12" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5v9M12 11l-6 6M12 11l6 6"/></g></symbol>
+<symbol id="i-briefcase" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2M3 13h18"/></g></symbol>
+<symbol id="i-building" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8 7h2M14 7h2M8 11h2M14 11h2M8 15h2M14 15h2M10 21v-3h4v3"/></g></symbol>
+<symbol id="i-chip" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M9.5 3v4M14.5 3v4M9.5 17v4M14.5 17v4M3 9.5h4M3 14.5h4M17 9.5h4M17 14.5h4"/><rect x="10" y="10" width="4" height="4" rx=".5"/></g></symbol>
+<symbol id="i-cloud" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M7 18a5 5 0 0 1-.6-9.96A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9z"/></g></symbol>
+<symbol id="i-database" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><ellipse cx="12" cy="5.5" rx="7" ry="2.5"/><path d="M5 5.5v13c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-13M5 12c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5"/></g></symbol>
+<symbol id="i-dns" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M12 3v18"/><path d="M5 5.5h11l3 2.5-3 2.5H5zM19 13H8l-3 2.5 3 2.5h11z"/></g></symbol>
+<symbol id="i-egress" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M10 14L20 4M14 4h6v6"/><path d="M19 13v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5"/></g></symbol>
+<symbol id="i-eye" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></g></symbol>
+<symbol id="i-firewall" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 9.7h18M3 14.3h18M9 5v4.7M15 5v4.7M6 9.7v4.6M12 9.7v4.6M18 9.7v4.6M9 14.3V19M15 14.3V19"/></g></symbol>
+<symbol id="i-gateway" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M3 20V10l9-6 9 6v10"/><path d="M8 20v-6h8v6M3 20h18"/></g></symbol>
+<symbol id="i-hub" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="3.5" r="1.8"/><circle cx="20.5" cy="12" r="1.8"/><circle cx="12" cy="20.5" r="1.8"/><circle cx="3.5" cy="12" r="1.8"/><path d="M12 5.3V9M18.7 12H15M12 18.7V15M5.3 12H9"/></g></symbol>
+<symbol id="i-id" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2.5"/><path d="M5.5 17c.6-1.8 2-2.7 3.5-2.7s2.9.9 3.5 2.7M14.5 10h4M14.5 13.5h3"/></g></symbol>
+<symbol id="i-key" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M16 5l2.5 2.5M13.5 7.5L16 10"/></g></symbol>
+<symbol id="i-link" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M9.5 14.5l5-5"/><path d="M11 7l1.7-1.7a4 4 0 0 1 5.7 5.7L16.7 12.7M13 17l-1.7 1.7a4 4 0 0 1-5.7-5.7L7.3 11.3"/></g></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3M12 15v2"/></g></symbol>
+<symbol id="i-log" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8.5 8h7M8.5 12h7M8.5 16h4"/></g></symbol>
+<symbol id="i-neural" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><circle cx="5" cy="7" r="2"/><circle cx="5" cy="17" r="2"/><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/><circle cx="19" cy="9" r="2"/><circle cx="19" cy="15" r="2"/><path d="M7 7l3-2M7 7l3 5M7 17l3-5M7 17l3 2M14 5l3 4M14 12l3-3M14 12l3 3M14 19l3-4"/></g></symbol>
+<symbol id="i-policy" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M12 4v16M8 20h8M5 7h14"/><path d="M5 7l-3 6a3 3 0 0 0 6 0zM19 7l-3 6a3 3 0 0 0 6 0z"/></g></symbol>
+<symbol id="i-radar" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12l6.5-6.5"/><circle cx="15.5" cy="9" r="1"/></g></symbol>
+<symbol id="i-router" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="12" r="9"/><path d="M7 10h9l-2.5-2.5M17 14H8l2.5 2.5"/></g></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5.5 5.5"/></g></symbol>
+<symbol id="i-server" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><rect x="4" y="4" width="16" height="7" rx="1.5"/><rect x="4" y="13" width="16" height="7" rx="1.5"/><path d="M8 7.5h.01M8 16.5h.01M12 7.5h4M12 16.5h4"/></g></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></g></symbol>
+<symbol id="i-shieldscan" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 10h6M9 13h6M9 16h3"/></g></symbol>
+<symbol id="i-stream" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="12" r="2.6"/><circle cx="4" cy="6" r="1.8"/><circle cx="20" cy="6" r="1.8"/><circle cx="4" cy="18" r="1.8"/><circle cx="20" cy="18" r="1.8"/><path d="M5.6 7l4.2 3.4M18.4 7l-4.2 3.4M5.6 17l4.2-3.4M18.4 17l-4.2-3.4"/></g></symbol>
+<symbol id="i-table" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M3 14.5h18M9.5 9v11"/></g></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1"/><path d="M12 1.5v4M12 18.5v4M1.5 12h4M18.5 12h4"/></g></symbol>
+<symbol id="i-tunnel" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M2.5 19v-7a9.5 9.5 0 0 1 19 0v7"/><path d="M7 19v-6.5a5 5 0 0 1 10 0V19"/><path d="M2 19h20"/><circle cx="12" cy="15.5" r="1.3"/></g></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-3.6 3-6 7-6s7 2.4 7 6"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7"/><path d="M18 14c2.4.6 4 2.6 4 6"/></g></symbol>
+<symbol id="i-vault" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="12" cy="12" r="3.5"/><path d="M12 8.5V7M12 17v-1.5M15.5 12H17M7 12h1.5"/></g></symbol>
+<symbol id="i-wrench" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M14.5 4a5 5 0 0 0 5.5 6.5l-9.3 9.3a2.2 2.2 0 0 1-3.1-3.1L16.9 7.4A5 5 0 0 1 14.5 4z"/></g></symbol>
+</defs>
+<g class="zone" data-title="Z0 External" data-layer="l0">
+<rect x="20" y="20" width="240" height="1030" rx="12" style="fill:color-mix(in srgb,var(--l0) 5%,transparent);stroke:color-mix(in srgb,var(--l0) 55%,transparent);stroke-width:1.3;stroke-dasharray:6 5"/>
+<rect x="32" y="10" width="92.6" height="20" rx="10" style="fill:var(--l0)"/>
+<text x="78.3" y="24" text-anchor="middle" style="fill:var(--sheet);font-size:11px;font-weight:600">Z0 External</text>
+</g>
+<g class="zone" data-title="Z1 Global edge" data-layer="l1">
+<rect x="290" y="20" width="250" height="410" rx="12" style="fill:color-mix(in srgb,var(--l1) 5%,transparent);stroke:color-mix(in srgb,var(--l1) 55%,transparent);stroke-width:1.3;stroke-dasharray:6 5"/>
+<rect x="302" y="10" width="112.39999999999999" height="20" rx="10" style="fill:var(--l1)"/>
+<text x="358.2" y="24" text-anchor="middle" style="fill:var(--sheet);font-size:11px;font-weight:600">Z1 Global edge</text>
+</g>
+<g class="zone" data-title="Z2 Network account" data-layer="l3">
+<rect x="290" y="460" width="250" height="590" rx="12" style="fill:color-mix(in srgb,var(--l3) 5%,transparent);stroke:color-mix(in srgb,var(--l3) 55%,transparent);stroke-width:1.3;stroke-dasharray:6 5"/>
+<rect x="302" y="450" width="138.8" height="20" rx="10" style="fill:var(--l3)"/>
+<text x="371.4" y="464" text-anchor="middle" style="fill:var(--sheet);font-size:11px;font-weight:600">Z2 Network account</text>
+</g>
+<g class="zone" data-title="Z3 Platform core" data-layer="l2">
+<rect x="570" y="20" width="500" height="640" rx="12" style="fill:color-mix(in srgb,var(--l2) 5%,transparent);stroke:color-mix(in srgb,var(--l2) 55%,transparent);stroke-width:1.3;stroke-dasharray:6 5"/>
+<rect x="582" y="10" width="125.6" height="20" rx="10" style="fill:var(--l2)"/>
+<text x="644.8" y="24" text-anchor="middle" style="fill:var(--sheet);font-size:11px;font-weight:600">Z3 Platform core</text>
+<text x="1058" y="38" text-anchor="end" style="fill:var(--ink-2);font-size:10px;font-style:italic">private VPCs, SCP fenced</text>
+</g>
+<g class="zone" data-title="AWS services via PrivateLink" data-layer="l4">
+<rect x="1100" y="20" width="400" height="200" rx="12" style="fill:color-mix(in srgb,var(--l4) 5%,transparent);stroke:color-mix(in srgb,var(--l4) 55%,transparent);stroke-width:1.3;stroke-dasharray:6 5"/>
+<rect x="1112" y="10" width="204.79999999999998" height="20" rx="10" style="fill:var(--l4)"/>
+<text x="1214.4" y="24" text-anchor="middle" style="fill:var(--sheet);font-size:11px;font-weight:600">AWS services via PrivateLink</text>
+</g>
+<g class="zone" data-title="Z4 Restricted enclave" data-layer="risk">
+<rect x="1100" y="250" width="400" height="190" rx="12" style="fill:color-mix(in srgb,var(--risk) 5%,transparent);stroke:color-mix(in srgb,var(--risk) 55%,transparent);stroke-width:1.3;stroke-dasharray:6 5"/>
+<rect x="1112" y="240" width="158.6" height="20" rx="10" style="fill:var(--risk)"/>
+<text x="1191.3" y="254" text-anchor="middle" style="fill:var(--sheet);font-size:11px;font-weight:600">Z4 Restricted enclave</text>
+<text x="1488" y="268" text-anchor="end" style="fill:var(--ink-2);font-size:10px;font-style:italic">separate account</text>
+</g>
+<g class="zone" data-title="Managed estate" data-layer="l0">
+<rect x="1100" y="470" width="400" height="190" rx="12" style="fill:color-mix(in srgb,var(--l0) 5%,transparent);stroke:color-mix(in srgb,var(--l0) 55%,transparent);stroke-width:1.3;stroke-dasharray:6 5"/>
+<rect x="1112" y="460" width="112.39999999999999" height="20" rx="10" style="fill:var(--l0)"/>
+<text x="1168.2" y="474" text-anchor="middle" style="fill:var(--sheet);font-size:11px;font-weight:600">Managed estate</text>
+</g>
+<g class="zone" data-title="Z5 Security and Log Archive" data-layer="l9">
+<rect x="570" y="690" width="930" height="290" rx="12" style="fill:color-mix(in srgb,var(--l9) 5%,transparent);stroke:color-mix(in srgb,var(--l9) 55%,transparent);stroke-width:1.3;stroke-dasharray:6 5"/>
+<rect x="582" y="680" width="198.2" height="20" rx="10" style="fill:var(--l9)"/>
+<text x="681.1" y="694" text-anchor="middle" style="fill:var(--sheet);font-size:11px;font-weight:600">Z5 Security and Log Archive</text>
+<text x="1488" y="708" text-anchor="end" style="fill:var(--ink-2);font-size:10px;font-style:italic">delegated admin accounts</text>
+</g>
+<path class="edge" data-from="employees" data-to="verified-access" d="M240.0 98.0 L315.0 98.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="partners-vendors" data-to="waf-shield" d="M240.0 188.0 L272.0 188.0 L272.0 180.0 L315.0 180.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="saas-platforms" data-to="waf-shield" d="M240.0 278.0 L272.0 278.0 L272.0 196.0 L315.0 196.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="verified-access" data-to="waf-shield" d="M415.0 126.0 L415.0 160.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="waf-shield" data-to="cloudfront-alb" d="M415.0 216.0 L415.0 250.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="cloudfront-alb" data-to="iam-identity-center" d="M415.0 306.0 L415.0 340.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="iam-identity-center" data-to="api-gateway" d="M515.0 368.0 L560.0 368.0 L560.0 98.0 L595.0 98.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="on-prem-dcs" data-to="direct-connect" d="M240.0 528.0 L315.0 528.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="on-prem-dcs" data-to="site-to-site-vpn" d="M240.0 542.0 L275.0 542.0 L275.0 606.0 L315.0 606.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:5 4;stroke-linejoin:round"/>
+<path class="edge" data-from="other-clouds" data-to="cloud-wan" d="M240.0 668.0 L315.0 684.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="direct-connect" data-to="" d="M515.0 528.0 L528.0 528.0 L528.0 762.0" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="site-to-site-vpn" data-to="" d="M515.0 606.0 L528.0 606.0 L528.0 762.0" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="cloud-wan" data-to="" d="M515.0 684.0 L528.0 684.0 L528.0 762.0" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="" data-to="transit-gateway" d="M528.0 762.0 L515.0 762.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="transit-gateway" data-to="network-firewall" d="M415.0 790.0 L415.0 812.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="network-firewall" data-to="api-gateway" d="M515.0 832.0 L552.0 832.0 L552.0 112.0 L595.0 112.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="api-gateway" data-to="bedrock-guardrails" d="M695.0 126.0 L695.0 165.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="bedrock-guardrails" data-to="agentcore-runtime" d="M695.0 221.0 L695.0 260.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="agentcore-runtime" data-to="agentcore-policy" d="M695.0 316.0 L695.0 355.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="agentcore-policy" data-to="hitl-approvals" d="M695.0 411.0 L695.0 450.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="hitl-approvals" data-to="mcp-tool-executors" d="M695.0 506.0 L695.0 545.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="agentcore-policy" data-to="mcp-tool-executors" d="M595.0 391.0 L583.0 391.0 L583.0 563.0 L595.0 563.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="agentcore-runtime" data-to="llm-gateway" d="M795.0 288.0 L845.0 288.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="event-backbone" data-to="agentcore-runtime" d="M845.0 98.0 L822.0 98.0 L822.0 272.0 L795.0 272.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="agent-registry" data-to="" d="M845.0 193.0 L812.0 193.0 L812.0 270.0" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:2 4;stroke-linejoin:round"/>
+<path class="edge" data-from="agentcore-runtime" data-to="knowledge-and-memory" d="M795.0 300.0 L832.0 300.0 L832.0 478.0 L845.0 478.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="llm-gateway" data-to="slm-serving" d="M945.0 316.0 L945.0 355.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="llm-gateway" data-to="amazon-bedrock-models" d="M1045.0 278.0 L1085.0 278.0 L1085.0 98.0 L1125.0 98.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="llm-gateway" data-to="in-house-llm" d="M1045.0 298.0 L1085.0 298.0 L1085.0 323.0 L1125.0 323.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="in-house-llm" data-to="regulated-data" d="M1300.0 351.0 L1300.0 368.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="mcp-tool-executors" data-to="workload-clusters" d="M795.0 573.0 L1075.0 573.0 L1075.0 538.0 L1125.0 538.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="mcp-tool-executors" data-to="" d="M595.0 587.0 L578.0 587.0 L578.0 850.0" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="" data-to="network-firewall" d="M578.0 850.0 L560.0 850.0 L515.0 848.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="network-firewall" data-to="egress-inspection" d="M515.0 848.0 L548.0 848.0 L548.0 918.0 L515.0 918.0" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="egress-inspection" data-to="saas-platforms" d="M315.0 918.0 L300.0 918.0 L300.0 290.0 L240.0 290.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:5 4;stroke-linejoin:round"/>
+<path class="edge" data-from="mcp-tool-executors" data-to="telemetry" d="M655.0 601.0 L655.0 860.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:2 4;stroke-linejoin:round"/>
+<path class="edge" data-from="telemetry" data-to="cloudtrail-lake" d="M795.0 888.0 L820.0 888.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="cloudtrail-lake" data-to="security-lake" d="M1020.0 888.0 L1045.0 888.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="security-hub" data-to="security-lake" d="M1270.0 888.0 L1245.0 888.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="security-lake" data-to="secrets-manager" d="M1145.0 860.0 L1145.0 796.0" marker-end="url(#ar-risk)" style="fill:none;stroke:var(--risk);stroke-width:1.6;stroke-dasharray:5 4;stroke-linejoin:round"/>
+<path class="edge" data-from="aws-kms-cloudhsm" data-to="knowledge-and-memory" d="M880.0 740.0 L880.0 675.0 L1000.0 675.0 L1000.0 478.0 L1045.0 478.0" marker-end="url(#ar-ink-2)" style="fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:2 4;stroke-linejoin:round"/>
+<g class="node" data-id="employees" data-layer="l0" tabindex="0" role="button" aria-label="Employees">
+<rect class="node-box" x="40" y="70" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l0) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="40" y="78" width="3" height="40" rx="1.5" style="fill:var(--l0)"/>
+<rect x="50" y="79.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l0) 14%,var(--sheet))"/>
+<use href="#i-users" xlink:href="#i-users" x="58" y="87.0" width="22" height="22" style="color:var(--l0)"/>
+<text x="98" y="95.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Employees</text>
+<text x="98" y="110.0" style="fill:var(--ink-2);font-size:10.5px">Managed devices, SSO</text>
+</g>
+<g class="node" data-id="partners-vendors" data-layer="l0" tabindex="0" role="button" aria-label="Partners, vendors">
+<rect class="node-box" x="40" y="160" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l0) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="40" y="168" width="3" height="40" rx="1.5" style="fill:var(--l0)"/>
+<rect x="50" y="169.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l0) 14%,var(--sheet))"/>
+<use href="#i-briefcase" xlink:href="#i-briefcase" x="58" y="177.0" width="22" height="22" style="color:var(--l0)"/>
+<text x="98" y="185.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Partners, vendors</text>
+<text x="98" y="200.0" style="fill:var(--ink-2);font-size:10.5px">Federated identity</text>
+</g>
+<g class="node" data-id="saas-platforms" data-layer="l0" tabindex="0" role="button" aria-label="SaaS platforms">
+<rect class="node-box" x="40" y="250" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l0) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="40" y="258" width="3" height="40" rx="1.5" style="fill:var(--l0)"/>
+<rect x="50" y="259.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l0) 14%,var(--sheet))"/>
+<use href="#i-cloud" xlink:href="#i-cloud" x="58" y="267.0" width="22" height="22" style="color:var(--l0)"/>
+<text x="98" y="275.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">SaaS platforms</text>
+<text x="98" y="290.0" style="fill:var(--ink-2);font-size:10.5px">ITSM, paging, Git, chat</text>
+</g>
+<g class="node" data-id="on-prem-dcs" data-layer="l0" tabindex="0" role="button" aria-label="On-prem DCs">
+<rect class="node-box" x="40" y="500" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l0) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="40" y="508" width="3" height="40" rx="1.5" style="fill:var(--l0)"/>
+<rect x="50" y="509.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l0) 14%,var(--sheet))"/>
+<use href="#i-building" xlink:href="#i-building" x="58" y="517.0" width="22" height="22" style="color:var(--l0)"/>
+<text x="98" y="525.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">On-prem DCs</text>
+<text x="98" y="540.0" style="fill:var(--ink-2);font-size:10.5px">DC1 and DC2</text>
+</g>
+<g class="node" data-id="other-clouds" data-layer="l0" tabindex="0" role="button" aria-label="Other clouds">
+<rect class="node-box" x="40" y="640" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l0) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="40" y="648" width="3" height="40" rx="1.5" style="fill:var(--l0)"/>
+<rect x="50" y="649.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l0) 14%,var(--sheet))"/>
+<use href="#i-cloud" xlink:href="#i-cloud" x="58" y="657.0" width="22" height="22" style="color:var(--l0)"/>
+<text x="98" y="665.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Other clouds</text>
+<text x="98" y="680.0" style="fill:var(--ink-2);font-size:10.5px">Azure, Google Cloud</text>
+</g>
+<g class="node" data-id="verified-access" data-layer="l1" tabindex="0" role="button" aria-label="Verified Access">
+<rect class="node-box" x="315" y="70" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l1) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="315" y="78" width="3" height="40" rx="1.5" style="fill:var(--l1)"/>
+<rect x="325" y="79.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l1) 14%,var(--sheet))"/>
+<use href="#i-id" xlink:href="#i-id" x="333" y="87.0" width="22" height="22" style="color:var(--l1)"/>
+<text x="373" y="95.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Verified Access</text>
+<text x="373" y="110.0" style="fill:var(--ink-2);font-size:10.5px">Zero-trust user access</text>
+</g>
+<g class="node" data-id="waf-shield" data-layer="l1" tabindex="0" role="button" aria-label="WAF + Shield">
+<rect class="node-box" x="315" y="160" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l1) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="315" y="168" width="3" height="40" rx="1.5" style="fill:var(--l1)"/>
+<rect x="325" y="169.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l1) 14%,var(--sheet))"/>
+<use href="#i-shield" xlink:href="#i-shield" x="333" y="177.0" width="22" height="22" style="color:var(--l1)"/>
+<text x="373" y="185.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">WAF + Shield</text>
+<text x="373" y="200.0" style="fill:var(--ink-2);font-size:10.5px">Advanced DDoS, bot, geo</text>
+</g>
+<g class="node" data-id="cloudfront-alb" data-layer="l1" tabindex="0" role="button" aria-label="CloudFront + ALB">
+<rect class="node-box" x="315" y="250" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l1) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="315" y="258" width="3" height="40" rx="1.5" style="fill:var(--l1)"/>
+<rect x="325" y="259.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l1) 14%,var(--sheet))"/>
+<use href="#i-balancer" xlink:href="#i-balancer" x="333" y="267.0" width="22" height="22" style="color:var(--l1)"/>
+<text x="373" y="275.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">CloudFront + ALB</text>
+<text x="373" y="290.0" style="fill:var(--ink-2);font-size:10.5px">ACM-managed TLS</text>
+</g>
+<g class="node" data-id="iam-identity-center" data-layer="l1" tabindex="0" role="button" aria-label="IAM Identity Center">
+<rect class="node-box" x="315" y="340" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l1) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="315" y="348" width="3" height="40" rx="1.5" style="fill:var(--l1)"/>
+<rect x="325" y="349.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l1) 14%,var(--sheet))"/>
+<use href="#i-lock" xlink:href="#i-lock" x="333" y="357.0" width="22" height="22" style="color:var(--l1)"/>
+<text x="373" y="365.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">IAM Identity Center</text>
+<text x="373" y="380.0" style="fill:var(--ink-2);font-size:10.5px">SSO, MFA, OIDC</text>
+</g>
+<g class="node" data-id="direct-connect" data-layer="l3" tabindex="0" role="button" aria-label="Direct Connect">
+<rect class="node-box" x="315" y="500" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l3) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="315" y="508" width="3" height="40" rx="1.5" style="fill:var(--l3)"/>
+<rect x="325" y="509.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l3) 14%,var(--sheet))"/>
+<use href="#i-link" xlink:href="#i-link" x="333" y="517.0" width="22" height="22" style="color:var(--l3)"/>
+<text x="373" y="525.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Direct Connect</text>
+<text x="373" y="540.0" style="fill:var(--ink-2);font-size:10.5px">Dedicated, MACsec</text>
+</g>
+<g class="node" data-id="site-to-site-vpn" data-layer="l3" tabindex="0" role="button" aria-label="Site-to-Site VPN">
+<rect class="node-box" x="315" y="578" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l3) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="315" y="586" width="3" height="40" rx="1.5" style="fill:var(--l3)"/>
+<rect x="325" y="587.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l3) 14%,var(--sheet))"/>
+<use href="#i-tunnel" xlink:href="#i-tunnel" x="333" y="595.0" width="22" height="22" style="color:var(--l3)"/>
+<text x="373" y="603.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Site-to-Site VPN</text>
+<text x="373" y="618.0" style="fill:var(--ink-2);font-size:10.5px">IPsec backup, partners</text>
+</g>
+<g class="node" data-id="cloud-wan" data-layer="l3" tabindex="0" role="button" aria-label="Cloud WAN">
+<rect class="node-box" x="315" y="656" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l3) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="315" y="664" width="3" height="40" rx="1.5" style="fill:var(--l3)"/>
+<rect x="325" y="665.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l3) 14%,var(--sheet))"/>
+<use href="#i-link" xlink:href="#i-link" x="333" y="673.0" width="22" height="22" style="color:var(--l3)"/>
+<text x="373" y="681.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Cloud WAN</text>
+<text x="373" y="696.0" style="fill:var(--ink-2);font-size:10.5px">Global segments</text>
+</g>
+<g class="node" data-id="transit-gateway" data-layer="l3" tabindex="0" role="button" aria-label="Transit Gateway">
+<rect class="node-box" x="315" y="734" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l3) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="315" y="742" width="3" height="40" rx="1.5" style="fill:var(--l3)"/>
+<rect x="325" y="743.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l3) 14%,var(--sheet))"/>
+<use href="#i-hub" xlink:href="#i-hub" x="333" y="751.0" width="22" height="22" style="color:var(--l3)"/>
+<text x="373" y="759.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Transit Gateway</text>
+<text x="373" y="774.0" style="fill:var(--ink-2);font-size:10.5px">Hub, route domains</text>
+</g>
+<g class="node" data-id="network-firewall" data-layer="l3" tabindex="0" role="button" aria-label="Network Firewall">
+<rect class="node-box" x="315" y="812" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l3) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="315" y="820" width="3" height="40" rx="1.5" style="fill:var(--l3)"/>
+<rect x="325" y="821.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l3) 14%,var(--sheet))"/>
+<use href="#i-firewall" xlink:href="#i-firewall" x="333" y="829.0" width="22" height="22" style="color:var(--l3)"/>
+<text x="373" y="837.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Network Firewall</text>
+<text x="373" y="852.0" style="fill:var(--ink-2);font-size:10.5px">Inspection VPC, IPS</text>
+</g>
+<g class="node" data-id="egress-inspection" data-layer="l3" tabindex="0" role="button" aria-label="Egress inspection">
+<rect class="node-box" x="315" y="890" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l3) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="315" y="898" width="3" height="40" rx="1.5" style="fill:var(--l3)"/>
+<rect x="325" y="899.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l3) 14%,var(--sheet))"/>
+<use href="#i-egress" xlink:href="#i-egress" x="333" y="907.0" width="22" height="22" style="color:var(--l3)"/>
+<text x="373" y="915.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Egress inspection</text>
+<text x="373" y="930.0" style="fill:var(--ink-2);font-size:10.5px">Domain allow-list, NAT</text>
+</g>
+<g class="node" data-id="route-53-resolver" data-layer="l3" tabindex="0" role="button" aria-label="Route 53 Resolver">
+<rect class="node-box" x="315" y="968" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l3) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="315" y="976" width="3" height="40" rx="1.5" style="fill:var(--l3)"/>
+<rect x="325" y="977.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l3) 14%,var(--sheet))"/>
+<use href="#i-dns" xlink:href="#i-dns" x="333" y="985.0" width="22" height="22" style="color:var(--l3)"/>
+<text x="373" y="993.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Route 53 Resolver</text>
+<text x="373" y="1008.0" style="fill:var(--ink-2);font-size:10.5px">DNS Firewall, endpoints</text>
+</g>
+<g class="node" data-id="api-gateway" data-layer="l2" tabindex="0" role="button" aria-label="API Gateway">
+<rect class="node-box" x="595" y="70" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l2) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="595" y="78" width="3" height="40" rx="1.5" style="fill:var(--l2)"/>
+<rect x="605" y="79.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l2) 14%,var(--sheet))"/>
+<use href="#i-gateway" xlink:href="#i-gateway" x="613" y="87.0" width="22" height="22" style="color:var(--l2)"/>
+<text x="653" y="95.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">API Gateway</text>
+<text x="653" y="110.0" style="fill:var(--ink-2);font-size:10.5px">Private REST, WAF</text>
+</g>
+<g class="node" data-id="bedrock-guardrails" data-layer="l1" tabindex="0" role="button" aria-label="Bedrock Guardrails">
+<rect class="node-box" x="595" y="165" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l1) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="595" y="173" width="3" height="40" rx="1.5" style="fill:var(--l1)"/>
+<rect x="605" y="174.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l1) 14%,var(--sheet))"/>
+<use href="#i-shieldscan" xlink:href="#i-shieldscan" x="613" y="182.0" width="22" height="22" style="color:var(--l1)"/>
+<text x="653" y="190.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Bedrock Guardrails</text>
+<text x="653" y="205.0" style="fill:var(--ink-2);font-size:10.5px">Injection, PII filters</text>
+</g>
+<g class="node" data-id="agentcore-runtime" data-layer="l2" tabindex="0" role="button" aria-label="AgentCore Runtime">
+<rect class="node-box" x="595" y="260" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l2) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="595" y="268" width="3" height="40" rx="1.5" style="fill:var(--l2)"/>
+<rect x="605" y="269.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l2) 14%,var(--sheet))"/>
+<use href="#i-agent" xlink:href="#i-agent" x="613" y="277.0" width="22" height="22" style="color:var(--l2)"/>
+<text x="653" y="285.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">AgentCore Runtime</text>
+<text x="653" y="300.0" style="fill:var(--ink-2);font-size:10.5px">Supervisor, all agents</text>
+</g>
+<g class="node" data-id="agentcore-policy" data-layer="l2" tabindex="0" role="button" aria-label="AgentCore Policy">
+<rect class="node-box" x="595" y="355" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l2) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="595" y="363" width="3" height="40" rx="1.5" style="fill:var(--l2)"/>
+<rect x="605" y="364.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l2) 14%,var(--sheet))"/>
+<use href="#i-policy" xlink:href="#i-policy" x="613" y="372.0" width="22" height="22" style="color:var(--l2)"/>
+<text x="653" y="380.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">AgentCore Policy</text>
+<text x="653" y="395.0" style="fill:var(--ink-2);font-size:10.5px">Cedar, per tool call</text>
+</g>
+<g class="node" data-id="hitl-approvals" data-layer="gate" tabindex="0" role="button" aria-label="HITL approvals">
+<rect class="node-box" x="595" y="450" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--gate) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="595" y="458" width="3" height="40" rx="1.5" style="fill:var(--gate)"/>
+<rect x="605" y="459.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--gate) 14%,var(--sheet))"/>
+<use href="#i-approve" xlink:href="#i-approve" x="613" y="467.0" width="22" height="22" style="color:var(--gate)"/>
+<text x="653" y="475.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">HITL approvals</text>
+<text x="653" y="490.0" style="fill:var(--ink-2);font-size:10.5px">Step Functions, Slack</text>
+</g>
+<g class="node" data-id="mcp-tool-executors" data-layer="l6" tabindex="0" role="button" aria-label="MCP tool executors">
+<rect class="node-box" x="595" y="545" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l6) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="595" y="553" width="3" height="40" rx="1.5" style="fill:var(--l6)"/>
+<rect x="605" y="554.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l6) 14%,var(--sheet))"/>
+<use href="#i-wrench" xlink:href="#i-wrench" x="613" y="562.0" width="22" height="22" style="color:var(--l6)"/>
+<text x="653" y="570.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">MCP tool executors</text>
+<text x="653" y="585.0" style="fill:var(--ink-2);font-size:10.5px">AgentCore Gateway, SSM</text>
+</g>
+<g class="node" data-id="event-backbone" data-layer="l7" tabindex="0" role="button" aria-label="Event backbone">
+<rect class="node-box" x="845" y="70" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l7) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="845" y="78" width="3" height="40" rx="1.5" style="fill:var(--l7)"/>
+<rect x="855" y="79.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l7) 14%,var(--sheet))"/>
+<use href="#i-stream" xlink:href="#i-stream" x="863" y="87.0" width="22" height="22" style="color:var(--l7)"/>
+<text x="903" y="95.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Event backbone</text>
+<text x="903" y="110.0" style="fill:var(--ink-2);font-size:10.5px">EventBridge, SQS</text>
+</g>
+<g class="node" data-id="agent-registry" data-layer="l2" tabindex="0" role="button" aria-label="Agent registry">
+<rect class="node-box" x="845" y="165" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l2) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="845" y="173" width="3" height="40" rx="1.5" style="fill:var(--l2)"/>
+<rect x="855" y="174.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l2) 14%,var(--sheet))"/>
+<use href="#i-table" xlink:href="#i-table" x="863" y="182.0" width="22" height="22" style="color:var(--l2)"/>
+<text x="903" y="190.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Agent registry</text>
+<text x="903" y="205.0" style="fill:var(--ink-2);font-size:10.5px">AgentCore Registry</text>
+</g>
+<g class="node" data-id="llm-gateway" data-layer="l3" tabindex="0" role="button" aria-label="LLM gateway">
+<rect class="node-box" x="845" y="260" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l3) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="845" y="268" width="3" height="40" rx="1.5" style="fill:var(--l3)"/>
+<rect x="855" y="269.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l3) 14%,var(--sheet))"/>
+<use href="#i-router" xlink:href="#i-router" x="863" y="277.0" width="22" height="22" style="color:var(--l3)"/>
+<text x="903" y="285.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">LLM gateway</text>
+<text x="903" y="300.0" style="fill:var(--ink-2);font-size:10.5px">Router, cache, quotas</text>
+</g>
+<g class="node" data-id="slm-serving" data-layer="l4" tabindex="0" role="button" aria-label="SLM serving">
+<rect class="node-box" x="845" y="355" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l4) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="845" y="363" width="3" height="40" rx="1.5" style="fill:var(--l4)"/>
+<rect x="855" y="364.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l4) 14%,var(--sheet))"/>
+<use href="#i-chip" xlink:href="#i-chip" x="863" y="372.0" width="22" height="22" style="color:var(--l4)"/>
+<text x="903" y="380.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">SLM serving</text>
+<text x="903" y="395.0" style="fill:var(--ink-2);font-size:10.5px">EKS, Inferentia, GPU</text>
+</g>
+<g class="node" data-id="knowledge-and-memory" data-layer="l5" tabindex="0" role="button" aria-label="Knowledge and memory">
+<rect class="node-box" x="845" y="450" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l5) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="845" y="458" width="3" height="40" rx="1.5" style="fill:var(--l5)"/>
+<rect x="855" y="459.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l5) 14%,var(--sheet))"/>
+<use href="#i-database" xlink:href="#i-database" x="863" y="467.0" width="22" height="22" style="color:var(--l5)"/>
+<text x="903" y="475.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Knowledge and memory</text>
+<text x="903" y="490.0" style="fill:var(--ink-2);font-size:10.5px">KB, vectors, Neptune</text>
+</g>
+<g class="node" data-id="amazon-bedrock-models" data-layer="l4" tabindex="0" role="button" aria-label="Amazon Bedrock models">
+<rect class="node-box" x="1125" y="70" width="350" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l4) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="1125" y="78" width="3" height="40" rx="1.5" style="fill:var(--l4)"/>
+<rect x="1135" y="79.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l4) 14%,var(--sheet))"/>
+<use href="#i-neural" xlink:href="#i-neural" x="1143" y="87.0" width="22" height="22" style="color:var(--l4)"/>
+<text x="1183" y="95.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Amazon Bedrock models</text>
+<text x="1183" y="110.0" style="fill:var(--ink-2);font-size:10.5px">Nova, Claude, Llama, Mistral</text>
+</g>
+<g class="node" data-id="s3-opensearch-knowledge-base" data-layer="l4" tabindex="0" role="button" aria-label="S3, OpenSearch, Knowledge Bases">
+<rect class="node-box" x="1125" y="145" width="350" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l4) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="1125" y="153" width="3" height="40" rx="1.5" style="fill:var(--l4)"/>
+<rect x="1135" y="154.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l4) 14%,var(--sheet))"/>
+<use href="#i-search" xlink:href="#i-search" x="1143" y="162.0" width="22" height="22" style="color:var(--l4)"/>
+<text x="1183" y="170.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">S3, OpenSearch, Knowledge Bases</text>
+<text x="1183" y="185.0" style="fill:var(--ink-2);font-size:10.5px">Interface endpoints, endpoint policies</text>
+</g>
+<g class="node" data-id="in-house-llm" data-layer="risk" tabindex="0" role="button" aria-label="In-house LLM">
+<rect class="node-box" x="1125" y="295" width="350" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--risk) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="1125" y="303" width="3" height="40" rx="1.5" style="fill:var(--risk)"/>
+<rect x="1135" y="304.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--risk) 14%,var(--sheet))"/>
+<use href="#i-neural" xlink:href="#i-neural" x="1143" y="312.0" width="22" height="22" style="color:var(--risk)"/>
+<text x="1183" y="320.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">In-house LLM</text>
+<text x="1183" y="335.0" style="fill:var(--ink-2);font-size:10.5px">EKS on Nitro, vLLM, Trainium / GPU</text>
+</g>
+<g class="node" data-id="regulated-data" data-layer="risk" tabindex="0" role="button" aria-label="Regulated data">
+<rect class="node-box" x="1125" y="368" width="350" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--risk) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="1125" y="376" width="3" height="40" rx="1.5" style="fill:var(--risk)"/>
+<rect x="1135" y="377.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--risk) 14%,var(--sheet))"/>
+<use href="#i-lock" xlink:href="#i-lock" x="1143" y="385.0" width="22" height="22" style="color:var(--risk)"/>
+<text x="1183" y="393.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Regulated data</text>
+<text x="1183" y="408.0" style="fill:var(--ink-2);font-size:10.5px">KMS external key store, no egress</text>
+</g>
+<g class="node" data-id="workload-clusters" data-layer="l0" tabindex="0" role="button" aria-label="Workload clusters">
+<rect class="node-box" x="1125" y="510" width="350" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l0) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="1125" y="518" width="3" height="40" rx="1.5" style="fill:var(--l0)"/>
+<rect x="1135" y="519.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l0) 14%,var(--sheet))"/>
+<use href="#i-server" xlink:href="#i-server" x="1143" y="527.0" width="22" height="22" style="color:var(--l0)"/>
+<text x="1183" y="535.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Workload clusters</text>
+<text x="1183" y="550.0" style="fill:var(--ink-2);font-size:10.5px">EKS, ECS, Lambda</text>
+</g>
+<g class="node" data-id="instances-and-databases" data-layer="l0" tabindex="0" role="button" aria-label="Instances and databases">
+<rect class="node-box" x="1125" y="585" width="350" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l0) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="1125" y="593" width="3" height="40" rx="1.5" style="fill:var(--l0)"/>
+<rect x="1135" y="594.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l0) 14%,var(--sheet))"/>
+<use href="#i-database" xlink:href="#i-database" x="1143" y="602.0" width="22" height="22" style="color:var(--l0)"/>
+<text x="1183" y="610.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Instances and databases</text>
+<text x="1183" y="625.0" style="fill:var(--ink-2);font-size:10.5px">EC2, RDS, Aurora, on-prem apps</text>
+</g>
+<g class="node" data-id="aws-kms-cloudhsm" data-layer="l9" tabindex="0" role="button" aria-label="AWS KMS, CloudHSM">
+<rect class="node-box" x="820" y="740" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l9) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="820" y="748" width="3" height="40" rx="1.5" style="fill:var(--l9)"/>
+<rect x="830" y="749.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l9) 14%,var(--sheet))"/>
+<use href="#i-key" xlink:href="#i-key" x="838" y="757.0" width="22" height="22" style="color:var(--l9)"/>
+<text x="878" y="765.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">AWS KMS, CloudHSM</text>
+<text x="878" y="780.0" style="fill:var(--ink-2);font-size:10.5px">CMKs everywhere</text>
+</g>
+<g class="node" data-id="secrets-manager" data-layer="l9" tabindex="0" role="button" aria-label="Secrets Manager">
+<rect class="node-box" x="1045" y="740" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l9) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="1045" y="748" width="3" height="40" rx="1.5" style="fill:var(--l9)"/>
+<rect x="1055" y="749.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l9) 14%,var(--sheet))"/>
+<use href="#i-vault" xlink:href="#i-vault" x="1063" y="757.0" width="22" height="22" style="color:var(--l9)"/>
+<text x="1103" y="765.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Secrets Manager</text>
+<text x="1103" y="780.0" style="fill:var(--ink-2);font-size:10.5px">Rotated, short-lived</text>
+</g>
+<g class="node" data-id="temporary-access" data-layer="l9" tabindex="0" role="button" aria-label="Temporary access">
+<rect class="node-box" x="1270" y="740" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l9) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="1270" y="748" width="3" height="40" rx="1.5" style="fill:var(--l9)"/>
+<rect x="1280" y="749.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l9) 14%,var(--sheet))"/>
+<use href="#i-id" xlink:href="#i-id" x="1288" y="757.0" width="22" height="22" style="color:var(--l9)"/>
+<text x="1328" y="765.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Temporary access</text>
+<text x="1328" y="780.0" style="fill:var(--ink-2);font-size:10.5px">JIT, break-glass</text>
+</g>
+<g class="node" data-id="telemetry" data-layer="l8" tabindex="0" role="button" aria-label="Telemetry">
+<rect class="node-box" x="595" y="860" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l8) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="595" y="868" width="3" height="40" rx="1.5" style="fill:var(--l8)"/>
+<rect x="605" y="869.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l8) 14%,var(--sheet))"/>
+<use href="#i-eye" xlink:href="#i-eye" x="613" y="877.0" width="22" height="22" style="color:var(--l8)"/>
+<text x="653" y="885.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Telemetry</text>
+<text x="653" y="900.0" style="fill:var(--ink-2);font-size:10.5px">X-Ray, CloudWatch, flows</text>
+</g>
+<g class="node" data-id="cloudtrail-lake" data-layer="l9" tabindex="0" role="button" aria-label="CloudTrail Lake">
+<rect class="node-box" x="820" y="860" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l9) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="820" y="868" width="3" height="40" rx="1.5" style="fill:var(--l9)"/>
+<rect x="830" y="869.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l9) 14%,var(--sheet))"/>
+<use href="#i-log" xlink:href="#i-log" x="838" y="877.0" width="22" height="22" style="color:var(--l9)"/>
+<text x="878" y="885.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">CloudTrail Lake</text>
+<text x="878" y="900.0" style="fill:var(--ink-2);font-size:10.5px">Log Archive account</text>
+</g>
+<g class="node" data-id="security-lake" data-layer="risk" tabindex="0" role="button" aria-label="Security Lake">
+<rect class="node-box" x="1045" y="860" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--risk) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="1045" y="868" width="3" height="40" rx="1.5" style="fill:var(--risk)"/>
+<rect x="1055" y="869.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--risk) 14%,var(--sheet))"/>
+<use href="#i-target" xlink:href="#i-target" x="1063" y="877.0" width="22" height="22" style="color:var(--risk)"/>
+<text x="1103" y="885.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Security Lake</text>
+<text x="1103" y="900.0" style="fill:var(--ink-2);font-size:10.5px">SIEM, SOAR, Detective</text>
+</g>
+<g class="node" data-id="security-hub" data-layer="l9" tabindex="0" role="button" aria-label="Security Hub">
+<rect class="node-box" x="1270" y="860" width="200" height="56" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--l9) 40%,var(--rule));stroke-width:1.2"/>
+<rect x="1270" y="868" width="3" height="40" rx="1.5" style="fill:var(--l9)"/>
+<rect x="1280" y="869.0" width="38" height="38" rx="9" style="fill:color-mix(in srgb,var(--l9) 14%,var(--sheet))"/>
+<use href="#i-radar" xlink:href="#i-radar" x="1288" y="877.0" width="22" height="22" style="color:var(--l9)"/>
+<text x="1328" y="885.0" style="fill:var(--ink);font-size:12.5px;font-weight:600">Security Hub</text>
+<text x="1328" y="900.0" style="fill:var(--ink-2);font-size:10.5px">GuardDuty, Inspector</text>
+</g>
+<g class="edge-label" data-from="saas-platforms" data-to="waf-shield">
+<rect x="242.6" y="259.0" width="58.8" height="18" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--ink-2) 50%,var(--rule));stroke-width:1"/>
+<text x="272.0" y="271.6" text-anchor="middle" style="fill:var(--ink-2);font-size:10px;font-weight:500">webhooks</text></g>
+<g class="edge-label" data-from="on-prem-dcs" data-to="direct-connect">
+<rect x="255.4" y="519.0" width="53.2" height="18" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--ink-2) 50%,var(--rule));stroke-width:1"/>
+<text x="282.0" y="531.6" text-anchor="middle" style="fill:var(--ink-2);font-size:10px;font-weight:500">primary</text></g>
+<g class="edge-label" data-from="on-prem-dcs" data-to="site-to-site-vpn">
+<rect x="251.2" y="565.0" width="47.6" height="18" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--ink-2) 50%,var(--rule));stroke-width:1"/>
+<text x="275.0" y="577.6" text-anchor="middle" style="fill:var(--ink-2);font-size:10px;font-weight:500">backup</text></g>
+<g class="edge-label" data-from="network-firewall" data-to="api-gateway">
+<rect x="514.2" y="171.0" width="75.6" height="18" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--ink-2) 50%,var(--rule));stroke-width:1"/>
+<text x="552.0" y="183.6" text-anchor="middle" style="fill:var(--ink-2);font-size:10px;font-weight:500">north-south</text></g>
+<g class="edge-label" data-from="agentcore-policy" data-to="hitl-approvals">
+<rect x="648.8" y="421.5" width="92.4" height="18" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--ink-2) 50%,var(--rule));stroke-width:1"/>
+<text x="695.0" y="434.1" text-anchor="middle" style="fill:var(--ink-2);font-size:10px;font-weight:500">needs approval</text></g>
+<g class="edge-label" data-from="agentcore-policy" data-to="mcp-tool-executors">
+<rect x="562.0" y="421.0" width="42.0" height="18" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--ink-2) 50%,var(--rule));stroke-width:1"/>
+<text x="583.0" y="433.6" text-anchor="middle" style="fill:var(--ink-2);font-size:10px;font-weight:500">allow</text></g>
+<g class="edge-label" data-from="agentcore-runtime" data-to="knowledge-and-memory">
+<rect x="808.2" y="411.0" width="47.6" height="18" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--ink-2) 50%,var(--rule));stroke-width:1"/>
+<text x="832.0" y="423.6" text-anchor="middle" style="fill:var(--ink-2);font-size:10px;font-weight:500">ground</text></g>
+<g class="edge-label" data-from="llm-gateway" data-to="amazon-bedrock-models">
+<rect x="1047.2" y="179.0" width="75.6" height="18" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--ink-2) 50%,var(--rule));stroke-width:1"/>
+<text x="1085.0" y="191.6" text-anchor="middle" style="fill:var(--ink-2);font-size:10px;font-weight:500">PrivateLink</text></g>
+<g class="edge-label" data-from="llm-gateway" data-to="in-house-llm">
+<rect x="1044.4" y="321.0" width="81.2" height="18" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--ink-2) 50%,var(--rule));stroke-width:1"/>
+<text x="1085.0" y="333.6" text-anchor="middle" style="fill:var(--ink-2);font-size:10px;font-weight:500">bridge, mTLS</text></g>
+<g class="edge-label" data-from="mcp-tool-executors" data-to="workload-clusters">
+<rect x="892.2" y="564.0" width="75.6" height="18" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--ink-2) 50%,var(--rule));stroke-width:1"/>
+<text x="930.0" y="576.6" text-anchor="middle" style="fill:var(--ink-2);font-size:10px;font-weight:500">VPC Lattice</text></g>
+<g class="edge-label" data-from="" data-to="network-firewall">
+<rect x="525.0" y="826.0" width="70.0" height="18" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--ink-2) 50%,var(--rule));stroke-width:1"/>
+<text x="560.0" y="838.6" text-anchor="middle" style="fill:var(--ink-2);font-size:10px;font-weight:500">to on-prem</text></g>
+<g class="edge-label" data-from="egress-inspection" data-to="saas-platforms">
+<rect x="273.4" y="428.0" width="53.2" height="18" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--ink-2) 50%,var(--rule));stroke-width:1"/>
+<text x="300.0" y="440.6" text-anchor="middle" style="fill:var(--ink-2);font-size:10px;font-weight:500">to SaaS</text></g>
+<g class="edge-label" data-from="mcp-tool-executors" data-to="telemetry">
+<rect x="622.8" y="641.0" width="64.4" height="18" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--ink-2) 50%,var(--rule));stroke-width:1"/>
+<text x="655.0" y="653.6" text-anchor="middle" style="fill:var(--ink-2);font-size:10px;font-weight:500">telemetry</text></g>
+<g class="edge-label" data-from="security-lake" data-to="secrets-manager">
+<rect x="1093.2" y="824.0" width="103.6" height="18" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--risk) 50%,var(--rule));stroke-width:1"/>
+<text x="1145.0" y="836.6" text-anchor="middle" style="fill:var(--risk);font-size:10px;font-weight:500">SOAR containment</text></g>
+<g class="edge-label" data-from="aws-kms-cloudhsm" data-to="knowledge-and-memory">
+<rect x="984.6" y="591.0" width="30.8" height="18" rx="9" style="fill:var(--sheet);stroke:color-mix(in srgb,var(--ink-2) 50%,var(--rule));stroke-width:1"/>
+<text x="1000.0" y="603.6" text-anchor="middle" style="fill:var(--ink-2);font-size:10px;font-weight:500">KMS</text></g>
+</svg>

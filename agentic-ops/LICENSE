@@ -1,0 +1,21 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright (c) 2026 Naga Gande
+
+Unless otherwise noted, the written content and diagrams in this repository
+(including everything under concepts/, architecture/, articles/, diagrams/,
+site/ and the Markdown files at the repository root) are licensed under the
+Creative Commons Attribution 4.0 International License.
+
+You are free to share and adapt this material for any purpose, including
+commercially, provided you give appropriate credit, provide a link to the
+licence, and indicate if changes were made.
+
+Full licence text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+Code, policy files, YAML and other templates under templates/ and .github/
+are licensed separately under the MIT License; see LICENSE-CODE.
+
+Product and service names mentioned are trademarks of their respective
+owners. This repository is not affiliated with or endorsed by Google, Amazon
+Web Services or any other vendor.

@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1260 520" width="1260" height="520" role="img" aria-label="AWS runtime security gate chain G1 to G12" class="aodiagram" style="font-family:'IBM Plex Sans','Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+<title>AWS runtime security gate chain G1 to G12</title><defs>
+<marker id="ar-ink-2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:#44525F"/></marker>
+<marker id="ar-risk" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:#AE2E24"/></marker>
+<marker id="ar-auto" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:#2E7D5B"/></marker>
+<marker id="ar-gate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:#B57612"/></marker>
+<marker id="ar-signal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:#1E5AA8"/></marker>
+<symbol id="i-agent" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><rect x="4.5" y="8" width="15" height="11" rx="3"/><path d="M12 4.5V8M9.5 16h5"/><circle cx="12" cy="3.5" r="1.2"/><circle cx="9.3" cy="12.5" r="1.1"/><circle cx="14.7" cy="12.5" r="1.1"/><path d="M2.5 12v3M21.5 12v3"/></g></symbol>
+<symbol id="i-approve" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><circle cx="10" cy="8" r="3.5"/><path d="M3 20c0-3.6 3-6 7-6 1.3 0 2.5.3 3.5.8M15 18l2 2 4.5-4.5"/></g></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M7.5 8.5l1.5 1.5 3-3M14 9h3M7.5 15l1.5 1.5 3-3M14 15.5h3"/></g></symbol>
+<symbol id="i-gateway" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M3 20V10l9-6 9 6v10"/><path d="M8 20v-6h8v6M3 20h18"/></g></symbol>
+<symbol id="i-id" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2.5"/><path d="M5.5 17c.6-1.8 2-2.7 3.5-2.7s2.9.9 3.5 2.7M14.5 10h4M14.5 13.5h3"/></g></symbol>
+<symbol id="i-policy" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M12 4v16M8 20h8M5 7h14"/><path d="M5 7l-3 6a3 3 0 0 0 6 0zM19 7l-3 6a3 3 0 0 0 6 0z"/></g></symbol>
+<symbol id="i-rollback" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M4 12a8 8 0 1 0 2.4-5.7"/><path d="M4 4v4.3h4.3"/></g></symbol>
+<symbol id="i-router" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="12" r="9"/><path d="M7 10h9l-2.5-2.5M17 14H8l2.5 2.5"/></g></symbol>
+<symbol id="i-scan" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><path d="M7 12h10"/></g></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5.5 5.5"/></g></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></g></symbol>
+<symbol id="i-shieldscan" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 10h6M9 13h6M9 16h3"/></g></symbol>
+<symbol id="i-stream" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="12" r="2.6"/><circle cx="4" cy="6" r="1.8"/><circle cx="20" cy="6" r="1.8"/><circle cx="4" cy="18" r="1.8"/><circle cx="20" cy="18" r="1.8"/><path d="M5.6 7l4.2 3.4M18.4 7l-4.2 3.4M5.6 17l4.2-3.4M18.4 17l-4.2-3.4"/></g></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1"/><path d="M12 1.5v4M12 18.5v4M1.5 12h4M18.5 12h4"/></g></symbol>
+<symbol id="i-wrench" viewBox="0 0 24 24"><g style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M14.5 4a5 5 0 0 0 5.5 6.5l-9.3 9.3a2.2 2.2 0 0 1-3.1-3.1L16.9 7.4A5 5 0 0 1 14.5 4z"/></g></symbol>
+</defs>
+<rect width="1260" height="520" style="fill:#EEF1F3"/>
+<path class="edge" data-from="request-or-event" data-to="g1-edge" d="M115.0 52.0 L115.0 70.0" marker-end="url(#ar-auto)" style="fill:none;stroke:#2E7D5B;stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="g1-edge" data-to="g2-identity" d="M210.0 98.0 L225.0 98.0" marker-end="url(#ar-auto)" style="fill:none;stroke:#2E7D5B;stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="g2-identity" data-to="g3-api-contract" d="M415.0 98.0 L430.0 98.0" marker-end="url(#ar-auto)" style="fill:none;stroke:#2E7D5B;stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="g3-api-contract" data-to="g4-input-safety" d="M620.0 98.0 L635.0 98.0" marker-end="url(#ar-auto)" style="fill:none;stroke:#2E7D5B;stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="g4-input-safety" data-to="g5-agent-authz" d="M825.0 98.0 L840.0 98.0" marker-end="url(#ar-auto)" style="fill:none;stroke:#2E7D5B;stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="g5-agent-authz" data-to="g6-model-gateway" d="M1030.0 98.0 L1045.0 98.0" marker-end="url(#ar-auto)" style="fill:none;stroke:#2E7D5B;stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="g6-model-gateway" data-to="g7-retrieval-acl" d="M1140.0 126.0 L1140.0 260.0" marker-end="url(#ar-auto)" style="fill:none;stroke:#2E7D5B;stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="g7-retrieval-acl" data-to="g8-output-safety" d="M1045.0 288.0 L1030.0 288.0" marker-end="url(#ar-auto)" style="fill:none;stroke:#2E7D5B;stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="g8-output-safety" data-to="g9-action-policy" d="M840.0 288.0 L825.0 288.0" marker-end="url(#ar-auto)" style="fill:none;stroke:#2E7D5B;stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="g9-action-policy" data-to="g11-exec-guard" d="M635.0 288.0 L620.0 288.0" marker-end="url(#ar-auto)" style="fill:none;stroke:#2E7D5B;stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="g11-exec-guard" data-to="g12-verify-audit" d="M430.0 288.0 L415.0 288.0" marker-end="url(#ar-auto)" style="fill:none;stroke:#2E7D5B;stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="g9-action-policy" data-to="g10-approval" d="M770.0 316.0 L770.0 428.0 L720.0 428.0" marker-end="url(#ar-gate)" style="fill:none;stroke:#B57612;stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="g10-approval" data-to="g11-exec-guard" d="M575.0 400.0 L575.0 316.0" marker-end="url(#ar-auto)" style="fill:none;stroke:#2E7D5B;stroke-width:1.6;stroke-dasharray:none;stroke-linejoin:round"/>
+<path class="edge" data-from="g11-exec-guard" data-to="rollback" d="M475.0 316.0 L475.0 370.0 L320.0 370.0 L320.0 400.0" marker-end="url(#ar-risk)" style="fill:none;stroke:#AE2E24;stroke-width:1.6;stroke-dasharray:5 4;stroke-linejoin:round"/>
+<path class="edge" data-from="g1-edge" data-to="" d="M55.0 126.0 L55.0 203.0" style="fill:none;stroke:#AE2E24;stroke-width:1.6;stroke-dasharray:5 4;stroke-linejoin:round"/>
+<path class="edge" data-from="g2-identity" data-to="" d="M260.0 126.0 L260.0 203.0" style="fill:none;stroke:#AE2E24;stroke-width:1.6;stroke-dasharray:5 4;stroke-linejoin:round"/>
+<path class="edge" data-from="g3-api-contract" data-to="" d="M465.0 126.0 L465.0 203.0" style="fill:none;stroke:#AE2E24;stroke-width:1.6;stroke-dasharray:5 4;stroke-linejoin:round"/>
+<path class="edge" data-from="g4-input-safety" data-to="" d="M670.0 126.0 L670.0 203.0" style="fill:none;stroke:#AE2E24;stroke-width:1.6;stroke-dasharray:5 4;stroke-linejoin:round"/>
+<path class="edge" data-from="g5-agent-authz" data-to="" d="M875.0 126.0 L875.0 203.0" style="fill:none;stroke:#AE2E24;stroke-width:1.6;stroke-dasharray:5 4;stroke-linejoin:round"/>
+<path class="edge" data-from="g6-model-gateway" data-to="" d="M1080.0 126.0 L1080.0 203.0" style="fill:none;stroke:#AE2E24;stroke-width:1.6;stroke-dasharray:5 4;stroke-linejoin:round"/>
+<path class="edge" data-from="g7-retrieval-acl" data-to="" d="M1080.0 260.0 L1080.0 203.0" style="fill:none;stroke:#AE2E24;stroke-width:1.6;stroke-dasharray:5 4;stroke-linejoin:round"/>
+<path class="edge" data-from="g8-output-safety" data-to="" d="M875.0 260.0 L875.0 203.0" style="fill:none;stroke:#AE2E24;stroke-width:1.6;stroke-dasharray:5 4;stroke-linejoin:round"/>
+<path class="edge" data-from="g9-action-policy" data-to="" d="M670.0 260.0 L670.0 203.0" style="fill:none;stroke:#AE2E24;stroke-width:1.6;stroke-dasharray:5 4;stroke-linejoin:round"/>
+<path class="edge" data-from="g11-exec-guard" data-to="" d="M465.0 260.0 L465.0 203.0" style="fill:none;stroke:#AE2E24;stroke-width:1.6;stroke-dasharray:5 4;stroke-linejoin:round"/>
+<path class="edge" data-from="" data-to="" d="M1080.0 203.0 L55.0 203.0" style="fill:none;stroke:#AE2E24;stroke-width:1.6;stroke-dasharray:5 4;stroke-linejoin:round"/>
+<path class="edge" data-from="" data-to="security-lake" d="M115.0 203.0 L115.0 260.0" marker-end="url(#ar-risk)" style="fill:none;stroke:#AE2E24;stroke-width:1.6;stroke-dasharray:5 4;stroke-linejoin:round"/>
+<g class="node" data-id="g1-edge" data-layer="l1" tabindex="0" role="button" aria-label="G1 Edge">
+<rect class="node-box" x="20" y="70" width="190" height="56" rx="9" style="fill:#FFFFFF;stroke:#ab9ec4;stroke-width:1.2"/>
+<rect x="20" y="78" width="3" height="40" rx="1.5" style="fill:#7A4FA3"/>
+<rect x="30" y="79.0" width="38" height="38" rx="9" style="fill:#ece6f2"/>
+<use href="#i-shield" xlink:href="#i-shield" x="38" y="87.0" width="22" height="22" style="color:#7A4FA3"/>
+<text x="78" y="95.0" style="fill:#16212B;font-size:12.5px;font-weight:600">G1 Edge</text>
+<text x="78" y="110.0" style="fill:#44525F;font-size:10.5px">WAF, Shield, CloudFront</text>
+</g>
+<g class="node" data-id="g2-identity" data-layer="l1" tabindex="0" role="button" aria-label="G2 Identity">
+<rect class="node-box" x="225" y="70" width="190" height="56" rx="9" style="fill:#FFFFFF;stroke:#ab9ec4;stroke-width:1.2"/>
+<rect x="225" y="78" width="3" height="40" rx="1.5" style="fill:#7A4FA3"/>
+<rect x="235" y="79.0" width="38" height="38" rx="9" style="fill:#ece6f2"/>
+<use href="#i-id" xlink:href="#i-id" x="243" y="87.0" width="22" height="22" style="color:#7A4FA3"/>
+<text x="283" y="95.0" style="fill:#16212B;font-size:12.5px;font-weight:600">G2 Identity</text>
+<text x="283" y="110.0" style="fill:#44525F;font-size:10.5px">IdC, Cognito, IAM</text>
+</g>
+<g class="node" data-id="g3-api-contract" data-layer="l1" tabindex="0" role="button" aria-label="G3 API contract">
+<rect class="node-box" x="430" y="70" width="190" height="56" rx="9" style="fill:#FFFFFF;stroke:#ab9ec4;stroke-width:1.2"/>
+<rect x="430" y="78" width="3" height="40" rx="1.5" style="fill:#7A4FA3"/>
+<rect x="440" y="79.0" width="38" height="38" rx="9" style="fill:#ece6f2"/>
+<use href="#i-gateway" xlink:href="#i-gateway" x="448" y="87.0" width="22" height="22" style="color:#7A4FA3"/>
+<text x="488" y="95.0" style="fill:#16212B;font-size:12.5px;font-weight:600">G3 API contract</text>
+<text x="488" y="110.0" style="fill:#44525F;font-size:10.5px">API GW auth, schema</text>
+</g>
+<g class="node" data-id="g4-input-safety" data-layer="l1" tabindex="0" role="button" aria-label="G4 Input safety">
+<rect class="node-box" x="635" y="70" width="190" height="56" rx="9" style="fill:#FFFFFF;stroke:#ab9ec4;stroke-width:1.2"/>
+<rect x="635" y="78" width="3" height="40" rx="1.5" style="fill:#7A4FA3"/>
+<rect x="645" y="79.0" width="38" height="38" rx="9" style="fill:#ece6f2"/>
+<use href="#i-shieldscan" xlink:href="#i-shieldscan" x="653" y="87.0" width="22" height="22" style="color:#7A4FA3"/>
+<text x="693" y="95.0" style="fill:#16212B;font-size:12.5px;font-weight:600">G4 Input safety</text>
+<text x="693" y="110.0" style="fill:#44525F;font-size:10.5px">Bedrock Guardrails</text>
+</g>
+<g class="node" data-id="g5-agent-authz" data-layer="l2" tabindex="0" role="button" aria-label="G5 Agent authZ">
+<rect class="node-box" x="840" y="70" width="190" height="56" rx="9" style="fill:#FFFFFF;stroke:#86a3c6;stroke-width:1.2"/>
+<rect x="840" y="78" width="3" height="40" rx="1.5" style="fill:#1E5AA8"/>
+<rect x="850" y="79.0" width="38" height="38" rx="9" style="fill:#dfe8f3"/>
+<use href="#i-agent" xlink:href="#i-agent" x="858" y="87.0" width="22" height="22" style="color:#1E5AA8"/>
+<text x="898" y="95.0" style="fill:#16212B;font-size:12.5px;font-weight:600">G5 Agent authZ</text>
+<text x="898" y="110.0" style="fill:#44525F;font-size:10.5px">AgentCore Identity</text>
+</g>
+<g class="node" data-id="g6-model-gateway" data-layer="l3" tabindex="0" role="button" aria-label="G6 Model gateway">
+<rect class="node-box" x="1045" y="70" width="190" height="56" rx="9" style="fill:#FFFFFF;stroke:#7fb0b8;stroke-width:1.2"/>
+<rect x="1045" y="78" width="3" height="40" rx="1.5" style="fill:#0E7C86"/>
+<rect x="1055" y="79.0" width="38" height="38" rx="9" style="fill:#ddedee"/>
+<use href="#i-router" xlink:href="#i-router" x="1063" y="87.0" width="22" height="22" style="color:#0E7C86"/>
+<text x="1103" y="95.0" style="fill:#16212B;font-size:12.5px;font-weight:600">G6 Model gateway</text>
+<text x="1103" y="110.0" style="fill:#44525F;font-size:10.5px">Data class, budget</text>
+</g>
+<g class="node" data-id="g7-retrieval-acl" data-layer="l5" tabindex="0" role="button" aria-label="G7 Retrieval ACL">
+<rect class="node-box" x="1045" y="260" width="190" height="56" rx="9" style="fill:#FFFFFF;stroke:#b1aa8e;stroke-width:1.2"/>
+<rect x="1045" y="268" width="3" height="40" rx="1.5" style="fill:#8A6D1D"/>
+<rect x="1055" y="269.0" width="38" height="38" rx="9" style="fill:#efebdf"/>
+<use href="#i-search" xlink:href="#i-search" x="1063" y="277.0" width="22" height="22" style="color:#8A6D1D"/>
+<text x="1103" y="285.0" style="fill:#16212B;font-size:12.5px;font-weight:600">G7 Retrieval ACL</text>
+<text x="1103" y="300.0" style="fill:#44525F;font-size:10.5px">KB metadata filters</text>
+</g>
+<g class="node" data-id="g8-output-safety" data-layer="l1" tabindex="0" role="button" aria-label="G8 Output safety">
+<rect class="node-box" x="840" y="260" width="190" height="56" rx="9" style="fill:#FFFFFF;stroke:#ab9ec4;stroke-width:1.2"/>
+<rect x="840" y="268" width="3" height="40" rx="1.5" style="fill:#7A4FA3"/>
+<rect x="850" y="269.0" width="38" height="38" rx="9" style="fill:#ece6f2"/>
+<use href="#i-scan" xlink:href="#i-scan" x="858" y="277.0" width="22" height="22" style="color:#7A4FA3"/>
+<text x="898" y="285.0" style="fill:#16212B;font-size:12.5px;font-weight:600">G8 Output safety</text>
+<text x="898" y="300.0" style="fill:#44525F;font-size:10.5px">Guardrails, grounding</text>
+</g>
+<g class="node" data-id="g9-action-policy" data-layer="l2" tabindex="0" role="button" aria-label="G9 Action policy">
+<rect class="node-box" x="635" y="260" width="190" height="56" rx="9" style="fill:#FFFFFF;stroke:#86a3c6;stroke-width:1.2"/>
+<rect x="635" y="268" width="3" height="40" rx="1.5" style="fill:#1E5AA8"/>
+<rect x="645" y="269.0" width="38" height="38" rx="9" style="fill:#dfe8f3"/>
+<use href="#i-policy" xlink:href="#i-policy" x="653" y="277.0" width="22" height="22" style="color:#1E5AA8"/>
+<text x="693" y="285.0" style="fill:#16212B;font-size:12.5px;font-weight:600">G9 Action policy</text>
+<text x="693" y="300.0" style="fill:#44525F;font-size:10.5px">AgentCore Policy</text>
+</g>
+<g class="node" data-id="g11-exec-guard" data-layer="l6" tabindex="0" role="button" aria-label="G11 Exec guard">
+<rect class="node-box" x="430" y="260" width="190" height="56" rx="9" style="fill:#FFFFFF;stroke:#c2a08e;stroke-width:1.2"/>
+<rect x="430" y="268" width="3" height="40" rx="1.5" style="fill:#B5541B"/>
+<rect x="440" y="269.0" width="38" height="38" rx="9" style="fill:#f5e7df"/>
+<use href="#i-wrench" xlink:href="#i-wrench" x="448" y="277.0" width="22" height="22" style="color:#B5541B"/>
+<text x="488" y="285.0" style="fill:#16212B;font-size:12.5px;font-weight:600">G11 Exec guard</text>
+<text x="488" y="300.0" style="fill:#44525F;font-size:10.5px">STS creds, dry-run</text>
+</g>
+<g class="node" data-id="g12-verify-audit" data-layer="auto" tabindex="0" role="button" aria-label="G12 Verify, audit">
+<rect class="node-box" x="225" y="260" width="190" height="56" rx="9" style="fill:#FFFFFF;stroke:#8cb1a7;stroke-width:1.2"/>
+<rect x="225" y="268" width="3" height="40" rx="1.5" style="fill:#2E7D5B"/>
+<rect x="235" y="269.0" width="38" height="38" rx="9" style="fill:#e2ede8"/>
+<use href="#i-check" xlink:href="#i-check" x="243" y="277.0" width="22" height="22" style="color:#2E7D5B"/>
+<text x="283" y="285.0" style="fill:#16212B;font-size:12.5px;font-weight:600">G12 Verify, audit</text>
+<text x="283" y="300.0" style="fill:#44525F;font-size:10.5px">CloudTrail, ledger</text>
+</g>
+<g class="node" data-id="g10-approval" data-layer="gate" tabindex="0" role="button" aria-label="G10 Approval">
+<rect class="node-box" x="530" y="400" width="190" height="56" rx="9" style="fill:#FFFFFF;stroke:#c2ae8a;stroke-width:1.2"/>
+<rect x="530" y="408" width="3" height="40" rx="1.5" style="fill:#B57612"/>
+<rect x="540" y="409.0" width="38" height="38" rx="9" style="fill:#f5ecde"/>
+<use href="#i-approve" xlink:href="#i-approve" x="548" y="417.0" width="22" height="22" style="color:#B57612"/>
+<text x="588" y="425.0" style="fill:#16212B;font-size:12.5px;font-weight:600">G10 Approval</text>
+<text x="588" y="440.0" style="fill:#44525F;font-size:10.5px">Step Functions token</text>
+</g>
+<g class="node" data-id="rollback" data-layer="risk" tabindex="0" role="button" aria-label="Rollback">
+<rect class="node-box" x="225" y="400" width="190" height="56" rx="9" style="fill:#FFFFFF;stroke:#bf9191;stroke-width:1.2"/>
+<rect x="225" y="408" width="3" height="40" rx="1.5" style="fill:#AE2E24"/>
+<rect x="235" y="409.0" width="38" height="38" rx="9" style="fill:#f4e2e0"/>
+<use href="#i-rollback" xlink:href="#i-rollback" x="243" y="417.0" width="22" height="22" style="color:#AE2E24"/>
+<text x="283" y="425.0" style="fill:#16212B;font-size:12.5px;font-weight:600">Rollback</text>
+<text x="283" y="440.0" style="fill:#44525F;font-size:10.5px">Demote autonomy</text>
+</g>
+<g class="node" data-id="security-lake" data-layer="risk" tabindex="0" role="button" aria-label="Security Lake">
+<rect class="node-box" x="20" y="260" width="190" height="56" rx="9" style="fill:#FFFFFF;stroke:#bf9191;stroke-width:1.2"/>
+<rect x="20" y="268" width="3" height="40" rx="1.5" style="fill:#AE2E24"/>
+<rect x="30" y="269.0" width="38" height="38" rx="9" style="fill:#f4e2e0"/>
+<use href="#i-target" xlink:href="#i-target" x="38" y="277.0" width="22" height="22" style="color:#AE2E24"/>
+<text x="78" y="285.0" style="fill:#16212B;font-size:12.5px;font-weight:600">Security Lake</text>
+<text x="78" y="300.0" style="fill:#44525F;font-size:10.5px">SIEM, SOAR case</text>
+</g>
+<g class="node" data-id="request-or-event" data-layer="l0" tabindex="0" role="button" aria-label="Request or event">
+<rect class="node-box" x="20" y="8" width="190" height="44" rx="9" style="fill:#FFFFFF;stroke:#9ea9b4;stroke-width:1.2"/>
+<rect x="20" y="16" width="3" height="28" rx="1.5" style="fill:#5B6B7A"/>
+<rect x="30" y="14.0" width="32" height="32" rx="9" style="fill:#e8eaec"/>
+<use href="#i-stream" xlink:href="#i-stream" x="38" y="22.0" width="16" height="16" style="color:#5B6B7A"/>
+<text x="72" y="34.0" style="fill:#16212B;font-size:12.5px;font-weight:600">Request or event</text>
+</g>
+<g class="edge-label" data-from="g9-action-policy" data-to="g10-approval">
+<rect x="723.8" y="366.0" width="92.4" height="18" rx="9" style="fill:#FFFFFF;stroke:#c0a476;stroke-width:1"/>
+<text x="770.0" y="378.6" text-anchor="middle" style="fill:#B57612;font-size:10px;font-weight:500">needs approval</text></g>
+<g class="edge-label" data-from="g10-approval" data-to="g11-exec-guard">
+<rect x="545.6" y="356.0" width="58.8" height="18" rx="9" style="fill:#FFFFFF;stroke:#7ca89a;stroke-width:1"/>
+<text x="575.0" y="368.6" text-anchor="middle" style="fill:#2E7D5B;font-size:10px;font-weight:500">approved</text></g>
+<g class="edge-label" data-from="g11-exec-guard" data-to="rollback">
+<rect x="379.8" y="361.0" width="36.4" height="18" rx="9" style="fill:#FFFFFF;stroke:#bc807f;stroke-width:1"/>
+<text x="398.0" y="373.6" text-anchor="middle" style="fill:#AE2E24;font-size:10px;font-weight:500">fail</text></g>
+<g class="edge-label" data-from="" data-to="">
+<rect x="505.4" y="194.0" width="109.2" height="18" rx="9" style="fill:#FFFFFF;stroke:#bc807f;stroke-width:1"/>
+<text x="560.0" y="206.6" text-anchor="middle" style="fill:#AE2E24;font-size:10px;font-weight:500">block, log, alert</text></g>
+<g class="legend" style="font-size:11px;fill:#44525F">
+<line x1="850" y1="480" x2="890" y2="480" style="stroke:#2E7D5B;stroke-width:1.6;stroke-dasharray:none"/>
+<text x="898" y="484">pass</text>
+<line x1="944" y1="480" x2="984" y2="480" style="stroke:#B57612;stroke-width:1.6;stroke-dasharray:none"/>
+<text x="992" y="484">escalate to human</text>
+<line x1="1116" y1="480" x2="1156" y2="480" style="stroke:#AE2E24;stroke-width:1.6;stroke-dasharray:5 4"/>
+<text x="1164" y="484">deny path</text>
+</g>
+</svg>

@@ -1,0 +1,15 @@
+{
+  "agent": {
+    "id": "incident-agent",
+    "allowed_actions": {
+      "k8s.scale_deployment": { "level": "L4", "blast_radius": "single-service" },
+      "db.failover": { "level": "L2", "blast_radius": "multi-service" }
+    }
+  },
+  "action": {
+    "name": "k8s.scale_deployment",
+    "blast_radius": "single-service",
+    "target": { "env": "prod", "criticality": "tier-1" }
+  },
+  "context": { "change_freeze": false, "autonomy_kill_switch": false }
+}

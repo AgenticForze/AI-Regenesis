@@ -1,0 +1,831 @@
+{
+ "title": "Full system architecture across trust zones",
+ "width": 1520,
+ "height": 1070,
+ "zones": [
+  {
+   "x": 20,
+   "y": 20,
+   "w": 240,
+   "h": 1030,
+   "title": "Z0 External",
+   "color": "l0"
+  },
+  {
+   "x": 290,
+   "y": 20,
+   "w": 250,
+   "h": 410,
+   "title": "Z1 Global edge",
+   "color": "l1"
+  },
+  {
+   "x": 290,
+   "y": 460,
+   "w": 250,
+   "h": 590,
+   "title": "Z2 Hybrid transit and hub",
+   "color": "l3"
+  },
+  {
+   "x": 570,
+   "y": 20,
+   "w": 500,
+   "h": 640,
+   "title": "Z3 Platform core",
+   "color": "l2",
+   "sub": "VPC-SC perimeter"
+  },
+  {
+   "x": 1100,
+   "y": 20,
+   "w": 400,
+   "h": 200,
+   "title": "Google APIs via PSC",
+   "color": "l4"
+  },
+  {
+   "x": 1100,
+   "y": 250,
+   "w": 400,
+   "h": 190,
+   "title": "Z4 Restricted enclave",
+   "color": "risk",
+   "sub": "separate perimeter"
+  },
+  {
+   "x": 1100,
+   "y": 470,
+   "w": 400,
+   "h": 190,
+   "title": "Managed estate",
+   "color": "l0"
+  },
+  {
+   "x": 570,
+   "y": 690,
+   "w": 930,
+   "h": 290,
+   "title": "Z5 Security and management",
+   "color": "l9",
+   "sub": "separate perimeter and folder"
+  }
+ ],
+ "nodes": [
+  {
+   "id": "employees",
+   "x": 40,
+   "y": 70,
+   "title": "Employees",
+   "sub": "Managed devices, SSO",
+   "icon": "users",
+   "color": "l0"
+  },
+  {
+   "id": "partners-vendors",
+   "x": 40,
+   "y": 160,
+   "title": "Partners, vendors",
+   "sub": "Federated identity",
+   "icon": "briefcase",
+   "color": "l0"
+  },
+  {
+   "id": "saas-platforms",
+   "x": 40,
+   "y": 250,
+   "title": "SaaS platforms",
+   "sub": "ITSM, paging, Git, chat",
+   "icon": "cloud",
+   "color": "l0"
+  },
+  {
+   "id": "on-prem-data-centres",
+   "x": 40,
+   "y": 500,
+   "title": "On-prem data centres",
+   "sub": "DC1 and DC2",
+   "icon": "building",
+   "color": "l0"
+  },
+  {
+   "id": "other-clouds",
+   "x": 40,
+   "y": 640,
+   "title": "Other clouds",
+   "sub": "AWS, Azure",
+   "icon": "cloud",
+   "color": "l0"
+  },
+  {
+   "id": "context-aware-access",
+   "x": 315,
+   "y": 70,
+   "title": "Context-aware access",
+   "sub": "Chrome Enterprise Premium",
+   "icon": "id",
+   "color": "l1"
+  },
+  {
+   "id": "cloud-armor",
+   "x": 315,
+   "y": 160,
+   "title": "Cloud Armor",
+   "sub": "WAF, DDoS, bot, geo",
+   "icon": "shield",
+   "color": "l1"
+  },
+  {
+   "id": "global-external-alb",
+   "x": 315,
+   "y": 250,
+   "title": "Global external ALB",
+   "sub": "Managed TLS certs",
+   "icon": "balancer",
+   "color": "l1"
+  },
+  {
+   "id": "identity-aware-proxy",
+   "x": 315,
+   "y": 340,
+   "title": "Identity-Aware Proxy",
+   "sub": "Per-request authN",
+   "icon": "lock",
+   "color": "l1"
+  },
+  {
+   "id": "interconnect",
+   "x": 315,
+   "y": 500,
+   "title": "Interconnect",
+   "sub": "Dedicated, MACsec",
+   "icon": "link",
+   "color": "l3"
+  },
+  {
+   "id": "ha-vpn",
+   "x": 315,
+   "y": 578,
+   "title": "HA VPN",
+   "sub": "IPsec backup, partners",
+   "icon": "tunnel",
+   "color": "l3"
+  },
+  {
+   "id": "cross-cloud-link",
+   "x": 315,
+   "y": 656,
+   "title": "Cross-Cloud link",
+   "sub": "To AWS and Azure",
+   "icon": "link",
+   "color": "l3"
+  },
+  {
+   "id": "cloud-router-ncc",
+   "x": 315,
+   "y": 734,
+   "title": "Cloud Router, NCC",
+   "sub": "BGP hub, route exchange",
+   "icon": "hub",
+   "color": "l3"
+  },
+  {
+   "id": "cloud-ngfw",
+   "x": 315,
+   "y": 812,
+   "title": "Cloud NGFW",
+   "sub": "IPS, secure tags",
+   "icon": "firewall",
+   "color": "l3"
+  },
+  {
+   "id": "secure-web-proxy",
+   "x": 315,
+   "y": 890,
+   "title": "Secure Web Proxy",
+   "sub": "FQDN egress allow-list",
+   "icon": "egress",
+   "color": "l3"
+  },
+  {
+   "id": "cloud-dns",
+   "x": 315,
+   "y": 968,
+   "title": "Cloud DNS",
+   "sub": "Private zones, forwarding",
+   "icon": "dns",
+   "color": "l3"
+  },
+  {
+   "id": "apigee-x",
+   "x": 595,
+   "y": 70,
+   "title": "Apigee X",
+   "sub": "API and AI gateway",
+   "icon": "gateway",
+   "color": "l2"
+  },
+  {
+   "id": "model-armor-dlp",
+   "x": 595,
+   "y": 165,
+   "title": "Model Armor + DLP",
+   "sub": "Injection, PII screening",
+   "icon": "shieldscan",
+   "color": "l1"
+  },
+  {
+   "id": "agent-engine",
+   "x": 595,
+   "y": 260,
+   "title": "Agent Engine",
+   "sub": "Vertex AI, all agents",
+   "icon": "agent",
+   "color": "l2"
+  },
+  {
+   "id": "policy-engine",
+   "x": 595,
+   "y": 355,
+   "title": "Policy engine",
+   "sub": "OPA rules as code",
+   "icon": "policy",
+   "color": "l2"
+  },
+  {
+   "id": "hitl-approvals",
+   "x": 595,
+   "y": 450,
+   "title": "HITL approvals",
+   "sub": "Workflows, Chat cards",
+   "icon": "approve",
+   "color": "gate"
+  },
+  {
+   "id": "mcp-tool-executors",
+   "x": 595,
+   "y": 545,
+   "title": "MCP tool executors",
+   "sub": "Cloud Run, JIT creds",
+   "icon": "wrench",
+   "color": "l6"
+  },
+  {
+   "id": "event-backbone",
+   "x": 845,
+   "y": 70,
+   "title": "Event backbone",
+   "sub": "Pub/Sub, Eventarc",
+   "icon": "stream",
+   "color": "l7"
+  },
+  {
+   "id": "agent-registry",
+   "x": 845,
+   "y": 165,
+   "title": "Agent registry",
+   "sub": "A2A agent cards",
+   "icon": "table",
+   "color": "l2"
+  },
+  {
+   "id": "llm-gateway",
+   "x": 845,
+   "y": 260,
+   "title": "LLM gateway",
+   "sub": "Router, cache, quotas",
+   "icon": "router",
+   "color": "l3"
+  },
+  {
+   "id": "slm-serving",
+   "x": 845,
+   "y": 355,
+   "title": "SLM serving",
+   "sub": "Cloud Run GPU",
+   "icon": "chip",
+   "color": "l4"
+  },
+  {
+   "id": "knowledge-and-memory",
+   "x": 845,
+   "y": 450,
+   "title": "Knowledge and memory",
+   "sub": "Search, vectors, graph",
+   "icon": "database",
+   "color": "l5"
+  },
+  {
+   "id": "gemini-on-vertex-ai",
+   "x": 1125,
+   "y": 70,
+   "title": "Gemini on Vertex AI",
+   "sub": "Provisioned Throughput",
+   "icon": "neural",
+   "color": "l4",
+   "w": 350
+  },
+  {
+   "id": "vertex-ai-search-bigquery-gc",
+   "x": 1125,
+   "y": 145,
+   "title": "Vertex AI Search, BigQuery, GCS",
+   "sub": "Restricted VIP, VPC-SC checked",
+   "icon": "search",
+   "color": "l4",
+   "w": 350
+  },
+  {
+   "id": "in-house-llm",
+   "x": 1125,
+   "y": 295,
+   "title": "In-house LLM",
+   "sub": "Confidential GKE, vLLM, TPU / GPU",
+   "icon": "neural",
+   "color": "risk",
+   "w": 350
+  },
+  {
+   "id": "regulated-data",
+   "x": 1125,
+   "y": 368,
+   "title": "Regulated data",
+   "sub": "EKM-held keys, no egress",
+   "icon": "lock",
+   "color": "risk",
+   "w": 350
+  },
+  {
+   "id": "workload-clusters",
+   "x": 1125,
+   "y": 510,
+   "title": "Workload clusters",
+   "sub": "GKE, Cloud Run",
+   "icon": "server",
+   "color": "l0",
+   "w": 350
+  },
+  {
+   "id": "vms-and-databases",
+   "x": 1125,
+   "y": 585,
+   "title": "VMs and databases",
+   "sub": "GCE, Cloud SQL, on-prem apps",
+   "icon": "database",
+   "color": "l0",
+   "w": 350
+  },
+  {
+   "id": "cloud-kms-hsm",
+   "x": 820,
+   "y": 740,
+   "title": "Cloud KMS, HSM",
+   "sub": "EKM, CMEK everywhere",
+   "icon": "key",
+   "color": "l9"
+  },
+  {
+   "id": "secret-manager",
+   "x": 1045,
+   "y": 740,
+   "title": "Secret Manager",
+   "sub": "Short-lived creds",
+   "icon": "vault",
+   "color": "l9"
+  },
+  {
+   "id": "privileged-access",
+   "x": 1270,
+   "y": 740,
+   "title": "Privileged access",
+   "sub": "PAM, JIT, break-glass",
+   "icon": "id",
+   "color": "l9"
+  },
+  {
+   "id": "telemetry",
+   "x": 595,
+   "y": 860,
+   "title": "Telemetry",
+   "sub": "Trace, logs, metrics, IDS",
+   "icon": "eye",
+   "color": "l8"
+  },
+  {
+   "id": "audit-log-sinks",
+   "x": 820,
+   "y": 860,
+   "title": "Audit log sinks",
+   "sub": "Locked buckets",
+   "icon": "log",
+   "color": "l9"
+  },
+  {
+   "id": "google-secops",
+   "x": 1045,
+   "y": 860,
+   "title": "Google SecOps",
+   "sub": "SIEM, SOAR playbooks",
+   "icon": "target",
+   "color": "risk"
+  },
+  {
+   "id": "security-command",
+   "x": 1270,
+   "y": 860,
+   "title": "Security Command",
+   "sub": "SCC posture, AI protect",
+   "icon": "radar",
+   "color": "l9"
+  }
+ ],
+ "edges": [
+  {
+   "from": "employees.r",
+   "to": "context-aware-access.l",
+   "route": "straight"
+  },
+  {
+   "from": "partners-vendors.r",
+   "to": "cloud-armor.l-8",
+   "route": "hv",
+   "mid": 272
+  },
+  {
+   "from": "saas-platforms.r",
+   "to": "cloud-armor.l+8",
+   "route": "hv",
+   "mid": 272,
+   "label": "webhooks",
+   "at": [
+    272.0,
+    268.0
+   ]
+  },
+  {
+   "from": "context-aware-access.b",
+   "to": "cloud-armor.t",
+   "route": "straight"
+  },
+  {
+   "from": "cloud-armor.b",
+   "to": "global-external-alb.t",
+   "route": "straight"
+  },
+  {
+   "from": "global-external-alb.b",
+   "to": "identity-aware-proxy.t",
+   "route": "straight"
+  },
+  {
+   "from": "identity-aware-proxy.r",
+   "to": "apigee-x.l",
+   "route": "hv",
+   "mid": 560
+  },
+  {
+   "from": "on-prem-data-centres.r",
+   "to": "interconnect.l",
+   "route": "straight",
+   "label": "primary",
+   "at": [
+    282.0,
+    528.0
+   ]
+  },
+  {
+   "from": "on-prem-data-centres.r+14",
+   "to": "ha-vpn.l",
+   "route": "hv",
+   "mid": 275,
+   "style": "dash",
+   "label": "backup",
+   "at": [
+    275.0,
+    574.0
+   ]
+  },
+  {
+   "from": "other-clouds.r",
+   "to": "cross-cloud-link.l",
+   "route": "straight"
+  },
+  {
+   "points": [
+    "interconnect.r",
+    [
+     528.0,
+     528.0
+    ],
+    [
+     528.0,
+     762.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    "ha-vpn.r",
+    [
+     528.0,
+     606.0
+    ],
+    [
+     528.0,
+     762.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    "cross-cloud-link.r",
+    [
+     528.0,
+     684.0
+    ],
+    [
+     528.0,
+     762.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    [
+     528.0,
+     762.0
+    ],
+    "cloud-router-ncc.r"
+   ]
+  },
+  {
+   "from": "cloud-router-ncc.b",
+   "to": "cloud-ngfw.t",
+   "route": "straight"
+  },
+  {
+   "from": "cloud-ngfw.r-8",
+   "to": "apigee-x.l+14",
+   "route": "hv",
+   "mid": 552,
+   "label": "north-south",
+   "at": [
+    552.0,
+    180.0
+   ]
+  },
+  {
+   "from": "apigee-x.b",
+   "to": "model-armor-dlp.t",
+   "route": "straight"
+  },
+  {
+   "from": "model-armor-dlp.b",
+   "to": "agent-engine.t",
+   "route": "straight"
+  },
+  {
+   "from": "agent-engine.b",
+   "to": "policy-engine.t",
+   "route": "straight"
+  },
+  {
+   "from": "policy-engine.b",
+   "to": "hitl-approvals.t",
+   "route": "straight",
+   "label": "needs approval",
+   "at": [
+    695.0,
+    430.5
+   ]
+  },
+  {
+   "from": "hitl-approvals.b",
+   "to": "mcp-tool-executors.t",
+   "route": "straight"
+  },
+  {
+   "points": [
+    "policy-engine.l+8",
+    [
+     583.0,
+     391.0
+    ],
+    [
+     583.0,
+     563.0
+    ],
+    "mcp-tool-executors.l-10"
+   ],
+   "label": "allow",
+   "at": [
+    583.0,
+    430.0
+   ]
+  },
+  {
+   "from": "agent-engine.r",
+   "to": "llm-gateway.l",
+   "route": "straight"
+  },
+  {
+   "from": "event-backbone.l",
+   "to": "agent-engine.r-16",
+   "route": "hv",
+   "mid": 822
+  },
+  {
+   "points": [
+    "agent-registry.l",
+    [
+     812.0,
+     193.0
+    ],
+    [
+     812.0,
+     270.0
+    ]
+   ],
+   "style": "dot",
+   "arrow": false
+  },
+  {
+   "from": "agent-engine.r+12",
+   "to": "knowledge-and-memory.l",
+   "route": "hv",
+   "mid": 832,
+   "label": "ground",
+   "at": [
+    832.0,
+    420.0
+   ]
+  },
+  {
+   "from": "llm-gateway.b",
+   "to": "slm-serving.t",
+   "route": "straight"
+  },
+  {
+   "from": "llm-gateway.r-10",
+   "to": "gemini-on-vertex-ai.l",
+   "route": "hv",
+   "mid": 1085,
+   "label": "PSC",
+   "at": [
+    1085.0,
+    188.0
+   ]
+  },
+  {
+   "from": "llm-gateway.r+10",
+   "to": "in-house-llm.l",
+   "route": "hv",
+   "mid": 1085,
+   "label": "bridge, mTLS",
+   "at": [
+    1085.0,
+    330.0
+   ]
+  },
+  {
+   "from": "in-house-llm.b",
+   "to": "regulated-data.t",
+   "route": "straight"
+  },
+  {
+   "from": "mcp-tool-executors.r",
+   "to": "workload-clusters.l",
+   "route": "hv",
+   "mid": 1075,
+   "label": "PSC attachments",
+   "at": [
+    930.0,
+    573.0
+   ]
+  },
+  {
+   "points": [
+    "mcp-tool-executors.l+14",
+    [
+     578.0,
+     587.0
+    ],
+    [
+     578.0,
+     850.0
+    ]
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    [
+     578.0,
+     850.0
+    ],
+    [
+     560.0,
+     850.0
+    ],
+    "cloud-ngfw.r+8"
+   ],
+   "label": "to on-prem",
+   "at": [
+    560.0,
+    835.0
+   ]
+  },
+  {
+   "points": [
+    "cloud-ngfw.r+8",
+    [
+     548.0,
+     848.0
+    ],
+    [
+     548.0,
+     918.0
+    ],
+    "secure-web-proxy.r"
+   ],
+   "arrow": false
+  },
+  {
+   "from": "secure-web-proxy.l",
+   "to": "saas-platforms.r+12",
+   "route": "hv",
+   "mid": 300,
+   "style": "dash",
+   "label": "to SaaS",
+   "at": [
+    300,
+    437
+   ]
+  },
+  {
+   "from": "mcp-tool-executors.b-40",
+   "to": "telemetry.t-40",
+   "route": "straight",
+   "style": "dot",
+   "label": "telemetry",
+   "at": [
+    655.0,
+    650.0
+   ]
+  },
+  {
+   "from": "telemetry.r",
+   "to": "audit-log-sinks.l",
+   "route": "straight"
+  },
+  {
+   "from": "audit-log-sinks.r",
+   "to": "google-secops.l",
+   "route": "straight"
+  },
+  {
+   "from": "security-command.l",
+   "to": "google-secops.r",
+   "route": "straight"
+  },
+  {
+   "from": "google-secops.t",
+   "to": "secret-manager.b",
+   "route": "straight",
+   "style": "dash",
+   "color": "risk",
+   "label": "SOAR containment",
+   "at": [
+    1145.0,
+    833.0
+   ]
+  },
+  {
+   "points": [
+    "cloud-kms-hsm.t-40",
+    [
+     880.0,
+     675.0
+    ],
+    [
+     1000.0,
+     675.0
+    ],
+    [
+     1000.0,
+     478.0
+    ],
+    "knowledge-and-memory.r"
+   ],
+   "style": "dot",
+   "label": "CMEK",
+   "at": [
+    1000.0,
+    600.0
+   ]
+  }
+ ]
+}

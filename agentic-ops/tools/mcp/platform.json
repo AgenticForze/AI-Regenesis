@@ -1,0 +1,150 @@
+{
+ "server": "platform",
+ "tools": [
+  {
+   "name": "platform.set_kill_switch",
+   "description": "Disable an agent or an action type platform-wide.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "target": {
+      "type": "string"
+     },
+     "enabled": {
+      "type": "boolean"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "target",
+     "enabled",
+     "reason"
+    ],
+    "additionalProperties": false
+   },
+   "annotations": {
+    "title": "platform.set_kill_switch",
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+   },
+   "x-agentops": {
+    "category": "control",
+    "dry_run": false,
+    "default_autonomy": "L0",
+    "max_autonomy": "L0",
+    "blast_radius": "platform",
+    "approval": "operators only",
+    "gates": [
+     "G2",
+     "G12"
+    ],
+    "gcp": "Feature flag in Firestore / Config",
+    "aws": "AWS AppConfig"
+   }
+  },
+  {
+   "name": "platform.set_autonomy_level",
+   "description": "Promote or demote an action type's autonomy level after the promotion checklist.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "agent": {
+      "type": "string"
+     },
+     "action": {
+      "type": "string"
+     },
+     "level": {
+      "type": "string",
+      "enum": [
+       "L0",
+       "L1",
+       "L2",
+       "L3",
+       "L4"
+      ]
+     },
+     "checklist_url": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "agent",
+     "action",
+     "level",
+     "checklist_url"
+    ],
+    "additionalProperties": false
+   },
+   "annotations": {
+    "title": "platform.set_autonomy_level",
+    "readOnlyHint": false,
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false
+   },
+   "x-agentops": {
+    "category": "control",
+    "dry_run": false,
+    "default_autonomy": "L0",
+    "max_autonomy": "L0",
+    "blast_radius": "platform",
+    "approval": "operators only",
+    "gates": [
+     "G2",
+     "G12"
+    ],
+    "gcp": "Policy bundle in Git, deployed by Cloud Build",
+    "aws": "Cedar policy in Git, deployed to AgentCore Policy"
+   }
+  },
+  {
+   "name": "platform.run_evaluation",
+   "description": "Run the offline evaluation suite for an agent version against its golden set.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "agent": {
+      "type": "string"
+     },
+     "version": {
+      "type": "string"
+     },
+     "golden_set": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "agent",
+     "version",
+     "golden_set"
+    ],
+    "additionalProperties": false
+   },
+   "annotations": {
+    "title": "platform.run_evaluation",
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false
+   },
+   "x-agentops": {
+    "category": "control",
+    "dry_run": false,
+    "default_autonomy": "L0",
+    "max_autonomy": "L0",
+    "blast_radius": "none",
+    "approval": "operators only",
+    "gates": [
+     "G2"
+    ],
+    "gcp": "Vertex AI Pipelines + Gen AI Evaluation Service",
+    "aws": "SageMaker Pipelines + AgentCore Evaluations"
+   }
+  }
+ ]
+}

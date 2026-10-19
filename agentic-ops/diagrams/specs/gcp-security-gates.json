@@ -1,0 +1,436 @@
+{
+ "title": "Runtime security gate chain G1 to G12",
+ "width": 1260,
+ "height": 520,
+ "zones": [],
+ "nodes": [
+  {
+   "id": "g1-edge",
+   "x": 20,
+   "y": 70,
+   "title": "G1 Edge",
+   "sub": "Armor, DDoS, WAF",
+   "icon": "shield",
+   "color": "l1",
+   "w": 190
+  },
+  {
+   "id": "g2-identity",
+   "x": 225,
+   "y": 70,
+   "title": "G2 Identity",
+   "sub": "IAP, CEP, WIF",
+   "icon": "id",
+   "color": "l1",
+   "w": 190
+  },
+  {
+   "id": "g3-api-contract",
+   "x": 430,
+   "y": 70,
+   "title": "G3 API contract",
+   "sub": "Apigee OAuth, schema",
+   "icon": "gateway",
+   "color": "l1",
+   "w": 190
+  },
+  {
+   "id": "g4-input-safety",
+   "x": 635,
+   "y": 70,
+   "title": "G4 Input safety",
+   "sub": "Model Armor, DLP",
+   "icon": "shieldscan",
+   "color": "l1",
+   "w": 190
+  },
+  {
+   "id": "g5-agent-authz",
+   "x": 840,
+   "y": 70,
+   "title": "G5 Agent authZ",
+   "sub": "Agent SA, A2A, mesh",
+   "icon": "agent",
+   "color": "l2",
+   "w": 190
+  },
+  {
+   "id": "g6-model-gateway",
+   "x": 1045,
+   "y": 70,
+   "title": "G6 Model gateway",
+   "sub": "Data class, budget",
+   "icon": "router",
+   "color": "l3",
+   "w": 190
+  },
+  {
+   "id": "g7-retrieval-acl",
+   "x": 1045,
+   "y": 260,
+   "title": "G7 Retrieval ACL",
+   "sub": "Entitlement filter",
+   "icon": "search",
+   "color": "l5",
+   "w": 190
+  },
+  {
+   "id": "g8-output-safety",
+   "x": 840,
+   "y": 260,
+   "title": "G8 Output safety",
+   "sub": "Screen, grounding",
+   "icon": "scan",
+   "color": "l1",
+   "w": 190
+  },
+  {
+   "id": "g9-action-policy",
+   "x": 635,
+   "y": 260,
+   "title": "G9 Action policy",
+   "sub": "OPA, blast radius",
+   "icon": "policy",
+   "color": "l2",
+   "w": 190
+  },
+  {
+   "id": "g11-exec-guard",
+   "x": 430,
+   "y": 260,
+   "title": "G11 Exec guard",
+   "sub": "JIT creds, dry-run",
+   "icon": "wrench",
+   "color": "l6",
+   "w": 190
+  },
+  {
+   "id": "g12-verify-audit",
+   "x": 225,
+   "y": 260,
+   "title": "G12 Verify, audit",
+   "sub": "Ledger, post-checks",
+   "icon": "check",
+   "color": "auto",
+   "w": 190
+  },
+  {
+   "id": "g10-approval",
+   "x": 530,
+   "y": 400,
+   "title": "G10 Approval",
+   "sub": "Named human approver",
+   "icon": "approve",
+   "color": "gate",
+   "w": 190
+  },
+  {
+   "id": "rollback",
+   "x": 225,
+   "y": 400,
+   "title": "Rollback",
+   "sub": "Demote autonomy",
+   "icon": "rollback",
+   "color": "risk",
+   "w": 190
+  },
+  {
+   "id": "google-secops",
+   "x": 20,
+   "y": 260,
+   "title": "Google SecOps",
+   "sub": "Case, SOAR",
+   "icon": "target",
+   "color": "risk",
+   "w": 190
+  },
+  {
+   "id": "request-or-event",
+   "x": 20,
+   "y": 8,
+   "title": "Request or event",
+   "icon": "stream",
+   "color": "l0",
+   "w": 190,
+   "h": 44
+  }
+ ],
+ "edges": [
+  {
+   "from": "request-or-event.b",
+   "to": "g1-edge.t",
+   "route": "straight",
+   "color": "auto"
+  },
+  {
+   "from": "g1-edge.r",
+   "to": "g2-identity.l",
+   "route": "straight",
+   "color": "auto"
+  },
+  {
+   "from": "g2-identity.r",
+   "to": "g3-api-contract.l",
+   "route": "straight",
+   "color": "auto"
+  },
+  {
+   "from": "g3-api-contract.r",
+   "to": "g4-input-safety.l",
+   "route": "straight",
+   "color": "auto"
+  },
+  {
+   "from": "g4-input-safety.r",
+   "to": "g5-agent-authz.l",
+   "route": "straight",
+   "color": "auto"
+  },
+  {
+   "from": "g5-agent-authz.r",
+   "to": "g6-model-gateway.l",
+   "route": "straight",
+   "color": "auto"
+  },
+  {
+   "from": "g6-model-gateway.b",
+   "to": "g7-retrieval-acl.t",
+   "route": "straight",
+   "color": "auto"
+  },
+  {
+   "from": "g7-retrieval-acl.l",
+   "to": "g8-output-safety.r",
+   "route": "straight",
+   "color": "auto"
+  },
+  {
+   "from": "g8-output-safety.l",
+   "to": "g9-action-policy.r",
+   "route": "straight",
+   "color": "auto"
+  },
+  {
+   "from": "g9-action-policy.l",
+   "to": "g11-exec-guard.r",
+   "route": "straight",
+   "color": "auto"
+  },
+  {
+   "from": "g11-exec-guard.l",
+   "to": "g12-verify-audit.r",
+   "route": "straight",
+   "color": "auto"
+  },
+  {
+   "points": [
+    "g9-action-policy.b+40",
+    [
+     770.0,
+     428.0
+    ],
+    "g10-approval.r"
+   ],
+   "color": "gate",
+   "label": "needs approval",
+   "at": [
+    770.0,
+    375.0
+   ]
+  },
+  {
+   "from": "g10-approval.t-50",
+   "to": "g11-exec-guard.b+50",
+   "route": "straight",
+   "color": "auto",
+   "label": "approved",
+   "at": [
+    575.0,
+    365.0
+   ]
+  },
+  {
+   "from": "g11-exec-guard.b-50",
+   "to": "rollback.t",
+   "route": "vh",
+   "mid": 370,
+   "style": "dash",
+   "color": "risk",
+   "label": "fail",
+   "at": [
+    398.0,
+    370.0
+   ]
+  },
+  {
+   "points": [
+    "g1-edge.b-60",
+    [
+     55.0,
+     203.0
+    ]
+   ],
+   "style": "dash",
+   "color": "risk",
+   "arrow": false
+  },
+  {
+   "points": [
+    "g2-identity.b-60",
+    [
+     260.0,
+     203.0
+    ]
+   ],
+   "style": "dash",
+   "color": "risk",
+   "arrow": false
+  },
+  {
+   "points": [
+    "g3-api-contract.b-60",
+    [
+     465.0,
+     203.0
+    ]
+   ],
+   "style": "dash",
+   "color": "risk",
+   "arrow": false
+  },
+  {
+   "points": [
+    "g4-input-safety.b-60",
+    [
+     670.0,
+     203.0
+    ]
+   ],
+   "style": "dash",
+   "color": "risk",
+   "arrow": false
+  },
+  {
+   "points": [
+    "g5-agent-authz.b-60",
+    [
+     875.0,
+     203.0
+    ]
+   ],
+   "style": "dash",
+   "color": "risk",
+   "arrow": false
+  },
+  {
+   "points": [
+    "g6-model-gateway.b-60",
+    [
+     1080.0,
+     203.0
+    ]
+   ],
+   "style": "dash",
+   "color": "risk",
+   "arrow": false
+  },
+  {
+   "points": [
+    "g7-retrieval-acl.t-60",
+    [
+     1080.0,
+     203.0
+    ]
+   ],
+   "style": "dash",
+   "color": "risk",
+   "arrow": false
+  },
+  {
+   "points": [
+    "g8-output-safety.t-60",
+    [
+     875.0,
+     203.0
+    ]
+   ],
+   "style": "dash",
+   "color": "risk",
+   "arrow": false
+  },
+  {
+   "points": [
+    "g9-action-policy.t-60",
+    [
+     670.0,
+     203.0
+    ]
+   ],
+   "style": "dash",
+   "color": "risk",
+   "arrow": false
+  },
+  {
+   "points": [
+    "g11-exec-guard.t-60",
+    [
+     465.0,
+     203.0
+    ]
+   ],
+   "style": "dash",
+   "color": "risk",
+   "arrow": false
+  },
+  {
+   "points": [
+    [
+     1080.0,
+     203.0
+    ],
+    [
+     55.0,
+     203.0
+    ]
+   ],
+   "style": "dash",
+   "color": "risk",
+   "label": "block, log, alert",
+   "at": [
+    560.0,
+    203.0
+   ],
+   "arrow": false
+  },
+  {
+   "points": [
+    [
+     115.0,
+     203.0
+    ],
+    "google-secops.t"
+   ],
+   "style": "dash",
+   "color": "risk"
+  }
+ ],
+ "legend": [
+  {
+   "label": "pass",
+   "color": "auto"
+  },
+  {
+   "label": "escalate to human",
+   "color": "gate"
+  },
+  {
+   "label": "deny path",
+   "color": "risk",
+   "style": "dash"
+  }
+ ],
+ "legend_at": [
+  850,
+  480
+ ]
+}
